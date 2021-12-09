@@ -1,0 +1,368 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Roboto', sans-serif;
+  width: 100vw;
+}
+
+body .header {
+  background-color: #12171d;
+}
+
+body .header .header_navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  padding: 26px 45px;
+}
+
+body .header .header_navigation .header_logo {
+  height: 100%;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  cursor: pointer;
+}
+
+body .header .header_navigation .header_logo img {
+  height: 100%;
+}
+
+body .header .header_navigation .header_navigation_container {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  font-size: 19px;
+  text-align: center;
+}
+
+body .header .header_navigation .header_navigation_container > a,
+body .header .header_navigation .header_navigation_container div {
+  color: white;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  font-weight: 400;
+  position: relative;
+}
+
+body .header .header_navigation .header_navigation_container > a:hover,
+body .header .header_navigation .header_navigation_container div:hover {
+  font-weight: 100;
+}
+
+body .header .header_navigation .header_navigation_container .navigation_treasury {
+  position: relative;
+}
+
+body .header .header_navigation .header_navigation_container .navigation_treasury a {
+  color: white;
+  text-decoration: none;
+}
+
+body .header .header_navigation .header_navigation_container .navigation_treasury img {
+  position: absolute;
+  width: 75px;
+  -webkit-transform: rotate(23deg);
+          transform: rotate(23deg);
+  top: -16px;
+  left: 52px;
+}
+
+body .header .header_navigation .header_navigation_container .navigation_sign_up button {
+  background-color: #e5007a;
+  color: white;
+  border: none;
+  font-size: 19px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+body .header .header_navigation .header_navigation_container .navigation_sign_up button:hover {
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+  font-weight: 100;
+  cursor: pointer;
+}
+
+body .header .header_container {
+  padding: 40px 45px 80px 45px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 8fr 2fr;
+      grid-template-columns: 8fr 2fr;
+  grid-gap: 60px;
+}
+
+body .header .header_container .header_parent .header_child_1 h1 {
+  font-size: 55px;
+  width: 75%;
+  color: #ffffff;
+  font-weight: 300;
+  margin-bottom: 0px;
+}
+
+body .header .header_container .header_parent .line_break {
+  margin: 15px 0;
+  height: 3px;
+  background-color: #ffffff;
+  width: 35%;
+}
+
+body .header .header_container .header_parent .header_child_2 h2 {
+  color: #ffffff;
+  font-weight: 200;
+  width: 75%;
+}
+
+body .header .header_container .header_parent_2 .header_child_1 img {
+  width: 420px;
+}
+
+body .header .header_container .header_parent_2 .line_break {
+  margin: 15px 0;
+  height: 3px;
+  background-color: #ffffff;
+  width: 43%;
+}
+
+body .header .header_container .header_parent_2 .header_child_2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .header .header_container .header_parent_2 .header_child_2 > div {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+body .header .header_container .header_parent_2 .header_child_2 > div:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+body .header .header_container .header_parent_2 .header_child_2 > div img {
+  width: 100%;
+  height: 100%;
+}
+
+body .about_section {
+  padding: 30px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .about_section .about_heading h1 {
+  font-size: 45px;
+}
+
+body .about_section .about_info {
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+body .about_section .about_info p {
+  font-size: 28px;
+  font-weight: 300;
+  margin: 10px;
+}
+
+body .live_chains_section {
+  background-color: #12171d;
+  padding: 40px 0px;
+  position: relative;
+}
+
+body .live_chains_section .live_chains_heading {
+  background-color: #ffffff;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 16px 26px 6px 10px;
+  border-radius: 10px;
+}
+
+body .live_chains_section .live_chains_heading h1 {
+  font-size: 31px;
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+body .live_chains_section .live_chains_heading img {
+  width: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+body .live_chains_section .chain-white {
+  position: absolute;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  left: 202px;
+  top: 88px;
+  width: 72px;
+}
+
+body .live_chains_section .live_chains_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 250px;
+  margin-left: 259px;
+  margin-top: 48px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+body .live_chains_section .live_chains_info .polkadot {
+  padding: 5px;
+  -webkit-box-shadow: 2px 2px 5px grey;
+          box-shadow: 2px 2px 5px grey;
+  border-radius: 10px;
+}
+
+body .live_chains_section .live_chains_info .polkadot img {
+  height: 130px;
+}
+
+body .live_chains_section .live_chains_info .polkadot h3 {
+  text-align: center;
+  margin: 0;
+}
+
+body .live_chains_section .live_chains_info .kusama {
+  padding: 5px;
+  -webkit-box-shadow: 2px 2px 5px grey;
+          box-shadow: 2px 2px 5px grey;
+  border-radius: 10px;
+}
+
+body .live_chains_section .live_chains_info .kusama img {
+  height: 130px;
+}
+
+body .live_chains_section .live_chains_info .kusama h3 {
+  text-align: center;
+  margin: 0;
+}
+
+body .live_chains_section .live_chains_info .moonbeam {
+  padding: 5px;
+  -webkit-box-shadow: 2px 2px 5px grey;
+          box-shadow: 2px 2px 5px grey;
+  border-radius: 10px;
+}
+
+body .live_chains_section .live_chains_info .moonbeam img {
+  height: 130px;
+}
+
+body .live_chains_section .live_chains_info .moonbeam h3 {
+  text-align: center;
+  margin: 0;
+}
+
+body .live_chains_section .live_chains_info .kilt {
+  padding: 5px;
+  -webkit-box-shadow: 2px 2px 5px grey;
+          box-shadow: 2px 2px 5px grey;
+  border-radius: 10px;
+}
+
+body .live_chains_section .live_chains_info .kilt img {
+  height: 130px;
+}
+
+body .live_chains_section .live_chains_info .kilt h3 {
+  text-align: center;
+  margin: 0;
+}
+
+body .live_chains_section .live_chains_info .bifost {
+  padding: 5px;
+  -webkit-box-shadow: 2px 2px 5px grey;
+          box-shadow: 2px 2px 5px grey;
+  border-radius: 10px;
+}
+
+body .live_chains_section .live_chains_info .bifost img {
+  height: 130px;
+}
+
+body .live_chains_section .live_chains_info .bifost h3 {
+  text-align: center;
+  margin: 0;
+}
+
+body .roadmap-section {
+  width: 100%;
+}
+
+body .roadmap-section img {
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */
