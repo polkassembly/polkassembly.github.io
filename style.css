@@ -688,7 +688,7 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   font-size: 20px;
 }
 
-.footer .content .subscribe_email .contact_us_button button {
+.footer .content .subscribe_email .contact_us_button a button {
   border-radius: 10px;
   border: none;
   font-size: 20px;
@@ -698,18 +698,9 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   cursor: pointer;
 }
 
-.footer .content .subscribe_email .contact_us_button button:hover {
+.footer .content .subscribe_email .contact_us_button a button:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
-}
-
-.footer .content .contact_us_button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .footer .footer_navigation {
@@ -829,7 +820,6 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     width: 100%;
   }
   body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links {
-    padding-left: 18%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -839,12 +829,13 @@ body .live_chains_section .live_chains_info a .bifost:hover {
             flex-direction: column;
   }
   body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links a {
-    padding: 10px 0;
+    padding: 10px 0 10px 18%;
     text-decoration: none;
     color: #ffffff;
   }
   body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up {
     padding: 10px 0;
+    padding-left: 18%;
   }
   body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up button {
     background-color: #e5007a;
@@ -857,6 +848,10 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     font-family: 'Roboto', sans-serif;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up button:hover {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
   }
   body .header .header_navigation {
     display: none;
@@ -1032,10 +1027,10 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  body .footer .content .subscribe_email .subscribe_email_input .or {
-    margin: 15px 25% 15px 0;
+  body .footer .content .subscribe_email .or {
+    margin: 15px 20% 15px 0;
   }
-  body .footer .content .subscribe_email .subscribe_email_input .contact_us_button button:hover {
+  body .footer .content .subscribe_email .contact_us_button a button:hover {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
