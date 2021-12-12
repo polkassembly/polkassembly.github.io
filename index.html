@@ -18,6 +18,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Polkassembly</title>
   </head>
   <body>
@@ -32,10 +33,11 @@
         <div class="header_navigation_container">
           <a href="#" class="navigation_about">About</a>
           <a href="#" class="navigation_governance">Governance</a>
-          <div class="navigation_treasury">
+          <a href="#">Treasury</a>
+          <!-- <div class="navigation_treasury">
             <a href="#">Treasury</a>
             <img src="./images/coming-soon-white.png" alt="coming-soon-icon" />
-          </div>
+          </div> -->
           <a href="#" class="navigation_contact">Contact</a>
           <div class="navigation_sign_up">
             <button>Sign up</button>
@@ -69,28 +71,36 @@
           <!-- social icons -->
           <div class="header_child_2">
             <div class="header_twitter">
-              <img
-                src="./images/twitter-black.png"
-                alt="Polkassembly-twitter-icon"
-              />
+              <a href="https://twitter.com/polk_gov" target="_blank">
+                <img
+                  src="./images/twitter-black.png"
+                  alt="Polkassembly-twitter-icon"
+                />
+              </a>
             </div>
             <div class="header_discord">
-              <img
-                src="./images/discord-black.png"
-                alt="Polkassembly-discord-icon"
-              />
+              <a href="https://discord.gg/jHEb84Vb" target="_blank">
+                <img
+                  src="./images/discord-black.png"
+                  alt="Polkassembly-discord-icon"
+                />
+              </a>
             </div>
             <div class="header_telegram">
-              <img
-                src="./images/telegram-black.png"
-                alt="Polkassembly-telegram-icon"
-              />
+              <a href="https://t.me/+6WQDzi6RuIw3YzY1" target="_blank">
+                <img
+                  src="./images/telegram-black.png"
+                  alt="Polkassembly-telegram-icon"
+                />
+              </a>
             </div>
             <div class="header_medium">
-              <img
-                src="./images/medium-black.png"
-                alt="Polkassembly-medium-icon"
-              />
+              <a href="https://polkassembly.medium.com" target="_blank">
+                <img
+                  src="./images/medium-black.png"
+                  alt="Polkassembly-medium-icon"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -103,12 +113,17 @@
         <h1>About</h1>
       </div>
       <div class="about_info">
-        <p>Polkassembly is a platform to discuss and vote on governance</p>
-        <p>proposals, motions and referandas.</p>
         <p>
-          This is a place where your community engages, to take decisions on
+          Polkassembly is a platform to discuss and vote on governance
+          proposals, motions and referandas. This is a place where your
+          community engages, to take decisions on the future of your protocol.
         </p>
-        <p>the future of your protocol.</p>
+        <!-- <p>proposals, motions and referandas.</p> -->
+        <!-- <p>
+          This is a place where your community engages, to take decisions on the
+          future of your protocol.
+        </p> -->
+        <!-- <p>the future of your protocol.</p> -->
       </div>
     </section>
 
@@ -147,20 +162,94 @@
       </div>
     </section>
 
-    <!-- roadmap-section -->
-    <section class="roadmap-section">
-      <img src="./images/roadmap.png" alt="" />
+    <!-- product-roadmap-section -->
+    <section class="roadmap_section">
+      <!-- <img src="./images/roadmap.png" alt="" /> -->
+      <div class="roadmap_heading">
+        <h1>Product Roadmap</h1>
+        <h2>2022</h2>
+      </div>
+      <div class="roadmap_container">
+        <div class="roadmap_parent_1">
+          <div class="q1">
+            <h3>Q1</h3>
+          </div>
+          <div class="roadmap_description">
+            <div class="description_heading">
+              <h3>Milestones</h3>
+            </div>
+            <div class="description_content">
+              <p>Treasury analytics</p>
+              <p>Tips intuitive UX</p>
+              <p>Governance module</p>
+              <p>Educational guides</p>
+              <!-- <p>Parachains analytics</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="roadmap_parent_2">
+          <div class="q2">
+            <h3>Q2</h3>
+          </div>
+          <div class="roadmap_description">
+            <div class="description_heading">
+              <h3>Milestones</h3>
+            </div>
+            <div class="description_content">
+              <p>UI Overhaul</p>
+              <p>Educational module</p>
+              <p>Reward points (shh....)</p>
+              <p>Profile badges</p>
+            </div>
+          </div>
+        </div>
+        <div class="roadmap_parent_3">
+          <div class="q3">
+            <h3>Q3</h3>
+          </div>
+          <div class="roadmap_description">
+            <div class="description_heading">
+              <h3>Milstones</h3>
+            </div>
+            <div class="description_content">
+              <p>Polkassembly governance</p>
+              <p>Mobile apps - V1</p>
+              <p>On chain reputation</p>
+              <p>Cross platform discussion</p>
+            </div>
+          </div>
+        </div>
+        <div class="roadmap_parent_4">
+          <div class="q4">
+            <h3>Q4</h3>
+          </div>
+          <div class="roadmap_description">
+            <div class="description_heading">
+              <h3>Milstones</h3>
+            </div>
+            <div class="description_content">
+              <p>Cross platform discussion</p>
+              <p>Content module - V2</p>
+              <p>Lottery</p>
+              <span class="extra_content">
+                More features as requested by community
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- contact-section -->
-    <section class="contact_section">
+    <!-- <section class="contact_section">
       <h1>
         Want to use Polkassembly to simplify Governance for your community?
       </h1>
       <button><i class="far fa-envelope"></i> Contact Us</button>
-    </section>
+    </section> -->
 
-    <section class="testimonial_sections">
+    <!-- testimonials section -->
+    <!-- <section class="testimonial_sections">
       <div class="testimonial_heading">
         <h1>Testimonials</h1>
       </div>
@@ -170,27 +259,42 @@
           <div class="description"></div>
         </div>
         <div class="badge">
-          <img src="./images/badge.png" alt="">
+          <img src="./images/badge.png" alt="" />
         </div>
         <div class="parent">
           <div class="image_container"></div>
           <div class="description"></div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- footer -->
     <footer class="footer">
       <div class="content">
         <div class="content_heading">
-          <h2>Want to know more about popular governance proposals and community updates?</h2>
-          <h2>Subscribe to our monthly newsletter and be a responsible citizen of the decentralized world</h2>
+          <h2>
+            Want to know more about popular governance proposals and community
+            updates?
+          </h2>
+          <h2>
+            Subscribe to our monthly newsletter and be a responsible citizen of
+            the decentralized world
+          </h2>
         </div>
         <div class="subscribe_email">
-          <input type="email" placeholder="Enter your email" />
-        </div>
-        <div class="subscribe_button">
-          <button type="submit" >Subscribe <i class="fas fa-arrow-right"></i></button>
+          <div class="subscribe_email_input">
+            <input type="email" placeholder="Enter your email address" />
+            <div class="subscribe_button">
+              <button type="submit">
+                Subscribe
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="or">or</div>
+          <div class="contact_us_button">
+            <button><i class="far fa-envelope"></i> Contact Us</button>
+          </div>
         </div>
       </div>
       <div class="footer_navigation">
@@ -205,28 +309,36 @@
         <!-- social icons -->
         <div class="footer_social_links">
           <div class="header_twitter">
-            <img
-              src="./images/twitter-black.png"
-              alt="Polkassembly-twitter-icon"
-            />
+            <a href="https://twitter.com/polk_gov" target="_blank">
+              <img
+                src="./images/twitter-black.png"
+                alt="Polkassembly-twitter-icon"
+              />
+            </a>
           </div>
           <div class="header_discord">
-            <img
-              src="./images/discord-black.png"
-              alt="Polkassembly-discord-icon"
-            />
+            <a href="https://discord.gg/jHEb84Vb" target="_blank">
+              <img
+                src="./images/discord-black.png"
+                alt="Polkassembly-discord-icon"
+              />
+            </a>
           </div>
           <div class="header_telegram">
-            <img
-              src="./images/telegram-black.png"
-              alt="Polkassembly-telegram-icon"
-            />
+            <a href="https://t.me/+6WQDzi6RuIw3YzY1" target="_blank">
+              <img
+                src="./images/telegram-black.png"
+                alt="Polkassembly-telegram-icon"
+              />
+            </a>
           </div>
           <div class="header_medium">
-            <img
-              src="./images/medium-black.png"
-              alt="Polkassembly-medium-icon"
-            />
+            <a href="https://polkassembly.medium.com" target="_blank">
+              <img
+                src="./images/medium-black.png"
+                alt="Polkassembly-medium-icon"
+              />
+            </a>
           </div>
         </div>
       </div>

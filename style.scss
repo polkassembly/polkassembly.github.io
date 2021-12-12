@@ -135,9 +135,12 @@ body {
             &:hover {
               transform: scale(1.1);
             }
-            img {
-              width: 100%;
+            a {
               height: 100%;
+              img {
+                width: 100%;
+                height: 100%;
+              }
             }
           }
         }
@@ -159,6 +162,9 @@ body {
     .about_info {
       text-align: center;
       letter-spacing: 2px;
+      margin: 10px;
+      padding: 0 40px;
+      line-height: 1.5;
       p {
         font-size: 28px;
         font-weight: 300;
@@ -292,10 +298,98 @@ body {
       }
     }
   }
-  .roadmap-section {
-    width: 100%;
-    img {
-      width: 100%;
+  // roadmap-section
+  .roadmap_section {
+    padding: 40px 80px;
+    .roadmap_heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+      h1 {
+        margin: 0;
+        margin-bottom: 15px;
+        font-size: 46px;
+      }
+      h2 {
+        margin: 0;
+        font-size: 28px;
+      }
+    }
+    .roadmap_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      .roadmap_parent_1,
+      .roadmap_parent_2,
+      .roadmap_parent_3,
+      .roadmap_parent_4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        padding: 20px;
+        margin: 0 30px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 2px 2px gainsboro;
+        transition: all 0.2s ease-in-out;
+        .q1,
+        .q2,
+        .q3,
+        .q4 {
+          background-color: #ffffff;
+          padding: 40px;
+          border-radius: 50%;
+          // border: 3px solid #12171d;
+          h3 {
+            margin: 0;
+            font-size: 40px;
+            padding: 30px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 3px 2px gainsboro;
+          }
+        }
+        .roadmap_description {
+          .description_heading {
+            h3 {
+              text-align: center;
+              color: aliceblue;
+              font-weight: 400;
+            }
+          }
+          .description_content {
+            p {
+              text-align: center;
+              padding: 10px;
+              // border: 1px solid gainsboro;
+              border-radius: 10px;
+              background-color: aliceblue;
+            }
+            .extra_content {
+              font-style: italic;
+              color: white;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+      .roadmap_parent_1 {
+        background: linear-gradient(#b23dc9, #8138be);
+      }
+      .roadmap_parent_2 {
+        background: linear-gradient(#3830ac, #0a77d0);
+      }
+      .roadmap_parent_3 {
+        background: linear-gradient(#02a2ea, #0eabb8);
+      }
+      .roadmap_parent_4 {
+        background: linear-gradient(#14a99f, #20a472);
+      }
+      .roadmap_parent_1:hover,
+      .roadmap_parent_2:hover,
+      .roadmap_parent_3:hover,
+      .roadmap_parent_4:hover {
+        transform: scale(0.99);
+      }
     }
   }
   // contact section
@@ -311,17 +405,6 @@ body {
       font-size: 40px;
       font-weight: 300;
       text-align: center;
-    }
-    button {
-      border-radius: 10px;
-      border: none;
-      font-size: 20px;
-      padding: 12px 35px;
-      transition: all 0.2s ease-in-out;
-      cursor: pointer;
-    }
-    button:hover {
-      transform: scale(0.95);
     }
   }
 
@@ -373,51 +456,86 @@ body {
       background: url('./images/gradient-background.png');
       background-color: #12171d;
       color: #ffffff;
-      padding: 60px 20px 40px 20px;
+      padding: 60px 40px 40px 40px;
+      display: flex;
+      align-items: center;
       .content_heading {
         h2 {
-          margin: 5px;
-          text-align: center;
+          // text-align: center;
           font-weight: 300;
-          font-size: 27px;
+          font-size: 24px;
+          line-height: 1.5;
           letter-spacing: 1px;
         }
       }
-      
+
       .subscribe_email {
         display: flex;
         justify-content: center;
-        padding: 40px;
-        input {
-          width: 500px;
-          height: 40px;
-          border: none;
-          border-radius: 4px;
-          font-size: 20px;
-          padding-left: 10px;
-          background-color: #f9f9fb;
+        flex-direction: column;
+        align-items: center;
+        .subscribe_email_input {
+          position: relative;
+          input {
+            width: 450px;
+            height: 50px;
+            border: none;
+            border-radius: 12px;
+            font-size: 20px;
+            padding-left: 10px;
+            background-color: #f9f9fb;
+          }
+          input::placeholder {
+            font-size: 20px;
+            letter-spacing: 1px;
+            font-weight: 100;
+          }
+          .subscribe_button {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            right: 8px;
+            top: 8px;
+
+            button {
+              cursor: pointer;
+              font-size: 20px;
+              padding: 6px 15px;
+              border-radius: 5px;
+              border: none;
+              transition: all 0.2s ease-in-out;
+              background-color: #12171d;
+              color: #ffffff;
+              font-weight: 100;
+              font-style: italic;
+            }
+            button:hover {
+              transform: scale(0.95);
+            }
+          }
         }
-        input::placeholder {
+        .or {
+          margin: 15px 0;
           font-size: 20px;
-          text-align: center;
-          letter-spacing: 1px;
-          font-weight: 100;
+        }
+        .contact_us_button {
+          button {
+            border-radius: 10px;
+            border: none;
+            font-size: 20px;
+            padding: 12px 35px;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+          }
+          button:hover {
+            transform: scale(0.95);
+          }
         }
       }
-      .subscribe_button {
+
+      .contact_us_button {
         display: flex;
-        justify-content: center;
-        button {
-          cursor: pointer;
-          font-size: 25px;
-          padding: 6px 15px;
-          border-radius: 5px;
-          border: none;
-          transition: all 0.2s ease-in-out;
-        }
-        button:hover {
-          transform: scale(0.95);
-        }
+        align-items: center;
       }
     }
 
@@ -462,13 +580,360 @@ body {
           &:hover {
             transform: scale(1.1);
           }
-          img {
-            width: 100%;
+          a {
             height: 100%;
+            img {
+              width: 100%;
+              height: 100%;
+            }
           }
         }
       }
-    } 
+    }
   }
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    // background-color: #14a99f;
+    // header
+    .header {
+      .header_navigation {
+        display: none;
+        .header_logo {
+          img {
+          }
+        }
+        .header_navigation_container {
+          & > a,
+          div {
+          }
+          & > a:hover,
+          div:hover {
+          }
+          .navigation_treasury {
+            a {
+            }
+            img {
+            }
+          }
+          .navigation_sign_up {
+            button {
+            }
+            button:hover {
+            }
+          }
+        }
+      }
+      .header_container {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 0;
+        padding: 40px 45px 40px 45px;
+        .header_parent {
+          .header_child_1 {
+            h1 {
+              font-size: 35px;
+              width: 100%;
+              text-align: end;
+            }
+          }
+          .line_break {
+            width: 100%;
+          }
+          .header_child_2 {
+            h2 {
+              width: 100%;
+              font-size: 20px;
+              text-align: end;
+            }
+          }
+        }
+        .header_parent_2 {
+          .header_child_1 {
+            display: none;
+            img {
+            }
+          }
+          .line_break {
+          }
+          .header_child_2 {
+            & > div {
+              &:hover {
+              }
+              a {
+                img {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // about
+    .about_section {
+      padding: 20px;
+      .about_heading {
+        h1 {
+          font-size: 30px;
+          margin: 0;
+        }
+      }
+      .about_info {
+        text-align: end;
+        padding: 0;
+        p {
+          font-size: 20px;
+          margin: 0;
+        }
+      }
+    }
+
+    // live chains
+    .live_chains_section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .live_chains_heading {
+        h1 {
+        }
+        img {
+        }
+      }
+      .chain-white {
+        display: none;
+      }
+      .live_chains_info {
+        display: flex;
+        margin-left: 0;
+        height: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background-color: transparent;
+        .polkadot {
+          background-color: #ffffff;
+          margin: 15px 0;
+          box-shadow: none;
+          img {
+          }
+          h3 {
+          }
+        }
+        .polkadot:hover {
+          transform: scale(1);
+        }
+        .kusama {
+          background-color: #ffffff;
+          margin: 15px 0;
+          box-shadow: none;
+          img {
+          }
+          h3 {
+          }
+        }
+        .kusama:hover {
+          transform: scale(1);
+        }
+        .moonbeam {
+          background-color: #ffffff;
+          margin: 15px 0;
+          box-shadow: none;
+          img {
+          }
+          h3 {
+          }
+        }
+        .moonbeam:hover {
+          transform: scale(1);
+        }
+        .kilt {
+          background-color: #ffffff;
+          margin: 15px 0;
+          box-shadow: none;
+          img {
+          }
+          h3 {
+          }
+        }
+        .kilt:hover {
+          transform: scale(1);
+        }
+        .bifost {
+          background-color: #ffffff;
+          margin: 15px 0;
+          box-shadow: none;
+          img {
+          }
+          h3 {
+          }
+        }
+        .bifost:hover {
+          transform: scale(1);
+        }
+      }
+    }
+    // roadmap-section
+    .roadmap_section {
+      padding: 20px 0;
+      .roadmap_heading {
+        h1 {
+          font-size: 30px;
+        }
+        h2 {
+          font-size: 24px;
+        }
+      }
+      .roadmap_container {
+        display: flex;
+        overflow: auto;
+        white-space: nowrap;
+        .roadmap_parent_1,
+        .roadmap_parent_2,
+        .roadmap_parent_3,
+        .roadmap_parent_4 {
+          margin: 0 10px;
+          .q1,
+          .q2,
+          .q3,
+          .q4 {
+            h3 {
+            }
+          }
+          .roadmap_description {
+            .description_heading {
+              h3 {
+              }
+            }
+            .description_content {
+              p {
+                width: 200px;
+              }
+              .extra_content {
+                white-space: initial;
+                font-style: italic;
+                color: white;
+                font-size: 15px;
+              }
+            }
+          }
+        }
+        .roadmap_parent_1 {
+        }
+        .roadmap_parent_2 {
+        }
+        .roadmap_parent_3 {
+        }
+        .roadmap_parent_4 {
+        }
+        .roadmap_parent_1:hover,
+        .roadmap_parent_2:hover,
+        .roadmap_parent_3:hover,
+        .roadmap_parent_4:hover {
+        }
+      }
+      .roadmap_container::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    // contact section
+    .contact_section {
+      h1 {
+      }
+      button {
+      }
+      button:hover {
+      }
+    }
+
+    // testimonials section
+    .testimonial_sections {
+      .testimonial_heading {
+        h1 {
+        }
+      }
+      .testimonials {
+        .parent {
+          .image_container {
+          }
+          .description {
+          }
+        }
+        .badge {
+          img {
+          }
+        }
+      }
+    }
+
+    .footer {
+      .content {
+        flex-direction: column;
+        padding: 20px;
+        .content_heading {
+          h2 {
+            text-align: end;
+            font-size: 18px;
+          }
+        }
+
+        .subscribe_email {
+          .subscribe_email_input {
+            input {
+              height: 40px;
+              width: 250px;
+              font-size: 12px;
+            }
+            input::placeholder {
+              font-size: 11px;
+            }
+            .subscribe_button {
+              button {
+                font-size: 14px;
+                padding: 6px;
+              }
+              button:hover {
+                transform: scale(1);
+              }
+            }
+            .or {
+            }
+            .contact_us_button {
+              button {
+              }
+              button:hover {
+                transform: scale(1);
+              }
+            }
+          }
+        }
+      }
+
+      .footer_navigation {
+        display: flex;
+        flex-direction: column;
+        .footer_navigation_links {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 8px;
+          padding: 10px;
+          a {
+          }
+          a:hover {
+          }
+        }
+
+        .footer_social_links {
+          padding-right: 0;
+          & > div {
+            &:hover {
+            }
+            a {
+              img {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

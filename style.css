@@ -186,7 +186,11 @@ body .header .header_container .header_parent_2 .header_child_2 > div:hover {
           transform: scale(1.1);
 }
 
-body .header .header_container .header_parent_2 .header_child_2 > div img {
+body .header .header_container .header_parent_2 .header_child_2 > div a {
+  height: 100%;
+}
+
+body .header .header_container .header_parent_2 .header_child_2 > div a img {
   width: 100%;
   height: 100%;
 }
@@ -215,6 +219,9 @@ body .about_section .about_heading h1 {
 body .about_section .about_info {
   text-align: center;
   letter-spacing: 2px;
+  margin: 10px;
+  padding: 0 40px;
+  line-height: 1.5;
 }
 
 body .about_section .about_info p {
@@ -393,12 +400,165 @@ body .live_chains_section .live_chains_info .bifost:hover {
           transform: scale(1.1);
 }
 
-body .roadmap-section {
-  width: 100%;
+body .roadmap_section {
+  padding: 40px 80px;
 }
 
-body .roadmap-section img {
-  width: 100%;
+body .roadmap_section .roadmap_heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+body .roadmap_section .roadmap_heading h1 {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 46px;
+}
+
+body .roadmap_section .roadmap_heading h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+body .roadmap_section .roadmap_container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+body .roadmap_section .roadmap_container .roadmap_parent_1,
+body .roadmap_section .roadmap_container .roadmap_parent_2,
+body .roadmap_section .roadmap_container .roadmap_parent_3,
+body .roadmap_section .roadmap_container .roadmap_parent_4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  padding: 20px;
+  margin: 0 30px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 2px 2px gainsboro;
+          box-shadow: 0px 0px 2px 2px gainsboro;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+body .roadmap_section .roadmap_container .roadmap_parent_1 .q1,
+body .roadmap_section .roadmap_container .roadmap_parent_1 .q2,
+body .roadmap_section .roadmap_container .roadmap_parent_1 .q3,
+body .roadmap_section .roadmap_container .roadmap_parent_1 .q4,
+body .roadmap_section .roadmap_container .roadmap_parent_2 .q1,
+body .roadmap_section .roadmap_container .roadmap_parent_2 .q2,
+body .roadmap_section .roadmap_container .roadmap_parent_2 .q3,
+body .roadmap_section .roadmap_container .roadmap_parent_2 .q4,
+body .roadmap_section .roadmap_container .roadmap_parent_3 .q1,
+body .roadmap_section .roadmap_container .roadmap_parent_3 .q2,
+body .roadmap_section .roadmap_container .roadmap_parent_3 .q3,
+body .roadmap_section .roadmap_container .roadmap_parent_3 .q4,
+body .roadmap_section .roadmap_container .roadmap_parent_4 .q1,
+body .roadmap_section .roadmap_container .roadmap_parent_4 .q2,
+body .roadmap_section .roadmap_container .roadmap_parent_4 .q3,
+body .roadmap_section .roadmap_container .roadmap_parent_4 .q4 {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 50%;
+}
+
+body .roadmap_section .roadmap_container .roadmap_parent_1 .q1 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_1 .q2 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_1 .q3 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_1 .q4 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_2 .q1 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_2 .q2 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_2 .q3 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_2 .q4 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_3 .q1 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_3 .q2 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_3 .q3 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_3 .q4 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_4 .q1 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_4 .q2 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_4 .q3 h3,
+body .roadmap_section .roadmap_container .roadmap_parent_4 .q4 h3 {
+  margin: 0;
+  font-size: 40px;
+  padding: 30px;
+  border-radius: 50%;
+  -webkit-box-shadow: 2px 2px 3px 2px gainsboro;
+          box-shadow: 2px 2px 3px 2px gainsboro;
+}
+
+body .roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_heading h3,
+body .roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_heading h3,
+body .roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_heading h3,
+body .roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_heading h3 {
+  text-align: center;
+  color: aliceblue;
+  font-weight: 400;
+}
+
+body .roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_content p,
+body .roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_content p,
+body .roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_content p,
+body .roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_content p {
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: aliceblue;
+}
+
+body .roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_content .extra_content,
+body .roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_content .extra_content,
+body .roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_content .extra_content,
+body .roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_content .extra_content {
+  font-style: italic;
+  color: white;
+  font-size: 15px;
+}
+
+body .roadmap_section .roadmap_container .roadmap_parent_1 {
+  background: -webkit-gradient(linear, left top, left bottom, from(#b23dc9), to(#8138be));
+  background: linear-gradient(#b23dc9, #8138be);
+}
+
+body .roadmap_section .roadmap_container .roadmap_parent_2 {
+  background: -webkit-gradient(linear, left top, left bottom, from(#3830ac), to(#0a77d0));
+  background: linear-gradient(#3830ac, #0a77d0);
+}
+
+body .roadmap_section .roadmap_container .roadmap_parent_3 {
+  background: -webkit-gradient(linear, left top, left bottom, from(#02a2ea), to(#0eabb8));
+  background: linear-gradient(#02a2ea, #0eabb8);
+}
+
+body .roadmap_section .roadmap_container .roadmap_parent_4 {
+  background: -webkit-gradient(linear, left top, left bottom, from(#14a99f), to(#20a472));
+  background: linear-gradient(#14a99f, #20a472);
+}
+
+body .roadmap_section .roadmap_container .roadmap_parent_1:hover,
+body .roadmap_section .roadmap_container .roadmap_parent_2:hover,
+body .roadmap_section .roadmap_container .roadmap_parent_3:hover,
+body .roadmap_section .roadmap_container .roadmap_parent_4:hover {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
 }
 
 body .contact_section {
@@ -422,21 +582,6 @@ body .contact_section h1 {
   font-size: 40px;
   font-weight: 300;
   text-align: center;
-}
-
-body .contact_section button {
-  border-radius: 10px;
-  border: none;
-  font-size: 20px;
-  padding: 12px 35px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-body .contact_section button:hover {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
 }
 
 body .testimonial_sections .testimonial_heading h1 {
@@ -499,14 +644,19 @@ body .footer .content {
   background: url("./images/gradient-background.png");
   background-color: #12171d;
   color: #ffffff;
-  padding: 60px 20px 40px 20px;
+  padding: 60px 40px 40px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .footer .content .content_heading h2 {
-  margin: 5px;
-  text-align: center;
   font-weight: 300;
-  font-size: 27px;
+  font-size: 24px;
+  line-height: 1.5;
   letter-spacing: 1px;
 }
 
@@ -517,69 +667,111 @@ body .footer .content .subscribe_email {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 40px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-body .footer .content .subscribe_email input {
-  width: 500px;
-  height: 40px;
+body .footer .content .subscribe_email .subscribe_email_input {
+  position: relative;
+}
+
+body .footer .content .subscribe_email .subscribe_email_input input {
+  width: 450px;
+  height: 50px;
   border: none;
-  border-radius: 4px;
+  border-radius: 12px;
   font-size: 20px;
   padding-left: 10px;
   background-color: #f9f9fb;
 }
 
-body .footer .content .subscribe_email input::-webkit-input-placeholder {
+body .footer .content .subscribe_email .subscribe_email_input input::-webkit-input-placeholder {
   font-size: 20px;
-  text-align: center;
   letter-spacing: 1px;
   font-weight: 100;
 }
 
-body .footer .content .subscribe_email input:-ms-input-placeholder {
+body .footer .content .subscribe_email .subscribe_email_input input:-ms-input-placeholder {
   font-size: 20px;
-  text-align: center;
   letter-spacing: 1px;
   font-weight: 100;
 }
 
-body .footer .content .subscribe_email input::-ms-input-placeholder {
+body .footer .content .subscribe_email .subscribe_email_input input::-ms-input-placeholder {
   font-size: 20px;
-  text-align: center;
   letter-spacing: 1px;
   font-weight: 100;
 }
 
-body .footer .content .subscribe_email input::placeholder {
+body .footer .content .subscribe_email .subscribe_email_input input::placeholder {
   font-size: 20px;
-  text-align: center;
   letter-spacing: 1px;
   font-weight: 100;
 }
 
-body .footer .content .subscribe_button {
+body .footer .content .subscribe_email .subscribe_email_input .subscribe_button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: absolute;
+  right: 8px;
+  top: 8px;
 }
 
-body .footer .content .subscribe_button button {
+body .footer .content .subscribe_email .subscribe_email_input .subscribe_button button {
   cursor: pointer;
-  font-size: 25px;
+  font-size: 20px;
   padding: 6px 15px;
   border-radius: 5px;
   border: none;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  background-color: #12171d;
+  color: #ffffff;
+  font-weight: 100;
+  font-style: italic;
 }
 
-body .footer .content .subscribe_button button:hover {
+body .footer .content .subscribe_email .subscribe_email_input .subscribe_button button:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+body .footer .content .subscribe_email .or {
+  margin: 15px 0;
+  font-size: 20px;
+}
+
+body .footer .content .subscribe_email .contact_us_button button {
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  padding: 12px 35px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+body .footer .content .subscribe_email .contact_us_button button:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body .footer .content .contact_us_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .footer .footer_navigation {
@@ -654,8 +846,238 @@ body .footer .footer_navigation .footer_social_links > div:hover {
           transform: scale(1.1);
 }
 
-body .footer .footer_navigation .footer_social_links > div img {
+body .footer .footer_navigation .footer_social_links > div a {
+  height: 100%;
+}
+
+body .footer .footer_navigation .footer_social_links > div a img {
   width: 100%;
   height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  body .header .header_navigation {
+    display: none;
+  }
+  body .header .header_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    grid-gap: 0;
+    padding: 40px 45px 40px 45px;
+  }
+  body .header .header_container .header_parent .header_child_1 h1 {
+    font-size: 35px;
+    width: 100%;
+    text-align: end;
+  }
+  body .header .header_container .header_parent .line_break {
+    width: 100%;
+  }
+  body .header .header_container .header_parent .header_child_2 h2 {
+    width: 100%;
+    font-size: 20px;
+    text-align: end;
+  }
+  body .header .header_container .header_parent_2 .header_child_1 {
+    display: none;
+  }
+  body .about_section {
+    padding: 20px;
+  }
+  body .about_section .about_heading h1 {
+    font-size: 30px;
+    margin: 0;
+  }
+  body .about_section .about_info {
+    text-align: end;
+    padding: 0;
+  }
+  body .about_section .about_info p {
+    font-size: 20px;
+    margin: 0;
+  }
+  body .live_chains_section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body .live_chains_section .chain-white {
+    display: none;
+  }
+  body .live_chains_section .live_chains_info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 0;
+    height: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    background-color: transparent;
+  }
+  body .live_chains_section .live_chains_info .polkadot {
+    background-color: #ffffff;
+    margin: 15px 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  body .live_chains_section .live_chains_info .polkadot:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  body .live_chains_section .live_chains_info .kusama {
+    background-color: #ffffff;
+    margin: 15px 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  body .live_chains_section .live_chains_info .kusama:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  body .live_chains_section .live_chains_info .moonbeam {
+    background-color: #ffffff;
+    margin: 15px 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  body .live_chains_section .live_chains_info .moonbeam:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  body .live_chains_section .live_chains_info .kilt {
+    background-color: #ffffff;
+    margin: 15px 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  body .live_chains_section .live_chains_info .kilt:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  body .live_chains_section .live_chains_info .bifost {
+    background-color: #ffffff;
+    margin: 15px 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  body .live_chains_section .live_chains_info .bifost:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  body .roadmap_section {
+    padding: 20px 0;
+  }
+  body .roadmap_section .roadmap_heading h1 {
+    font-size: 30px;
+  }
+  body .roadmap_section .roadmap_heading h2 {
+    font-size: 24px;
+  }
+  body .roadmap_section .roadmap_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  body .roadmap_section .roadmap_container .roadmap_parent_1,
+  body .roadmap_section .roadmap_container .roadmap_parent_2,
+  body .roadmap_section .roadmap_container .roadmap_parent_3,
+  body .roadmap_section .roadmap_container .roadmap_parent_4 {
+    margin: 0 10px;
+  }
+  body .roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_content p,
+  body .roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_content p,
+  body .roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_content p,
+  body .roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_content p {
+    width: 200px;
+  }
+  body .roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_content .extra_content,
+  body .roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_content .extra_content,
+  body .roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_content .extra_content,
+  body .roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_content .extra_content {
+    white-space: initial;
+    font-style: italic;
+    color: white;
+    font-size: 15px;
+  }
+  body .roadmap_section .roadmap_container::-webkit-scrollbar {
+    display: none;
+  }
+  body .footer .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px;
+  }
+  body .footer .content .content_heading h2 {
+    text-align: end;
+    font-size: 18px;
+  }
+  body .footer .content .subscribe_email .subscribe_email_input input {
+    height: 40px;
+    width: 250px;
+    font-size: 12px;
+  }
+  body .footer .content .subscribe_email .subscribe_email_input input::-webkit-input-placeholder {
+    font-size: 11px;
+  }
+  body .footer .content .subscribe_email .subscribe_email_input input:-ms-input-placeholder {
+    font-size: 11px;
+  }
+  body .footer .content .subscribe_email .subscribe_email_input input::-ms-input-placeholder {
+    font-size: 11px;
+  }
+  body .footer .content .subscribe_email .subscribe_email_input input::placeholder {
+    font-size: 11px;
+  }
+  body .footer .content .subscribe_email .subscribe_email_input .subscribe_button button {
+    font-size: 14px;
+    padding: 6px;
+  }
+  body .footer .content .subscribe_email .subscribe_email_input .subscribe_button button:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  body .footer .content .subscribe_email .subscribe_email_input .contact_us_button button:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  body .footer .footer_navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .footer .footer_navigation .footer_navigation_links {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-gap: 8px;
+    padding: 10px;
+  }
+  body .footer .footer_navigation .footer_social_links {
+    padding-right: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
