@@ -289,126 +289,55 @@ body .live_chains_section .live_chains_info {
   border-radius: 20px;
 }
 
-body .live_chains_section .live_chains_info .polkadot {
+body .live_chains_section .live_chains_info a {
+  text-decoration: none;
+  color: #12171d;
+}
+
+body .live_chains_section .live_chains_info a .polkadot,
+body .live_chains_section .live_chains_info a .kusama,
+body .live_chains_section .live_chains_info a .moonbeam,
+body .live_chains_section .live_chains_info a .kilt,
+body .live_chains_section .live_chains_info a .bifost {
   padding: 5px;
   -webkit-box-shadow: 2px 2px 5px grey;
           box-shadow: 2px 2px 5px grey;
   border-radius: 10px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-body .live_chains_section .live_chains_info .polkadot img {
+body .live_chains_section .live_chains_info a .polkadot img,
+body .live_chains_section .live_chains_info a .kusama img,
+body .live_chains_section .live_chains_info a .moonbeam img,
+body .live_chains_section .live_chains_info a .kilt img,
+body .live_chains_section .live_chains_info a .bifost img {
   height: 130px;
 }
 
-body .live_chains_section .live_chains_info .polkadot h3 {
+body .live_chains_section .live_chains_info a .polkadot h3,
+body .live_chains_section .live_chains_info a .kusama h3,
+body .live_chains_section .live_chains_info a .moonbeam h3,
+body .live_chains_section .live_chains_info a .kilt h3,
+body .live_chains_section .live_chains_info a .bifost h3 {
   text-align: center;
   margin: 0;
 }
 
-body .live_chains_section .live_chains_info .polkadot:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+body .live_chains_section .live_chains_info a .polkadot:hover,
+body .live_chains_section .live_chains_info a .kusama:hover,
+body .live_chains_section .live_chains_info a .moonbeam:hover,
+body .live_chains_section .live_chains_info a .kilt:hover,
+body .live_chains_section .live_chains_info a .bifost:hover {
+  -webkit-transform: scale(0.97);
+          transform: scale(0.97);
 }
 
-body .live_chains_section .live_chains_info .kusama {
-  padding: 5px;
-  -webkit-box-shadow: 2px 2px 5px grey;
-          box-shadow: 2px 2px 5px grey;
-  border-radius: 10px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-body .live_chains_section .live_chains_info .kusama img {
-  height: 130px;
-}
-
-body .live_chains_section .live_chains_info .kusama h3 {
-  text-align: center;
-  margin: 0;
-}
-
-body .live_chains_section .live_chains_info .kusama:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-body .live_chains_section .live_chains_info .moonbeam {
-  padding: 5px;
-  -webkit-box-shadow: 2px 2px 5px grey;
-          box-shadow: 2px 2px 5px grey;
-  border-radius: 10px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-body .live_chains_section .live_chains_info .moonbeam img {
-  height: 130px;
-}
-
-body .live_chains_section .live_chains_info .moonbeam h3 {
-  text-align: center;
-  margin: 0;
-}
-
-body .live_chains_section .live_chains_info .moonbeam:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-body .live_chains_section .live_chains_info .kilt {
-  padding: 5px;
-  -webkit-box-shadow: 2px 2px 5px grey;
-          box-shadow: 2px 2px 5px grey;
-  border-radius: 10px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-body .live_chains_section .live_chains_info .kilt img {
-  height: 130px;
-}
-
-body .live_chains_section .live_chains_info .kilt h3 {
-  text-align: center;
-  margin: 0;
-}
-
-body .live_chains_section .live_chains_info .kilt:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-body .live_chains_section .live_chains_info .bifost {
-  padding: 5px;
-  -webkit-box-shadow: 2px 2px 5px grey;
-          box-shadow: 2px 2px 5px grey;
-  border-radius: 10px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-body .live_chains_section .live_chains_info .bifost img {
-  height: 130px;
-}
-
-body .live_chains_section .live_chains_info .bifost h3 {
-  text-align: center;
-  margin: 0;
-}
-
-body .live_chains_section .live_chains_info .bifost:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-body .roadmap_section {
+.roadmap_section {
   padding: 40px 80px;
 }
 
-body .roadmap_section .roadmap_heading {
+.roadmap_section .roadmap_heading {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -422,18 +351,18 @@ body .roadmap_section .roadmap_heading {
   margin-bottom: 40px;
 }
 
-body .roadmap_section .roadmap_heading h1 {
+.roadmap_section .roadmap_heading h1 {
   margin: 0;
   margin-bottom: 15px;
   font-size: 46px;
 }
 
-body .roadmap_section .roadmap_heading h2 {
+.roadmap_section .roadmap_heading h2 {
   margin: 0;
   font-size: 28px;
 }
 
-body .roadmap_section .roadmap_container {
+.roadmap_section .roadmap_container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
@@ -441,10 +370,10 @@ body .roadmap_section .roadmap_container {
   overflow: auto;
 }
 
-body .roadmap_section .roadmap_container .roadmap_parent_1,
-body .roadmap_section .roadmap_container .roadmap_parent_2,
-body .roadmap_section .roadmap_container .roadmap_parent_3,
-body .roadmap_section .roadmap_container .roadmap_parent_4 {
+.roadmap_section .roadmap_container .roadmap_parent_1,
+.roadmap_section .roadmap_container .roadmap_parent_2,
+.roadmap_section .roadmap_container .roadmap_parent_3,
+.roadmap_section .roadmap_container .roadmap_parent_4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -465,43 +394,43 @@ body .roadmap_section .roadmap_container .roadmap_parent_4 {
   transition: all 0.2s ease-in-out;
 }
 
-body .roadmap_section .roadmap_container .roadmap_parent_1 .q1,
-body .roadmap_section .roadmap_container .roadmap_parent_1 .q2,
-body .roadmap_section .roadmap_container .roadmap_parent_1 .q3,
-body .roadmap_section .roadmap_container .roadmap_parent_1 .q4,
-body .roadmap_section .roadmap_container .roadmap_parent_2 .q1,
-body .roadmap_section .roadmap_container .roadmap_parent_2 .q2,
-body .roadmap_section .roadmap_container .roadmap_parent_2 .q3,
-body .roadmap_section .roadmap_container .roadmap_parent_2 .q4,
-body .roadmap_section .roadmap_container .roadmap_parent_3 .q1,
-body .roadmap_section .roadmap_container .roadmap_parent_3 .q2,
-body .roadmap_section .roadmap_container .roadmap_parent_3 .q3,
-body .roadmap_section .roadmap_container .roadmap_parent_3 .q4,
-body .roadmap_section .roadmap_container .roadmap_parent_4 .q1,
-body .roadmap_section .roadmap_container .roadmap_parent_4 .q2,
-body .roadmap_section .roadmap_container .roadmap_parent_4 .q3,
-body .roadmap_section .roadmap_container .roadmap_parent_4 .q4 {
+.roadmap_section .roadmap_container .roadmap_parent_1 .q1,
+.roadmap_section .roadmap_container .roadmap_parent_1 .q2,
+.roadmap_section .roadmap_container .roadmap_parent_1 .q3,
+.roadmap_section .roadmap_container .roadmap_parent_1 .q4,
+.roadmap_section .roadmap_container .roadmap_parent_2 .q1,
+.roadmap_section .roadmap_container .roadmap_parent_2 .q2,
+.roadmap_section .roadmap_container .roadmap_parent_2 .q3,
+.roadmap_section .roadmap_container .roadmap_parent_2 .q4,
+.roadmap_section .roadmap_container .roadmap_parent_3 .q1,
+.roadmap_section .roadmap_container .roadmap_parent_3 .q2,
+.roadmap_section .roadmap_container .roadmap_parent_3 .q3,
+.roadmap_section .roadmap_container .roadmap_parent_3 .q4,
+.roadmap_section .roadmap_container .roadmap_parent_4 .q1,
+.roadmap_section .roadmap_container .roadmap_parent_4 .q2,
+.roadmap_section .roadmap_container .roadmap_parent_4 .q3,
+.roadmap_section .roadmap_container .roadmap_parent_4 .q4 {
   background-color: #ffffff;
   padding: 40px;
   border-radius: 50%;
 }
 
-body .roadmap_section .roadmap_container .roadmap_parent_1 .q1 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_1 .q2 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_1 .q3 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_1 .q4 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_2 .q1 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_2 .q2 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_2 .q3 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_2 .q4 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_3 .q1 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_3 .q2 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_3 .q3 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_3 .q4 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_4 .q1 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_4 .q2 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_4 .q3 h3,
-body .roadmap_section .roadmap_container .roadmap_parent_4 .q4 h3 {
+.roadmap_section .roadmap_container .roadmap_parent_1 .q1 h3,
+.roadmap_section .roadmap_container .roadmap_parent_1 .q2 h3,
+.roadmap_section .roadmap_container .roadmap_parent_1 .q3 h3,
+.roadmap_section .roadmap_container .roadmap_parent_1 .q4 h3,
+.roadmap_section .roadmap_container .roadmap_parent_2 .q1 h3,
+.roadmap_section .roadmap_container .roadmap_parent_2 .q2 h3,
+.roadmap_section .roadmap_container .roadmap_parent_2 .q3 h3,
+.roadmap_section .roadmap_container .roadmap_parent_2 .q4 h3,
+.roadmap_section .roadmap_container .roadmap_parent_3 .q1 h3,
+.roadmap_section .roadmap_container .roadmap_parent_3 .q2 h3,
+.roadmap_section .roadmap_container .roadmap_parent_3 .q3 h3,
+.roadmap_section .roadmap_container .roadmap_parent_3 .q4 h3,
+.roadmap_section .roadmap_container .roadmap_parent_4 .q1 h3,
+.roadmap_section .roadmap_container .roadmap_parent_4 .q2 h3,
+.roadmap_section .roadmap_container .roadmap_parent_4 .q3 h3,
+.roadmap_section .roadmap_container .roadmap_parent_4 .q4 h3 {
   margin: 0;
   font-size: 40px;
   padding: 30px;
@@ -510,67 +439,67 @@ body .roadmap_section .roadmap_container .roadmap_parent_4 .q4 h3 {
           box-shadow: 2px 2px 3px 2px gainsboro;
 }
 
-body .roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_heading h3,
-body .roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_heading h3,
-body .roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_heading h3,
-body .roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_heading h3 {
+.roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_heading h3,
+.roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_heading h3,
+.roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_heading h3,
+.roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_heading h3 {
   text-align: center;
   color: aliceblue;
   font-weight: 400;
 }
 
-body .roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_content p,
-body .roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_content p,
-body .roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_content p,
-body .roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_content p {
+.roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_content p,
+.roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_content p,
+.roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_content p,
+.roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_content p {
   text-align: center;
   padding: 10px;
   border-radius: 10px;
   background-color: aliceblue;
 }
 
-body .roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_content .extra_content,
-body .roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_content .extra_content,
-body .roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_content .extra_content,
-body .roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_content .extra_content {
+.roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_content .extra_content,
+.roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_content .extra_content,
+.roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_content .extra_content,
+.roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_content .extra_content {
   font-style: italic;
   color: white;
   font-size: 15px;
 }
 
-body .roadmap_section .roadmap_container .roadmap_parent_1 {
+.roadmap_section .roadmap_container .roadmap_parent_1 {
   background: -webkit-gradient(linear, left top, left bottom, from(#b23dc9), to(#8138be));
   background: linear-gradient(#b23dc9, #8138be);
 }
 
-body .roadmap_section .roadmap_container .roadmap_parent_2 {
+.roadmap_section .roadmap_container .roadmap_parent_2 {
   background: -webkit-gradient(linear, left top, left bottom, from(#3830ac), to(#0a77d0));
   background: linear-gradient(#3830ac, #0a77d0);
 }
 
-body .roadmap_section .roadmap_container .roadmap_parent_3 {
+.roadmap_section .roadmap_container .roadmap_parent_3 {
   background: -webkit-gradient(linear, left top, left bottom, from(#02a2ea), to(#0eabb8));
   background: linear-gradient(#02a2ea, #0eabb8);
 }
 
-body .roadmap_section .roadmap_container .roadmap_parent_4 {
+.roadmap_section .roadmap_container .roadmap_parent_4 {
   background: -webkit-gradient(linear, left top, left bottom, from(#14a99f), to(#20a472));
   background: linear-gradient(#14a99f, #20a472);
 }
 
-body .roadmap_section .roadmap_container .roadmap_parent_1:hover,
-body .roadmap_section .roadmap_container .roadmap_parent_2:hover,
-body .roadmap_section .roadmap_container .roadmap_parent_3:hover,
-body .roadmap_section .roadmap_container .roadmap_parent_4:hover {
+.roadmap_section .roadmap_container .roadmap_parent_1:hover,
+.roadmap_section .roadmap_container .roadmap_parent_2:hover,
+.roadmap_section .roadmap_container .roadmap_parent_3:hover,
+.roadmap_section .roadmap_container .roadmap_parent_4:hover {
   -webkit-transform: scale(0.99);
           transform: scale(0.99);
 }
 
-body .roadmap_section .roadmap_container::-webkit-scrollbar {
+.roadmap_section .roadmap_container::-webkit-scrollbar {
   display: none;
 }
 
-body .contact_section {
+.contact_section {
   background: url("./images/gradient-background.png");
   background-color: #12171d;
   color: #ffffff;
@@ -587,20 +516,20 @@ body .contact_section {
           align-items: center;
 }
 
-body .contact_section h1 {
+.contact_section h1 {
   font-size: 40px;
   font-weight: 300;
   text-align: center;
 }
 
-body .testimonial_sections .testimonial_heading h1 {
+.testimonial_sections .testimonial_heading h1 {
   text-align: center;
   margin: 0;
   margin-top: 40px;
   font-size: 46px;
 }
 
-body .testimonial_sections .testimonials {
+.testimonial_sections .testimonials {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 6fr 1fr 6fr;
@@ -611,7 +540,7 @@ body .testimonial_sections .testimonials {
   padding-bottom: 30px;
 }
 
-body .testimonial_sections .testimonials .parent {
+.testimonial_sections .testimonials .parent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -624,7 +553,7 @@ body .testimonial_sections .testimonials .parent {
           align-items: center;
 }
 
-body .testimonial_sections .testimonials .parent .image_container {
+.testimonial_sections .testimonials .parent .image_container {
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
   background-color: aliceblue;
@@ -634,22 +563,22 @@ body .testimonial_sections .testimonials .parent .image_container {
   border-radius: 50%;
 }
 
-body .testimonial_sections .testimonials .parent .description {
+.testimonial_sections .testimonials .parent .description {
   height: 450px;
   width: 400px;
   border: 1px solid black;
   border-radius: 5px;
 }
 
-body .testimonial_sections .testimonials .badge {
+.testimonial_sections .testimonials .badge {
   width: 100%;
 }
 
-body .testimonial_sections .testimonials .badge img {
+.testimonial_sections .testimonials .badge img {
   width: 100%;
 }
 
-body .footer .content {
+.footer .content {
   background: url("./images/gradient-background.png");
   background-color: #12171d;
   color: #ffffff;
@@ -662,14 +591,14 @@ body .footer .content {
           align-items: center;
 }
 
-body .footer .content .content_heading h2 {
+.footer .content .content_heading h2 {
   font-weight: 300;
   font-size: 24px;
   line-height: 1.5;
   letter-spacing: 1px;
 }
 
-body .footer .content .subscribe_email {
+.footer .content .subscribe_email {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -685,11 +614,11 @@ body .footer .content .subscribe_email {
           align-items: center;
 }
 
-body .footer .content .subscribe_email .subscribe_email_input {
+.footer .content .subscribe_email .subscribe_email_input {
   position: relative;
 }
 
-body .footer .content .subscribe_email .subscribe_email_input input {
+.footer .content .subscribe_email .subscribe_email_input input {
   width: 450px;
   height: 50px;
   border: none;
@@ -699,31 +628,31 @@ body .footer .content .subscribe_email .subscribe_email_input input {
   background-color: #f9f9fb;
 }
 
-body .footer .content .subscribe_email .subscribe_email_input input::-webkit-input-placeholder {
+.footer .content .subscribe_email .subscribe_email_input input::-webkit-input-placeholder {
   font-size: 20px;
   letter-spacing: 1px;
   font-weight: 100;
 }
 
-body .footer .content .subscribe_email .subscribe_email_input input:-ms-input-placeholder {
+.footer .content .subscribe_email .subscribe_email_input input:-ms-input-placeholder {
   font-size: 20px;
   letter-spacing: 1px;
   font-weight: 100;
 }
 
-body .footer .content .subscribe_email .subscribe_email_input input::-ms-input-placeholder {
+.footer .content .subscribe_email .subscribe_email_input input::-ms-input-placeholder {
   font-size: 20px;
   letter-spacing: 1px;
   font-weight: 100;
 }
 
-body .footer .content .subscribe_email .subscribe_email_input input::placeholder {
+.footer .content .subscribe_email .subscribe_email_input input::placeholder {
   font-size: 20px;
   letter-spacing: 1px;
   font-weight: 100;
 }
 
-body .footer .content .subscribe_email .subscribe_email_input .subscribe_button {
+.footer .content .subscribe_email .subscribe_email_input .subscribe_button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -735,7 +664,7 @@ body .footer .content .subscribe_email .subscribe_email_input .subscribe_button 
   top: 8px;
 }
 
-body .footer .content .subscribe_email .subscribe_email_input .subscribe_button button {
+.footer .content .subscribe_email .subscribe_email_input .subscribe_button button {
   cursor: pointer;
   font-size: 20px;
   padding: 6px 15px;
@@ -749,32 +678,32 @@ body .footer .content .subscribe_email .subscribe_email_input .subscribe_button 
   font-style: italic;
 }
 
-body .footer .content .subscribe_email .subscribe_email_input .subscribe_button button:hover {
+.footer .content .subscribe_email .subscribe_email_input .subscribe_button button:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-body .footer .content .subscribe_email .or {
+.footer .content .subscribe_email .or {
   margin: 15px 0;
   font-size: 20px;
 }
 
-body .footer .content .subscribe_email .contact_us_button button {
+.footer .content .subscribe_email .contact_us_button button {
   border-radius: 10px;
   border: none;
   font-size: 20px;
-  padding: 12px 35px;
+  padding: 8px 25px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 
-body .footer .content .subscribe_email .contact_us_button button:hover {
+.footer .content .subscribe_email .contact_us_button button:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-body .footer .content .contact_us_button {
+.footer .content .contact_us_button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -783,7 +712,7 @@ body .footer .content .contact_us_button {
           align-items: center;
 }
 
-body .footer .footer_navigation {
+.footer .footer_navigation {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 6fr 4fr;
@@ -795,7 +724,7 @@ body .footer .footer_navigation {
   padding: 40px 0;
 }
 
-body .footer .footer_navigation .footer_navigation_links {
+.footer .footer_navigation .footer_navigation_links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -804,7 +733,7 @@ body .footer .footer_navigation .footer_navigation_links {
           justify-content: space-evenly;
 }
 
-body .footer .footer_navigation .footer_navigation_links a {
+.footer .footer_navigation .footer_navigation_links a {
   text-decoration: none;
   color: #ffffff;
   font-size: 15px;
@@ -812,11 +741,11 @@ body .footer .footer_navigation .footer_navigation_links a {
   font-weight: 300;
 }
 
-body .footer .footer_navigation .footer_navigation_links a:hover {
+.footer .footer_navigation .footer_navigation_links a:hover {
   color: #f9f9fb;
 }
 
-body .footer .footer_navigation .footer_social_links {
+.footer .footer_navigation .footer_social_links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -829,7 +758,7 @@ body .footer .footer_navigation .footer_social_links {
   padding-right: 30px;
 }
 
-body .footer .footer_navigation .footer_social_links > div {
+.footer .footer_navigation .footer_social_links > div {
   width: 30px;
   height: 30px;
   margin: 10px;
@@ -850,16 +779,16 @@ body .footer .footer_navigation .footer_social_links > div {
   transition: all 0.2s ease-in-out;
 }
 
-body .footer .footer_navigation .footer_social_links > div:hover {
+.footer .footer_navigation .footer_social_links > div:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-body .footer .footer_navigation .footer_social_links > div a {
+.footer .footer_navigation .footer_social_links > div a {
   height: 100%;
 }
 
-body .footer .footer_navigation .footer_social_links > div a img {
+.footer .footer_navigation .footer_social_links > div a img {
   width: 100%;
   height: 100%;
 }
@@ -1002,53 +931,25 @@ body .footer .footer_navigation .footer_social_links > div a img {
             justify-content: space-evenly;
     background-color: transparent;
   }
-  body .live_chains_section .live_chains_info .polkadot {
+  body .live_chains_section .live_chains_info a {
+    text-decoration: none;
+    color: #12171d;
+  }
+  body .live_chains_section .live_chains_info a .polkadot,
+  body .live_chains_section .live_chains_info a .kusama,
+  body .live_chains_section .live_chains_info a .moonbeam,
+  body .live_chains_section .live_chains_info a .kilt,
+  body .live_chains_section .live_chains_info a .bifost {
     background-color: #ffffff;
     margin: 15px 0;
     -webkit-box-shadow: none;
             box-shadow: none;
   }
-  body .live_chains_section .live_chains_info .polkadot:hover {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  body .live_chains_section .live_chains_info .kusama {
-    background-color: #ffffff;
-    margin: 15px 0;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-  body .live_chains_section .live_chains_info .kusama:hover {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  body .live_chains_section .live_chains_info .moonbeam {
-    background-color: #ffffff;
-    margin: 15px 0;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-  body .live_chains_section .live_chains_info .moonbeam:hover {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  body .live_chains_section .live_chains_info .kilt {
-    background-color: #ffffff;
-    margin: 15px 0;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-  body .live_chains_section .live_chains_info .kilt:hover {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  body .live_chains_section .live_chains_info .bifost {
-    background-color: #ffffff;
-    margin: 15px 0;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-  body .live_chains_section .live_chains_info .bifost:hover {
+  body .live_chains_section .live_chains_info a .polkadot:hover,
+  body .live_chains_section .live_chains_info a .kusama:hover,
+  body .live_chains_section .live_chains_info a .moonbeam:hover,
+  body .live_chains_section .live_chains_info a .kilt:hover,
+  body .live_chains_section .live_chains_info a .bifost:hover {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
@@ -1100,6 +1001,12 @@ body .footer .footer_navigation .footer_social_links > div a img {
     text-align: end;
     font-size: 18px;
   }
+  body .footer .content .subscribe_email {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    width: 100%;
+  }
   body .footer .content .subscribe_email .subscribe_email_input input {
     height: 40px;
     width: 250px;
@@ -1124,6 +1031,9 @@ body .footer .footer_navigation .footer_social_links > div a img {
   body .footer .content .subscribe_email .subscribe_email_input .subscribe_button button:hover {
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+  body .footer .content .subscribe_email .subscribe_email_input .or {
+    margin: 15px 25% 15px 0;
   }
   body .footer .content .subscribe_email .subscribe_email_input .contact_us_button button:hover {
     -webkit-transform: scale(1);

@@ -216,383 +216,328 @@ body {
       margin-top: 48px;
       background-color: #ffffff;
       border-radius: 20px;
-      .polkadot {
-        padding: 5px;
-        box-shadow: 2px 2px 5px grey;
-        border-radius: 10px;
-        transition: all 0.3s ease-in-out;
-        img {
-          height: 130px;
-        }
-        h3 {
-          text-align: center;
-          margin: 0;
-        }
-      }
-      .polkadot:hover {
-        transform: scale(1.1);
-      }
-      .kusama {
-        padding: 5px;
-        box-shadow: 2px 2px 5px grey;
-        border-radius: 10px;
-        transition: all 0.3s ease-in-out;
-        img {
-          // height: 200px;
-          height: 130px;
-        }
-        h3 {
-          text-align: center;
-          margin: 0;
-        }
-      }
-      .kusama:hover {
-        transform: scale(1.1);
-      }
-      .moonbeam {
-        padding: 5px;
-        box-shadow: 2px 2px 5px grey;
-        border-radius: 10px;
-        transition: all 0.3s ease-in-out;
-        img {
-          height: 130px;
-        }
-        h3 {
-          text-align: center;
-          margin: 0;
-        }
-      }
-      .moonbeam:hover {
-        transform: scale(1.1);
-      }
-      .kilt {
-        padding: 5px;
-        box-shadow: 2px 2px 5px grey;
-        border-radius: 10px;
-        transition: all 0.3s ease-in-out;
-        img {
-          // height: 190px;
-          height: 130px;
-        }
-        h3 {
-          text-align: center;
-          margin: 0;
-        }
-      }
-      .kilt:hover {
-        transform: scale(1.1);
-      }
-      .bifost {
-        padding: 5px;
-        box-shadow: 2px 2px 5px grey;
-        border-radius: 10px;
-        transition: all 0.3s ease-in-out;
-        img {
-          // height: 190px;
-          height: 130px;
-        }
-        h3 {
-          text-align: center;
-          margin: 0;
-        }
-      }
-      .bifost:hover {
-        transform: scale(1.1);
-      }
-    }
-  }
-  // roadmap-section
-  .roadmap_section {
-    padding: 40px 80px;
-    .roadmap_heading {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 40px;
-      h1 {
-        margin: 0;
-        margin-bottom: 15px;
-        font-size: 46px;
-      }
-      h2 {
-        margin: 0;
-        font-size: 28px;
-      }
-    }
-    .roadmap_container {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      overflow: auto;
-      .roadmap_parent_1,
-      .roadmap_parent_2,
-      .roadmap_parent_3,
-      .roadmap_parent_4 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        padding: 20px;
-        margin: 0 30px;
-        border-radius: 20px;
-        box-shadow: 0px 0px 2px 2px gainsboro;
-        transition: all 0.2s ease-in-out;
-        .q1,
-        .q2,
-        .q3,
-        .q4 {
-          background-color: #ffffff;
-          padding: 40px;
-          border-radius: 50%;
-          // border: 3px solid #12171d;
+      a {
+        text-decoration: none;
+        color: #12171d;
+        .polkadot,
+        .kusama,
+        .moonbeam,
+        .kilt,
+        .bifost {
+          padding: 5px;
+          box-shadow: 2px 2px 5px grey;
+          border-radius: 10px;
+          transition: all 0.2s ease-in-out;
+          img {
+            height: 130px;
+          }
           h3 {
+            text-align: center;
             margin: 0;
-            font-size: 40px;
-            padding: 30px;
-            border-radius: 50%;
-            box-shadow: 2px 2px 3px 2px gainsboro;
           }
         }
-        .roadmap_description {
-          .description_heading {
-            h3 {
-              text-align: center;
-              color: aliceblue;
-              font-weight: 400;
-            }
-          }
-          .description_content {
-            p {
-              text-align: center;
-              padding: 10px;
-              // border: 1px solid gainsboro;
-              border-radius: 10px;
-              background-color: aliceblue;
-            }
-            .extra_content {
-              font-style: italic;
-              color: white;
-              font-size: 15px;
-            }
-          }
+        .polkadot:hover,
+        .kusama:hover,
+        .moonbeam:hover,
+        .kilt:hover,
+        .bifost:hover {
+          transform: scale(0.97);
         }
       }
-      .roadmap_parent_1 {
-        background: linear-gradient(#b23dc9, #8138be);
-      }
-      .roadmap_parent_2 {
-        background: linear-gradient(#3830ac, #0a77d0);
-      }
-      .roadmap_parent_3 {
-        background: linear-gradient(#02a2ea, #0eabb8);
-      }
-      .roadmap_parent_4 {
-        background: linear-gradient(#14a99f, #20a472);
-      }
-      .roadmap_parent_1:hover,
-      .roadmap_parent_2:hover,
-      .roadmap_parent_3:hover,
-      .roadmap_parent_4:hover {
-        transform: scale(0.99);
-      }
-    }
-    .roadmap_container::-webkit-scrollbar {
-      display: none;
     }
   }
-  // contact section
-  .contact_section {
-    background: url('./images/gradient-background.png');
-    background-color: #12171d;
-    color: #ffffff;
-    padding: 80px 20px;
+}
+// roadmap-section
+.roadmap_section {
+  padding: 40px 80px;
+  .roadmap_heading {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
     h1 {
-      font-size: 40px;
-      font-weight: 300;
-      text-align: center;
+      margin: 0;
+      margin-bottom: 15px;
+      font-size: 46px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 28px;
     }
   }
-
-  // testimonials section
-  .testimonial_sections {
-    .testimonial_heading {
-      h1 {
-        text-align: center;
-        margin: 0;
-        margin-top: 40px;
-        font-size: 46px;
-      }
-    }
-    .testimonials {
-      display: grid;
-      grid-template-columns: 6fr 1fr 6fr;
-      align-items: center;
-      padding-bottom: 30px;
-      .parent {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .image_container {
-          transform: translateY(50%);
-          background-color: aliceblue;
-          width: 150px;
-          height: 150px;
-          border: 1px solid black;
-          border-radius: 50%;
-        }
-        .description {
-          height: 450px;
-          width: 400px;
-          border: 1px solid black;
-          border-radius: 5px;
-        }
-      }
-      .badge {
-        width: 100%;
-        img {
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  .footer {
-    .content {
-      background: url('./images/gradient-background.png');
-      background-color: #12171d;
-      color: #ffffff;
-      padding: 60px 40px 40px 40px;
+  .roadmap_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: auto;
+    .roadmap_parent_1,
+    .roadmap_parent_2,
+    .roadmap_parent_3,
+    .roadmap_parent_4 {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      .content_heading {
-        h2 {
-          // text-align: center;
-          font-weight: 300;
-          font-size: 24px;
-          line-height: 1.5;
-          letter-spacing: 1px;
+      position: relative;
+      padding: 20px;
+      margin: 0 30px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 2px 2px gainsboro;
+      transition: all 0.2s ease-in-out;
+      .q1,
+      .q2,
+      .q3,
+      .q4 {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 50%;
+        // border: 3px solid #12171d;
+        h3 {
+          margin: 0;
+          font-size: 40px;
+          padding: 30px;
+          border-radius: 50%;
+          box-shadow: 2px 2px 3px 2px gainsboro;
         }
       }
-
-      .subscribe_email {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        .subscribe_email_input {
-          position: relative;
-          input {
-            width: 450px;
-            height: 50px;
-            border: none;
-            border-radius: 12px;
-            font-size: 20px;
-            padding-left: 10px;
-            background-color: #f9f9fb;
-          }
-          input::placeholder {
-            font-size: 20px;
-            letter-spacing: 1px;
-            font-weight: 100;
-          }
-          .subscribe_button {
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            right: 8px;
-            top: 8px;
-
-            button {
-              cursor: pointer;
-              font-size: 20px;
-              padding: 6px 15px;
-              border-radius: 5px;
-              border: none;
-              transition: all 0.2s ease-in-out;
-              background-color: #12171d;
-              color: #ffffff;
-              font-weight: 100;
-              font-style: italic;
-            }
-            button:hover {
-              transform: scale(0.95);
-            }
+      .roadmap_description {
+        .description_heading {
+          h3 {
+            text-align: center;
+            color: aliceblue;
+            font-weight: 400;
           }
         }
-        .or {
-          margin: 15px 0;
-          font-size: 20px;
-        }
-        .contact_us_button {
-          button {
+        .description_content {
+          p {
+            text-align: center;
+            padding: 10px;
+            // border: 1px solid gainsboro;
             border-radius: 10px;
-            border: none;
-            font-size: 20px;
-            padding: 12px 35px;
-            transition: all 0.2s ease-in-out;
+            background-color: aliceblue;
+          }
+          .extra_content {
+            font-style: italic;
+            color: white;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .roadmap_parent_1 {
+      background: linear-gradient(#b23dc9, #8138be);
+    }
+    .roadmap_parent_2 {
+      background: linear-gradient(#3830ac, #0a77d0);
+    }
+    .roadmap_parent_3 {
+      background: linear-gradient(#02a2ea, #0eabb8);
+    }
+    .roadmap_parent_4 {
+      background: linear-gradient(#14a99f, #20a472);
+    }
+    .roadmap_parent_1:hover,
+    .roadmap_parent_2:hover,
+    .roadmap_parent_3:hover,
+    .roadmap_parent_4:hover {
+      transform: scale(0.99);
+    }
+  }
+  .roadmap_container::-webkit-scrollbar {
+    display: none;
+  }
+}
+// contact section
+.contact_section {
+  background: url('./images/gradient-background.png');
+  background-color: #12171d;
+  color: #ffffff;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-size: 40px;
+    font-weight: 300;
+    text-align: center;
+  }
+}
+
+// testimonials section
+.testimonial_sections {
+  .testimonial_heading {
+    h1 {
+      text-align: center;
+      margin: 0;
+      margin-top: 40px;
+      font-size: 46px;
+    }
+  }
+  .testimonials {
+    display: grid;
+    grid-template-columns: 6fr 1fr 6fr;
+    align-items: center;
+    padding-bottom: 30px;
+    .parent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .image_container {
+        transform: translateY(50%);
+        background-color: aliceblue;
+        width: 150px;
+        height: 150px;
+        border: 1px solid black;
+        border-radius: 50%;
+      }
+      .description {
+        height: 450px;
+        width: 400px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+    }
+    .badge {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footer {
+  .content {
+    background: url('./images/gradient-background.png');
+    background-color: #12171d;
+    color: #ffffff;
+    padding: 60px 40px 40px 40px;
+    display: flex;
+    align-items: center;
+    .content_heading {
+      h2 {
+        // text-align: center;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 1.5;
+        letter-spacing: 1px;
+      }
+    }
+
+    .subscribe_email {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      .subscribe_email_input {
+        position: relative;
+        input {
+          width: 450px;
+          height: 50px;
+          border: none;
+          border-radius: 12px;
+          font-size: 20px;
+          padding-left: 10px;
+          background-color: #f9f9fb;
+        }
+        input::placeholder {
+          font-size: 20px;
+          letter-spacing: 1px;
+          font-weight: 100;
+        }
+        .subscribe_button {
+          display: flex;
+          justify-content: center;
+          position: absolute;
+          right: 8px;
+          top: 8px;
+
+          button {
             cursor: pointer;
+            font-size: 20px;
+            padding: 6px 15px;
+            border-radius: 5px;
+            border: none;
+            transition: all 0.2s ease-in-out;
+            background-color: #12171d;
+            color: #ffffff;
+            font-weight: 100;
+            font-style: italic;
           }
           button:hover {
             transform: scale(0.95);
           }
         }
       }
-
+      .or {
+        margin: 15px 0;
+        font-size: 20px;
+      }
       .contact_us_button {
-        display: flex;
-        align-items: center;
+        button {
+          border-radius: 10px;
+          border: none;
+          font-size: 20px;
+          padding: 8px 25px;
+          transition: all 0.2s ease-in-out;
+          cursor: pointer;
+        }
+        button:hover {
+          transform: scale(0.95);
+        }
       }
     }
 
-    .footer_navigation {
-      display: grid;
-      grid-template-columns: 6fr 4fr;
+    .contact_us_button {
+      display: flex;
       align-items: center;
-      background-color: #12171d;
-      padding: 40px 0;
-      .footer_navigation_links {
-        display: flex;
-        justify-content: space-evenly;
-        a {
-          text-decoration: none;
-          color: #ffffff;
-          font-size: 15px;
-          color: gainsboro;
-          font-weight: 300;
-        }
-        a:hover {
-          color: #f9f9fb;
-        }
-      }
+    }
+  }
 
-      .footer_social_links {
+  .footer_navigation {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    align-items: center;
+    background-color: #12171d;
+    padding: 40px 0;
+    .footer_navigation_links {
+      display: flex;
+      justify-content: space-evenly;
+      a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 15px;
+        color: gainsboro;
+        font-weight: 300;
+      }
+      a:hover {
+        color: #f9f9fb;
+      }
+    }
+
+    .footer_social_links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 30px;
+      & > div {
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 50%;
         display: flex;
+        justify-content: center;
         align-items: center;
-        justify-content: flex-end;
-        padding-right: 30px;
-        & > div {
-          width: 30px;
-          height: 30px;
-          margin: 10px;
-          padding: 10px;
-          background-color: #ffffff;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          transition: all 0.2s ease-in-out;
-          &:hover {
-            transform: scale(1.1);
-          }
-          a {
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+        }
+        a {
+          height: 100%;
+          img {
+            width: 100%;
             height: 100%;
-            img {
-              width: 100%;
-              height: 100%;
-            }
           }
         }
       }
@@ -776,65 +721,25 @@ body {
         flex-wrap: wrap;
         justify-content: space-evenly;
         background-color: transparent;
-        .polkadot {
-          background-color: #ffffff;
-          margin: 15px 0;
-          box-shadow: none;
-          img {
+        a {
+          text-decoration: none;
+          color: #12171d;
+          .polkadot,
+          .kusama,
+          .moonbeam,
+          .kilt,
+          .bifost {
+            background-color: #ffffff;
+            margin: 15px 0;
+            box-shadow: none;
           }
-          h3 {
+          .polkadot:hover,
+          .kusama:hover,
+          .moonbeam:hover,
+          .kilt:hover,
+          .bifost:hover {
+            transform: scale(1);
           }
-        }
-        .polkadot:hover {
-          transform: scale(1);
-        }
-        .kusama {
-          background-color: #ffffff;
-          margin: 15px 0;
-          box-shadow: none;
-          img {
-          }
-          h3 {
-          }
-        }
-        .kusama:hover {
-          transform: scale(1);
-        }
-        .moonbeam {
-          background-color: #ffffff;
-          margin: 15px 0;
-          box-shadow: none;
-          img {
-          }
-          h3 {
-          }
-        }
-        .moonbeam:hover {
-          transform: scale(1);
-        }
-        .kilt {
-          background-color: #ffffff;
-          margin: 15px 0;
-          box-shadow: none;
-          img {
-          }
-          h3 {
-          }
-        }
-        .kilt:hover {
-          transform: scale(1);
-        }
-        .bifost {
-          background-color: #ffffff;
-          margin: 15px 0;
-          box-shadow: none;
-          img {
-          }
-          h3 {
-          }
-        }
-        .bifost:hover {
-          transform: scale(1);
         }
       }
     }
@@ -940,6 +845,8 @@ body {
         }
 
         .subscribe_email {
+          align-items: flex-end;
+          width: 100%;
           .subscribe_email_input {
             input {
               height: 40px;
@@ -959,6 +866,7 @@ body {
               }
             }
             .or {
+              margin: 15px 25% 15px 0;
             }
             .contact_us_button {
               button {
