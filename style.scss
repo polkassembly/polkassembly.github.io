@@ -6,6 +6,9 @@ body {
   // header
   .header {
     background-color: #12171d;
+    .mobile_header {
+      display: none;
+    }
     .header_navigation {
       display: flex;
       align-items: center;
@@ -13,7 +16,7 @@ body {
       padding: 26px 45px;
       .header_logo {
         height: 100%;
-        flex: 3;
+        flex: 2;
         cursor: pointer;
         img {
           height: 100%;
@@ -319,6 +322,7 @@ body {
     .roadmap_container {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
+      overflow: auto;
       .roadmap_parent_1,
       .roadmap_parent_2,
       .roadmap_parent_3,
@@ -390,6 +394,9 @@ body {
       .roadmap_parent_4:hover {
         transform: scale(0.99);
       }
+    }
+    .roadmap_container::-webkit-scrollbar {
+      display: none;
     }
   }
   // contact section
@@ -598,6 +605,65 @@ body {
     // background-color: #14a99f;
     // header
     .header {
+      .mobile_header {
+        display: block;
+        .menu_icon {
+          padding-top: 20px;
+          padding-left: 20px;
+          color: #ffffff;
+          font-size: 30px;
+        }
+        .mobile_header_navigation_container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          transform: translateX(-100%);
+          position: fixed;
+          top: 0;
+          left: 0;
+          // display: flex;
+          // flex-direction: column;
+          // width: 50%;
+          height: 100%;
+          z-index: 1;
+          transition: all 0.5s ease-in-out;
+          .mobile_parent_1 {
+            background-color: #12171d;
+            .mobile_header_logo {
+              width: 85%;
+              padding: 30px 0 40px 10px;
+              img {
+                width: 100%;
+              }
+            }
+            .mobile_navigation_links {
+              padding-left: 18%;
+              display: flex;
+              flex-direction: column;
+              a {
+                padding: 10px 0;
+                text-decoration: none;
+                color: #ffffff;
+              }
+              .navigation_sign_up {
+                padding: 10px 0;
+                button {
+                  background-color: #e5007a;
+                  color: white;
+                  border: none;
+                  font-size: 15px;
+                  padding: 5px 10px;
+                  border-radius: 4px;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  transition: all 0.2s ease-in-out;
+                }
+              }
+            }
+          }
+          .mobile_parent_2 {
+          }
+        }
+      }
       .header_navigation {
         display: none;
         .header_logo {
@@ -629,7 +695,7 @@ body {
         display: flex;
         flex-direction: column;
         grid-gap: 0;
-        padding: 40px 45px 40px 45px;
+        padding: 0px 45px 40px 45px;
         .header_parent {
           .header_child_1 {
             h1 {
@@ -830,9 +896,6 @@ body {
         .roadmap_parent_3:hover,
         .roadmap_parent_4:hover {
         }
-      }
-      .roadmap_container::-webkit-scrollbar {
-        display: none;
       }
     }
     // contact section

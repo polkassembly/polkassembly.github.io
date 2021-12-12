@@ -9,6 +9,10 @@ body .header {
   background-color: #12171d;
 }
 
+body .header .mobile_header {
+  display: none;
+}
+
 body .header .header_navigation {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -22,9 +26,9 @@ body .header .header_navigation {
 
 body .header .header_navigation .header_logo {
   height: 100%;
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
   cursor: pointer;
 }
 
@@ -434,6 +438,7 @@ body .roadmap_section .roadmap_container {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
+  overflow: auto;
 }
 
 body .roadmap_section .roadmap_container .roadmap_parent_1,
@@ -559,6 +564,10 @@ body .roadmap_section .roadmap_container .roadmap_parent_3:hover,
 body .roadmap_section .roadmap_container .roadmap_parent_4:hover {
   -webkit-transform: scale(0.99);
           transform: scale(0.99);
+}
+
+body .roadmap_section .roadmap_container::-webkit-scrollbar {
+  display: none;
 }
 
 body .contact_section {
@@ -856,6 +865,70 @@ body .footer .footer_navigation .footer_social_links > div a img {
 }
 
 @media screen and (max-width: 768px) {
+  body .header .mobile_header {
+    display: block;
+  }
+  body .header .mobile_header .menu_icon {
+    padding-top: 20px;
+    padding-left: 20px;
+    color: #ffffff;
+    font-size: 30px;
+  }
+  body .header .mobile_header .mobile_header_navigation_container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 {
+    background-color: #12171d;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_header_logo {
+    width: 85%;
+    padding: 30px 0 40px 10px;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_header_logo img {
+    width: 100%;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links {
+    padding-left: 18%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links a {
+    padding: 10px 0;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up {
+    padding: 10px 0;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up button {
+    background-color: #e5007a;
+    color: white;
+    border: none;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
   body .header .header_navigation {
     display: none;
   }
@@ -868,7 +941,7 @@ body .footer .footer_navigation .footer_social_links > div a img {
         -ms-flex-direction: column;
             flex-direction: column;
     grid-gap: 0;
-    padding: 40px 45px 40px 45px;
+    padding: 0px 45px 40px 45px;
   }
   body .header .header_container .header_parent .header_child_1 h1 {
     font-size: 35px;
@@ -1015,9 +1088,6 @@ body .footer .footer_navigation .footer_social_links > div a img {
     font-style: italic;
     color: white;
     font-size: 15px;
-  }
-  body .roadmap_section .roadmap_container::-webkit-scrollbar {
-    display: none;
   }
   body .footer .content {
     -webkit-box-orient: vertical;
