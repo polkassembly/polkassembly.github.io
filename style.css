@@ -808,6 +808,7 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   }
   body .header .mobile_header .mobile_header_logo img {
     width: 100%;
+    max-width: 158px;
   }
   body .header .mobile_header .menu_icon {
     padding-right: 20px;
