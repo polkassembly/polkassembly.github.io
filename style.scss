@@ -549,10 +549,26 @@ body {
     // header
     .header {
       .mobile_header {
-        display: block;
-        .menu_icon {
-          padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        .mobile_header_logo {
+          display: flex;
+          width: 44%;
           padding-left: 20px;
+          img {
+            width: 100%;
+          }
+        }
+        .menu_icon {
+          padding-right: 20px;
+          color: #ffffff;
+          font-size: 30px;
+        }
+        .menu_icon_2 {
+          display: none;
+          padding-right: 20px;
           color: #ffffff;
           font-size: 30px;
         }

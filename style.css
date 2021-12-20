@@ -788,11 +788,35 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 
 @media screen and (max-width: 768px) {
   body .header .mobile_header {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 20px;
+  }
+  body .header .mobile_header .mobile_header_logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 44%;
+    padding-left: 20px;
+  }
+  body .header .mobile_header .mobile_header_logo img {
+    width: 100%;
   }
   body .header .mobile_header .menu_icon {
-    padding-top: 20px;
-    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+    font-size: 30px;
+  }
+  body .header .mobile_header .menu_icon_2 {
+    display: none;
+    padding-right: 20px;
     color: #ffffff;
     font-size: 30px;
   }
