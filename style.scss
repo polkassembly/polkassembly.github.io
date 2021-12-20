@@ -58,7 +58,8 @@ body {
             left: 52px;
           }
         }
-        .navigation_sign_up {
+        .navigation_sign_up,
+        .navigation_sign_in {
           button {
             background-color: #e5007a;
             color: white;
@@ -185,12 +186,12 @@ body {
       background-color: #ffffff;
       position: relative;
       width: fit-content;
-      padding: 16px 26px 6px 10px;
+      padding: 11px 18px;
       border-radius: 10px;
       h1 {
         font-size: 31px;
         margin: 0;
-        font-weight: 300;
+        font-weight: 400;
         letter-spacing: 2px;
       }
       img {
@@ -580,27 +581,51 @@ body {
             .mobile_navigation_links {
               display: flex;
               flex-direction: column;
-              a {
+              .navigation_governance_accordian_up,
+              .navigation_governance_accordian_down {
+                padding-left: 10px;
+              }
+              a,
+              ul {
+                margin: 0;
+                list-style: none;
                 padding: 10px 0 10px 18%;
                 text-decoration: none;
                 color: #ffffff;
+                li {
+                  padding-top: 10px;
+                  a {
+                    padding-left: 10px;
+                  }
+                }
+                // li:first-child {
+                //   padding-top: 0;
+                // }
+                li:last-child {
+                  padding-bottom: 0;
+                }
               }
-              .navigation_sign_up {
+              .navigation_sign_up,
+              .navigation_sign_in {
                 padding: 10px 0;
                 padding-left: 18%;
-                button {
-                  background-color: #e5007a;
-                  color: white;
-                  border: none;
-                  font-size: 15px;
-                  padding: 5px 10px;
-                  border-radius: 4px;
-                  margin: 0;
-                  font-family: 'Roboto', sans-serif;
-                  transition: all 0.2s ease-in-out;
-                }
-                button:hover {
-                  transform: scale(0.95);
+                a {
+                  padding-left: 0;
+                  button {
+                    background-color: #e5007a;
+                    color: white;
+                    border: none;
+                    font-size: 15px;
+                    padding: 5px 10px;
+                    border-radius: 4px;
+                    margin: 0;
+                    font-family: 'Roboto', sans-serif;
+                    transition: all 0.2s ease-in-out;
+                    width: 75px;
+                  }
+                  button:hover {
+                    transform: scale(0.95);
+                  }
                 }
               }
             }
@@ -628,7 +653,8 @@ body {
             img {
             }
           }
-          .navigation_sign_up {
+          .navigation_sign_up,
+          .navigation_sign_in {
             button {
             }
             button:hover {
@@ -909,4 +935,8 @@ body {
       }
     }
   }
+}
+
+.no_display {
+  display: none;
 }

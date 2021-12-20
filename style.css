@@ -91,7 +91,8 @@ body .header .header_navigation .header_navigation_container .navigation_treasur
   left: 52px;
 }
 
-body .header .header_navigation .header_navigation_container .navigation_sign_up button {
+body .header .header_navigation .header_navigation_container .navigation_sign_up button,
+body .header .header_navigation .header_navigation_container .navigation_sign_in button {
   background-color: #e5007a;
   color: white;
   border: none;
@@ -104,7 +105,8 @@ body .header .header_navigation .header_navigation_container .navigation_sign_up
   transition: all 0.2s ease-in-out;
 }
 
-body .header .header_navigation .header_navigation_container .navigation_sign_up button:hover {
+body .header .header_navigation .header_navigation_container .navigation_sign_up button:hover,
+body .header .header_navigation .header_navigation_container .navigation_sign_in button:hover {
   -webkit-transform: scale(0.85);
           transform: scale(0.85);
   font-weight: 100;
@@ -246,14 +248,14 @@ body .live_chains_section .live_chains_heading {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 16px 26px 6px 10px;
+  padding: 11px 18px;
   border-radius: 10px;
 }
 
 body .live_chains_section .live_chains_heading h1 {
   font-size: 31px;
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 2px;
 }
 
@@ -828,16 +830,41 @@ body .live_chains_section .live_chains_info a .bifost:hover {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links a {
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_governance_accordian_up,
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_governance_accordian_down {
+    padding-left: 10px;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links a,
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links ul {
+    margin: 0;
+    list-style: none;
     padding: 10px 0 10px 18%;
     text-decoration: none;
     color: #ffffff;
   }
-  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up {
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links a li,
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links ul li {
+    padding-top: 10px;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links a li a,
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links ul li a {
+    padding-left: 10px;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links a li:last-child,
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links ul li:last-child {
+    padding-bottom: 0;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up,
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in {
     padding: 10px 0;
     padding-left: 18%;
   }
-  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up button {
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up a,
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in a {
+    padding-left: 0;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up a button,
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in a button {
     background-color: #e5007a;
     color: white;
     border: none;
@@ -848,8 +875,10 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     font-family: 'Roboto', sans-serif;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+    width: 75px;
   }
-  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up button:hover {
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up a button:hover,
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in a button:hover {
     -webkit-transform: scale(0.95);
             transform: scale(0.95);
   }
@@ -1054,5 +1083,9 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   body .footer .footer_navigation .footer_social_links {
     padding-right: 0;
   }
+}
+
+.no_display {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
