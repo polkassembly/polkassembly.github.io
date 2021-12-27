@@ -91,8 +91,8 @@ body .header .header_navigation .header_navigation_container .navigation_treasur
   left: 52px;
 }
 
-body .header .header_navigation .header_navigation_container .navigation_sign_up a,
-body .header .header_navigation .header_navigation_container .navigation_sign_in a {
+body .header .header_navigation .header_navigation_container .navigation_sign_up button,
+body .header .header_navigation .header_navigation_container .navigation_sign_in button {
   background-color: #e5007a;
   color: white;
   border: none;
@@ -103,11 +103,10 @@ body .header .header_navigation .header_navigation_container .navigation_sign_in
   font-family: 'Roboto', sans-serif;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  text-decoration: none;
 }
 
-body .header .header_navigation .header_navigation_container .navigation_sign_up a:hover,
-body .header .header_navigation .header_navigation_container .navigation_sign_in a:hover {
+body .header .header_navigation .header_navigation_container .navigation_sign_up button:hover,
+body .header .header_navigation .header_navigation_container .navigation_sign_in button:hover {
   -webkit-transform: scale(0.85);
           transform: scale(0.85);
   font-weight: 100;
@@ -414,7 +413,7 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 .roadmap_section .roadmap_container .roadmap_parent_4 .q3,
 .roadmap_section .roadmap_container .roadmap_parent_4 .q4 {
   background-color: #ffffff;
-  padding: 40px;
+  padding: 10px;
   border-radius: 50%;
 }
 
@@ -500,6 +499,61 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 
 .roadmap_section .roadmap_container::-webkit-scrollbar {
   display: none;
+}
+
+.medium_section {
+  padding: 2vw 4vw;
+  margin-bottom: 2rem;
+}
+
+.medium_section .medium_heading {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.medium_section .medium_heading h1 {
+  margin-bottom: 50px;
+  font-size: 46px;
+}
+
+.medium_section .medium_blogs_container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 10vw;
+  grid-column-gap: 2vw;
+}
+
+.medium_section .blogThumbnail {
+  height: 180px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 92.5%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.medium_section .blogCard {
+  background-color: #12171d;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.medium_section .blogCard:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.medium_section .blogContentContainer {
+  background-color: #fff;
+  padding: 2px 16px;
 }
 
 .contact_section {
@@ -1040,6 +1094,13 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     color: white;
     font-size: 15px;
   }
+  body .medium_section {
+    padding: 2vw 4vw;
+  }
+  body .medium_section .medium_blogs_container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
   body .footer .content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1108,6 +1169,13 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   }
   body .footer .footer_navigation .footer_social_links {
     padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .medium_section .medium_blogs_container {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
   }
 }
 
