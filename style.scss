@@ -60,7 +60,7 @@ body {
         }
         .navigation_sign_up,
         .navigation_sign_in {
-          button {
+          a {
             background-color: #e5007a;
             color: white;
             border: none;
@@ -71,7 +71,7 @@ body {
             font-family: 'Roboto', sans-serif;
             transition: all 0.2s ease-in-out;
           }
-          button:hover {
+          a:hover {
             transform: scale(0.85);
             font-weight: 100;
             cursor: pointer;
@@ -395,7 +395,7 @@ body {
 
   .blogContentContainer {
     background-color: #fff;
-
+    
     padding: 2px 16px;
   }
 }

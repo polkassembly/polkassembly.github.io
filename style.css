@@ -91,8 +91,8 @@ body .header .header_navigation .header_navigation_container .navigation_treasur
   left: 52px;
 }
 
-body .header .header_navigation .header_navigation_container .navigation_sign_up button,
-body .header .header_navigation .header_navigation_container .navigation_sign_in button {
+body .header .header_navigation .header_navigation_container .navigation_sign_up a,
+body .header .header_navigation .header_navigation_container .navigation_sign_in a {
   background-color: #e5007a;
   color: white;
   border: none;
@@ -105,8 +105,8 @@ body .header .header_navigation .header_navigation_container .navigation_sign_in
   transition: all 0.2s ease-in-out;
 }
 
-body .header .header_navigation .header_navigation_container .navigation_sign_up button:hover,
-body .header .header_navigation .header_navigation_container .navigation_sign_in button:hover {
+body .header .header_navigation .header_navigation_container .navigation_sign_up a:hover,
+body .header .header_navigation .header_navigation_container .navigation_sign_in a:hover {
   -webkit-transform: scale(0.85);
           transform: scale(0.85);
   font-weight: 100;
