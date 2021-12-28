@@ -21,13 +21,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Polkassembly</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0ERLX91JE"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-E0ERLX91JE"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-E0ERLX91JE');
+      gtag("config", "G-E0ERLX91JE");
     </script>
   </head>
   <body>
@@ -480,6 +485,19 @@
         </div>
       </div>
     </footer>
+
+    <!-- cookie consent popup -->
+    <div id="cookie-consent-popup">
+      <div class="cookie-message">
+        <img src="https://img.icons8.com/plasticine/100/000000/cookie.png" />
+        <span class="text">
+          This website uses cookies to provide you the best possible experience.
+          By continuing to use this website you consent to use our cookies.
+        </span>
+        <span id="close-cookie-popup" href="#">&times;</span>
+      </div>
+    </div>
+
     <script src="./script.js"></script>
   </body>
 </html>

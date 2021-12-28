@@ -601,6 +601,65 @@ body {
   }
 }
 
+// cookie consent popup
+#cookie-consent-popup{
+  .cookie-message {
+    border-radius: 10px;
+    padding: 15px 0;
+    background: #f7f8fb;
+    border: 1px solid rgba(0,0,0,.15);
+    box-shadow: 0 0 16px 2px rgba(0,0,0,.05), 0 10px 10px 2px rgba(0,0,0,.05);
+    font-size: 12px;
+    line-height: 40px;
+    border-top: 1px solid #e4e4e4;
+    position: fixed;
+    z-index: 100;
+    bottom: 2%;
+    right: 2%;
+    margin: auto;
+    max-width: 540px;
+    display: -ms-flexbox;
+    display: flex;
+    animation-name: cookie-popup-in;
+    animation-duration: 1s;
+  }
+
+  .cookie-message img {
+    height: 50px;
+    width: 50px;
+    margin: 0 15px;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+  }
+
+  .cookie-message span.text {
+    display: inline-block;
+    line-height: 1.5;
+    padding-right: 16px;
+    border-right: 1px solid rgba(0,0,0,.1);
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+  }
+
+  .cookie-message span#close-cookie-popup {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    border: none;
+    font-size: 24px;
+    padding: 0 20px 0 16px;
+    position: relative;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    color: #919191;
+    transition: color 0.2s;
+    cursor: pointer;
+  }
+
+}
+
 @media screen and (max-width: 768px) {
   
   body {
@@ -1034,4 +1093,9 @@ body {
 
 .no_display {
   display: none;
+}
+
+@keyframes cookie-popup-in{
+  from {right: -3%;}
+  to {right: 2%;}
 }
