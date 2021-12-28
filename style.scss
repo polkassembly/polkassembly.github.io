@@ -70,6 +70,7 @@ body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
             transition: all 0.2s ease-in-out;
+            text-decoration: none;
           }
           a:hover {
             transform: scale(0.85);
@@ -354,6 +355,10 @@ body {
   padding: 2vw 4vw;
   margin-bottom: 2rem;
 
+  a{
+    text-decoration: none;
+  }
+
   .medium_heading {
     margin-top: 40px;
     text-align: center;
@@ -395,7 +400,6 @@ body {
 
   .blogContentContainer {
     background-color: #fff;
-    
     padding: 2px 16px;
   }
 }

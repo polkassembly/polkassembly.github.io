@@ -103,6 +103,7 @@ body .header .header_navigation .header_navigation_container .navigation_sign_in
   font-family: 'Roboto', sans-serif;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 body .header .header_navigation .header_navigation_container .navigation_sign_up a:hover,
@@ -504,6 +505,10 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 .medium_section {
   padding: 2vw 4vw;
   margin-bottom: 2rem;
+}
+
+.medium_section a {
+  text-decoration: none;
 }
 
 .medium_section .medium_heading {
