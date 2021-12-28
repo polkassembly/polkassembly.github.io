@@ -19,6 +19,9 @@ const medium_blogs_container = document.querySelector(
   ".medium_blogs_container"
 );
 
+const cookiePopupCloseBtn = document.querySelector("#close-cookie-popup");
+const cookieConsentPopupDiv = document.querySelector("#cookie-consent-popup");
+
 // side-menu slides from left
 menuIcon.addEventListener("click", () => {
   mobileHeader.style.transform = "translateX(0)";
@@ -43,6 +46,11 @@ navigationGovernanceUnselect.addEventListener("click", () => {
 navigationGovernanceParent.addEventListener("click", () => {
   navigationGovernance.classList.add("no_display");
   navigationGovernanceUnselect.classList.remove("no_display");
+});
+
+// closes cookie popup
+cookiePopupCloseBtn.addEventListener("click", () => {
+  cookieConsentPopupDiv.classList.add("no_display");
 });
 
 // fetch medium blog posts
