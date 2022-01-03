@@ -3,6 +3,11 @@ const menuIcon2 = document.querySelector(".menu_icon_2");
 const parent2 = document.querySelector(".mobile_parent_2");
 const body = document.querySelector("body");
 const navigationGovernance = document.querySelector(".navigation_governance");
+const navigationGovernanceOption = document.querySelector(".navigation_governance_option");
+const navigationGovernanceList = document.querySelector(".navigation_governance_list");
+const navigationGovernanceChild = document.querySelector(".navigation_governance_child");
+
+
 const navigationGovernanceParent = document.querySelector(
   ".navigation_governance_parent"
 );
@@ -48,10 +53,21 @@ navigationGovernanceParent.addEventListener("click", () => {
   navigationGovernanceUnselect.classList.remove("no_display");
 });
 
+// opens governance chains
+navigationGovernanceList.addEventListener('mouseover', () => {
+  navigationGovernanceChild.classList.remove('no_display');
+});
+
+// closes governance chains
+navigationGovernanceList.addEventListener('mouseleave', () => {
+  navigationGovernanceChild.classList.add('no_display');
+});
+
 // closes cookie popup
 cookiePopupCloseBtn.addEventListener("click", () => {
   cookieConsentPopupDiv.classList.add("no_display");
 });
+
 
 // fetch medium blog posts
 const fetchMediumBlogs = async (name) => {
