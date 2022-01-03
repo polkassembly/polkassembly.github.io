@@ -202,6 +202,23 @@ body .header .header_container .header_parent_2 .header_child_2 > div a img {
   height: 100%;
 }
 
+body .hiring {
+  width: 100%;
+  text-align: center;
+  background-color: #E5007A;
+  padding: 0.8em 0;
+  color: #fff;
+}
+
+body .hiring_form_link {
+  padding: 0.4rem;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-left: 0.4rem;
+  text-decoration: none;
+  color: #333;
+}
+
 body .about_section {
   padding: 30px 50px 100px 50px;
   display: -webkit-box;
@@ -526,7 +543,7 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  grid-row-gap: 10vw;
+  grid-row-gap: 3vw;
   grid-column-gap: 2vw;
 }
 
@@ -1057,6 +1074,9 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   }
   body .header .header_container .header_parent_2 .header_child_1 {
     display: none;
+  }
+  body .hiring {
+    margin-top: 0.5rem;
   }
   body .about_section {
     padding: 20px;
