@@ -153,6 +153,23 @@ body {
     }
   }
 
+  .hiring{
+    width: 100%;
+    text-align: center;
+    background-color: #E5007A;
+    padding: 0.8em 0;
+    color: #fff;
+  }
+
+  .hiring_form_link{
+    padding: 0.4rem;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-left: 0.4rem;
+    text-decoration: none;
+    color: #333;
+  }
+
   // about
   .about_section {
     padding: 30px 50px 100px 50px;
@@ -371,7 +388,7 @@ body {
   .medium_blogs_container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 10vw;
+    grid-row-gap: 3vw;
     grid-column-gap: 2vw;
   }
 
@@ -842,6 +859,11 @@ body {
         }
       }
     }
+
+    .hiring{
+      margin-top: 0.5rem;
+    }
+
     // about
     .about_section {
       padding: 20px;
@@ -1081,6 +1103,7 @@ body {
       }
     }
   }
+  
 }
 
 @media screen and (max-width: 601px) {
