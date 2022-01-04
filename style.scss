@@ -150,6 +150,39 @@ body {
         }
       }
     }
+    .hiring {
+      width: 100%;
+      text-align: center;
+      background-color: #33001b ;
+      background: linear-gradient(to right, transparent 8%, #33001b 55%, transparent 89%);
+      padding: 1em 0;
+      color: #fff;
+      .hiring_form_link {
+        padding: 0.4rem;
+        text-decoration: none;
+        color: #333;
+        button {
+          margin: 0;
+          padding: 0;
+          border: none;
+          margin: 0;
+          padding: 0;
+          border: none;
+          background: #ffffff;
+          padding: 8px 16px;
+          border-radius: 3px;
+          font-size: 15px;
+          cursor: pointer;
+          transition: all 0.25s ease-in-out;
+        }
+      }
+      .hiring_form_link:hover {
+        button {
+          background: #ff0084;
+          color: #fff;
+        }
+      }
+    }
     .header_container {
       padding: 40px 45px 80px 45px;
       display: grid;
@@ -159,17 +192,13 @@ body {
         .header_child_1 {
           h1 {
             font-size: 55px;
-            width: 75%;
             color: #ffffff;
             font-weight: 300;
             margin-bottom: 0px;
+            .underline {
+              border-bottom: 2px solid white;
+            }
           }
-        }
-        .line_break {
-          margin: 15px 0;
-          height: 3px;
-          background-color: #ffffff;
-          width: 35%;
         }
         .header_child_2 {
           h2 {
@@ -221,23 +250,6 @@ body {
         }
       }
     }
-  }
-
-  .hiring{
-    width: 100%;
-    text-align: center;
-    background-color: #E5007A;
-    padding: 0.8em 0;
-    color: #fff;
-  }
-
-  .hiring_form_link{
-    padding: 0.4rem;
-    background-color: #fff;
-    border-radius: 5px;
-    margin-left: 0.4rem;
-    text-decoration: none;
-    color: #333;
   }
 
   // about
