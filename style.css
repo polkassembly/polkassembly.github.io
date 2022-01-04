@@ -56,10 +56,10 @@ body .header .header_navigation .header_navigation_container > a,
 body .header .header_navigation .header_navigation_container ul {
   color: white;
   text-decoration: none;
-  cursor: pointer;
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-  font-weight: 400;
+  cursor: default;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-weight: 300;
   position: relative;
   padding: 0;
   margin: 0;
@@ -68,7 +68,16 @@ body .header .header_navigation .header_navigation_container ul {
 body .header .header_navigation .header_navigation_container > a a,
 body .header .header_navigation .header_navigation_container ul a {
   text-decoration: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   color: #ffffff;
+}
+
+body .header .header_navigation .header_navigation_container > a a:hover,
+body .header .header_navigation .header_navigation_container ul a:hover {
+  color: #E5007A;
+  border: 1px solid #E5007A;
+  border-width: 0 0 1px 0;
 }
 
 body .header .header_navigation .header_navigation_container > a .navigation_governance_child,
@@ -95,11 +104,20 @@ body .header .header_navigation .header_navigation_container ul .navigation_gove
   text-decoration: none;
   color: #ffffff;
   font-weight: 300;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+body .header .header_navigation .header_navigation_container > a .navigation_governance_child li:hover a,
+body .header .header_navigation .header_navigation_container ul .navigation_governance_child li:hover a {
+  color: #E5007A;
+  border: 1px solid #E5007A;
+  border-width: 0 0 1px 0;
 }
 
 body .header .header_navigation .header_navigation_container > a:hover,
 body .header .header_navigation .header_navigation_container ul:hover {
-  font-weight: 300;
+  color: #E5007A;
 }
 
 body .header .header_navigation .header_navigation_container .navigation_treasury {
@@ -120,28 +138,69 @@ body .header .header_navigation .header_navigation_container .navigation_treasur
   left: 52px;
 }
 
-body .header .header_navigation .header_navigation_container .navigation_sign_up a,
-body .header .header_navigation .header_navigation_container .navigation_sign_in a {
-  background-color: #e5007a;
-  color: white;
-  border: none;
-  font-size: 19px;
-  padding: 5px 10px;
-  border-radius: 10px;
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  width: 85px;
+body .header .header_navigation .header_navigation_container .navigation_hiring {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-body .header .header_navigation .header_navigation_container .navigation_sign_up a:hover,
+body .header .header_navigation .header_navigation_container .navigation_hiring a {
+  width: 90px;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 6px 10px;
+  border: 1px solid brown;
+  font-weight: 300;
+  border-radius: 4px;
+  font-size: 17px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(51%, #141414), to(brown));
+  background: linear-gradient(to right, transparent 0%, #141414 51%, brown 100%);
+  text-align: center;
+  background-size: 200% auto;
+  display: block;
+}
+
+body .header .header_navigation .header_navigation_container .navigation_hiring:hover a {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+body .header .header_navigation .header_navigation_container .navigation_sign_in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .header .header_navigation .header_navigation_container .navigation_sign_in a {
+  width: 90px;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 6px 10px;
+  font-weight: 300;
+  border-radius: 4px;
+  font-size: 17px;
+  background: -webkit-gradient(linear, left top, right top, from(#ff0084), color-stop(51%, #33001b), to(#ff0084));
+  background: linear-gradient(to right, #ff0084 0%, #33001b 51%, #ff0084 100%);
+  text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-size: 200% auto;
+  display: block;
+}
+
 body .header .header_navigation .header_navigation_container .navigation_sign_in a:hover {
-  -webkit-transform: scale(0.85);
-          transform: scale(0.85);
-  font-weight: 100;
-  cursor: pointer;
+  background-position: center right;
+  color: #fff;
+  text-decoration: none;
 }
 
 body .header .header_container {
