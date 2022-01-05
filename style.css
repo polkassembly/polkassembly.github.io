@@ -208,7 +208,10 @@ body .header .header_navigation .header_navigation_container .navigation_sign_in
 }
 
 body .header .hiring {
-  width: 100%;
+  width: 90%;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   background-color: #33001b;
   background: -webkit-gradient(linear, left top, right top, color-stop(-1%, transparent), color-stop(54%, #33001b), color-stop(101%, transparent));
@@ -226,11 +229,7 @@ body .header .hiring .hiring_form_link {
 }
 
 body .header .hiring .hiring_form_link button {
-  margin: 0;
-  padding: 0;
-  border: none;
-  margin: 0;
-  padding: 0;
+  margin-top: 0.5em;
   border: none;
   background: #ffffff;
   padding: 8px 16px;
@@ -1382,6 +1381,13 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   .medium_section .medium_blogs_container {
     -ms-grid-columns: 1fr !important;
         grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .hiring {
+    width: 100%;
+    margin-top: 0;
   }
 }
 

@@ -159,7 +159,10 @@ body {
       }
     }
     .hiring {
-      width: 100%;
+      width: 90%;
+      margin-top: 1em;
+      margin-left: auto;
+      margin-right: auto;
       text-align: center;
       background-color: #33001b ;
       background: linear-gradient(to right, transparent -1%, #33001b 54%, transparent 101%);
@@ -171,11 +174,7 @@ body {
         text-decoration: none;
         color: #333;
         button {
-          margin: 0;
-          padding: 0;
-          border: none;
-          margin: 0;
-          padding: 0;
+          margin-top: 0.5em;
           border: none;
           background: #ffffff;
           padding: 8px 16px;
@@ -770,7 +769,7 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  
+
   body {
     // background-color: #14a99f;
     // header
@@ -1206,6 +1205,15 @@ body {
     .medium_blogs_container{
       grid-template-columns: 1fr !important;
     }
+  }
+
+}
+
+//large and up (mobile-first)
+@media screen and (min-width: 600px)  {
+  .hiring{
+    width: 100%;
+    margin-top: 0;
   }
 }
 
