@@ -75,8 +75,6 @@ body .header .header_navigation .header_navigation_container ul a {
 body .header .header_navigation .header_navigation_container > a a:hover,
 body .header .header_navigation .header_navigation_container ul a:hover {
   color: #E5007A;
-  border: 1px solid #E5007A;
-  border-width: 0 0 1px 0;
 }
 
 body .header .header_navigation .header_navigation_container > a .navigation_governance_child,
@@ -85,21 +83,25 @@ body .header .header_navigation .header_navigation_container ul .navigation_gove
   padding-top: 15px;
 }
 
-body .header .header_navigation .header_navigation_container > a .navigation_governance_child li,
-body .header .header_navigation .header_navigation_container ul .navigation_governance_child li {
+body .header .header_navigation .header_navigation_container > a .navigation_governance_child .nav_gov_list_card,
+body .header .header_navigation .header_navigation_container ul .navigation_governance_child .nav_gov_list_card {
+  background-color: #12171d;
+  border-radius: 8px;
+  -webkit-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
+}
+
+body .header .header_navigation .header_navigation_container > a .navigation_governance_child .nav_gov_list_card li,
+body .header .header_navigation .header_navigation_container ul .navigation_governance_child .nav_gov_list_card li {
   list-style: none;
   text-decoration: none;
   color: #ffffff;
   padding: 8px 16px;
   text-align: end;
-  -webkit-box-shadow: 2px 2px 6px 1px black;
-          box-shadow: 2px 2px 6px 1px black;
-  border-radius: 5px;
-  background-color: #12171d;
 }
 
-body .header .header_navigation .header_navigation_container > a .navigation_governance_child li a,
-body .header .header_navigation .header_navigation_container ul .navigation_governance_child li a {
+body .header .header_navigation .header_navigation_container > a .navigation_governance_child .nav_gov_list_card li a,
+body .header .header_navigation .header_navigation_container ul .navigation_governance_child .nav_gov_list_card li a {
   text-decoration: none;
   color: #ffffff;
   font-weight: 300;
@@ -107,11 +109,9 @@ body .header .header_navigation .header_navigation_container ul .navigation_gove
   transition: all 0.5s ease;
 }
 
-body .header .header_navigation .header_navigation_container > a .navigation_governance_child li:hover a,
-body .header .header_navigation .header_navigation_container ul .navigation_governance_child li:hover a {
+body .header .header_navigation .header_navigation_container > a .navigation_governance_child .nav_gov_list_card li:hover a,
+body .header .header_navigation .header_navigation_container ul .navigation_governance_child .nav_gov_list_card li:hover a {
   color: #E5007A;
-  border: 1px solid #E5007A;
-  border-width: 0 0 1px 0;
 }
 
 body .header .header_navigation .header_navigation_container > a:hover,
@@ -137,6 +137,10 @@ body .header .header_navigation .header_navigation_container .navigation_treasur
   left: 52px;
 }
 
+body .header .header_navigation .header_navigation_container .navigation_contact {
+  margin: 0 0.3em;
+}
+
 body .header .header_navigation .header_navigation_container .navigation_hiring {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -144,6 +148,7 @@ body .header .header_navigation .header_navigation_container .navigation_hiring 
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-right: 0.3em;
 }
 
 body .header .header_navigation .header_navigation_container .navigation_hiring a {
@@ -206,8 +211,8 @@ body .header .hiring {
   width: 100%;
   text-align: center;
   background-color: #33001b;
-  background: -webkit-gradient(linear, left top, right top, color-stop(8%, transparent), color-stop(55%, #33001b), color-stop(89%, transparent));
-  background: linear-gradient(to right, transparent 8%, #33001b 55%, transparent 89%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(-1%, transparent), color-stop(54%, #33001b), color-stop(101%, transparent));
+  background: linear-gradient(to right, transparent -1%, #33001b 54%, transparent 101%);
   padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
