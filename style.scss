@@ -568,8 +568,9 @@ body {
     background: url('./images/gradient-background.png');
     background-color: #12171d;
     color: #ffffff;
-    padding: 60px 40px 40px 40px;
+    padding: 40px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     .content_heading {
       h2 {
@@ -1166,8 +1167,7 @@ body {
         display: flex;
         flex-direction: column;
         .footer_navigation_links {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
+          flex-wrap: wrap;
           grid-gap: 8px;
           padding: 10px;
           a {

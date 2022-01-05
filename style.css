@@ -768,10 +768,14 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   background: url("./images/gradient-background.png");
   background-color: #12171d;
   color: #ffffff;
-  padding: 60px 40px 40px 40px;
+  padding: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1360,10 +1364,8 @@ body .live_chains_section .live_chains_info a .bifost:hover {
             flex-direction: column;
   }
   body .footer .footer_navigation .footer_navigation_links {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     grid-gap: 8px;
     padding: 10px;
   }
