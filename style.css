@@ -2,7 +2,6 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: 'Roboto', sans-serif;
-  width: 100vw;
 }
 
 body .header {
@@ -987,7 +986,7 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   position: fixed;
   z-index: 100;
   bottom: 2%;
-  right: 2%;
+  right: 1%;
   margin: auto;
   max-width: 540px;
   display: -ms-flexbox;
