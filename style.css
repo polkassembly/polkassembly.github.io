@@ -630,8 +630,10 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 }
 
 .medium_section {
-  padding: 2vw 4vw;
-  margin-bottom: 2rem;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  padding-bottom: 4rem;
+  padding-top: 1vh;
 }
 
 .medium_section a {
@@ -658,24 +660,28 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 }
 
 .medium_section .blogThumbnail {
-  height: 180px;
+  height: 30vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  width: 92.5%;
+  width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
 .medium_section .blogCard {
+  display: block;
   background-color: #12171d;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.3s;
   transition: 0.3s;
   border-radius: 10px;
+  text-align: center;
 }
 
 .medium_section .blogCard:hover {
@@ -685,7 +691,10 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 
 .medium_section .blogContentContainer {
   background-color: #fff;
-  padding: 2px 16px;
+  padding: 1px 16px;
+  height: 12vh;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .contact_section {
