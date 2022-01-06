@@ -289,7 +289,7 @@ body {
   // live chains
   .live_chains_section {
     background-color: #12171d;
-    padding: 40px 0px;
+    padding: 40px 0;
     position: relative;
     .live_chains_heading {
       background-color: #ffffff;
@@ -1213,7 +1213,7 @@ body {
 @media screen and (min-width: 600px)  {
   .hiring{
     width: 100%;
-    margin-top: 0;
+    margin-top: 0 !important;
   }
 }
 
