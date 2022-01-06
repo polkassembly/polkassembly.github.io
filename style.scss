@@ -103,7 +103,7 @@ body {
         }
 
         .navigation_contact{
-          margin: 0 0.3em;
+          margin: 0 0.35em;
         }
         
         .navigation_hiring {
@@ -235,7 +235,7 @@ body {
           & > div {
             width: 30px;
             height: 30px;
-            margin: 10px;
+            margin: 1.2vw;
             padding: 10px;
             background-color: #ffffff;
             border-radius: 50%;
@@ -459,8 +459,10 @@ body {
 
 // medium section
 .medium_section{
-  padding: 2vw 4vw;
-  margin-bottom: 2rem;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  padding-bottom: 4rem;
+  padding-top: 1vh;
 
   a{
     text-decoration: none;
@@ -483,22 +485,25 @@ body {
   }
 
   .blogThumbnail{
-    height: 180px;
+    height: 30vh;
+    object-fit:  cover;
+    object-position:top;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    width: 92.5%;
+    width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+
   }
 
   .blogCard {
+    display: block;
     background-color: #12171d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 10px;
+    text-align: center;
   }
 
   .blogCard:hover {
@@ -507,7 +512,10 @@ body {
 
   .blogContentContainer {
     background-color: #fff;
-    padding: 2px 16px;
+    padding: 1px 16px;
+    height: 12vh;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
 }
 
