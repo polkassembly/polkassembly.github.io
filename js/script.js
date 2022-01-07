@@ -3,10 +3,15 @@ const menuIcon2 = document.querySelector(".menu_icon_2");
 const parent2 = document.querySelector(".mobile_parent_2");
 const body = document.querySelector("body");
 const navigationGovernance = document.querySelector(".navigation_governance");
-const navigationGovernanceOption = document.querySelector(".navigation_governance_option");
-const navigationGovernanceList = document.querySelector(".navigation_governance_list");
-const navigationGovernanceChild = document.querySelector(".navigation_governance_child");
-
+const navigationGovernanceOption = document.querySelector(
+  ".navigation_governance_option"
+);
+const navigationGovernanceList = document.querySelector(
+  ".navigation_governance_list"
+);
+const navigationGovernanceChild = document.querySelector(
+  ".navigation_governance_child"
+);
 
 const navigationGovernanceParent = document.querySelector(
   ".navigation_governance_parent"
@@ -54,20 +59,19 @@ navigationGovernanceParent.addEventListener("click", () => {
 });
 
 // opens governance chains
-navigationGovernanceList.addEventListener('mouseover', () => {
-  navigationGovernanceChild.classList.remove('no_display');
+navigationGovernanceList.addEventListener("mouseover", () => {
+  navigationGovernanceChild.classList.remove("no_display");
 });
 
 // closes governance chains
-navigationGovernanceList.addEventListener('mouseleave', () => {
-  navigationGovernanceChild.classList.add('no_display');
+navigationGovernanceList.addEventListener("mouseleave", () => {
+  navigationGovernanceChild.classList.add("no_display");
 });
 
 // closes cookie popup
 cookiePopupCloseBtn.addEventListener("click", () => {
   cookieConsentPopupDiv.classList.add("no_display");
 });
-
 
 // fetch medium blog posts
 const fetchMediumBlogs = async (name) => {
@@ -113,5 +117,19 @@ fetchMediumBlogs("@PolkAssembly").then((res) => {
   res.items.forEach((blogPost) => {
     const blogCard = createBlogCardElement(blogPost);
     medium_blogs_container.appendChild(blogCard);
+  });
+});
+
+//roadmap accordion hover event listeners
+const roadmap_q1 = document.querySelector("#roadmap_q1");
+roadmap_q1.addEventListener("mouseleave", () => {
+  roadmap_q1.classList.remove("roadmap_active");
+});
+
+const arr_roadmap_inactive = document.querySelectorAll(".roadmap_inactive");
+
+arr_roadmap_inactive.forEach((item) => {
+  item.addEventListener("mouseover", () => {
+    roadmap_q1.classList.remove("roadmap_active");
   });
 });

@@ -1261,7 +1261,6 @@ body {
     .custom-accordion {
       display: table;
       width: 100%;
-      // max-width: 1200px;
       margin: 0 auto;
       height: 70vh;
       max-height: 1000px;
@@ -1272,13 +1271,15 @@ body {
         display: table-cell;
         position: relative;
         height: 100%;
-        padding: 2rem 1rem;
+        padding: 1rem 0;
         text-align: center;
         transform-origin: 0 50%;
         transition: all .3s cubic-bezier(.8, .16, .42, .89);
 
-        &:hover:not(:first-of-type) {
-          transform: scaleX(2) translateX(-96px);
+
+        &:hover:not(:first-of-type),
+        &.roadmap_active {
+          transform: scaleX(1.5) translateX(-50px);
           background: #C40061;
         }
 
@@ -1297,43 +1298,35 @@ body {
           border-radius: 0;
         }
 
-        &:first-of-type {
-          font-size: 2rem;
-        }
-
-        &:hover:first-of-type .heart-icon {
-          transform: scale(2);
-        }
-
-        &:first-of-type>.title {
-          transform: rotate(0) translateX(-50%) translateY(-2.5rem);
-          padding: 0;
-          text-align: center;
-
-        }
-
         &:first-of-type>.content {
           opacity: 1;
-          transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-57%) translateY(-50%);
+          font-size: 1.6rem;
         }
 
-        &:hover:not(:first-of-type)>.icon {
-          transform: scaleX(.5);
+        &:hover:not(:first-of-type)>.icon,
+        &.roadmap_active>.icon {
+          transform: scaleX(.7);
           color: #fff;
         }
 
-        &:hover:not(:first-of-type)>.title {
-          transform: scaleX(.5) translateX(-50%) translateY(-100%);
+        &:hover:not(:first-of-type)>.title,
+        &.roadmap_active>.title {
+          transform: scaleX(0.7) translateX(-50%);
+          transition-duration: 0s;
           text-align: center;
           padding: 0;
+          font-weight: 200;
 
           >.text {
             transform: translateX(-50%);
+            transition-duration: 0s;
             left: 50%;
           }
         }
 
-        &:hover:not(:first-of-type)>.content {
+        &:hover:not(:first-of-type)>.content,
+        &.roadmap_active>.content {
           opacity: 1;
         }
       }
@@ -1354,7 +1347,7 @@ body {
         text-align: left;
         transform-origin: 0 50%;
         transform: rotate(-90deg);
-        transition: all .3s cubic-bezier(.8, .16, .42, .89);
+        transition-duration: 0s;
         font-size: 1.2rem;
 
         div::after {
@@ -1367,7 +1360,9 @@ body {
         left: 2rem;
         bottom: 0;
         white-space: nowrap;
-        transition: all .3s cubic-bezier(.8, .16, .42, .89);
+        transition: all .2s cubic-bezier(.8, .16, .42, .89);
+        // transition-duration: 0s;
+
       }
 
       >.item>.content {
@@ -1376,17 +1371,13 @@ body {
         left: 50%;
         width: 200%;
         height: auto;
-        transform: translateX(-50%) translateY(-50%) scaleX(.5);
+        transform: translateX(-50%) translateY(-50%) scaleX(.7);
         transition: all .3s cubic-bezier(.8, .16, .42, .89);
         opacity: 0;
         padding: 1rem;
         pointer-events: none;
 
         .milestones_list {
-          // list-style-type: none;
-          // text-align: center;
-          // padding-left: 0;
-
           li {
             margin: 1rem 5rem;
             font-size: 1.1rem;

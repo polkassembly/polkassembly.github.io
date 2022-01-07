@@ -1277,16 +1277,16 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     display: table-cell;
     position: relative;
     height: 100%;
-    padding: 2rem 1rem;
+    padding: 1rem 0;
     text-align: center;
     -webkit-transform-origin: 0 50%;
             transform-origin: 0 50%;
     -webkit-transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
     transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
   }
-  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type) {
-    -webkit-transform: scaleX(2) translateX(-96px);
-            transform: scaleX(2) translateX(-96px);
+  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type), #roadmap-accordion .custom-accordion > .item.roadmap_active {
+    -webkit-transform: scaleX(1.5) translateX(-50px);
+            transform: scaleX(1.5) translateX(-50px);
     background: #C40061;
   }
   #roadmap-accordion .custom-accordion > .item:hover + .item:first-of-type {
@@ -1301,41 +1301,38 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     width: 25%;
     border-radius: 0;
   }
-  #roadmap-accordion .custom-accordion > .item:first-of-type {
-    font-size: 2rem;
-  }
-  #roadmap-accordion .custom-accordion > .item:hover:first-of-type .heart-icon {
-    -webkit-transform: scale(2);
-            transform: scale(2);
-  }
-  #roadmap-accordion .custom-accordion > .item:first-of-type > .title {
-    -webkit-transform: rotate(0) translateX(-50%) translateY(-2.5rem);
-            transform: rotate(0) translateX(-50%) translateY(-2.5rem);
-    padding: 0;
-    text-align: center;
-  }
   #roadmap-accordion .custom-accordion > .item:first-of-type > .content {
     opacity: 1;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-            transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-57%) translateY(-50%);
+            transform: translateX(-57%) translateY(-50%);
+    font-size: 1.6rem;
   }
-  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type) > .icon {
-    -webkit-transform: scaleX(0.5);
-            transform: scaleX(0.5);
+  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type) > .icon,
+  #roadmap-accordion .custom-accordion > .item.roadmap_active > .icon {
+    -webkit-transform: scaleX(0.7);
+            transform: scaleX(0.7);
     color: #fff;
   }
-  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type) > .title {
-    -webkit-transform: scaleX(0.5) translateX(-50%) translateY(-100%);
-            transform: scaleX(0.5) translateX(-50%) translateY(-100%);
+  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type) > .title,
+  #roadmap-accordion .custom-accordion > .item.roadmap_active > .title {
+    -webkit-transform: scaleX(0.7) translateX(-50%);
+            transform: scaleX(0.7) translateX(-50%);
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
     text-align: center;
     padding: 0;
+    font-weight: 200;
   }
-  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type) > .title > .text {
+  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type) > .title > .text,
+  #roadmap-accordion .custom-accordion > .item.roadmap_active > .title > .text {
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
     left: 50%;
   }
-  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type) > .content {
+  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type) > .content,
+  #roadmap-accordion .custom-accordion > .item.roadmap_active > .content {
     opacity: 1;
   }
   #roadmap-accordion .custom-accordion > .item > .icon {
@@ -1356,8 +1353,8 @@ body .live_chains_section .live_chains_info a .bifost:hover {
             transform-origin: 0 50%;
     -webkit-transform: rotate(-90deg);
             transform: rotate(-90deg);
-    -webkit-transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
-    transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
     font-size: 1.2rem;
   }
   #roadmap-accordion .custom-accordion > .item > .title div::after {
@@ -1368,8 +1365,8 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     left: 2rem;
     bottom: 0;
     white-space: nowrap;
-    -webkit-transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
-    transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
+    -webkit-transition: all 0.2s cubic-bezier(0.8, 0.16, 0.42, 0.89);
+    transition: all 0.2s cubic-bezier(0.8, 0.16, 0.42, 0.89);
   }
   #roadmap-accordion .custom-accordion > .item > .content {
     position: absolute;
@@ -1377,8 +1374,8 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     left: 50%;
     width: 200%;
     height: auto;
-    -webkit-transform: translateX(-50%) translateY(-50%) scaleX(0.5);
-            transform: translateX(-50%) translateY(-50%) scaleX(0.5);
+    -webkit-transform: translateX(-50%) translateY(-50%) scaleX(0.7);
+            transform: translateX(-50%) translateY(-50%) scaleX(0.7);
     -webkit-transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
     transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
     opacity: 0;
