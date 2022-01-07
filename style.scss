@@ -1261,7 +1261,7 @@ body {
     .custom-accordion {
       display: table;
       width: 100%;
-      max-width: 1200px;
+      // max-width: 1200px;
       margin: 0 auto;
       height: 70vh;
       max-height: 1000px;
@@ -1280,10 +1280,6 @@ body {
         &:hover:not(:first-of-type) {
           transform: scaleX(2) translateX(-96px);
           background: #C40061;
-        }
-
-        &:hover+.item {
-          opacity: .1;
         }
 
         &:hover+.item:first-of-type {

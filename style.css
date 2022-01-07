@@ -1267,7 +1267,6 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   #roadmap-accordion .custom-accordion {
     display: table;
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
     height: 70vh;
     max-height: 1000px;
@@ -1289,9 +1288,6 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     -webkit-transform: scaleX(2) translateX(-96px);
             transform: scaleX(2) translateX(-96px);
     background: #C40061;
-  }
-  #roadmap-accordion .custom-accordion > .item:hover + .item {
-    opacity: .1;
   }
   #roadmap-accordion .custom-accordion > .item:hover + .item:first-of-type {
     opacity: .1;
