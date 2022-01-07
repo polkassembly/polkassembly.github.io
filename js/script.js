@@ -32,6 +32,10 @@ const medium_blogs_container = document.querySelector(
 const cookiePopupCloseBtn = document.querySelector("#close-cookie-popup");
 const cookieConsentPopupDiv = document.querySelector("#cookie-consent-popup");
 
+const arr_roadmap_items = document.querySelectorAll(
+  ".custom-accordion > .quarter_item"
+);
+
 // side-menu slides from left
 menuIcon.addEventListener("click", () => {
   mobileHeader.style.transform = "translateX(0)";
@@ -120,16 +124,16 @@ fetchMediumBlogs("@PolkAssembly").then((res) => {
   });
 });
 
-//roadmap accordion hover event listeners
-const roadmap_q1 = document.querySelector("#roadmap_q1");
-roadmap_q1.addEventListener("mouseleave", () => {
-  roadmap_q1.classList.remove("roadmap_active");
-});
-
-const arr_roadmap_inactive = document.querySelectorAll(".roadmap_inactive");
-
-arr_roadmap_inactive.forEach((item) => {
+/*
+  State for accordion
+*/
+var roadmapLastActiveItem = document.querySelector("#roadmap_q1"); //default is q1 panel (via html)
+arr_roadmap_items.forEach((item) => {
+  // remove active state class from last roadmapLastActiveItem
+  //assign latest roadmapLastActiveItem
   item.addEventListener("mouseover", () => {
-    roadmap_q1.classList.remove("roadmap_active");
+    roadmapLastActiveItem.classList.remove("roadmap_active");
+    roadmapLastActiveItem = item;
+    roadmapLastActiveItem.classList.add("roadmap_active");
   });
 });

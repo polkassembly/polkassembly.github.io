@@ -1351,8 +1351,8 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     text-align: left;
     -webkit-transform-origin: 0 50%;
             transform-origin: 0 50%;
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
     -webkit-transition-duration: 0s;
             transition-duration: 0s;
     font-size: 1.2rem;
@@ -1383,7 +1383,7 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     pointer-events: none;
   }
   #roadmap-accordion .custom-accordion > .item > .content .milestones_list li {
-    margin: 1rem 5rem;
+    margin: 1rem 6em;
     font-size: 1.1rem;
   }
   #roadmap-accordion .custom-accordion > .item > .content .milestones_list li:not(:last-of-type) {
