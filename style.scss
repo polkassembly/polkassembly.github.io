@@ -1,11 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0px;
   padding: 0px;
   font-family: 'Roboto', sans-serif;
+  background-color: #12171d;
 
   // header
   .header {
-    background-color: #12171d;
 
     .mobile_header {
       display: none;
@@ -72,7 +76,7 @@ body {
                 text-decoration: none;
                 color: #ffffff;
                 padding: 8px 16px;
-                text-align: end;
+                text-align: start;
 
                 // box-shadow: 10px -2px 5px -6px rgba(0,0,0,0.75);
                 // border-radius: 5px;
@@ -128,16 +132,16 @@ body {
           margin-right: 0.3em;
 
           a {
-            width: 90px;
+            min-width: 6.8rem;
             text-decoration: none;
             color: #ffffff;
             padding: 6px 10px;
-            border: 1px solid brown;
+            border: 1px solid #E5007A;
             font-weight: 300;
             border-radius: 4px;
             font-size: 17px;
             transition: 0.5s;
-            background: linear-gradient(to right, transparent 0%, #141414 51%, brown 100%);
+            background: linear-gradient(to right, transparent 0%, #141414 51%, #FC4C9E 100%);
             text-align: center;
             background-size: 200% auto;
             display: block;
@@ -164,7 +168,8 @@ body {
             font-weight: 300;
             border-radius: 4px;
             font-size: 17px;
-            background: linear-gradient(to right, #ff0084 0%, #33001b 51%, #ff0084 100%);
+            // background-color: #ff0084;
+            background: linear-gradient(to right, #C40061 0%, #C40061 51%, #FF88C9 100%);
             text-align: center;
             transition: 0.5s;
             background-size: 200% auto;
@@ -211,7 +216,7 @@ body {
 
       .hiring_form_link:hover {
         button {
-          background: #ff0084;
+          background: #E5007A;
           color: #fff;
         }
       }
@@ -266,10 +271,10 @@ body {
           justify-content: center;
 
           &>div {
-            width: 30px;
-            height: 30px;
+            width: 3rem;
+            height: 3rem;
             margin: 1.2vw;
-            padding: 10px;
+            padding: 0.7rem;
             background-color: #ffffff;
             border-radius: 50%;
             display: flex;
@@ -283,9 +288,8 @@ body {
             }
 
             a {
-              height: 100%;
-
               img {
+                margin-top: 0.3rem;
                 width: 100%;
                 height: 100%;
               }
@@ -298,6 +302,7 @@ body {
 
   // about
   .about_section {
+    background-color: #fff;
     padding: 30px 50px 100px 50px;
     display: flex;
     flex-direction: column;
@@ -335,8 +340,9 @@ body {
       background-color: #ffffff;
       position: relative;
       width: fit-content;
-      padding: 11px 18px;
-      border-radius: 10px;
+      padding: 11px 9px;
+      border-radius: 6px;
+      margin-left: 1em;
 
       h1 {
         font-size: 31px;
@@ -365,11 +371,13 @@ body {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      height: 250px;
+      height: 220px;
       margin-left: 259px;
       margin-top: 48px;
+      margin-right: 1em;
       background-color: #ffffff;
-      border-radius: 20px;
+      border-radius: 10px;
+      padding: 0 1.5em;
 
       a {
         text-decoration: none;
@@ -407,6 +415,33 @@ body {
   }
 }
 
+// #live_chains_section {
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 1rem;
+
+//   >.chain_card {
+//     flex: 1;
+//     background: #fff;
+//     padding: 1.6rem;
+//     color: #333;
+//     border-radius: 0.5rem;
+//     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+//     text-align: center;
+
+//   }
+
+//   >.chain_card:hover {
+//     // box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+//   }
+
+//   >.chain_img {
+//     flex-basis: 48px;
+//   }
+
+// }
 
 // roadmap accordion section
 #roadmap-accordion {
@@ -476,6 +511,7 @@ body {
 
 // medium section
 .medium_section {
+
   padding-left: 4vw;
   padding-right: 4vw;
   padding-bottom: 4rem;
@@ -490,6 +526,7 @@ body {
     text-align: center;
 
     h1 {
+      color: #fff;
       margin-bottom: 50px;
       font-size: 46px;
     }
@@ -517,7 +554,7 @@ body {
 
   .blogCard {
     display: block;
-    background-color: #12171d;
+    background-color: #eee;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     border-radius: 10px;
@@ -529,9 +566,12 @@ body {
   }
 
   .blogContentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #fff;
     padding: 1px 16px;
-    height: 12vh;
+    height: 10vh;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
   }
@@ -729,8 +769,8 @@ body {
       padding-right: 30px;
 
       &>div {
-        width: 30px;
-        height: 30px;
+        width: 2.7rem;
+        height: 2.7rem;
         margin: 10px;
         padding: 10px;
         background-color: #ffffff;
@@ -825,7 +865,6 @@ body {
 // Media Queries
 
 @media screen and (max-width: 768px) {
-
   body {
 
     // background-color: #14a99f;
@@ -1146,7 +1185,6 @@ body {
       }
     }
   }
-
 }
 
 @media screen and (max-width: 601px) {
@@ -1155,10 +1193,9 @@ body {
       grid-template-columns: 1fr !important;
     }
   }
-
 }
 
-//large and up (mobile-first)
+//medium and up (mobile-first)
 @media screen and (min-width: 600px) {
   .hiring {
     width: 100%;
@@ -1173,7 +1210,7 @@ body {
       display: table;
       width: 100%;
       margin: 0 auto;
-      height: 60vh;
+      height: 55vh;
       max-height: 1000px;
       overflow: hidden;
       padding-bottom: 0;
@@ -1247,7 +1284,7 @@ body {
         font-size: 2rem;
         transition: all .3s cubic-bezier(.8, .16, .42, .89);
         color: #fff;
-        transform: translateY(22vh);
+        transform: translateY(19.5vh);
       }
 
       >.item>.title {
@@ -1281,7 +1318,6 @@ body {
 
     }
   }
-
 }
 
 
