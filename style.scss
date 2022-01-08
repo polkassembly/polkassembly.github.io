@@ -956,38 +956,11 @@ body {
             }
           }
 
-          .mobile_parent_2 {}
         }
       }
 
       .header_navigation {
         display: none;
-
-        .header_logo {
-          img {}
-        }
-
-        .header_navigation_container {
-
-          &>a,
-          div {}
-
-          &>a:hover,
-          div:hover {}
-
-          .navigation_treasury {
-            a {}
-
-            img {}
-          }
-
-          .navigation_sign_up,
-          .navigation_sign_in {
-            button {}
-
-            button:hover {}
-          }
-        }
       }
 
       .header_container {
@@ -1021,20 +994,6 @@ body {
         .header_parent_2 {
           .header_child_1 {
             display: none;
-
-            img {}
-          }
-
-          .line_break {}
-
-          .header_child_2 {
-            &>div {
-              &:hover {}
-
-              a {
-                img {}
-              }
-            }
           }
         }
       }
@@ -1071,12 +1030,6 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      .live_chains_heading {
-        h1 {}
-
-        img {}
-      }
 
       .chain-white {
         display: none;
@@ -1121,34 +1074,6 @@ body {
 
       .medium_blogs_container {
         grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    // contact section
-    .contact_section {
-      h1 {}
-
-      button {}
-
-      button:hover {}
-    }
-
-    // testimonials section
-    .testimonial_sections {
-      .testimonial_heading {
-        h1 {}
-      }
-
-      .testimonials {
-        .parent {
-          .image_container {}
-
-          .description {}
-        }
-
-        .badge {
-          img {}
-        }
       }
     }
 
@@ -1197,8 +1122,6 @@ body {
 
           .contact_us_button {
             a {
-              button {}
-
               button:hover {
                 transform: scale(1);
               }
@@ -1215,22 +1138,10 @@ body {
           flex-wrap: wrap;
           grid-gap: 8px;
           padding: 10px;
-
-          a {}
-
-          a:hover {}
         }
 
         .footer_social_links {
           padding-right: 0;
-
-          &>div {
-            &:hover {}
-
-            a {
-              img {}
-            }
-          }
         }
       }
     }
