@@ -1262,7 +1262,7 @@ body {
       display: table;
       width: 100%;
       margin: 0 auto;
-      height: 70vh;
+      height: 60vh;
       max-height: 1000px;
       overflow: hidden;
       padding-bottom: 0;
@@ -1335,39 +1335,17 @@ body {
         font-weight: 700;
         font-size: 2rem;
         transition: all .3s cubic-bezier(.8, .16, .42, .89);
-        color: #C40061;
+        color: #fff;
+        transform: translateY(22vh);
       }
 
       >.item>.title {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        height: 1.5rem;
-        width: 200%;
-        text-align: left;
-        transform-origin: 0 50%;
-        transform: scaleX(0);
-        transition-duration: 0s;
-        font-size: 1.2rem;
-
-        div::after {
-          content: ""
-        }
-      }
-
-      >.item>.title>.text {
-        position: absolute;
-        left: 2rem;
-        bottom: 0;
-        white-space: nowrap;
-        transition: all .2s cubic-bezier(.8, .16, .42, .89);
-        // transition-duration: 0s;
-
+        display: none;
       }
 
       >.item>.content {
         position: absolute;
-        top: 50%;
+        top: 55%;
         left: 50%;
         width: 200%;
         height: auto;
@@ -1384,7 +1362,7 @@ body {
 
             &:not(:last-of-type) {
               padding-bottom: 0.7rem;
-              border-bottom: 1px solid rgba(255, 255, 255, 0.37);
+              border-bottom: none;
             }
           }
         }

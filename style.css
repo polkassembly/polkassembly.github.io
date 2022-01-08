@@ -1268,7 +1268,7 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     display: table;
     width: 100%;
     margin: 0 auto;
-    height: 70vh;
+    height: 60vh;
     max-height: 1000px;
     overflow: hidden;
     padding-bottom: 0;
@@ -1340,37 +1340,16 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     font-size: 2rem;
     -webkit-transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
     transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
-    color: #C40061;
+    color: #fff;
+    -webkit-transform: translateY(22vh);
+            transform: translateY(22vh);
   }
   #roadmap-accordion .custom-accordion > .item > .title {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    height: 1.5rem;
-    width: 200%;
-    text-align: left;
-    -webkit-transform-origin: 0 50%;
-            transform-origin: 0 50%;
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-    -webkit-transition-duration: 0s;
-            transition-duration: 0s;
-    font-size: 1.2rem;
-  }
-  #roadmap-accordion .custom-accordion > .item > .title div::after {
-    content: "";
-  }
-  #roadmap-accordion .custom-accordion > .item > .title > .text {
-    position: absolute;
-    left: 2rem;
-    bottom: 0;
-    white-space: nowrap;
-    -webkit-transition: all 0.2s cubic-bezier(0.8, 0.16, 0.42, 0.89);
-    transition: all 0.2s cubic-bezier(0.8, 0.16, 0.42, 0.89);
+    display: none;
   }
   #roadmap-accordion .custom-accordion > .item > .content {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     width: 200%;
     height: auto;
@@ -1388,7 +1367,7 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   }
   #roadmap-accordion .custom-accordion > .item > .content .milestones_list li:not(:last-of-type) {
     padding-bottom: 0.7rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.37);
+    border-bottom: none;
   }
 }
 
