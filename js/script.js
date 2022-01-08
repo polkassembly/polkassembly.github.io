@@ -3,10 +3,15 @@ const menuIcon2 = document.querySelector(".menu_icon_2");
 const parent2 = document.querySelector(".mobile_parent_2");
 const body = document.querySelector("body");
 const navigationGovernance = document.querySelector(".navigation_governance");
-const navigationGovernanceOption = document.querySelector(".navigation_governance_option");
-const navigationGovernanceList = document.querySelector(".navigation_governance_list");
-const navigationGovernanceChild = document.querySelector(".navigation_governance_child");
-
+const navigationGovernanceOption = document.querySelector(
+  ".navigation_governance_option"
+);
+const navigationGovernanceList = document.querySelector(
+  ".navigation_governance_list"
+);
+const navigationGovernanceChild = document.querySelector(
+  ".navigation_governance_child"
+);
 
 const navigationGovernanceParent = document.querySelector(
   ".navigation_governance_parent"
@@ -26,6 +31,10 @@ const medium_blogs_container = document.querySelector(
 
 const cookiePopupCloseBtn = document.querySelector("#close-cookie-popup");
 const cookieConsentPopupDiv = document.querySelector("#cookie-consent-popup");
+
+const arr_roadmap_items = document.querySelectorAll(
+  ".custom-accordion > .quarter_item"
+);
 
 // side-menu slides from left
 menuIcon.addEventListener("click", () => {
@@ -54,20 +63,19 @@ navigationGovernanceParent.addEventListener("click", () => {
 });
 
 // opens governance chains
-navigationGovernanceList.addEventListener('mouseover', () => {
-  navigationGovernanceChild.classList.remove('no_display');
+navigationGovernanceList.addEventListener("mouseover", () => {
+  navigationGovernanceChild.classList.remove("no_display");
 });
 
 // closes governance chains
-navigationGovernanceList.addEventListener('mouseleave', () => {
-  navigationGovernanceChild.classList.add('no_display');
+navigationGovernanceList.addEventListener("mouseleave", () => {
+  navigationGovernanceChild.classList.add("no_display");
 });
 
 // closes cookie popup
 cookiePopupCloseBtn.addEventListener("click", () => {
   cookieConsentPopupDiv.classList.add("no_display");
 });
-
 
 // fetch medium blog posts
 const fetchMediumBlogs = async (name) => {
@@ -113,5 +121,19 @@ fetchMediumBlogs("@PolkAssembly").then((res) => {
   res.items.forEach((blogPost) => {
     const blogCard = createBlogCardElement(blogPost);
     medium_blogs_container.appendChild(blogCard);
+  });
+});
+
+/*
+  State for accordion
+*/
+var roadmapLastActiveItem = document.querySelector("#roadmap_q1"); //default is q1 panel (via html)
+arr_roadmap_items.forEach((item) => {
+  // remove active state class from last roadmapLastActiveItem
+  //assign latest roadmapLastActiveItem
+  item.addEventListener("mouseover", () => {
+    roadmapLastActiveItem.classList.remove("roadmap_active");
+    roadmapLastActiveItem = item;
+    roadmapLastActiveItem.classList.add("roadmap_active");
   });
 });

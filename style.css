@@ -1,10 +1,12 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   margin: 0px;
   padding: 0px;
   font-family: 'Roboto', sans-serif;
-}
-
-body .header {
   background-color: #12171d;
 }
 
@@ -97,7 +99,7 @@ body .header .header_navigation .header_navigation_container ul .navigation_gove
   text-decoration: none;
   color: #ffffff;
   padding: 8px 16px;
-  text-align: end;
+  text-align: start;
 }
 
 body .header .header_navigation .header_navigation_container > a .navigation_governance_child .nav_gov_list_card li a,
@@ -152,18 +154,18 @@ body .header .header_navigation .header_navigation_container .navigation_hiring 
 }
 
 body .header .header_navigation .header_navigation_container .navigation_hiring a {
-  width: 90px;
+  min-width: 6.8rem;
   text-decoration: none;
   color: #ffffff;
   padding: 6px 10px;
-  border: 1px solid brown;
+  border: 1px solid #E5007A;
   font-weight: 300;
   border-radius: 4px;
   font-size: 17px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(51%, #141414), to(brown));
-  background: linear-gradient(to right, transparent 0%, #141414 51%, brown 100%);
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(51%, #141414), to(#FC4C9E));
+  background: linear-gradient(to right, transparent 0%, #141414 51%, #FC4C9E 100%);
   text-align: center;
   background-size: 200% auto;
   display: block;
@@ -192,8 +194,8 @@ body .header .header_navigation .header_navigation_container .navigation_sign_in
   font-weight: 300;
   border-radius: 4px;
   font-size: 17px;
-  background: -webkit-gradient(linear, left top, right top, from(#ff0084), color-stop(51%, #33001b), to(#ff0084));
-  background: linear-gradient(to right, #ff0084 0%, #33001b 51%, #ff0084 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#C40061), color-stop(51%, #C40061), to(#FF88C9));
+  background: linear-gradient(to right, #C40061 0%, #C40061 51%, #FF88C9 100%);
   text-align: center;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -241,7 +243,7 @@ body .header .hiring .hiring_form_link button {
 }
 
 body .header .hiring .hiring_form_link:hover button {
-  background: #ff0084;
+  background: #E5007A;
   color: #fff;
 }
 
@@ -295,10 +297,10 @@ body .header .header_container .header_parent_2 .header_child_2 {
 }
 
 body .header .header_container .header_parent_2 .header_child_2 > div {
-  width: 30px;
-  height: 30px;
+  width: 3rem;
+  height: 3rem;
   margin: 1.2vw;
-  padding: 10px;
+  padding: 0.7rem;
   background-color: #ffffff;
   border-radius: 50%;
   display: -webkit-box;
@@ -320,16 +322,14 @@ body .header .header_container .header_parent_2 .header_child_2 > div:hover {
           transform: scale(1.1);
 }
 
-body .header .header_container .header_parent_2 .header_child_2 > div a {
-  height: 100%;
-}
-
 body .header .header_container .header_parent_2 .header_child_2 > div a img {
+  margin-top: 0.3rem;
   width: 100%;
   height: 100%;
 }
 
 body .about_section {
+  background-color: #fff;
   padding: 30px 50px 100px 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -376,8 +376,9 @@ body .live_chains_section .live_chains_heading {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 11px 18px;
-  border-radius: 10px;
+  padding: 11px 9px;
+  border-radius: 6px;
+  margin-left: 1em;
 }
 
 body .live_chains_section .live_chains_heading h1 {
@@ -412,11 +413,13 @@ body .live_chains_section .live_chains_info {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 250px;
+  height: 220px;
   margin-left: 259px;
   margin-top: 48px;
+  margin-right: 1em;
   background-color: #ffffff;
-  border-radius: 20px;
+  border-radius: 10px;
+  padding: 0 1.5em;
 }
 
 body .live_chains_section .live_chains_info a {
@@ -463,170 +466,65 @@ body .live_chains_section .live_chains_info a .bifost:hover {
           transform: scale(0.97);
 }
 
-.roadmap_section {
-  padding: 40px 80px;
+#roadmap-accordion {
+  margin-top: 15vh;
+  margin-bottom: 10vh;
 }
 
-.roadmap_section .roadmap_heading {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 40px;
+#roadmap-accordion .custom-accordion {
+  background: #12171d;
+  color: #FFFFFF;
+  padding-bottom: 2rem;
 }
 
-.roadmap_section .roadmap_heading h1 {
-  margin: 0;
-  margin-bottom: 15px;
-  font-size: 46px;
-}
-
-.roadmap_section .roadmap_heading h2 {
-  margin: 0;
-  font-size: 28px;
-}
-
-.roadmap_section .roadmap_container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-  overflow: auto;
-}
-
-.roadmap_section .roadmap_container .roadmap_parent_1,
-.roadmap_section .roadmap_container .roadmap_parent_2,
-.roadmap_section .roadmap_container .roadmap_parent_3,
-.roadmap_section .roadmap_container .roadmap_parent_4 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-  padding: 20px;
-  margin: 0 30px;
-  border-radius: 20px;
-  -webkit-box-shadow: 0px 0px 2px 2px gainsboro;
-          box-shadow: 0px 0px 2px 2px gainsboro;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.roadmap_section .roadmap_container .roadmap_parent_1 .q1,
-.roadmap_section .roadmap_container .roadmap_parent_1 .q2,
-.roadmap_section .roadmap_container .roadmap_parent_1 .q3,
-.roadmap_section .roadmap_container .roadmap_parent_1 .q4,
-.roadmap_section .roadmap_container .roadmap_parent_2 .q1,
-.roadmap_section .roadmap_container .roadmap_parent_2 .q2,
-.roadmap_section .roadmap_container .roadmap_parent_2 .q3,
-.roadmap_section .roadmap_container .roadmap_parent_2 .q4,
-.roadmap_section .roadmap_container .roadmap_parent_3 .q1,
-.roadmap_section .roadmap_container .roadmap_parent_3 .q2,
-.roadmap_section .roadmap_container .roadmap_parent_3 .q3,
-.roadmap_section .roadmap_container .roadmap_parent_3 .q4,
-.roadmap_section .roadmap_container .roadmap_parent_4 .q1,
-.roadmap_section .roadmap_container .roadmap_parent_4 .q2,
-.roadmap_section .roadmap_container .roadmap_parent_4 .q3,
-.roadmap_section .roadmap_container .roadmap_parent_4 .q4 {
-  background-color: #ffffff;
-  padding: 10px;
-  border-radius: 50%;
-}
-
-.roadmap_section .roadmap_container .roadmap_parent_1 .q1 h3,
-.roadmap_section .roadmap_container .roadmap_parent_1 .q2 h3,
-.roadmap_section .roadmap_container .roadmap_parent_1 .q3 h3,
-.roadmap_section .roadmap_container .roadmap_parent_1 .q4 h3,
-.roadmap_section .roadmap_container .roadmap_parent_2 .q1 h3,
-.roadmap_section .roadmap_container .roadmap_parent_2 .q2 h3,
-.roadmap_section .roadmap_container .roadmap_parent_2 .q3 h3,
-.roadmap_section .roadmap_container .roadmap_parent_2 .q4 h3,
-.roadmap_section .roadmap_container .roadmap_parent_3 .q1 h3,
-.roadmap_section .roadmap_container .roadmap_parent_3 .q2 h3,
-.roadmap_section .roadmap_container .roadmap_parent_3 .q3 h3,
-.roadmap_section .roadmap_container .roadmap_parent_3 .q4 h3,
-.roadmap_section .roadmap_container .roadmap_parent_4 .q1 h3,
-.roadmap_section .roadmap_container .roadmap_parent_4 .q2 h3,
-.roadmap_section .roadmap_container .roadmap_parent_4 .q3 h3,
-.roadmap_section .roadmap_container .roadmap_parent_4 .q4 h3 {
-  margin: 0;
-  font-size: 40px;
-  padding: 30px;
-  border-radius: 50%;
-  -webkit-box-shadow: 2px 2px 3px 2px gainsboro;
-          box-shadow: 2px 2px 3px 2px gainsboro;
-}
-
-.roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_heading h3,
-.roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_heading h3,
-.roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_heading h3,
-.roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_heading h3 {
+#roadmap-accordion .custom-accordion > .item {
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  max-width: 30rem;
   text-align: center;
-  color: aliceblue;
-  font-weight: 400;
 }
 
-.roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_content p,
-.roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_content p,
-.roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_content p,
-.roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_content p {
+#roadmap-accordion .custom-accordion > .item:first-of-type {
+  background: #E5007A;
   text-align: center;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: aliceblue;
+  margin-bottom: 2rem;
 }
 
-.roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_content .extra_content,
-.roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_content .extra_content,
-.roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_content .extra_content,
-.roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_content .extra_content {
-  font-style: italic;
-  color: white;
-  font-size: 15px;
+#roadmap-accordion .custom-accordion > .item:first-of-type > .icon {
+  color: #fff;
 }
 
-.roadmap_section .roadmap_container .roadmap_parent_1 {
-  background: -webkit-gradient(linear, left top, left bottom, from(#b23dc9), to(#8138be));
-  background: linear-gradient(#b23dc9, #8138be);
+#roadmap-accordion .custom-accordion > .item > .icon {
+  color: #E5007A;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
 }
 
-.roadmap_section .roadmap_container .roadmap_parent_2 {
-  background: -webkit-gradient(linear, left top, left bottom, from(#3830ac), to(#0a77d0));
-  background: linear-gradient(#3830ac, #0a77d0);
+#roadmap-accordion .custom-accordion > .item > .title {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.735);
 }
 
-.roadmap_section .roadmap_container .roadmap_parent_3 {
-  background: -webkit-gradient(linear, left top, left bottom, from(#02a2ea), to(#0eabb8));
-  background: linear-gradient(#02a2ea, #0eabb8);
+#roadmap-accordion .custom-accordion > .item > .title div::after {
+  content: " :";
 }
 
-.roadmap_section .roadmap_container .roadmap_parent_4 {
-  background: -webkit-gradient(linear, left top, left bottom, from(#14a99f), to(#20a472));
-  background: linear-gradient(#14a99f, #20a472);
+#roadmap-accordion .custom-accordion > .item > .content .milestones_list {
+  list-style-type: none;
+  text-align: center;
+  padding-left: 0;
 }
 
-.roadmap_section .roadmap_container .roadmap_parent_1:hover,
-.roadmap_section .roadmap_container .roadmap_parent_2:hover,
-.roadmap_section .roadmap_container .roadmap_parent_3:hover,
-.roadmap_section .roadmap_container .roadmap_parent_4:hover {
-  -webkit-transform: scale(0.99);
-          transform: scale(0.99);
+#roadmap-accordion .custom-accordion > .item > .content .milestones_list li {
+  margin: 1rem 0.1rem;
+  font-size: 0.9rem;
 }
 
-.roadmap_section .roadmap_container::-webkit-scrollbar {
-  display: none;
+#roadmap-accordion .custom-accordion > .item > .content .milestones_list li:not(:last-of-type) {
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.144);
 }
 
 .medium_section {
@@ -646,6 +544,7 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 }
 
 .medium_section .medium_heading h1 {
+  color: #fff;
   margin-bottom: 50px;
   font-size: 46px;
 }
@@ -675,7 +574,7 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 
 .medium_section .blogCard {
   display: block;
-  background-color: #12171d;
+  background-color: #eee;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.3s;
@@ -690,9 +589,18 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 }
 
 .medium_section .blogContentContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #fff;
   padding: 1px 16px;
-  height: 12vh;
+  height: 10vh;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -952,8 +860,8 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 }
 
 .footer .footer_navigation .footer_social_links > div {
-  width: 30px;
-  height: 30px;
+  width: 2.7rem;
+  height: 2.7rem;
   margin: 10px;
   padding: 10px;
   background-color: #ffffff;
@@ -1045,6 +953,10 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
   cursor: pointer;
+}
+
+.no_display {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -1144,7 +1056,8 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links ul li:last-child {
     padding-bottom: 0;
   }
-  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links a:hover, body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links ul > li:hover {
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links a:hover,
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links ul > li:hover {
     color: #ff0084;
   }
   body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up,
@@ -1273,43 +1186,6 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  body .roadmap_section {
-    padding: 20px 0;
-  }
-  body .roadmap_section .roadmap_heading h1 {
-    font-size: 30px;
-  }
-  body .roadmap_section .roadmap_heading h2 {
-    font-size: 24px;
-  }
-  body .roadmap_section .roadmap_container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    overflow: auto;
-    white-space: nowrap;
-  }
-  body .roadmap_section .roadmap_container .roadmap_parent_1,
-  body .roadmap_section .roadmap_container .roadmap_parent_2,
-  body .roadmap_section .roadmap_container .roadmap_parent_3,
-  body .roadmap_section .roadmap_container .roadmap_parent_4 {
-    margin: 0 10px;
-  }
-  body .roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_content p,
-  body .roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_content p,
-  body .roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_content p,
-  body .roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_content p {
-    width: 200px;
-  }
-  body .roadmap_section .roadmap_container .roadmap_parent_1 .roadmap_description .description_content .extra_content,
-  body .roadmap_section .roadmap_container .roadmap_parent_2 .roadmap_description .description_content .extra_content,
-  body .roadmap_section .roadmap_container .roadmap_parent_3 .roadmap_description .description_content .extra_content,
-  body .roadmap_section .roadmap_container .roadmap_parent_4 .roadmap_description .description_content .extra_content {
-    white-space: initial;
-    font-style: italic;
-    color: white;
-    font-size: 15px;
-  }
   body .medium_section {
     padding: 2vw 4vw;
   }
@@ -1400,8 +1276,112 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   }
 }
 
-.no_display {
-  display: none;
+@media screen and (min-width: 800px) and (min-height: 270px) {
+  #roadmap-accordion .custom-accordion {
+    display: table;
+    width: 100%;
+    margin: 0 auto;
+    height: 55vh;
+    max-height: 1000px;
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+  #roadmap-accordion .custom-accordion > .item {
+    display: table-cell;
+    position: relative;
+    height: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    -webkit-transform-origin: 0 50%;
+            transform-origin: 0 50%;
+    -webkit-transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
+    transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
+  }
+  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type), #roadmap-accordion .custom-accordion > .item.roadmap_active {
+    -webkit-transform: scaleX(1.5) translateX(-50px);
+            transform: scaleX(1.5) translateX(-50px);
+    background: #C40061;
+  }
+  #roadmap-accordion .custom-accordion > .item:hover + .item:first-of-type {
+    opacity: .1;
+    background: #C40061;
+  }
+  #roadmap-accordion .custom-accordion > .item:not(:first-of-type) {
+    border-right: 1px solid #C40061;
+  }
+  #roadmap-accordion .custom-accordion > .item:first-of-type {
+    background: #12171d;
+    width: 25%;
+    border-radius: 0;
+  }
+  #roadmap-accordion .custom-accordion > .item:first-of-type > .content {
+    opacity: 1;
+    -webkit-transform: translateX(-57%) translateY(-50%);
+            transform: translateX(-57%) translateY(-50%);
+    font-size: 1.6rem;
+  }
+  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type) > .icon,
+  #roadmap-accordion .custom-accordion > .item.roadmap_active > .icon {
+    -webkit-transform: scaleX(0.7);
+            transform: scaleX(0.7);
+    color: #fff;
+  }
+  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type) > .title,
+  #roadmap-accordion .custom-accordion > .item.roadmap_active > .title {
+    -webkit-transform: scaleX(0.7) translateX(-50%);
+            transform: scaleX(0.7) translateX(-50%);
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
+    text-align: center;
+    padding: 0;
+    font-weight: 200;
+  }
+  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type) > .title > .text,
+  #roadmap-accordion .custom-accordion > .item.roadmap_active > .title > .text {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
+    left: 50%;
+  }
+  #roadmap-accordion .custom-accordion > .item:hover:not(:first-of-type) > .content,
+  #roadmap-accordion .custom-accordion > .item.roadmap_active > .content {
+    opacity: 1;
+  }
+  #roadmap-accordion .custom-accordion > .item > .icon {
+    font-weight: 700;
+    font-size: 2rem;
+    -webkit-transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
+    transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
+    color: #fff;
+    -webkit-transform: translateY(19.5vh);
+            transform: translateY(19.5vh);
+  }
+  #roadmap-accordion .custom-accordion > .item > .title {
+    display: none;
+  }
+  #roadmap-accordion .custom-accordion > .item > .content {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 200%;
+    height: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%) scaleX(0.7);
+            transform: translateX(-50%) translateY(-50%) scaleX(0.7);
+    -webkit-transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
+    transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
+    opacity: 0;
+    padding: 1rem;
+    pointer-events: none;
+  }
+  #roadmap-accordion .custom-accordion > .item > .content .milestones_list li {
+    margin: 1rem 6em;
+    font-size: 1.1rem;
+  }
+  #roadmap-accordion .custom-accordion > .item > .content .milestones_list li:not(:last-of-type) {
+    padding-bottom: 0.7rem;
+    border-bottom: none;
+  }
 }
 
 @-webkit-keyframes cookie-popup-in {
