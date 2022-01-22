@@ -1,80 +1,80 @@
-const menuIcon = document.querySelector(".menu_icon");
-const menuIcon2 = document.querySelector(".menu_icon_2");
-const parent2 = document.querySelector(".mobile_parent_2");
-const body = document.querySelector("body");
-const navigationGovernance = document.querySelector(".navigation_governance");
+const menuIcon = document.querySelector('.menu_icon');
+const menuIcon2 = document.querySelector('.menu_icon_2');
+const parent2 = document.querySelector('.mobile_parent_2');
+const body = document.querySelector('body');
+const navigationGovernance = document.querySelector('.navigation_governance');
 const navigationGovernanceOption = document.querySelector(
-  ".navigation_governance_option"
+  '.navigation_governance_option'
 );
 const navigationGovernanceList = document.querySelector(
-  ".navigation_governance_list"
+  '.navigation_governance_list'
 );
 const navigationGovernanceChild = document.querySelector(
-  ".navigation_governance_child"
+  '.navigation_governance_child'
 );
 
 const navigationGovernanceParent = document.querySelector(
-  ".navigation_governance_parent"
+  '.navigation_governance_parent'
 );
 
 const navigationGovernanceUnselect = document.querySelector(
-  ".navigation_governance_unselect"
+  '.navigation_governance_unselect'
 );
 
 const mobileHeader = document.querySelector(
-  ".mobile_header_navigation_container"
+  '.mobile_header_navigation_container'
 );
 
 const medium_blogs_container = document.querySelector(
-  ".medium_blogs_container"
+  '.medium_blogs_container'
 );
 
-const cookiePopupCloseBtn = document.querySelector("#close-cookie-popup");
-const cookieConsentPopupDiv = document.querySelector("#cookie-consent-popup");
+const cookiePopupCloseBtn = document.querySelector('#close-cookie-popup');
+const cookieConsentPopupDiv = document.querySelector('#cookie-consent-popup');
 
 const arr_roadmap_items = document.querySelectorAll(
-  ".custom-accordion > .quarter_item"
+  '.custom-accordion > .quarter_item'
 );
 
 // side-menu slides from left
-menuIcon.addEventListener("click", () => {
-  mobileHeader.style.transform = "translateX(0)";
-  menuIcon.style.display = "none";
-  menuIcon2.style.display = "block";
+menuIcon.addEventListener('click', () => {
+  mobileHeader.style.transform = 'translateX(0)';
+  menuIcon.style.display = 'none';
+  menuIcon2.style.display = 'block';
 });
 
 // side-menu slides to left
-parent2.addEventListener("click", () => {
-  mobileHeader.style.transform = "translateX(-100%)";
-  menuIcon.style.display = "block";
-  menuIcon2.style.display = "none";
+parent2.addEventListener('click', () => {
+  mobileHeader.style.transform = 'translateX(-100%)';
+  menuIcon.style.display = 'block';
+  menuIcon2.style.display = 'none';
 });
 
 // list opens on governance click
-navigationGovernanceUnselect.addEventListener("click", () => {
-  navigationGovernance.classList.remove("no_display");
-  navigationGovernanceUnselect.classList.add("no_display");
+navigationGovernanceUnselect.addEventListener('click', () => {
+  navigationGovernance.classList.remove('no_display');
+  navigationGovernanceUnselect.classList.add('no_display');
 });
 
 // list closes on governance click
-navigationGovernanceParent.addEventListener("click", () => {
-  navigationGovernance.classList.add("no_display");
-  navigationGovernanceUnselect.classList.remove("no_display");
+navigationGovernanceParent.addEventListener('click', () => {
+  navigationGovernance.classList.add('no_display');
+  navigationGovernanceUnselect.classList.remove('no_display');
 });
 
 // opens governance chains
-navigationGovernanceList.addEventListener("mouseover", () => {
-  navigationGovernanceChild.classList.remove("no_display");
+navigationGovernanceList.addEventListener('mouseover', () => {
+  navigationGovernanceChild.classList.remove('no_display');
 });
 
 // closes governance chains
-navigationGovernanceList.addEventListener("mouseleave", () => {
-  navigationGovernanceChild.classList.add("no_display");
+navigationGovernanceList.addEventListener('mouseleave', () => {
+  navigationGovernanceChild.classList.add('no_display');
 });
 
 // closes cookie popup
-cookiePopupCloseBtn.addEventListener("click", () => {
-  cookieConsentPopupDiv.classList.add("no_display");
+cookiePopupCloseBtn.addEventListener('click', () => {
+  cookieConsentPopupDiv.classList.add('no_display');
 });
 
 // fetch medium blog posts
@@ -85,16 +85,24 @@ const fetchMediumBlogs = async (name) => {
   return await res.json();
 };
 
+// truncated the length
+const truncate = (str, length) => {
+  if (str.length > length) {
+    return str.substring(0, length) + '...';
+  }
+  return str;
+};
+
 //populate medium_section with blog cards
-fetchMediumBlogs("@PolkAssembly").then((res) => {
+fetchMediumBlogs('@PolkAssembly').then((res) => {
   function createBlogCardElement(blogPost) {
     //create
-    const cardAnchor = document.createElement("A");
-    const blogCard = document.createElement("DIV"); //.blogCard
-    const blogThumbnail = document.createElement("IMG"); //.blogThumbnail
-    const blogContentContainer = document.createElement("DIV"); //.blogContentContainer
-    const blogTitle = document.createElement("H4"); //.blogContentContainer>h4
-    const blogContent = document.createElement("P"); //.blogContentContainer>p
+    const cardAnchor = document.createElement('A');
+    const blogCard = document.createElement('DIV'); //.blogCard
+    const blogThumbnail = document.createElement('IMG'); //.blogThumbnail
+    const blogContentContainer = document.createElement('DIV'); //.blogContentContainer
+    const blogTitle = document.createElement('H4'); //.blogContentContainer>h4
+    const blogContent = document.createElement('P'); //.blogContentContainer>p
 
     //structure
     cardAnchor.appendChild(blogCard);
@@ -104,15 +112,15 @@ fetchMediumBlogs("@PolkAssembly").then((res) => {
     blogContentContainer.appendChild(blogContent);
 
     //style
-    blogCard.className = "blogCard";
-    blogThumbnail.className = "blogThumbnail";
-    blogContentContainer.className = "blogContentContainer";
+    blogCard.className = 'blogCard';
+    blogThumbnail.className = 'blogThumbnail';
+    blogContentContainer.className = 'blogContentContainer';
 
     //populate
-    cardAnchor.setAttribute("href", blogPost.link);
-    cardAnchor.setAttribute("target", "_blank");
-    blogThumbnail.setAttribute("src", blogPost.thumbnail);
-    blogTitle.innerText = blogPost.title;
+    cardAnchor.setAttribute('href', blogPost.link);
+    cardAnchor.setAttribute('target', '_blank');
+    blogThumbnail.setAttribute('src', blogPost.thumbnail);
+    blogTitle.innerText = truncate(blogPost.title, 40);
     // blogContent.innerHTML = blogPost.content;
 
     return cardAnchor;
@@ -127,13 +135,13 @@ fetchMediumBlogs("@PolkAssembly").then((res) => {
 /*
   State for accordion
 */
-var roadmapLastActiveItem = document.querySelector("#roadmap_q1"); //default is q1 panel (via html)
+var roadmapLastActiveItem = document.querySelector('#roadmap_q1'); //default is q1 panel (via html)
 arr_roadmap_items.forEach((item) => {
   // remove active state class from last roadmapLastActiveItem
   //assign latest roadmapLastActiveItem
-  item.addEventListener("mouseover", () => {
-    roadmapLastActiveItem.classList.remove("roadmap_active");
+  item.addEventListener('mouseover', () => {
+    roadmapLastActiveItem.classList.remove('roadmap_active');
     roadmapLastActiveItem = item;
-    roadmapLastActiveItem.classList.add("roadmap_active");
+    roadmapLastActiveItem.classList.add('roadmap_active');
   });
 });

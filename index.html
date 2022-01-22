@@ -30,9 +30,9 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
+      gtag('js', new Date());
 
-      gtag("config", "G-E0ERLX91JE");
+      gtag('config', 'G-E0ERLX91JE');
     </script>
   </head>
   <body>
@@ -490,14 +490,22 @@
         <h1>Latest Medium Posts</h1>
       </div>
 
-      <div class="medium_blogs_container">
-        <!-- <div class="blogCard">
-          <img class="blogThumbnail" src="" alt="Thumbnail" style="">
-          <div class="blogContentContainer">
-            <h4><b>Title</b></h4>
-            <p>Architect & Engineer</p>
+      <div class="medium_blogs_wrapper">
+        <div class="medium_blogs_container">
+          <div class="prev_container">
+            <i class="fas fa-arrow-circle-left"></i>
           </div>
-        </div> -->
+          <div class="next_container">
+            <i class="fas fa-arrow-circle-right"></i>
+          </div>
+          <!-- <div class="blogCard">
+            <img class="blogThumbnail" src="" alt="Thumbnail" style="">
+            <div class="blogContentContainer">
+              <h4><b>Title</b></h4>
+              <p>Architect & Engineer</p>
+            </div>
+          </div> -->
+        </div>
       </div>
     </section>
 
@@ -633,7 +641,8 @@
       </div>
     </div>
 
-    <script src="./js/script.js"></script>
-    <script src="./js/smoothScroll.js"></script>
+    <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/smoothScroll.js"></script>
+    <script type="module" src="./js/blogScroll.js"></script>
   </body>
 </html>
