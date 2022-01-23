@@ -184,6 +184,7 @@ body .header .header_navigation .header_navigation_container .navigation_sign_in
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
 body .header .header_navigation .header_navigation_container .navigation_sign_in a {
@@ -209,6 +210,35 @@ body .header .header_navigation .header_navigation_container .navigation_sign_in
   text-decoration: none;
 }
 
+body .header .header_navigation .header_navigation_container .navigation_sign_in .navigation_sign_in_list_container {
+  position: absolute;
+  padding-top: 43px;
+}
+
+body .header .header_navigation .header_navigation_container .navigation_sign_in .navigation_sign_in_list_container .navigation_sign_in_list {
+  background-color: #12171d;
+  border-radius: 8px;
+  -webkit-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
+}
+
+body .header .header_navigation .header_navigation_container .navigation_sign_in .navigation_sign_in_list_container .navigation_sign_in_list li {
+  list-style: none;
+  padding: 8px 16px;
+}
+
+body .header .header_navigation .header_navigation_container .navigation_sign_in .navigation_sign_in_list_container .navigation_sign_in_list li a {
+  background: transparent;
+  text-align: start;
+  padding: 0;
+  font-size: 19px;
+  width: 100%;
+}
+
+body .header .header_navigation .header_navigation_container .navigation_sign_in .navigation_sign_in_list_container .navigation_sign_in_list li a:hover {
+  color: #e5007a;
+}
+
 body .header .hiring {
   width: 90%;
   margin-top: 1em;
@@ -231,7 +261,6 @@ body .header .hiring .hiring_form_link {
 }
 
 body .header .hiring .hiring_form_link button {
-  margin-top: 0.5em;
   border: none;
   background: #ffffff;
   padding: 8px 16px;
@@ -564,7 +593,7 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 
 .medium_section .prev_container,
 .medium_section .next_container {
-  font-size: 3em;
+  font-size: 2em;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -573,11 +602,11 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 }
 
 .medium_section .prev_container {
-  left: 0.2em;
+  left: 0.5em;
 }
 
 .medium_section .next_container {
-  right: 0.2em;
+  right: 0.5em;
 }
 
 .medium_section .medium_blogs_container::-webkit-scrollbar {
@@ -1153,6 +1182,9 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   }
   body .hiring {
     margin-top: 0.5rem;
+  }
+  body .hiring button {
+    margin-top: 0.5em;
   }
   body .about_section {
     padding: 20px;

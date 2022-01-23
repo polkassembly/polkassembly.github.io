@@ -36,6 +36,10 @@ const arr_roadmap_items = document.querySelectorAll(
   '.custom-accordion > .quarter_item'
 );
 
+const navigationSignInButton = document.querySelectorAll('.navigation_sign_in')[1];
+console.log(navigationSignInButton);
+const navigationSignInList = document.querySelector('.navigation_sign_in_list_container');
+
 // side-menu slides from left
 menuIcon.addEventListener('click', () => {
   mobileHeader.style.transform = 'translateX(0)';
@@ -144,4 +148,15 @@ arr_roadmap_items.forEach((item) => {
     roadmapLastActiveItem = item;
     roadmapLastActiveItem.classList.add('roadmap_active');
   });
+});
+
+
+// sign in button
+navigationSignInButton.addEventListener('mouseover', () => {
+  console.log('aaya');
+  navigationSignInList.classList.remove('no_display');
+});
+
+navigationSignInButton.addEventListener('mouseleave', () => {
+  navigationSignInList.classList.add('no_display');
 });
