@@ -1122,16 +1122,14 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links ul > li:hover {
     color: #ff0084;
   }
-  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up,
   body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in {
     padding: 10px 0;
     padding-left: 18%;
   }
-  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up a,
   body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in a {
     padding-left: 0;
+    margin-right: 45px;
   }
-  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up a button,
   body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in a button {
     background-color: #e5007a;
     color: white;
@@ -1145,10 +1143,32 @@ body .live_chains_section .live_chains_info a .bifost:hover {
     transition: all 0.2s ease-in-out;
     width: 75px;
   }
-  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_up a button:hover,
   body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in a button:hover {
     -webkit-transform: scale(0.95);
             transform: scale(0.95);
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in_accordian_down {
+    color: #ffffff;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in_list {
+    padding-left: 0;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in_list .navigation_sign_in {
+    padding: 0;
+    padding-left: 18%;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in_list .navigation_sign_in .navigation_sign_in_text {
+    padding-right: 45px;
+    color: #e5007a;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in_list .navigation_sign_in .navigation_sign_in_accordian_up {
+    color: #e5007a;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in_list li {
+    padding-left: 18%;
+  }
+  body .header .mobile_header .mobile_header_navigation_container .mobile_parent_1 .mobile_navigation_links .navigation_sign_in_list li a:hover {
+    color: #e5007a;
   }
   body .header .header_navigation {
     display: none;

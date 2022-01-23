@@ -1028,14 +1028,13 @@ body {
                 color: #ff0084;
               }
 
-              .navigation_sign_up,
               .navigation_sign_in {
                 padding: 10px 0;
                 padding-left: 18%;
 
                 a {
                   padding-left: 0;
-
+                  margin-right: 45px;
                   button {
                     background-color: #e5007a;
                     color: white;
@@ -1051,6 +1050,30 @@ body {
 
                   button:hover {
                     transform: scale(0.95);
+                  }
+                }
+              }
+              .navigation_sign_in_accordian_down {
+                color: #ffffff;
+              }
+
+              .navigation_sign_in_list {
+                padding-left: 0;
+                .navigation_sign_in {
+                  padding: 0;
+                  padding-left: 18%;
+                  .navigation_sign_in_text {
+                    padding-right: 45px;
+                    color: #e5007a;
+                  }
+                  .navigation_sign_in_accordian_up {
+                    color: #e5007a;
+                  }
+                }
+                li {
+                  padding-left: 18%;
+                  a:hover {
+                    color: #e5007a;
                   }
                 }
               }

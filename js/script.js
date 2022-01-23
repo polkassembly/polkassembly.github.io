@@ -36,9 +36,13 @@ const arr_roadmap_items = document.querySelectorAll(
   '.custom-accordion > .quarter_item'
 );
 
-const navigationSignInButton = document.querySelectorAll('.navigation_sign_in')[1];
-console.log(navigationSignInButton);
-const navigationSignInList = document.querySelector('.navigation_sign_in_list_container');
+const navigationSignInButton = document.querySelectorAll('.navigation_sign_in')[2];
+console.log('naviagtion sign in button', navigationSignInButton);
+const navigationSignInListContainer = document.querySelector('.navigation_sign_in_list_container');
+
+const navigationSignInButtonClose = document.querySelector('.navigation_sign_in_close');
+const navigationSignInList = document.querySelector('.navigation_sign_in_list');
+const navigationSignInButtonOpen = document.querySelector('.navigation_sign_in_open');
 
 // side-menu slides from left
 menuIcon.addEventListener('click', () => {
@@ -153,10 +157,21 @@ arr_roadmap_items.forEach((item) => {
 
 // sign in button
 navigationSignInButton.addEventListener('mouseover', () => {
-  console.log('aaya');
-  navigationSignInList.classList.remove('no_display');
+  navigationSignInListContainer.classList.remove('no_display');
 });
 
 navigationSignInButton.addEventListener('mouseleave', () => {
+  navigationSignInListContainer.classList.add('no_display');
+});
+
+// opens sign in list
+navigationSignInButtonClose.addEventListener('click', () => {
+  navigationSignInButtonClose.classList.add('no_display');
+  navigationSignInList.classList.remove('no_display');
+});
+
+// closes sign in list
+navigationSignInButtonOpen.addEventListener('click', () => {
   navigationSignInList.classList.add('no_display');
+  navigationSignInButtonClose.classList.remove('no_display');
 });
