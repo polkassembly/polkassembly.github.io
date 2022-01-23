@@ -359,7 +359,8 @@ body .header .header_container .header_parent_2 .header_child_2 > div a img {
 
 body .about_section {
   background-color: #fff;
-  padding: 30px 50px 100px 50px;
+  padding: 30px 50px;
+  padding-bottom: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -391,6 +392,55 @@ body .about_section .about_info p {
   font-size: 28px;
   font-weight: 300;
   margin: 10px;
+}
+
+body #recognition {
+  color: #fff;
+  padding: 2em 8vw 4em 8vw;
+  text-align: center;
+}
+
+body #recognition h1 {
+  font-size: 45px;
+  margin-bottom: 1.5em;
+}
+
+body #recognition .recognition_type {
+  margin-bottom: 2.5em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 50%;
+      grid-template-columns: 40% 50%;
+  gap: 3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: end;
+}
+
+body #recognition .recognition_type h2,
+body #recognition .recognition_type p {
+  text-align: start;
+}
+
+body #recognition .recognition_type h2 {
+  font-weight: 500;
+}
+
+body #recognition .recognition_type p {
+  font-size: 1.12rem;
+  font-weight: 300;
+  float: left;
+}
+
+body #recognition .recognition_type a {
+  font-weight: 400;
+  color: #e5007a;
+}
+
+body #recognition .recognition_type img {
+  float: right;
+  height: 10em;
 }
 
 body .live_chains_section {
@@ -1019,6 +1069,41 @@ body .live_chains_section .live_chains_info a .bifost:hover {
 
 .no_display {
   display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  #recognition {
+    padding: 2em 0 4em 0 !important;
+  }
+  #recognition .recognition_type {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: none !important;
+        grid-template-columns: none !important;
+    justify-items: center !important;
+    gap: 0 !important;
+    margin-left: 2.2em;
+    margin-right: 2.2em;
+  }
+  #recognition .recognition_type p {
+    text-align: justify !important;
+  }
+  #recognition .recognition_type h2 {
+    margin-top: 1em;
+    margin-bottom: -0.05em;
+    text-align: center !important;
+  }
+  #recognition .recognition_type img {
+    float: none !important;
+    width: 261.53px !important;
+    height: 92.3px !important;
+  }
+  #recognition .recognition_type:last-child {
+    border-top: 1px rgba(255, 255, 255, 0.267) solid;
+    padding-top: 4em;
+    margin-top: 3em;
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
