@@ -210,35 +210,6 @@ body .header .header_navigation .header_navigation_container .navigation_sign_in
   text-decoration: none;
 }
 
-body .header .header_navigation .header_navigation_container .navigation_sign_in .navigation_sign_in_list_container {
-  position: absolute;
-  padding-top: 43px;
-}
-
-body .header .header_navigation .header_navigation_container .navigation_sign_in .navigation_sign_in_list_container .navigation_sign_in_list {
-  background-color: #12171d;
-  border-radius: 8px;
-  -webkit-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.75);
-}
-
-body .header .header_navigation .header_navigation_container .navigation_sign_in .navigation_sign_in_list_container .navigation_sign_in_list li {
-  list-style: none;
-  padding: 8px 16px;
-}
-
-body .header .header_navigation .header_navigation_container .navigation_sign_in .navigation_sign_in_list_container .navigation_sign_in_list li a {
-  background: transparent;
-  text-align: start;
-  padding: 0;
-  font-size: 19px;
-  width: 100%;
-}
-
-body .header .header_navigation .header_navigation_container .navigation_sign_in .navigation_sign_in_list_container .navigation_sign_in_list li a:hover {
-  color: #e5007a;
-}
-
 body .header .hiring {
   width: 90%;
   margin-top: 1em;
@@ -510,7 +481,9 @@ body .live_chains_section .live_chains_info a .polkadot,
 body .live_chains_section .live_chains_info a .kusama,
 body .live_chains_section .live_chains_info a .moonbeam,
 body .live_chains_section .live_chains_info a .kilt,
-body .live_chains_section .live_chains_info a .bifost {
+body .live_chains_section .live_chains_info a .bifrost,
+body .live_chains_section .live_chains_info a .moonriver,
+body .live_chains_section .live_chains_info a .automata {
   padding: 5px;
   -webkit-box-shadow: 2px 2px 5px grey;
           box-shadow: 2px 2px 5px grey;
@@ -523,15 +496,31 @@ body .live_chains_section .live_chains_info a .polkadot img,
 body .live_chains_section .live_chains_info a .kusama img,
 body .live_chains_section .live_chains_info a .moonbeam img,
 body .live_chains_section .live_chains_info a .kilt img,
-body .live_chains_section .live_chains_info a .bifost img {
+body .live_chains_section .live_chains_info a .bifrost img,
+body .live_chains_section .live_chains_info a .moonriver img,
+body .live_chains_section .live_chains_info a .automata img {
   height: 130px;
+}
+
+@media screen and (min-width: 769px) {
+  body .live_chains_section .live_chains_info a .polkadot img,
+  body .live_chains_section .live_chains_info a .kusama img,
+  body .live_chains_section .live_chains_info a .moonbeam img,
+  body .live_chains_section .live_chains_info a .kilt img,
+  body .live_chains_section .live_chains_info a .bifrost img,
+  body .live_chains_section .live_chains_info a .moonriver img,
+  body .live_chains_section .live_chains_info a .automata img {
+    height: 7vw;
+  }
 }
 
 body .live_chains_section .live_chains_info a .polkadot h3,
 body .live_chains_section .live_chains_info a .kusama h3,
 body .live_chains_section .live_chains_info a .moonbeam h3,
 body .live_chains_section .live_chains_info a .kilt h3,
-body .live_chains_section .live_chains_info a .bifost h3 {
+body .live_chains_section .live_chains_info a .bifrost h3,
+body .live_chains_section .live_chains_info a .moonriver h3,
+body .live_chains_section .live_chains_info a .automata h3 {
   text-align: center;
   margin: 0;
 }
@@ -540,7 +529,9 @@ body .live_chains_section .live_chains_info a .polkadot:hover,
 body .live_chains_section .live_chains_info a .kusama:hover,
 body .live_chains_section .live_chains_info a .moonbeam:hover,
 body .live_chains_section .live_chains_info a .kilt:hover,
-body .live_chains_section .live_chains_info a .bifost:hover {
+body .live_chains_section .live_chains_info a .bifrost:hover,
+body .live_chains_section .live_chains_info a .moonriver:hover,
+body .live_chains_section .live_chains_info a .automata:hover {
   -webkit-transform: scale(0.97);
           transform: scale(0.97);
 }
@@ -1071,6 +1062,95 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   display: none;
 }
 
+/* The Modal (background) */
+#navigation_sign_in_list_modal {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* The Close Button */
+}
+
+#navigation_sign_in_list_modal .modal-content {
+  background-color: #12171D;
+  margin: 2.5vh auto;
+  padding: 5px 20px;
+  border: 1px solid #888;
+  width: 95%;
+  /* Could be more or less, depending on screen size */
+  max-width: 450px;
+  border-radius: 6px;
+  color: #fff;
+  overflow: auto;
+  max-height: 95%;
+}
+
+#navigation_sign_in_list_modal .modal-content h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+#navigation_sign_in_list_modal .modal-content p {
+  color: #B8B8B8;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+#navigation_sign_in_list_modal .modal-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#navigation_sign_in_list_modal .modal-content ul li {
+  background-color: #fff;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+#navigation_sign_in_list_modal .modal-content ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#navigation_sign_in_list_modal .modal-content ul li a img {
+  margin-right: 0.8rem;
+  background-color: #fff;
+}
+
+#navigation_sign_in_list_modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+#navigation_sign_in_list_modal .close:hover,
+#navigation_sign_in_list_modal .close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1024px) {
   #recognition {
     padding: 2em 0 4em 0 !important;
@@ -1342,7 +1422,9 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   body .live_chains_section .live_chains_info a .kusama,
   body .live_chains_section .live_chains_info a .moonbeam,
   body .live_chains_section .live_chains_info a .kilt,
-  body .live_chains_section .live_chains_info a .bifost {
+  body .live_chains_section .live_chains_info a .bifrost,
+  body .live_chains_section .live_chains_info a .moonriver,
+  body .live_chains_section .live_chains_info a .automata {
     background-color: #ffffff;
     margin: 15px 0;
     -webkit-box-shadow: none;
@@ -1352,7 +1434,9 @@ body .live_chains_section .live_chains_info a .bifost:hover {
   body .live_chains_section .live_chains_info a .kusama:hover,
   body .live_chains_section .live_chains_info a .moonbeam:hover,
   body .live_chains_section .live_chains_info a .kilt:hover,
-  body .live_chains_section .live_chains_info a .bifost:hover {
+  body .live_chains_section .live_chains_info a .bifrost:hover,
+  body .live_chains_section .live_chains_info a .moonriver:hover,
+  body .live_chains_section .live_chains_info a .automata:hover {
     -webkit-transform: scale(1);
             transform: scale(1);
   }

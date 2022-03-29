@@ -98,52 +98,8 @@
               <!-- <a href="#">Treasury</a> -->
               <a href="#contact" class="navigation_contact">Contact</a>
               <div class="navigation_sign_in navigation_sign_in_close">
-                <a href="#">Sign in</a>
-                <span class="navigation_sign_in_accordian_down"
-                  ><i class="fas fa-chevron-down"></i
-                ></span>
+                <a href="#" class="sign-in-mobile-btn">Sign in</a>
               </div>
-              <ul href="#" class="navigation_sign_in_list no_display">
-                <div class="navigation_sign_in navigation_sign_in_open">
-                  <span class="navigation_sign_in_text">Sign in</span>
-                  <span class="navigation_sign_in_accordian_up"
-                    ><i class="fas fa-chevron-up"></i
-                  ></span>
-                </div>
-                <li>
-                  <a
-                    href="https://polkadot.polkassembly.io/login"
-                    target="_blank"
-                    >Polkadot</a
-                  >
-                </li>
-                <li>
-                  <a href="https://kusama.polkassembly.io/login" target="_blank"
-                    >Kusama</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://moonbeam.polkassembly.network/login"
-                    target="_blank"
-                    >Moonbeam</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://kilt.polkassembly.network/login"
-                    target="_blank"
-                    >Kilt</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://bifrost.polkassembly.network/login"
-                    target="_blank"
-                    >Bifrost</a
-                  >
-                </li>
-              </ul>
             </div>
           </div>
           <div class="mobile_parent_2"></div>
@@ -207,43 +163,6 @@
           </div>
           <div class="navigation_sign_in">
             <a href="#" class="navigation_sign_in_button">Sign in</a>
-            <div class="navigation_sign_in_list_container no_display">
-              <ul href="#" class="navigation_sign_in_list">
-                <li>
-                  <a
-                    href="https://polkadot.polkassembly.io/login"
-                    target="_blank"
-                    >Polkadot</a
-                  >
-                </li>
-                <li>
-                  <a href="https://kusama.polkassembly.io/login" target="_blank"
-                    >Kusama</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://moonbeam.polkassembly.network/login"
-                    target="_blank"
-                    >Moonbeam</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://kilt.polkassembly.network/login"
-                    target="_blank"
-                    >Kilt</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://bifrost.polkassembly.network/login"
-                    target="_blank"
-                    >Bifrost</a
-                  >
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
@@ -425,9 +344,23 @@
         </a>
 
         <a href="https://bifrost.polkassembly.network/" target="_blank">
-          <div class="bifost">
+          <div class="bifrost">
             <img src="./images/bifrost-logo.png" alt="bifrost-logo" />
             <h3>Bifrost</h3>
+          </div>
+        </a>
+
+        <a href="https://moonriver.polkassembly.network/" target="_blank">
+          <div class="moonriver">
+            <img src="./images/moonriver-logo.png" alt="moonriver-logo" />
+            <h3>Moonriver</h3>
+          </div>
+        </a>
+
+        <a href="https://automata.polkassembly.network/" target="_blank">
+          <div class="automata">
+            <img src="./images/automata-logo.png" alt="automata-logo" />
+            <h3>Automata</h3>
           </div>
         </a>
       </div>
@@ -758,6 +691,69 @@
           By continuing to use this website you consent to use our cookies.
         </span>
         <span id="close-cookie-popup" href="#">&times;</span>
+      </div>
+    </div>
+
+    <div id="navigation_sign_in_list_modal" class="modal no_display">
+      <div class="modal-content">
+        <span id="modal_close" class="close">&times;</span>
+        <h3>Sign In</h3>
+        <p>Choose a network to sign in.</p>
+
+        <ul>
+          <li>
+            <a href="https://polkadot.polkassembly.io/" target="_blank"
+              >
+              <img src="./images/polkadot-logo.png" height="32" width="32" alt="Polkadot Logo" />
+              Polkadot</a
+            >
+          </li>
+          <li>
+            <a href="https://kusama.polkassembly.io/" target="_blank"
+              >
+              <img src="./images/kusama-logo.png" height="32" width="32" alt="Kusama Logo" />
+              Kusama</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://moonbeam.polkassembly.network/"
+              target="_blank"
+              >
+              <img src="./images/moonbeam-logo.png" height="32" width="32" alt="Moonbeam Logo" />
+              Moonbeam</a
+            >
+          </li>
+          <li>
+            <a href="https://kilt.polkassembly.network/" target="_blank"
+              >
+              <img src="./images/kilt-logo.png" height="32" width="32" alt="Kilt Logo" />
+              Kilt</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://bifrost.polkassembly.network/" target="_blank"
+              >
+              <img src="./images/bifrost-logo.png" height="32" width="32" alt="Bifrost Logo" />
+              Bifrost</a
+            >
+          </li>
+          <li>
+            <a href="https://moonriver.polkassembly.network/" target="_blank"
+              >
+              <img src="./images/moonriver-logo.png" height="32" width="32" alt="Moonriver Logo" />
+              Moonriver</a
+            >
+          </li>
+          <li>
+            <a href="https://automata.polkassembly.network/" target="_blank"
+              >
+              <img src="./images/automata-logo.png" height="32" width="32" alt="Automata Logo" />
+              Automata</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
 
