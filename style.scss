@@ -995,11 +995,23 @@ body {
       padding-left: 0;
       li {
         background-color: #fff;
-        padding: 1rem;
+        padding: 0.6rem;
         margin: 1rem;
         border-radius: 5px;
+
+        &:hover {
+        padding: 1.5rem;
+          a {
+            font-size: 1.3rem;
+            img {
+              height: 1.5em;
+              width: 1.5em;
+            }
+          }
+        }
         
         a {
+          text-decoration: none;
           display: flex;
           align-items: center;
           img {
