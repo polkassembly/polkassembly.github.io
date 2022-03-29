@@ -1109,12 +1109,26 @@ body .live_chains_section .live_chains_info a .automata:hover {
 
 #navigation_sign_in_list_modal .modal-content ul li {
   background-color: #fff;
-  padding: 1rem;
+  padding: 0.6rem;
   margin: 1rem;
   border-radius: 5px;
 }
 
+#navigation_sign_in_list_modal .modal-content ul li:hover {
+  padding: 1.5rem;
+}
+
+#navigation_sign_in_list_modal .modal-content ul li:hover a {
+  font-size: 1.3rem;
+}
+
+#navigation_sign_in_list_modal .modal-content ul li:hover a img {
+  height: 1.5em;
+  width: 1.5em;
+}
+
 #navigation_sign_in_list_modal .modal-content ul li a {
+  text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
