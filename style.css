@@ -1109,25 +1109,31 @@ body .live_chains_section .live_chains_info a .automata:hover {
 
 #navigation_sign_in_list_modal .modal-content ul li {
   background-color: #fff;
-  padding: 0.6rem;
-  margin: 1rem;
+  margin: 0.7rem 1rem;
   border-radius: 5px;
 }
 
 #navigation_sign_in_list_modal .modal-content ul li:hover {
-  padding: 1.5rem;
+  background-color: #e5007a;
 }
 
 #navigation_sign_in_list_modal .modal-content ul li:hover a {
+  padding: 1rem;
+  color: #fff;
   font-size: 1.3rem;
 }
 
 #navigation_sign_in_list_modal .modal-content ul li:hover a img {
-  height: 1.5em;
-  width: 1.5em;
+  height: 48px;
+  width: 48px;
 }
 
 #navigation_sign_in_list_modal .modal-content ul li a {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-property: padding;
+  transition-property: padding;
+  padding: 0.6rem;
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1140,6 +1146,10 @@ body .live_chains_section .live_chains_info a .automata:hover {
 #navigation_sign_in_list_modal .modal-content ul li a img {
   margin-right: 0.8rem;
   background-color: #fff;
+  padding: 0.5em;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
 }
 
 #navigation_sign_in_list_modal .close {
