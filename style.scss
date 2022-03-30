@@ -1012,7 +1012,7 @@ body {
         }
         
         a {
-          transition: 0.5s;
+          transition: 0.3s;
           transition-property: padding;
           padding: 0.6rem;
           text-decoration: none;
@@ -1028,6 +1028,18 @@ body {
           }
         }
       }
+    }
+
+    #modal-search {
+      background-image: url('./images/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+      border-radius: 5px;
     }
   }
 

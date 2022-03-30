@@ -700,7 +700,9 @@
         <h3>Sign In</h3>
         <p>Choose a network to sign in.</p>
 
-        <ul>
+        <input type="text" id="modal-search" onkeyup="loginSearchInput()" placeholder="Search for a network.." title="Please input a network">
+
+        <ul id="networkUL">
           <li>
             <a href="https://polkadot.polkassembly.io/" target="_blank"
               >
@@ -756,6 +758,25 @@
         </ul>
       </div>
     </div>
+
+    <script type="text/javascript">
+      function loginSearchInput() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("modal-search");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("networkUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+      }
+    </script>
 
     <script type="module" src="./js/script.js"></script>
     <script type="module" src="./js/smoothScroll.js"></script>

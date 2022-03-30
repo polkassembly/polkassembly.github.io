@@ -1129,8 +1129,8 @@ body .live_chains_section .live_chains_info a .automata:hover {
 }
 
 #navigation_sign_in_list_modal .modal-content ul li a {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   -webkit-transition-property: padding;
   transition-property: padding;
   padding: 0.6rem;
@@ -1150,6 +1150,18 @@ body .live_chains_section .live_chains_info a .automata:hover {
   height: 36px;
   width: 36px;
   border-radius: 50%;
+}
+
+#navigation_sign_in_list_modal .modal-content #modal-search {
+  background-image: url("./images/searchicon.png");
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  border-radius: 5px;
 }
 
 #navigation_sign_in_list_modal .close {
