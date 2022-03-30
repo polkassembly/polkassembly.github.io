@@ -125,7 +125,7 @@ fetchMediumBlogs('@PolkAssembly').then((res) => {
     cardAnchor.setAttribute('href', blogPost.link);
     cardAnchor.setAttribute('target', '_blank');
     blogThumbnail.setAttribute('src', blogPost.thumbnail);
-    blogTitle.innerText = truncate(blogPost.title, 40);
+    blogTitle.innerHTML = truncate(blogPost.title, 40);
     // blogContent.innerHTML = blogPost.content;
 
     return cardAnchor;

@@ -700,18 +700,20 @@
         <h3>Sign In</h3>
         <p>Choose a network to sign in.</p>
 
-        <ul>
+        <input type="text" id="modal-search" onkeyup="loginSearchInput()" placeholder="Search for a network.." title="Please input a network">
+
+        <ul id="networkUL">
           <li>
             <a href="https://polkadot.polkassembly.io/" target="_blank"
               >
-              <img src="./images/polkadot-logo.png" height="32" width="32" alt="Polkadot Logo" />
+              <img src="./images/polkadot-logo.png" alt="Polkadot Logo" />
               Polkadot</a
             >
           </li>
           <li>
             <a href="https://kusama.polkassembly.io/" target="_blank"
               >
-              <img src="./images/kusama-logo.png" height="32" width="32" alt="Kusama Logo" />
+              <img src="./images/kusama-logo.png" alt="Kusama Logo" />
               Kusama</a
             >
           </li>
@@ -720,14 +722,14 @@
               href="https://moonbeam.polkassembly.network/"
               target="_blank"
               >
-              <img src="./images/moonbeam-logo.png" height="32" width="32" alt="Moonbeam Logo" />
+              <img src="./images/moonbeam-logo.png" alt="Moonbeam Logo" />
               Moonbeam</a
             >
           </li>
           <li>
             <a href="https://kilt.polkassembly.network/" target="_blank"
               >
-              <img src="./images/kilt-logo.png" height="32" width="32" alt="Kilt Logo" />
+              <img src="./images/kilt-logo.png" alt="Kilt Logo" />
               Kilt</a
             >
           </li>
@@ -735,27 +737,46 @@
             <a
               href="https://bifrost.polkassembly.network/" target="_blank"
               >
-              <img src="./images/bifrost-logo.png" height="32" width="32" alt="Bifrost Logo" />
+              <img src="./images/bifrost-logo.png" alt="Bifrost Logo" />
               Bifrost</a
             >
           </li>
           <li>
             <a href="https://moonriver.polkassembly.network/" target="_blank"
               >
-              <img src="./images/moonriver-logo.png" height="32" width="32" alt="Moonriver Logo" />
+              <img src="./images/moonriver-logo.png" alt="Moonriver Logo" />
               Moonriver</a
             >
           </li>
           <li>
             <a href="https://automata.polkassembly.network/" target="_blank"
               >
-              <img src="./images/automata-logo.png" height="32" width="32" alt="Automata Logo" />
+              <img src="./images/automata-logo.png" alt="Automata Logo" />
               Automata</a
             >
           </li>
         </ul>
       </div>
     </div>
+
+    <script type="text/javascript">
+      function loginSearchInput() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("modal-search");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("networkUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+      }
+    </script>
 
     <script type="module" src="./js/script.js"></script>
     <script type="module" src="./js/smoothScroll.js"></script>

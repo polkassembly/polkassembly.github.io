@@ -995,31 +995,51 @@ body {
       padding-left: 0;
       li {
         background-color: #fff;
-        padding: 0.6rem;
-        margin: 1rem;
+        margin: 0.7rem 1rem;
         border-radius: 5px;
 
         &:hover {
-        padding: 1.5rem;
+        background-color: #e5007a;
           a {
+            padding: 1rem;
+            color: #fff;
             font-size: 1.3rem;
             img {
-              height: 1.5em;
-              width: 1.5em;
+              height: 48px;
+              width: 48px;
             }
           }
         }
         
         a {
+          transition: 0.3s;
+          transition-property: padding;
+          padding: 0.6rem;
           text-decoration: none;
           display: flex;
           align-items: center;
           img {
             margin-right: 0.8rem;
             background-color: #fff;
+            padding: 0.5em;
+            height: 36px;
+            width: 36px;
+            border-radius: 50%;
           }
         }
       }
+    }
+
+    #modal-search {
+      background-image: url('./images/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+      border-radius: 5px;
     }
   }
 
