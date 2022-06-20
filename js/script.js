@@ -128,6 +128,11 @@ fetchMediumBlogs('@PolkAssembly').then((res) => {
     blogTitle.innerHTML = truncate(blogPost.title, 40);
     // blogContent.innerHTML = blogPost.content;
 
+    // TODO: REMOVE - TEMP FIX
+    if(blogPost.title == "Building accountability for Treasury proposals") {
+      blogThumbnail.setAttribute('src', './images/building_accountability_thumbnail.png');
+    }
+
     return cardAnchor;
   }
 
