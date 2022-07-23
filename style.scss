@@ -444,7 +444,8 @@ body {
         .kilt,
         .bifrost,
         .moonriver,
-        .automata {
+        .automata
+        .hydradx {
           padding: 5px;
           box-shadow: 2px 2px 5px grey;
           border-radius: 10px;
@@ -469,7 +470,8 @@ body {
         .kilt:hover,
         .bifrost:hover,
         .moonriver:hover,
-        .automata:hover {
+        .automata:hover,
+        .hydradx:hover {
           transform: scale(0.97);
         }
       }
@@ -1010,7 +1012,7 @@ body {
             }
           }
         }
-        
+
         a {
           transition: 0.3s;
           transition-property: padding;
@@ -1366,7 +1368,8 @@ body {
           .kilt,
           .bifrost,
           .moonriver,
-          .automata {
+          .automata,
+          .hydradx {
             background-color: #ffffff;
             margin: 15px 0;
             box-shadow: none;
@@ -1378,7 +1381,8 @@ body {
           .kilt:hover,
           .bifrost:hover,
           .moonriver:hover,
-          .automata:hover {
+          .automata:hover,
+          .hydradx:hover {
             transform: scale(1);
           }
         }

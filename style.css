@@ -483,7 +483,8 @@ body .live_chains_section .live_chains_info a .moonbeam,
 body .live_chains_section .live_chains_info a .kilt,
 body .live_chains_section .live_chains_info a .bifrost,
 body .live_chains_section .live_chains_info a .moonriver,
-body .live_chains_section .live_chains_info a .automata {
+body .live_chains_section .live_chains_info a .automata,
+body .live_chains_section .live_chains_info a .hydradx {
   padding: 5px;
   -webkit-box-shadow: 2px 2px 5px grey;
           box-shadow: 2px 2px 5px grey;
@@ -498,7 +499,8 @@ body .live_chains_section .live_chains_info a .moonbeam img,
 body .live_chains_section .live_chains_info a .kilt img,
 body .live_chains_section .live_chains_info a .bifrost img,
 body .live_chains_section .live_chains_info a .moonriver img,
-body .live_chains_section .live_chains_info a .automata img {
+body .live_chains_section .live_chains_info a .automata img,
+body .live_chains_section .live_chains_info a .hydradx img {
   height: 130px;
 }
 
@@ -509,7 +511,8 @@ body .live_chains_section .live_chains_info a .automata img {
   body .live_chains_section .live_chains_info a .kilt img,
   body .live_chains_section .live_chains_info a .bifrost img,
   body .live_chains_section .live_chains_info a .moonriver img,
-  body .live_chains_section .live_chains_info a .automata img {
+  body .live_chains_section .live_chains_info a .automata img,
+  body .live_chains_section .live_chains_info a .hydradx img {
     height: 7vw;
   }
 }
@@ -520,7 +523,8 @@ body .live_chains_section .live_chains_info a .moonbeam h3,
 body .live_chains_section .live_chains_info a .kilt h3,
 body .live_chains_section .live_chains_info a .bifrost h3,
 body .live_chains_section .live_chains_info a .moonriver h3,
-body .live_chains_section .live_chains_info a .automata h3 {
+body .live_chains_section .live_chains_info a .automata h3,
+body .live_chains_section .live_chains_info a .hydradx h3 {
   text-align: center;
   margin: 0;
 }
@@ -531,7 +535,8 @@ body .live_chains_section .live_chains_info a .moonbeam:hover,
 body .live_chains_section .live_chains_info a .kilt:hover,
 body .live_chains_section .live_chains_info a .bifrost:hover,
 body .live_chains_section .live_chains_info a .moonriver:hover,
-body .live_chains_section .live_chains_info a .automata:hover {
+body .live_chains_section .live_chains_info a .automata:hover,
+body .live_chains_section .live_chains_info a .hydradx:hover {
   -webkit-transform: scale(0.97);
           transform: scale(0.97);
 }
@@ -1460,7 +1465,8 @@ body .live_chains_section .live_chains_info a .automata:hover {
   body .live_chains_section .live_chains_info a .kilt,
   body .live_chains_section .live_chains_info a .bifrost,
   body .live_chains_section .live_chains_info a .moonriver,
-  body .live_chains_section .live_chains_info a .automata {
+  body .live_chains_section .live_chains_info a .automata,
+  body .live_chains_section .live_chains_info a .hydradx {
     background-color: #ffffff;
     margin: 15px 0;
     -webkit-box-shadow: none;
@@ -1472,7 +1478,8 @@ body .live_chains_section .live_chains_info a .automata:hover {
   body .live_chains_section .live_chains_info a .kilt:hover,
   body .live_chains_section .live_chains_info a .bifrost:hover,
   body .live_chains_section .live_chains_info a .moonriver:hover,
-  body .live_chains_section .live_chains_info a .automata:hover {
+  body .live_chains_section .live_chains_info a .automata:hover,
+  body .live_chains_section .live_chains_info a .hydradx:hover {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
