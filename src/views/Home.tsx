@@ -7,6 +7,7 @@ import RecognitionSection from '../components/Home/RecognitionSection'
 import RoadmapSection from '../components/Home/RoadmapSection'
 import TopFeaturesSection from '../components/Home/TopFeaturesSection'
 import MediumPostsSection from '../components/Home/MediumPostsSection'
+import MonthlyNewsLetter from '../components/Home/MonthlyNewsLetter'
 
 export default function Home() {
 	return (
@@ -18,6 +19,7 @@ export default function Home() {
 			<RecognitionSection />
 			<RoadmapSection />
 			<MediumPostsSection />
+			<MonthlyNewsLetter/>
 			<Footer />
 		</>
 	)
