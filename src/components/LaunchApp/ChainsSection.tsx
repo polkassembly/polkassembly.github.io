@@ -46,7 +46,7 @@ export default function ChainsSection() {
 					type="text"
 					placeholder="Search"
 					value={searchInput}
-					onChange={(e) => setSearchInput(e.target.value)}
+					onChange={(e: { target: { value: any; }; }) => setSearchInput(e.target.value)}
 				/>
 
 				<button className="absolute p-1 text-white -translate-y-1/2 bg-pa-pink rounded-full top-1/2 right-4" type="button" onClick={() => setSearchInput('')}>
@@ -64,11 +64,11 @@ export default function ChainsSection() {
 
 			<div className="grid grid-cols-2 lg:grid-cols-4 mx-auto md:mx-6 xl:mx-48 gap-y-4 lg:gap-y-14 mt-10 lg:mt-24 min-h-[100vh] max-h-[100vh] overflow-auto content-start">
 				{searchInput ? 
-						searchResults.map(parachainObj =>
+						searchResults.map((parachainObj: { image: string; title: string; }) =>
 							chainCircle(parachainObj.image, parachainObj.title)
 						)
 					:
-					parachains.map(parachainObj =>
+					parachains.map((parachainObj: { image: string; title: string; }) =>
 					chainCircle(parachainObj.image, parachainObj.title)
 					)
 				}
