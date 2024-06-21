@@ -21,7 +21,18 @@ export default function MediumPostsSection() {
         "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@PolkAssembly"
       );
       const json = await res.json();
-      setBlogs(json.items);
+
+      const updatedBlogs = json.items.map((item: any) => {
+        if (!item.thumbnail) {
+          const match = item.description.match(/<img[^>]+src="([^">]+)"/);
+          if (match) {
+            item.thumbnail = match[1];
+          }
+        }
+        return item;
+      });
+
+      setBlogs(updatedBlogs);
       return;
     };
 
