@@ -21,7 +21,18 @@ export default function MediumPostsSection() {
         "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@PolkAssembly"
       );
       const json = await res.json();
-      setBlogs(json.items);
+
+      const updatedBlogs = json.items.map((item: any) => {
+        if (!item.thumbnail) {
+          const match = item.description.match(/<img[^>]+src="([^">]+)"/);
+          if (match) {
+            item.thumbnail = match[1];
+          }
+        }
+        return item;
+      });
+
+      setBlogs(updatedBlogs);
       return;
     };
 
@@ -73,7 +84,7 @@ export default function MediumPostsSection() {
             blogs.map((blogObj, i) => {
               return (<SwiperSlide key={i} className='my-6'>
                   <a href={blogObj.link} target='_blank' rel="noopener noreferrer" className="block overflow-hidden rounded-2xl">
-                    <img className="object-cover w-full h-48" src={blogObj.thumbnail} alt={truncate(blogObj.title, 40)} />
+                    <img className={blogObj.thumbnail ? "object-cover w-full h-48" :"w-full h-48"} src={blogObj.thumbnail || '/public/icons/PAicon.svg'} alt={truncate(blogObj.title, 40)} />
 
                     <div className="p-4 bg-gray-900">
                       <p className="text-xs text-gray-500 mb-1">@PolkAssembly | {(blogObj.pubDate).split(' ')[0]}</p>
