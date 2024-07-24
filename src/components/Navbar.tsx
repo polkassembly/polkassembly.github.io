@@ -44,7 +44,7 @@ export default function Navbar() {
           }
 
           <a href="https://docs.polkassembly.io/" rel="noopener noreferrer" target="_blank" className='mx-0 mr-3 md:mx-6 font-normal text-sm md:text-base md:font-semibold hover:text-pa-pink'>Docs</a>
-
+          {currentRoute() == '/' ? <>
           <NavLink to='/launch-app' className={({ isActive }) => isActive ? `bg-pa-pink text-white ${launchAppBtnClasses}` : `text-pa-pink ${launchAppBtnClasses}`}>
             <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-pa-pink group-hover:translate-x-0 ease">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -56,6 +56,8 @@ export default function Navbar() {
           <NavLink to='/launch-app' className={({ isActive }) => isActive ? `bg-pa-pink text-white ${launchAppBtnMobileClasses}` : `text-pa-pink ${launchAppBtnMobileClasses}`}>
             Launch App
           </NavLink>
+          </>
+          : null}
         </div>
       </div>
     </nav>
