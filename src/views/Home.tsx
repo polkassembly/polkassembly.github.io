@@ -8,19 +8,23 @@ import RoadmapSection from '../components/Home/RoadmapSection'
 import TopFeaturesSection from '../components/Home/TopFeaturesSection'
 import MediumPostsSection from '../components/Home/MediumPostsSection'
 import MonthlyNewsLetter from '../components/Home/MonthlyNewsLetter'
+import ProjectsSection from '../components/Home/ProjectsSection';
+import WhySection from '../components/Home/WhySection';
 
 export default function Home() {
 	return (
 		<>
 			<HeroSection />
-			<AboutSection />
+			<ProjectsSection />
+			<WhySection />
+			<RecognitionSection />
+			{/* <AboutSection />
 			<TopFeaturesSection />
 			<LiveChainsSection />
-			<RecognitionSection />
 			<RoadmapSection />
 			<MediumPostsSection />
-			<MonthlyNewsLetter/>
+			<MonthlyNewsLetter /> */}
 			<Footer />
 		</>
-	)
+	);
 }

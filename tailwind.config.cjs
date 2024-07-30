@@ -8,7 +8,7 @@ module.exports = {
 			},
 			colors: {
 				'pa-pink': '#E80B81',
-				'pa-pink-light': '#FFC9E5',
+				'pa-pink-light': '#FEF6FB',
 				'pa-purple': '#F9D2FF',
 				'pa-purple-light': '#F1EBFF'
 			},
@@ -16,7 +16,8 @@ module.exports = {
 				center: true
 			},
 			backgroundImage: {
-				'hero-bg': "url('../src/assets/images/bg-hero.svg')"
+				'hero-bg': "url('../src/assets/images/bg-hero.svg')",
+				'recognition-bg': "url('../src/assets/images/recognition-bg.svg')"
 			},
 			animation: {
 				scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite'

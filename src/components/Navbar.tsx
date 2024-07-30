@@ -141,7 +141,7 @@ export default function Navbar() {
 				</div>
 				<div className='flex items-center'>
 					<motion.div
-						className='menu-item'
+						className='menu-item z-50'
 						onMouseEnter={toggleMouseMenu}
 						onMouseLeave={toggleMouseMenu}>
 						{currentRoute() == '/' ? (
