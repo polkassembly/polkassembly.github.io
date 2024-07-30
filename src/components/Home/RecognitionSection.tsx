@@ -27,8 +27,8 @@ export default function RecognitionSection() {
 				/>
 			</div>
 
-			<div className='container bg-white grid grid-cols-3 items-start mt-12 justify-center border rounded-3xl p-8'>
-				<div className='flex flex-col  col-span-1 pr-8'>
+			<div className='container bg-white grid grid-cols-3 items-start mt-12 justify-center border rounded-3xl py-8'>
+				<div className='flex flex-col  col-span-1 px-8'>
 					<img
 						src={web3Grant}
 						className=''
@@ -90,7 +90,7 @@ export default function RecognitionSection() {
 					</div>
 				</div>
 
-				<div className='flex flex-col col-span-1 pl-8'>
+				<div className='flex flex-col col-span-1 px-8'>
 					<img
 						src={treasuryImg}
 						className=''

@@ -8,13 +8,6 @@ interface CarouselProps {
 	initialScroll?: number;
 }
 
-type Card = {
-	src: string;
-	title: string;
-	category: string;
-	content: React.ReactNode;
-};
-
 export const CarouselContext = createContext<{
 	onCardClose: (index: number) => void;
 	currentIndex: number;
@@ -39,6 +32,7 @@ export const Carousel = ({items, initialScroll = 0}: CarouselProps) => {
 	const checkScrollability = () => {
 		if (carouselRef.current) {
 			const {scrollLeft, scrollWidth, clientWidth} = carouselRef.current;
+			console.log('scrollLeft', scrollLeft, 'scrollWidth', scrollWidth, 'clientWidth', clientWidth);
 			setCanScrollLeft(scrollLeft > 0);
 			setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
 		}

@@ -10,6 +10,8 @@ import MediumPostsSection from '../components/Home/MediumPostsSection'
 import MonthlyNewsLetter from '../components/Home/MonthlyNewsLetter'
 import ProjectsSection from '../components/Home/ProjectsSection';
 import WhySection from '../components/Home/WhySection';
+import TestimonialSection from '../components/Home/TestimonialSection';
+import GovernSection from '../components/Home/GovernSection';
 
 export default function Home() {
 	return (
@@ -18,12 +20,14 @@ export default function Home() {
 			<ProjectsSection />
 			<WhySection />
 			<RecognitionSection />
+			<TestimonialSection />
+			<GovernSection />
+			<MonthlyNewsLetter />
 			{/* <AboutSection />
 			<TopFeaturesSection />
 			<LiveChainsSection />
 			<RoadmapSection />
-			<MediumPostsSection />
-			<MonthlyNewsLetter /> */}
+			<MediumPostsSection /> */}
 			<Footer />
 		</>
 	);

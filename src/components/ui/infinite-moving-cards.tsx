@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {cn} from '../../utils/utils';
+import quote from '../../assets/images/quoteup.svg';
+import starPink from '../../assets/images/star-pink.svg';
 
 export const InfiniteMovingCards = ({
 	items,
@@ -10,9 +12,10 @@ export const InfiniteMovingCards = ({
 	className
 }: {
 	items: {
-		quote?: string;
-		name?: string;
-		title: string;
+		author?: string;
+		designation?: string;
+		testimony?: string;
+		title?: string;
 		image?: string;
 	}[];
 	direction?: 'left' | 'right';
@@ -69,7 +72,7 @@ export const InfiniteMovingCards = ({
 		return (
 			<div
 				ref={containerRef}
-				className={cn('scroller relative z-20  w-screen overflow-hidden  ', className)}>
+				className={cn('scroller relative z-20  w-full overflow-hidden  ', className)}>
 				<ul
 					ref={scrollerRef}
 					className={cn('flex min-w-full shrink-0 gap-24 py-4 w-max flex-nowrap', start && 'animate-scroll ', pauseOnHover && 'hover:[animation-play-state:paused]')}>
@@ -91,35 +94,73 @@ export const InfiniteMovingCards = ({
 		);
 	}
 
-	return (
-		<div
-			ref={containerRef}
-			className={cn('scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]', className)}>
-			<ul
-				ref={scrollerRef}
-				className={cn(' flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap', start && 'animate-scroll ', pauseOnHover && 'hover:[animation-play-state:paused]')}>
-				{items.map((item, idx) => (
-					<li
-						className='w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px]'
-						style={{
-							background: 'linear-gradient(180deg, var(--slate-800), var(--slate-900)'
-						}}
-						key={item.name}>
-						<blockquote>
-							<div
-								aria-hidden='true'
-								className='user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]'></div>
-							<span className=' relative z-20 text-sm leading-[1.6] text-gray-100 font-normal'>{item.quote}</span>
-							<div className='relative z-20 mt-6 flex flex-row items-center'>
-								<span className='flex flex-col gap-1'>
-									<span className=' text-sm leading-[1.6] text-gray-400 font-normal'>{item.name}</span>
-									<span className=' text-sm leading-[1.6] text-gray-400 font-normal'>{item.title}</span>
-								</span>
-							</div>
-						</blockquote>
-					</li>
-				))}
-			</ul>
-		</div>
-	);
+	if (type === 'cards') {
+		return (
+			<div
+				ref={containerRef}
+				className={cn('scroller w-full relative z-20 overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]', className)}>
+				<ul
+					ref={scrollerRef}
+					className={cn(' flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap', start && 'animate-scroll ', pauseOnHover && 'hover:[animation-play-state:paused]')}>
+					{items.map((item, idx) => (
+						<li
+							className='w-[450px] max-w-full relative rounded-2xl border flex-shrink-0 bg-pa-pink-light px-8 py-6 md:w-[550px]'
+							key={idx}>
+							<blockquote>
+								<div
+									aria-hidden='true'
+									className='user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]'></div>
+								<div className='flex gap-2 relaitve w-full items-start'>
+									<img
+										src={item.image}
+										alt={item.title}
+										className='rounded-full h-12 w-12 object-cover'
+									/>
+									<div className='flex flex-col'>
+										<span className='relative z-20 text-lg leading-[1.6] text-black font-semibold'>{item.author}</span>
+										<span className='text-base leading-[1.6] text-black font-normal'>{item.designation}</span>
+									</div>
+									<img
+										src={quote}
+										className='absolute right-6 top-6 w-8 h-8'
+									/>
+								</div>
+								<div className='relative z-20 mt-6 flex flex-row items-center'>
+									<span className='flex flex-col gap-1'>
+										<span className=' text-sm leading-[1.6] text-black font-normal'>{item.testimony}</span>
+									</span>
+								</div>
+							</blockquote>
+						</li>
+					))}
+				</ul>
+			</div>
+		);
+	}
+
+	if (type === 'banner') {
+		return (
+			<div
+				ref={containerRef}
+				className={cn('scroller relative z-20  w-full overflow-hidden  ', className)}>
+				<ul
+					ref={scrollerRef}
+					className={cn('flex min-w-full shrink-0 gap-24 py-4 w-max flex-nowrap', start && 'animate-scroll ', pauseOnHover && 'hover:[animation-play-state:paused]')}>
+					{items.map((item, idx) => (
+						<li
+							className='flex items-center gap-4'
+							key={item.title}>
+							<h1 className='text-3xl inline-flex items-center gap-2 lg:text-6xl font-semibold text-black'>{item.title}</h1>
+							<img
+								src={starPink}
+								className='w-12 ml-12'
+							/>
+						</li>
+					))}
+				</ul>
+			</div>
+		);
+	}
+
+	return null;
 };

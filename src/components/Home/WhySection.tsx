@@ -9,7 +9,7 @@ export default function WhySection() {
 		<section
 			id='why-section'
 			className='bg-pa-pink-light flex flex-col items-center'>
-			<div className='w-screen border-t-8 border-pa-pink' />
+			<div className='w-full border-t-8 border-pa-pink' />
 			<div className='flex relative w-fit flex-col pt-24 items-center container'>
 				<img
 					src={star}
