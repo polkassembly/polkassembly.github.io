@@ -1,5 +1,9 @@
+import react, {useState} from 'react';
 import arrow from '../../assets/images/arrow-rounded-white.svg';
+import {motion} from 'framer-motion';
 const KeyFeaturesSection = () => {
+	const [active, setActive] = useState<string>('01');
+
 	return (
 		<section
 			id='features-section'
@@ -27,13 +31,20 @@ const KeyFeaturesSection = () => {
 				</svg>
 			</div>
 			<div className='grid mt-8 px-28 gap-8 grid-cols-12'>
-				<div className='col-span-5 flex flex-col h-[600px] overflow-y-auto gap-8'>
+				<div className='col-span-5 flex flex-col h-[600px] py-4 pr-2 overflow-y-auto gap-8'>
 					{data.map(item => (
-						<div
+						<motion.div
 							key={item.id}
-							className='bg-pa-pink-light border border-pa-pink rounded-2xl p-8'>
+							className={`${item.id === active ? 'bg-pa-pink-light border-pa-pink ' : 'bg-white  border-slate-400 cursor-pointer'} border p-8`}
+							onClick={() => setActive(item.id)}
+							initial={{scale: 0.95}}
+							animate={{
+								scale: item.id === active ? 1 : 0.95,
+								borderRadius: item.id === active ? '1rem' : '9999px'
+							}}
+							transition={{duration: 0.3}}>
 							<div className='flex justify-between items-center'>
-								<h1 className='text-xl text-pa-pink font-semibold'>
+								<h1 className={`text-xl ${item.id === active ? 'text-pa-pink' : 'text-black'} font-semibold`}>
 									{item.id} <span className='text-black font-normal ml-1'>{item.title}</span>
 								</h1>
 								<svg
@@ -48,21 +59,31 @@ const KeyFeaturesSection = () => {
 									/>
 								</svg>
 							</div>
-							<p className='text-base mt-4 text-black'>{item.description}</p>
-						</div>
+							{item.id === active && (
+								<motion.p
+									className='text-base mt-4 text-black'
+									initial={{opacity: 0, height: 0}}
+									animate={{opacity: 1, height: 'auto'}}
+									transition={{duration: 0.3}}>
+									{item.description}
+								</motion.p>
+							)}
+						</motion.div>
 					))}
 				</div>
-				<div className='col-span-7 bg-pa-pink-light flex flex-col justify-between rounded-2xl p-8'>
-					<div className='h-full w-full rounded-xl bg-gray-300'></div>
-					<div className='flex items-center mt-8 justify-between'>
-						<h1 className='text-xl text-black font-semibold'>Delegation</h1>
-						<img
-							src={arrow}
-							alt='arrow'
-							className='w-12'
-						/>
+				{active && (
+					<div className='col-span-7 bg-pa-pink-light flex flex-col justify-between rounded-2xl p-8'>
+						<div className='h-full w-full rounded-xl bg-gray-300'></div>
+						<div className='flex items-center mt-8 justify-between'>
+							<h1 className='text-xl text-black font-semibold'>{data.filter(item => item.id === active)[0].title}</h1>
+							<img
+								src={arrow}
+								alt='arrow'
+								className='w-12'
+							/>
+						</div>
 					</div>
-				</div>
+				)}
 			</div>
 		</section>
 	);
