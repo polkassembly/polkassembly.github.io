@@ -12,12 +12,14 @@ import ProjectsSection from '../components/Home/ProjectsSection';
 import WhySection from '../components/Home/WhySection';
 import TestimonialSection from '../components/Home/TestimonialSection';
 import GovernSection from '../components/Home/GovernSection';
+import KeyFeaturesSection from '../components/Home/KeyFeaturesSection';
 
 export default function Home() {
 	return (
 		<>
 			<HeroSection />
 			<ProjectsSection />
+			<KeyFeaturesSection />
 			<WhySection />
 			<RecognitionSection />
 			<TestimonialSection />
