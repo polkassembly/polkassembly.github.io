@@ -104,20 +104,21 @@ export const socialLinksUL = (colorClass?: string, iconClass?: string, classes?:
 
 export default function Footer({withContactUs = true}: {withContactUs?: boolean}) {
 	return (
-		<footer className='bg-slate-900 rounded-tl-3xl rounded-tr-3xl relative z-10'>
-			<div className='max-w-screen-xl px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24'>
-				<div className='grid grid-cols-1 gap-8 lg:grid-cols-12'>
+		<footer className='bg-[#191A23] rounded-tl-3xl rounded-tr-3xl relative z-10'>
+			<div className='max-w-screen-xl px-4 pt-8 md:pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24'>
+				<div className='md:grid md:grid-cols-1 gap-8 lg:grid-cols-12'>
 					{/* Logo and Socials */}
 					<div className='md:-mt-5 col-span-3'>
-						<div className='flex justify-center text-teal-300 sm:justify-start'>
+						<div className='flex items-center w-full justify-between  md:justify-start'>
 							<img
 								src={polkassemblyLogoWhite}
-								className='h-auto w-52 md:w-52'
+								className='h-auto w-40 md:w-52'
 							/>
+							<div className='block md:hidden col-span-3 h-fit'>{socialLinksUL('', 'w-5 h-5', 'justify-end')}</div>
 						</div>
-						<div className='mt-12'>
-							<h1 className='text-black bg-pa-pink rounded-md px-2 w-fit'>Contact us:</h1>
-							<ul className='mt-4 space-y-4 text-sm'>
+						<div className='mt-12 flex flex-col items-center md:items-start'>
+							<h1 className='text-white bg-pa-pink rounded-md px-2 w-fit'>Contact us:</h1>
+							<ul className='mt-4 space-y-4 text-sm flex flex-col items-center md:items-start'>
 								<li>
 									<a
 										className='flex items-center justify-center sm:justify-start gap-1.5 group'
@@ -140,33 +141,34 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 					{/* Links */}
 					<div className='grid grid-cols-1 h-fit gap-2 sm:grid-cols-2 md:grid-cols-4 col-span-6'>
 						<div className='text-center sm:text-left'>
-							<p className='text-lg font-medium text-white underline'>About us</p>
-							<div className='w-[800px] ml-24 flex items-center rounded-xl mt-12 bg-[#292a32] py-12 px-8'>
+							<p className='hidden md:block text-lg font-medium text-white underline'>About us</p>
+							<div className='md:w-[800px] md:ml-24 flex flex-col md:flex-row items-start gap-2 md:items-center rounded-xl mt-12 bg-[#292a32] py-12 px-8'>
 								<input
 									type='email'
 									placeholder='Email'
-									className='z-20 w-full px-4 py-2 text-white rounded-xl bg-transparent border-2 border-white placeholder:text-white'
+									className='z-20 w-full px-4 py-2 text-white rounded-xl bg-transparent border border-white placeholder:text-white'
 								/>
-								<button className='ml-4 text-black bg-pa-pink hover:bg-pa-pink/80 px-4 py-2 w-[40%] rounded-xl'>Subscribe to news</button>
+								<button className='md:ml-4 text-white bg-pa-pink hover:bg-pa-pink/80 px-4 py-2 md:w-[40%] rounded-xl'>Subscribe to news</button>
 							</div>
 						</div>
 
-						<div className='text-center sm:text-left underline'>
+						<div className='hidden md:block text-center sm:text-left underline'>
 							<p className='text-lg w-fit font-medium text-white underline'>Services</p>
 						</div>
-						<div className='text-center sm:text-left underline'>
+						<div className='hidden md:block text-center sm:text-left underline'>
 							<p className='text-lg w-fit font-medium text-white underline'>Report a Bug</p>
 						</div>
-						<div className='text-center sm:text-left underline'>
+						<div className='hidden md:block text-center sm:text-left underline'>
 							<p className='text-lg w-fit font-medium text-white underline'>Blog</p>
 						</div>
 					</div>
-					<div className='col-span-3 h-fit'>{socialLinksUL('', 'w-5 h-5', 'justify-end')}</div>
+					<div className='hidden md:block col-span-3 h-fit'>{socialLinksUL('', 'w-5 h-5', 'justify-end')}</div>
 				</div>
 
 				{/* Bottom Line Content */}
-				<div className='pt-12 mt-12 border-t border-white'>
+				<div className='pt-8 md:pt-12 mt-4 md:mt-12 border-t border-white'>
 					<div className='text-center sm:flex sm:justify-between sm:text-left'>
+						<p className='md:mt-4 mb-4 md:mb-auto text-sm text-white sm:order-first sm:mt-0 '>&copy; Polka Labs Private Limited {new Date().getFullYear()}, All Rights Reserved</p>
 						<a
 							className='text-white text-sm underline transition hover:text-purple-400/60'
 							rel='noopener noreferrer'
@@ -174,8 +176,6 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 							href='https://polkadot.polkassembly.io/privacy'>
 							Privacy Policy
 						</a>
-
-						<p className='mt-4 text-sm text-white sm:order-first sm:mt-0'>&copy; Polka Labs Private Limited {new Date().getFullYear()}, All Rights Reserved</p>
 					</div>
 				</div>
 			</div>

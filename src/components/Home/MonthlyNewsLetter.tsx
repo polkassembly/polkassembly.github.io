@@ -31,7 +31,7 @@ export default function MonthlyNewsLetter() {
 	const cards = data.map(news => (
 		<div
 			key={news?.id}
-			className='container mt-20 h-64 p-1 flex drop-shadow-md rounded-[50px] overflow-hidden flex-col md:flex-row  md:h-[500px] w-[600px] bg-white'>
+			className='container md:mt-20 h-[350px] w-[80vw] p-1 flex drop-shadow-md rounded-[50px] overflow-hidden flex-col md:flex-row  md:h-[500px] md:w-[600px] bg-white'>
 			<div
 				className={`bg-cover bg-center bg-no-repeat w-full h-full rounded-[40px] z-20 flex flex-col justify-end p-[24px] md:p-[36px] gap-[24px] md:gap-[18px]`}
 				style={{backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0), transparent 100%), url(${news?.cover_image || NewsLetter})`}}>
@@ -54,10 +54,10 @@ export default function MonthlyNewsLetter() {
 	return data.length ? (
 		<section className='my-28 mx-4 md:mx-20'>
 			<div className='flex justify-between w-full items-center'>
-				<h1 className='text-3xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
+				<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 					<span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Polkadot</span> News
 				</h1>
-				<button className='bg-white text-pa-pink rounded-full border border-pa-pink p-4 flex text-sm items-center gap-2'>
+				<button className='hidden md:flex bg-white text-pa-pink rounded-full border border-pa-pink p-4 text-sm items-center gap-2'>
 					See More
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
@@ -78,6 +78,20 @@ export default function MonthlyNewsLetter() {
 					size={600}
 				/>
 			</div>
+			<button className='flex md:hidden bg-white text-pa-pink rounded-full border border-pa-pink py-2 px-4 text-base font-semibold items-center gap-2'>
+				See More
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					width='21'
+					height='8'
+					viewBox='0 0 21 8'
+					fill='none'>
+					<path
+						d='M20.3536 4.35355C20.5488 4.15829 20.5488 3.84171 20.3536 3.64645L17.1716 0.464466C16.9763 0.269204 16.6597 0.269204 16.4645 0.464466C16.2692 0.659728 16.2692 0.976311 16.4645 1.17157L19.2929 4L16.4645 6.82843C16.2692 7.02369 16.2692 7.34027 16.4645 7.53553C16.6597 7.7308 16.9763 7.7308 17.1716 7.53553L20.3536 4.35355ZM0 4.5H20V3.5H0V4.5Z'
+						fill='#E6007A'
+					/>
+				</svg>
+			</button>
 		</section>
 	) : null;
 }

@@ -10,11 +10,12 @@ const KeyFeaturesSection = () => {
 			<DivWithBorder
 				className='bg-[#f5f5f572] border-pa-pink rounded-2xl border p-8`'
 				duration={5000}>
-				<div className='flex justify-between items-center'>
-					<h1 className='text-xl text-pa-pink font-semibold'>
-						{id} <span className='text-black font-normal ml-1'>{title}</span>
+				<div className='flex w-[55vw] md:w-auto justify-between items-center'>
+					<h1 className='text-xl text-pa-pink font-bold'>
+						{id} <span className='text-black font-semibold ml-1'>{title}</span>
 					</h1>
 					<svg
+						className='rotate-90 md:rotate-0'
 						xmlns='http://www.w3.org/2000/svg'
 						width='26'
 						height='16'
@@ -34,13 +35,14 @@ const KeyFeaturesSection = () => {
 	const inactiveCard = (id: string, title: string, description: string) => {
 		return (
 			<div
-				className='bg-white rounded-full border-slate-400 cursor-pointer border  p-8'
+				className='bg-white rounded-3xl h-full w-[60vw] md:w-auto md:h-auto md:rounded-full border-slate-400 cursor-pointer border  p-8'
 				onClick={() => setActive(id)}>
 				<div className='flex justify-between items-center'>
 					<h1 className='text-xl text-black font-semibold'>
 						{id} <span className='text-black font-normal ml-1'>{title}</span>
 					</h1>
 					<svg
+						className='rotate-90 md:rotate-0'
 						xmlns='http://www.w3.org/2000/svg'
 						width='26'
 						height='16'
@@ -60,15 +62,13 @@ const KeyFeaturesSection = () => {
 		<section
 			id='features-section'
 			className='pb-28'>
-			<div className='w-full border-t-8 py-20 border-pa-pink' />
-			<div className='flex px-28 items-start justify-between'>
+			<div className='w-full border-t-8 py-8 md:py-20 border-pa-pink' />
+			<div className='flex  px-8 md:px-28 items-start justify-between'>
 				<div className=''>
-					<h1 className='text-3xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
+					<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 						Key <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Features</span>
 					</h1>
-					<p className='text-sm lg:text-xl text-left mt-6 text-black'>
-						A glimpse into the best features on Polkassembly <br /> to elevate your governance experience.
-					</p>
+					<p className='text-sm md:w-[60%] lg:text-xl text-left mt-6 text-black'>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
 				</div>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
@@ -82,21 +82,21 @@ const KeyFeaturesSection = () => {
 					/>
 				</svg>
 			</div>
-			<div className='grid mt-8 px-28 gap-8 grid-cols-12'>
-				<div className='col-span-5 flex flex-col h-[600px] py-4 pr-2 overflow-y-auto gap-8'>
+			<div className='grid mt-8 px-8 md:px-28 gap-8 md:grid-cols-12'>
+				<div className=' md:col-span-5 flex md:flex-col md:h-[600px] md:py-4 pr-2 overflow-x-scroll md:overflow-y-auto gap-8'>
 					{data.map(item => (
-						<div>{item.id === active ? animatedActiveCard(item.id, item.title, item.description) : inactiveCard(item.id, item.title, item.description)}</div>
+						<div key={item.id}>{item.id === active ? animatedActiveCard(item.id, item.title, item.description) : inactiveCard(item.id, item.title, item.description)}</div>
 					))}
 				</div>
 				{active && (
-					<div className='col-span-7 bg-pa-pink-light flex flex-col justify-between rounded-2xl p-8'>
-						<div className='h-full w-full rounded-xl bg-gray-300'></div>
+					<div className='md:col-span-7 bg-pa-pink-light flex flex-col justify-between rounded-2xl p-8'>
+						<div className='h-[200px] md:h-full w-full rounded-xl bg-gray-300'></div>
 						<div className='flex items-center mt-8 justify-between'>
 							<h1 className='text-xl text-black font-semibold'>{data.filter(item => item.id === active)[0].title}</h1>
 							<img
 								src={arrow}
 								alt='arrow'
-								className='w-12'
+								className='w-8 md:w-12'
 							/>
 						</div>
 					</div>

@@ -78,15 +78,15 @@ export const InfiniteMovingCards = ({
 					className={cn('flex min-w-full shrink-0 gap-24 py-4 w-max flex-nowrap', start && 'animate-scroll ', pauseOnHover && 'hover:[animation-play-state:paused]')}>
 					{items.map((item, idx) => (
 						<li
-							className='w-[200px] flex flex-col items-center justify-center relative rounded-2xl bg-white border-4 flex-shrink-0 border-[#E1E1E1] p-4'
+							className='w-[135px] md:w-[200px] flex flex-col items-center justify-center relative rounded-2xl bg-white border-4 flex-shrink-0 border-[#E1E1E1] p-4'
 							key={item.title}>
 							<div className='flex items-center justify-center h-12 md:h-16'>
 								<img
 									src={item.image}
-									className='rounded-full h-auto w-8 md:w-16 mx-auto'
+									className='rounded-full h-auto w-16 mx-auto'
 								/>
 							</div>
-							<h3 className={`mt-1 md:mt-5 text-[10px] font-medium md:text-lg md:font-semibold text-gray-600 ${item.title === 'Xx' ? 'uppercase' : 'capitalize'} tracking-normal lg:tracking-widest text-center leading-none md:leading-auto px-2`}>{item.title}</h3>
+							<h3 className={`mt-3 md:mt-5 text-base font-medium md:text-lg md:font-semibold text-black ${item.title === 'Xx' ? 'uppercase' : 'capitalize'} tracking-normal lg:tracking-widest text-center leading-none md:leading-auto px-2`}>{item.title}</h3>
 						</li>
 					))}
 				</ul>
@@ -104,7 +104,7 @@ export const InfiniteMovingCards = ({
 					className={cn(' flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap', start && 'animate-scroll ', pauseOnHover && 'hover:[animation-play-state:paused]')}>
 					{items.map((item, idx) => (
 						<li
-							className='w-[450px] max-w-full relative rounded-2xl border flex-shrink-0 bg-pa-pink-light px-8 py-6 md:w-[550px]'
+							className='w-[350px] max-w-full relative rounded-2xl border flex-shrink-0 bg-pa-pink-light px-8 py-6 md:w-[550px]'
 							key={idx}>
 							<blockquote>
 								<div

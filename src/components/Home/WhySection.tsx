@@ -15,23 +15,21 @@ export default function WhySection() {
 					src={star}
 					className='absolute -left-48 top-12 w-12 h-12'
 				/>
-				<h1 className='text-3xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
+				<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 					Why <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Polkassembly?</span>
 				</h1>
-				<p className='text-sm lg:text-xl text-center mt-6 text-black'>
-					Lets take a deep dive into the values that make Polkassembly the best governance <br /> platform for the DOT ecosystem.
-				</p>
+				<p className='text-sm lg:text-xl w-[75%] font-semibold text-center mt-6 text-black'>Lets take a deep dive into the values that make Polkassembly the best governance platform for the DOT ecosystem.</p>
 				<img
 					src={star}
-					className='absolute -right-48 bottom-0 w-12 h-12'
+					className='absolute right-2 md:-right-48 bottom-0 w-8 h-8 md:w-12 md:h-12'
 				/>
 			</div>
-			<div className='container mx-48 mb-24 grid grid-cols-2 justify-center items-center w-fit mt-24 gap-4'>
+			<div className='container mx-8 md:mx-48 mb-24 grid md:grid-cols-2 justify-center items-center w-fit mt-24 gap-4'>
 				{data.map(item => (
 					<div
 						key={item.id}
 						className='rounded-3xl w-full h-[400px] bg-white p-12 flex flex-col col-span-1 justify-between'>
-						<p className='text-xl font-semibold text-black'>{item.id}</p>
+						<p className='text-xl font-bold text-black'>{item.id}</p>
 						<img
 							src={item.logo}
 							className='w-32 h-32'

@@ -96,7 +96,7 @@ export default function Navbar() {
 	});
 
 	return (
-		<nav className='bg-white border-b-4 border-pa-pink md:border-0  md:bg-transparent z-50'>
+		<nav className='bg-white border-b-4 relative border-pa-pink md:border-0  md:bg-transparent z-50'>
 			<div className='container flex justify-between text-black text-center py-3'>
 				<Link
 					to='/'
@@ -152,7 +152,7 @@ export default function Navbar() {
 					</a>
 				</div>
 				<div className='flex items-center gap-2 me-2'>
-					<div className='flex items-center'>
+					<div className='hidden md:flex items-center'>
 						<motion.div
 							className='menu-item z-50'
 							onMouseEnter={toggleMouseMenu}
@@ -222,11 +222,11 @@ export default function Navbar() {
 					<motion.nav
 						initial={false}
 						animate={isOpen ? 'open' : 'closed'}
-						className='flex md:hidden'
+						className='flex md:hidden absolute top-0 right-4 bottom-0'
 						custom={height}
 						ref={containerRef}>
 						<motion.div
-							className='absolute top-0 z-50 right-0 w-[300px] bg-[red]'
+							className='absolute top-0 z-50 right-0 w-[300px] bg-white'
 							variants={sidebar}
 						/>
 						<button onClick={() => toggleOpen()}>
