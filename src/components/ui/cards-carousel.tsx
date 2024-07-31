@@ -6,6 +6,7 @@ import {cn} from '../../utils/utils';
 interface CarouselProps {
 	items: JSX.Element[];
 	initialScroll?: number;
+	size?: number;
 }
 
 export const CarouselContext = createContext<{
@@ -16,7 +17,7 @@ export const CarouselContext = createContext<{
 	currentIndex: 0
 });
 
-export const Carousel = ({items, initialScroll = 0}: CarouselProps) => {
+export const Carousel = ({items, initialScroll = 0, size = 300}: CarouselProps) => {
 	const carouselRef = React.useRef<HTMLDivElement>(null);
 	const [canScrollLeft, setCanScrollLeft] = React.useState(false);
 	const [canScrollRight, setCanScrollRight] = React.useState(true);
@@ -40,13 +41,13 @@ export const Carousel = ({items, initialScroll = 0}: CarouselProps) => {
 
 	const scrollLeft = () => {
 		if (carouselRef.current) {
-			carouselRef.current.scrollBy({left: -300, behavior: 'smooth'});
+			carouselRef.current.scrollBy({left: -size, behavior: 'smooth'});
 		}
 	};
 
 	const scrollRight = () => {
 		if (carouselRef.current) {
-			carouselRef.current.scrollBy({left: 300, behavior: 'smooth'});
+			carouselRef.current.scrollBy({left: size, behavior: 'smooth'});
 		}
 	};
 

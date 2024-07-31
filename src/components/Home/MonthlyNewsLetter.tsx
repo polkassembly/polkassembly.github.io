@@ -73,7 +73,10 @@ export default function MonthlyNewsLetter() {
 				</button>
 			</div>
 			<div className='px-2 w-full relative overflow-hidden'>
-				<Carousel items={cards} />
+				<Carousel
+					items={cards}
+					size={600}
+				/>
 			</div>
 		</section>
 	) : null;
