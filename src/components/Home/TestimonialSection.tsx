@@ -5,7 +5,7 @@ import {InfiniteMovingCards} from '../ui/infinite-moving-cards';
 export default function TestimonialSection() {
 	return (
 		<section
-			id='testimony-section'
+			id='testimonial-section'
 			className='flex flex-col items-center'>
 			<div className='flex relative w-fit flex-col pt-24 items-center container'>
 				<img

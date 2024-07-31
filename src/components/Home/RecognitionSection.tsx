@@ -7,7 +7,9 @@ import arrow from '../../assets/images/arrow-diagonal.svg';
 
 export default function RecognitionSection() {
 	return (
-		<section className='p-28 bg-recognition-bg bg-contain bg-no-repeat bg-bottom'>
+		<section
+			id='recognition-section'
+			className='p-28 bg-recognition-bg bg-contain bg-no-repeat bg-bottom'>
 			<h1 className='text-3xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 				Notable <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Recognition</span>
 			</h1>

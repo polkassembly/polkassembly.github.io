@@ -126,7 +126,7 @@ export default function Navbar() {
 						About
 					</ScrollLink>
 					<ScrollLink
-						to='top-features-section'
+						to='recognition-section'
 						smooth='easeInOutQuart'
 						delay={0}
 						offset={-40}
@@ -135,16 +135,7 @@ export default function Navbar() {
 						Recognition
 					</ScrollLink>
 					<ScrollLink
-						to='roadmap-section'
-						smooth='easeInOutQuart'
-						delay={0}
-						offset={-40}
-						duration={200}
-						className='hidden md:block mx-6 cursor-pointer font-semibold hover:text-pa-pink'>
-						Roadmap
-					</ScrollLink>
-					<ScrollLink
-						to='roadmap-section'
+						to='testimonial-section'
 						smooth='easeInOutQuart'
 						delay={0}
 						offset={-40}

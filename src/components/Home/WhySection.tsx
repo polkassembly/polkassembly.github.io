@@ -7,7 +7,7 @@ import star from '../../assets/images/star.svg';
 export default function WhySection() {
 	return (
 		<section
-			id='why-section'
+			id='about-section'
 			className='bg-pa-pink-light flex flex-col items-center'>
 			<div className='w-full border-t-8 border-pa-pink' />
 			<div className='flex relative w-fit flex-col pt-24 items-center container'>
