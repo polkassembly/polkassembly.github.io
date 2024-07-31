@@ -54,7 +54,7 @@ export default function MonthlyNewsLetter() {
 	return data.length ? (
 		<section className='my-28 mx-4 md:mx-20'>
 			<div className='flex justify-between w-full items-center'>
-				<h1 className='text-3xl flex items-center gap-2 lg:text-6xl font-semibold text-black'>
+				<h1 className='text-3xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 					<span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Polkadot</span> News
 				</h1>
 				<button className='bg-white text-pa-pink rounded-full border border-pa-pink p-4 flex text-sm items-center gap-2'>

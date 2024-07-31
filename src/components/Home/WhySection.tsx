@@ -15,7 +15,7 @@ export default function WhySection() {
 					src={star}
 					className='absolute -left-48 top-12 w-12 h-12'
 				/>
-				<h1 className='text-3xl flex items-center gap-2 lg:text-6xl font-semibold text-black'>
+				<h1 className='text-3xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 					Why <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Polkassembly?</span>
 				</h1>
 				<p className='text-sm lg:text-xl text-center mt-6 text-black'>

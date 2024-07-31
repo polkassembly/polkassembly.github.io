@@ -150,7 +150,7 @@ export const InfiniteMovingCards = ({
 						<li
 							className='flex items-center gap-4'
 							key={item.title}>
-							<h1 className='text-3xl inline-flex items-center gap-2 lg:text-6xl font-semibold text-black'>{item.title}</h1>
+							<h1 className='text-3xl inline-flex items-center gap-2 lg:text-6xl font-bold text-black'>{item.title}</h1>
 							<img
 								src={starPink}
 								className='w-12 ml-12'

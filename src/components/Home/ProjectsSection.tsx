@@ -3,7 +3,6 @@ import polkasafeLogo from '../../assets/projects/polkasafe.svg';
 import townhallBanner from '../../assets/images/projects-icon.svg';
 import learnMore from '../../assets/images/project-arrow.svg';
 import {Carousel} from '../ui/cards-carousel';
-import SectionHeading from './SectionHeading';
 
 export default function ProjectsSection() {
 	const cards = data.map((card, index) => (
@@ -35,7 +34,7 @@ export default function ProjectsSection() {
 		<section
 			id='projects-section'
 			className='flex items-center justify-between h-screen ml-28'>
-			<h1 className='text-3xl flex flex-col  lg:text-6xl font-semibold text-black'>
+			<h1 className='text-3xl flex flex-col  lg:text-6xl font-bold text-black'>
 				Polkassembly <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Projects</span>
 			</h1>
 			<div className='ml-8 px-2 relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]'>

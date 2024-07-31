@@ -66,7 +66,7 @@ export default function Navbar() {
 					{currentRoute() == '/' ? (
 						<>
 							<ScrollLink
-								to='about-section'
+								to='features-section'
 								smooth='easeInOutQuart'
 								delay={0}
 								offset={-40}
@@ -152,8 +152,8 @@ export default function Navbar() {
 									<span className='absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-pa-pink group-hover:translate-x-0 ease'>
 										<svg
 											className='w-6 h-6'
-											fill='none'
-											stroke='currentdivor'
+											fill='white'
+											stroke='white'
 											viewBox='0 0 24 24'
 											xmlns='http://www.w3.org/2000/svg'>
 											<path
