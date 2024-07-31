@@ -11,7 +11,7 @@ const GovernSection = () => {
 			<div className='-mt-24 top-16 w-full flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden'>
 				<InfiniteMovingCards
 					items={[{title: 'Govern'}, {title: 'Participate'}, {title: 'Collaborate'}]}
-					speed='slow'
+					speed='fast'
 					pauseOnHover={false}
 					type='banner'
 				/>
