@@ -7,7 +7,7 @@ export default function HeroSection() {
 		<section className='bg-hero-bg bg-cover bg-no-repeat bg-center'>
 			<div
 				id='hero-section'
-				className='h-[80vh] md:h-[75vh] -mt-24 flex justify-center items-center w-full'>
+				className='h-[60vh] md:h-[75vh] md:-mt-24 flex justify-center items-center w-full'>
 				<div className='h-[500px] flex lg:items-end relative z-10 mt-32'>
 					<div className='ml-4 mt-16 mb-16 lg:mb-32 flex flex-col items-center text-white'>
 						<h1 className='text-3xl lg:text-6xl font-bold text-black'>
