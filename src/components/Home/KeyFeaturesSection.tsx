@@ -83,7 +83,7 @@ const KeyFeaturesSection = () => {
 				</svg>
 			</div>
 			<div className='grid mt-8 px-8 md:px-28 gap-8 md:grid-cols-12'>
-				<div className=' md:col-span-5 flex md:flex-col md:h-[600px] md:py-4 pr-2 overflow-x-scroll md:overflow-y-auto gap-8'>
+				<div className=' md:col-span-5 flex md:flex-col md:h-[600px] md:py-4 pr-2 overflow-x-scroll md:overflow-x-auto md:overflow-y-auto gap-8'>
 					{data.map(item => (
 						<div key={item.id}>{item.id === active ? animatedActiveCard(item.id, item.title, item.description) : inactiveCard(item.id, item.title, item.description)}</div>
 					))}

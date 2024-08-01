@@ -4,6 +4,9 @@ import {Link as ScrollLink, animateScroll as scroll} from 'react-scroll';
 import polkassemblyLogo from '../assets/images/pa-logo.svg';
 import {motion, useCycle} from 'framer-motion';
 import parachainsArr from './parachainsArr';
+import {chainProperties, network} from '../utils/networkConstants';
+import {isOpenGovSupported} from '../utils/openGovNetworks';
+import chainLogo from '../assets/parachain-logos/chain-logo.jpg';
 
 export const useDimensions = (ref: any) => {
 	const dimensions = useRef({width: 0, height: 0});
@@ -15,6 +18,60 @@ export const useDimensions = (ref: any) => {
 
 	return dimensions.current;
 };
+
+type DropdownMenuItemType = {
+	key: any;
+	label: any;
+	link: string;
+};
+
+const polkadotChains: DropdownMenuItemType[] = [];
+const kusamaChains: DropdownMenuItemType[] = [];
+const soloChains: DropdownMenuItemType[] = [];
+const testChains: DropdownMenuItemType[] = [];
+
+let link = '';
+
+for (const key of Object.keys(network)) {
+	const keyVal = network[key as keyof typeof network];
+	if (key === 'TANGANIKA') continue;
+
+	link = ['MOONBASE', 'MOONRIVER', 'MOONBEAM', 'KILT'].includes(key) ? `https://${key}.polkassembly.network` : `https://${key === 'POLYMESHTEST' ? 'polymesh-test' : keyVal}.polkassembly.io`;
+
+	if (isOpenGovSupported(keyVal)) {
+		link = `${link}/opengov`;
+	}
+	const optionObj: DropdownMenuItemType = {
+		key,
+		label: (
+			<div className='my-2 flex items-center'>
+				<span>
+					<img
+						className='mr-3 h-5 w-5 rounded-full bg-white object-contain'
+						src={chainProperties[keyVal]?.logo ? chainProperties[keyVal].logo : chainLogo}
+						alt='Logo'
+					/>
+				</span>
+				<span className='text-sm font-medium capitalize text-bodyBlue hover:text-pa-pink truncate'>{keyVal == 'hydradx' ? 'HydraDX' : keyVal}</span>
+			</div>
+		),
+		link
+	};
+
+	switch (chainProperties[keyVal]?.category) {
+		case 'polkadot':
+			polkadotChains.push(optionObj);
+			break;
+		case 'kusama':
+			kusamaChains.push(optionObj);
+			break;
+		case 'test':
+			testChains.push(optionObj);
+			break;
+		default:
+			soloChains.push(optionObj);
+	}
+}
 
 export default function Navbar() {
 	const launchAppBtnClasses = 'hidden md:inline-flex relative items-center text-white justify-center p-4 px-6 py-1 overflow-hidden font-medium transition duration-300 ease-out border-2 bg-pa-pink rounded-full shadow-md group';
@@ -160,7 +217,7 @@ export default function Navbar() {
 							{currentRoute() == '/' ? (
 								<>
 									<NavLink
-										to='/launch-app'
+										to='/'
 										className={({isActive}) => (isActive ? `bg-pa-pink text-white ${launchAppBtnClasses}` : `text-white ${launchAppBtnClasses}`)}>
 										<span className='absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-pa-pink group-hover:translate-x-0 ease'>
 											<svg
@@ -181,7 +238,7 @@ export default function Navbar() {
 									</NavLink>
 
 									<NavLink
-										to='/launch-app'
+										to='/'
 										className={({isActive}) => (isActive ? `bg-pa-pink text-white ${launchAppBtnMobileClasses}` : `text-white ${launchAppBtnMobileClasses}`)}>
 										Launch App
 									</NavLink>
@@ -194,24 +251,49 @@ export default function Navbar() {
 								variants={subMenuAnimate}>
 								<div className='max-h-[52vh] bg-white border border-pa-pink px-4 rounded-lg overflow-y-auto'>
 									<>
+										<div className='text-sm font-semibold mt-2 text-gray-800 text-left'>Polkadot &amp; Parachains</div>
 										<div className='mt-2 grid grid-cols-2 gap-x-4 w-[300px]'>
-											{parachainsArr.map(optionObj => (
-												<div
-													key={optionObj.title}
-													className={`flex col-span-1 cursor-pointer font-medium text-pink_primary dark:text-blue-dark-high`}
-													// onClick={() => handleLink(optionObj)}
-												>
-													<div className='my-2 flex items-center'>
-														<span>
-															<img
-																className='mr-3 h-5 w-5 rounded-full bg-white object-contain'
-																src={optionObj.image}
-																alt='Logo'
-															/>
-														</span>
-														<span className='text-sm font-medium capitalize truncate mr-2'>{optionObj.title}</span>
+											{polkadotChains.map(optionObj => (
+												<a
+													href={optionObj.link}
+													target='_blank'
+													rel='noopener noreferrer'
+													key={optionObj.key}
+													className={`flex col-span-1 cursor-pointer font-medium text-pink_primary dark:text-blue-dark-high`}>
+													<div className='my-1 flex items-center'>
+														<span className='text-sm font-medium capitalize truncate mr-2'>{optionObj.label}</span>
 													</div>
-												</div>
+												</a>
+											))}
+										</div>
+										<div className='text-sm font-semibold mt-2 text-gray-800 text-left'>Kusama &amp; Parachains</div>
+										<div className='mt-2 grid grid-cols-2 gap-x-4 w-[300px]'>
+											{kusamaChains.map(optionObj => (
+												<a
+													href={optionObj.link}
+													target='_blank'
+													rel='noopener noreferrer'
+													key={optionObj.key}
+													className={`flex col-span-1 cursor-pointer font-medium text-pink_primary dark:text-blue-dark-high`}>
+													<div className='my-1 flex items-center'>
+														<span className='text-sm font-medium capitalize truncate mr-2'>{optionObj.label}</span>
+													</div>
+												</a>
+											))}
+										</div>
+										<div className='text-sm font-semibold mt-2 text-gray-800 text-left'>Test Chains</div>
+										<div className='mt-2 grid grid-cols-2 gap-x-4 w-[300px]'>
+											{testChains.map(optionObj => (
+												<a
+													href={optionObj.link}
+													target='_blank'
+													rel='noopener noreferrer'
+													key={optionObj.key}
+													className={`flex col-span-1 cursor-pointer font-medium text-pink_primary dark:text-blue-dark-high`}>
+													<div className='my-1 flex items-center'>
+														<span className='text-sm font-medium capitalize truncate mr-2'>{optionObj.label}</span>
+													</div>
+												</a>
 											))}
 										</div>
 									</>

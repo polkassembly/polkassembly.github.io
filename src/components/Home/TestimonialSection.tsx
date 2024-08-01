@@ -1,4 +1,4 @@
-import whyOne from '../../assets/images/why-1.svg';
+import circlePink from '../../assets/images/circle_pink.svg';
 import star from '../../assets/images/star.svg';
 import {InfiniteMovingCards} from '../ui/infinite-moving-cards';
 
@@ -40,31 +40,31 @@ const data = [
 	{
 		author: 'Alan Baker',
 		designation: 'CEO of Redbird Company',
-		image: whyOne,
+		image: circlePink,
 		testimony: "Working with Polkassembly  has been an incredible experience. They truly listened to our needs and delivered a stunning design that exceeded our expectations. We couldn't be happier with the final product!"
 	},
 	{
 		author: 'Alan Baker',
 		designation: 'CEO of Redbird Company',
-		image: whyOne,
+		image: circlePink,
 		testimony: "Working with Polkassembly  has been an incredible experience. They truly listened to our needs and delivered a stunning design that exceeded our expectations. We couldn't be happier with the final product!"
 	},
 	{
 		author: 'Alan Baker',
 		designation: 'CEO of Redbird Company',
-		image: whyOne,
+		image: circlePink,
 		testimony: "Working with Polkassembly  has been an incredible experience. They truly listened to our needs and delivered a stunning design that exceeded our expectations. We couldn't be happier with the final product!"
 	},
 	{
 		author: 'Alan Baker',
 		designation: 'CEO of Redbird Company',
-		image: whyOne,
+		image: circlePink,
 		testimony: "Working with Polkassembly  has been an incredible experience. They truly listened to our needs and delivered a stunning design that exceeded our expectations. We couldn't be happier with the final product!"
 	},
 	{
 		author: 'Alan Baker',
 		designation: 'CEO of Redbird Company',
-		image: whyOne,
+		image: circlePink,
 		testimony: "Working with Polkassembly  has been an incredible experience. They truly listened to our needs and delivered a stunning design that exceeded our expectations. We couldn't be happier with the final product!"
 	}
 ];

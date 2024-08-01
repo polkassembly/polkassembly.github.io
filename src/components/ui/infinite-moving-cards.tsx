@@ -107,9 +107,6 @@ export const InfiniteMovingCards = ({
 							className='w-[350px] max-w-full relative rounded-2xl border flex-shrink-0 bg-pa-pink-light px-8 py-6 md:w-[550px]'
 							key={idx}>
 							<blockquote>
-								<div
-									aria-hidden='true'
-									className='user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]'></div>
 								<div className='flex gap-2 relaitve w-full items-start'>
 									<img
 										src={item.image}
