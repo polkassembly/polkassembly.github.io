@@ -1,11 +1,32 @@
-import react, {useState} from 'react';
+import react, {useState, useRef, useEffect} from 'react';
 import arrow from '../../assets/images/arrow-rounded-white.svg';
+import {useMotionValueEvent, useScroll} from 'framer-motion';
 import {motion} from 'framer-motion';
 import {DivWithBorder} from '../ui/moving-border';
 const KeyFeaturesSection = () => {
-	const [active, setActive] = useState<string>('01');
+	const [active, setActive] = useState<number>(0);
+	const ref = useRef<any>(null);
+	const {scrollYProgress} = useScroll({
+		// uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
+		target: ref,
+		// container: ref,
+		offset: ['start center', 'center start']
+	});
+	const cardLength = data.length;
 
 	const animatedActiveCard = (id: string, title: string, description: string) => {
+		useMotionValueEvent(scrollYProgress, 'change', latest => {
+			const cardsBreakpoints = data.map((_, index) => index / cardLength);
+			const closestBreakpointIndex = cardsBreakpoints.reduce((acc, breakpoint, index) => {
+				const distance = Math.abs(latest - breakpoint);
+				if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
+					return index;
+				}
+				return acc;
+			}, 0);
+			setActive(closestBreakpointIndex);
+		});
+
 		return (
 			<DivWithBorder
 				className='bg-[#f5f5f572] border-pa-pink rounded-2xl border p-8`'
@@ -32,11 +53,11 @@ const KeyFeaturesSection = () => {
 		);
 	};
 
-	const inactiveCard = (id: string, title: string, description: string) => {
+	const inactiveCard = (id: string, title: string, description: string, index: number) => {
 		return (
 			<div
 				className='bg-white rounded-3xl h-full w-[60vw] md:w-auto md:h-auto md:rounded-full border-slate-400 cursor-pointer border  p-8'
-				onClick={() => setActive(id)}>
+				onClick={() => setActive(index)}>
 				<div className='flex justify-between items-center'>
 					<h1 className='text-xl text-black font-semibold'>
 						{id} <span className='text-black font-normal ml-1'>{title}</span>
@@ -82,25 +103,40 @@ const KeyFeaturesSection = () => {
 					/>
 				</svg>
 			</div>
-			<div className='grid mt-8 px-8 md:px-28 gap-8 md:grid-cols-12'>
-				<div className=' md:col-span-5 flex md:flex-col md:h-[600px] md:py-4 pr-2 overflow-x-scroll md:overflow-x-auto md:overflow-y-auto gap-8'>
-					{data.map(item => (
-						<div key={item.id}>{item.id === active ? animatedActiveCard(item.id, item.title, item.description) : inactiveCard(item.id, item.title, item.description)}</div>
+			<div
+				ref={ref}
+				className='relative grid mt-8 px-8 md:px-28 md:pt-20 gap-8 md:grid-cols-12'>
+				<div className='md:col-span-5 flex md:flex-col md:py-4 pr-2 overflow-x-scroll md:overflow-x-auto gap-8'>
+					{data.map((item, idx) => (
+						<div key={item.id}>{idx === active ? animatedActiveCard(item.id, item.title, item.description) : inactiveCard(item.id, item.title, item.description, idx)}</div>
 					))}
 				</div>
-				{active && (
-					<div className='md:col-span-7 bg-pa-pink-light flex flex-col justify-between rounded-2xl p-8'>
-						<div className='h-[200px] md:h-full w-full rounded-xl bg-gray-300'></div>
-						<div className='flex items-center mt-8 justify-between'>
-							<h1 className='text-xl text-black font-semibold'>{data.filter(item => item.id === active)[0].title}</h1>
-							<img
-								src={arrow}
-								alt='arrow'
-								className='w-8 md:w-12'
-							/>
-						</div>
+
+				<motion.div
+					key={active}
+					initial={{
+						opacity: 0
+					}}
+					animate={{
+						opacity: 1
+					}}
+					transition={{
+						duration: 0.5,
+						ease: 'easeInOut'
+					}}
+					
+				
+					className='md:col-span-7 sticky top-4 bg-pa-pink-light flex flex-col max-h-[550px] justify-between rounded-2xl p-8'>
+					<div className='h-[200px] md:h-full w-full rounded-xl bg-gray-300'></div>
+					<div className='flex items-center mt-8 justify-between'>
+						<h1 className='text-xl text-black font-semibold'>{data.filter(item => item.id === data[active].id)[0].title}</h1>
+						<img
+							src={arrow}
+							alt='arrow'
+							className='w-8 md:w-12'
+						/>
 					</div>
-				)}
+				</motion.div>
 			</div>
 		</section>
 	);
