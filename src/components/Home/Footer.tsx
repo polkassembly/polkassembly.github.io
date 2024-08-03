@@ -5,7 +5,7 @@ import contactUsBg from '../../assets/images/contact-us-bg.svg'
 
 export const socialLinksUL = (colorClass?: string, iconClass?: string, classes?: string) => {
 	return (
-		<ul className={`ml-0 flex gap-4 ${classes}`}>
+		<ul className={`ml-0 flex flex-wrap gap-4 ${classes}`}>
 			<li>
 				<a
 					href='https://github.com/polkassembly/polkassembly'

@@ -8,12 +8,7 @@ export default function ProjectsSection() {
 	const cards = data.map((card, index) => (
 		<div
 			key={card.title}
-			className='w-[250px] md:w-[350px] md:h-[450px] bg-[#F3F3F3] rounded-3xl flex flex-col justify-between gap-4 p-8'>
-			<img
-				className='w-[250px]'
-				src={card.banner}
-				alt={card.title}
-			/>
+			className='w-[250px] md:w-[350px] md:h-[300px] bg-[#F3F3F3] rounded-3xl flex flex-col justify-between gap-4  p-8 md:p-12'>
 			<div className='text-2xl font-semibold flex gap-2'>
 				<img
 					src={card.logo}
@@ -21,6 +16,8 @@ export default function ProjectsSection() {
 				/>
 				<h1 className=''>{card.title}</h1>
 			</div>
+			<p className=''>{card.content}</p>
+
 			<h1 className='text-xl text-black font-light flex items-center gap-2'>
 				<img
 					src={learnMore}
@@ -50,25 +47,25 @@ const data = [
 		title: 'Townhall',
 		banner: townhallBanner,
 		logo: townhallLogo,
-		content: 'townhall'
+		content: 'A glimpse into the best features on Polkassembly to elevate your governance experience.'
 	},
 	{
 		title: 'Polkasafe',
 		banner: townhallBanner,
 		logo: polkasafeLogo,
-		content: 'polkasafe'
+		content: 'A glimpse into the best features on Polkassembly to elevate your governance experience.'
 	},
 	{
 		title: 'Fellowship',
 		banner: townhallBanner,
 		logo: polkasafeLogo,
-		content: 'fellowship'
+		content: 'A glimpse into the best features on Polkassembly to elevate your governance experience.'
 	},
 
 	{
 		title: 'Polkassembly',
 		banner: townhallBanner,
 		logo: polkasafeLogo,
-		content: 'polkassembly'
+		content: 'A glimpse into the best features on Polkassembly to elevate your governance experience.'
 	}
 ];
