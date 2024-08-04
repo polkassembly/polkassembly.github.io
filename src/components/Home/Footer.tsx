@@ -142,7 +142,7 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 					<div className='grid grid-cols-1 h-fit gap-2 sm:grid-cols-2 md:grid-cols-4 col-span-6'>
 						<div className='text-center sm:text-left'>
 							<p className='hidden md:block text-lg font-medium text-white underline'>About us</p>
-							<div className='md:w-[800px] md:ml-24 flex flex-col md:flex-row items-start gap-2 md:items-center rounded-xl mt-12 bg-[#292a32] py-12 px-8'>
+							<div className='md:w-[600px] xl:w-[800px] xl:ml-24 flex flex-col md:flex-row items-start gap-2 md:items-center rounded-xl mt-12 bg-[#292a32] py-12 px-8'>
 								<input
 									type='email'
 									placeholder='Email'
@@ -156,10 +156,10 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 							<p className='text-lg w-fit font-medium text-white underline'>Services</p>
 						</div>
 						<div className='hidden md:block text-center sm:text-left underline'>
-							<p className='text-lg w-fit font-medium text-white underline'>Report a Bug</p>
+							<p className='text-lg w-fit font-medium truncate text-white underline'>Report a Bug</p>
 						</div>
 						<div className='hidden md:block text-center sm:text-left underline'>
-							<p className='text-lg w-fit font-medium text-white underline'>Blog</p>
+							<p className='text-lg ml-4 w-fit font-medium text-white underline'>Blog</p>
 						</div>
 					</div>
 					<div className='hidden md:block col-span-3 h-fit'>{socialLinksUL('', 'w-5 h-5', 'justify-end')}</div>

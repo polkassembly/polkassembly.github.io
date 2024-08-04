@@ -110,7 +110,7 @@ const KeyFeaturesSection = () => {
                         A glimpse into the best features on Polkassembly to elevate your governance experience.
                     </p>
                 </div>
-                <img src={starPink} alt='star' className='w-20 h-20'/>
+                <img src={starPink} alt='star' className='md:w-20 md:h-20'/>
                 
             </div>
             <motion.div

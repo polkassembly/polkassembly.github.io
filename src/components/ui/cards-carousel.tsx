@@ -35,7 +35,7 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 		if (carouselRef.current) {
 			const {scrollLeft, scrollWidth, clientWidth} = carouselRef.current;
 			setCanScrollLeft(scrollLeft > 0);
-			setCanScrollRight(scrollLeft < scrollWidth - clientWidth - size);
+			setCanScrollRight(scrollLeft < scrollWidth - clientWidth - (isMobile() ? 0 : size));
 		}
 	};
 
@@ -114,11 +114,11 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 						onClick={scrollLeft}
 						disabled={!canScrollLeft}>
 						{type === 'news' ? (
-							<div className='relative -left-24 z-20 border rounded-full'>
+							<div className='w-8 md:w-24 relative -left-24 z-20 border rounded-full'>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
-								width='56'
-								height='56'
+								// width='56'
+								// height='56'
 								viewBox='0 0 56 56'
 								fill={canScrollLeft ? '#222222' : 'white'}>
 								<circle
@@ -134,7 +134,7 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 							</svg>
 							</div>
 						) : (
-							<div className={`w-14 h-14 rotate-180 rounded-full bg-slate-800 flex items-center justify-center ${canScrollLeft ? '' : 'hidden'}`}>
+							<div className={`w-8 h-8 md:w-14 md:h-14 rotate-180 rounded-full bg-slate-800 flex items-center justify-center ${canScrollLeft ? '' : 'hidden'}`}>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									width='20'
@@ -165,11 +165,11 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 						onClick={scrollRight}
 						disabled={!canScrollRight}>
 						{type === 'news' ? (
-							<div className='relative -right-24 z-20 border rounded-full'>
+							<div className='w-8 md:w-24 relative -right-24 z-20 border rounded-full'>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
-									width='56'
-									height='56'
+									// width='56'
+									// height='56'
 									viewBox='0 0 56 56'
 									fill={canScrollRight ? '#222222' : 'white'}>
 									<circle
@@ -184,7 +184,7 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 								</svg>
 							</div>
 						) : (
-							<div className={`w-14 h-14 rounded-full bg-slate-800 flex items-center justify-center ${canScrollRight ? '' : 'hidden'}`}>
+							<div className={`w-8 h-8 md:w-14 md:h-14 rounded-full bg-slate-800 flex items-center justify-center ${canScrollRight ? '' : 'hidden'}`}>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									width='20'

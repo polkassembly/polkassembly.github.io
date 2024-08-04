@@ -9,7 +9,7 @@ export default function RecognitionSection() {
 	return (
 		<section
 			id='recognition-section'
-			className='p-8 md:p-28 md:pt-16 bg-recognition-bg bg-contain bg-no-repeat bg-bottom'>
+			className='p-8 md:p-28 md:pt-16 bg-recognition-bg md:bg-contain bg-no-repeat bg-bottom'>
 			<h1 className='text-4xl flex flex-wrap items-center gap-2 lg:text-6xl font-bold text-black'>
 				Notable <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Recognition</span>
 			</h1>
@@ -21,13 +21,13 @@ export default function RecognitionSection() {
 					<p className='mt-4 text-base font-semibold italic'>“We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.”</p>
 				</div>
 				<img
-					className='md:col-span-1 relative -bottom-28 md:bottom-0 left-8 md:left-auto md:-right-24 rotate-90 md:rotate-0'
+					className='md:col-span-1 relative -bottom-28 md:bottom-0 left-8 lg:left-auto md:-right-24 rotate-90 md:rotate-0'
 					src={illus}
 					alt='illus'
 				/>
 			</div>
 
-			<div className=' bg-white grid md:grid-cols-3 items-start mt-12 justify-center border rounded-3xl py-8'>
+			<div className=' bg-white grid lg:grid-cols-3 items-start mt-12 justify-center border rounded-3xl py-8'>
 				<div className='flex flex-col col-span-1 pb-8 md:pb-0 px-8'>
 					<img
 						src={web3Grant}
@@ -39,7 +39,7 @@ export default function RecognitionSection() {
 							Supported by Web3 <br /> Foundation
 						</h2>
 
-						<p className='mt-1 text-lg md:h-[175px]'>
+						<p className='mt-1 text-lg overflow-hidden ellipsis md:h-[175px]'>
 							Polkassembly is a recipient of a technical grant from Web3 Foundation. We have successfully delivered the milestones described in our grant applications. Please see the Wave 7 Grants blog from Web 3 Foundation that mentions our project.
 							<br />
 						</p>
@@ -71,7 +71,7 @@ export default function RecognitionSection() {
 							Program
 						</h2>
 
-						<p className='mt-1 text-lg md:h-[175px]'>
+						<p className='mt-1 text-lg overflow-hidden ellipsis md:h-[175px]'>
 							Polkassembly is one of the projects that have been carefully selected by Parity to participate in Substrate Builders Program. Please see the Substrate projects page that mentions our project.
 							<br />
 						</p>
@@ -103,7 +103,7 @@ export default function RecognitionSection() {
 							and Kusama Treasury
 						</h2>
 
-						<p className='mt-1 text-lg md:h-[175px]'>
+						<p className='mt-1 text-lg  overflow-hidden ellipsis md:h-[175px]'>
 							Polkassembly is a recipient of treasury grants from Polkadot as well as Kusama for building the community's go-to governance platform. <br />
 						</p>
 

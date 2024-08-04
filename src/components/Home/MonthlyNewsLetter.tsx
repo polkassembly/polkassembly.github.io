@@ -9,6 +9,10 @@ export default function MonthlyNewsLetter() {
 	const [coverImage, setCoverImage] = useState<string>('');
 	const [data, setData] = useState<any[]>([]);
 
+	const isMobile = () => {
+		return window && window.innerWidth < 768;
+	};
+
 	useEffect(() => {
 		const fetchFeed = async () => {
 			try {
@@ -30,7 +34,7 @@ export default function MonthlyNewsLetter() {
 	const cards = data.map(news => (
 		<div
 			key={news?.id}
-			className='container h-[350px] w-[80vw] p-3 flex drop-shadow-md rounded-[50px] overflow-hidden flex-col md:flex-row  md:h-[500px] md:w-[599px] bg-white'>
+			className='container h-[350px] w-[250px] p-3 flex drop-shadow-md rounded-[50px] overflow-hidden flex-col md:flex-row  md:h-[500px] md:w-[599px] bg-white'>
 			<div
 				className={`bg-cover bg-center bg-no-repeat w-full h-full rounded-[40px] z-20 flex flex-col justify-end p-[24px] md:p-[36px] gap-[24px] md:gap-[18px]`}
 				style={{backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0), transparent 100%), url(${news?.cover_image || NewsLetter})`}}>
@@ -74,11 +78,11 @@ export default function MonthlyNewsLetter() {
 			<div className='px-2 w-[75vw] relative'>
 				<Carousel
 					items={cards}
-					size={600}
+					size={isMobile() ? 300 : 630}
 					type='news'
 				/>
 			</div>
-			<button className='flex md:hidden bg-white text-pa-pink rounded-full border border-pa-pink py-2 px-4 text-base font-semibold items-center gap-2'>
+			<button className='flex md:hidden mr-auto bg-white text-pa-pink rounded-full border border-pa-pink py-2 px-4 text-base font-semibold items-center gap-2'>
 				See More
 				<svg
 					xmlns='http://www.w3.org/2000/svg'

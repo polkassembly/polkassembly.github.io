@@ -24,13 +24,13 @@ export default function WhySection() {
 					className='absolute right-2 md:-right-48 bottom-0 w-8 h-8 md:w-12 md:h-12'
 				/>
 			</div>
-			<div className='container mx-12 md:mx-48 mb-24 grid md:grid-cols-2 justify-center items-center w-fit mt-24 gap-4'>
+			<div className='container mx-12 md:mx-48 mb-24 grid xl:grid-cols-2 justify-center items-center w-fit mt-24 gap-4'>
 				{data.map(item => (
 					<div
 						key={item.id}
-						className='rounded-[50px] border w-full md:h-[300px] bg-white p-12 flex flex-col col-span-1 justify-start'>
+						className='rounded-3xl md:rounded-[50px] overflow-hidden border w-full md:h-full bg-white p-8 md:p-12 flex flex-col col-span-1 justify-start'>
 						<p className='text-2xl mb-8 font-bold text-[#666666]'>{item.id}</p>
-						<div className='flex gap-16 flex-col md:flex-row items-start'>
+						<div className='flex gap-16 flex-col lg:flex-row items-start'>
 							<img
 								src={item.logo}
 								className='w-32 h-32'
