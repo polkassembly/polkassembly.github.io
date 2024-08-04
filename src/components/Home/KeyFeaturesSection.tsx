@@ -14,7 +14,7 @@ const KeyFeaturesSection = () => {
     const scrollControls = useAnimation();
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ['start center', 'center start']
+        offset: ['center center', 'center start']
     });
     const cardLength = data.length;
 
