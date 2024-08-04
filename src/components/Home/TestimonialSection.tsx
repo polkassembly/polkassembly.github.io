@@ -27,9 +27,9 @@ export default function TestimonialSection() {
 			<div className=' flex flex-col w-full mt-20 items-center justify-center relative overflow-hidden'>
 				<InfiniteMovingCards
 					items={data}
-					speed='slow'
+					speed='normal'
 					type='cards'
-					direction='right'
+					direction='left'
 				/>
 			</div>
 		</section>

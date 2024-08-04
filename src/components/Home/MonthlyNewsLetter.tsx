@@ -12,9 +12,8 @@ export default function MonthlyNewsLetter() {
 	useEffect(() => {
 		const fetchFeed = async () => {
 			try {
-				const url = 'https://substackapi.com/api/feeds/polkassembly.substack.com?limit=3&sort=new';
+				const url = 'https://substackapi.com/api/feeds/polkassembly.substack.com?limit=4&sort=new';
 				const response = await(await fetch(url)).json();
-				console.log('respo', response);
 				if (response.length >= 3) {
 					setData(response);
 				}
@@ -31,7 +30,7 @@ export default function MonthlyNewsLetter() {
 	const cards = data.map(news => (
 		<div
 			key={news?.id}
-			className='container md:mt-20 h-[350px] w-[80vw] p-1 flex drop-shadow-md rounded-[50px] overflow-hidden flex-col md:flex-row  md:h-[500px] md:w-[600px] bg-white'>
+			className='container h-[350px] w-[80vw] p-3 flex drop-shadow-md rounded-[50px] overflow-hidden flex-col md:flex-row  md:h-[500px] md:w-[599px] bg-white'>
 			<div
 				className={`bg-cover bg-center bg-no-repeat w-full h-full rounded-[40px] z-20 flex flex-col justify-end p-[24px] md:p-[36px] gap-[24px] md:gap-[18px]`}
 				style={{backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0), transparent 100%), url(${news?.cover_image || NewsLetter})`}}>
@@ -52,7 +51,7 @@ export default function MonthlyNewsLetter() {
 	));
 
 	return data.length ? (
-		<section className='my-28 mx-4 md:mx-20'>
+		<section className='my-28 mx-4 md:mx-20 flex flex-col items-center justify-center'>
 			<div className='flex justify-between w-full items-center'>
 				<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 					<span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Polkadot</span> News
@@ -72,10 +71,11 @@ export default function MonthlyNewsLetter() {
 					</svg>
 				</button>
 			</div>
-			<div className='px-2 w-full relative overflow-hidden'>
+			<div className='px-2 w-[75vw] relative'>
 				<Carousel
 					items={cards}
 					size={600}
+					type='news'
 				/>
 			</div>
 			<button className='flex md:hidden bg-white text-pa-pink rounded-full border border-pa-pink py-2 px-4 text-base font-semibold items-center gap-2'>

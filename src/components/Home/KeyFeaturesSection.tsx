@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import arrow from '../../assets/images/arrow-rounded-white.svg';
 import { useMotionValueEvent, useScroll, useAnimation } from 'framer-motion';
 import { motion } from 'framer-motion';
+import starPink from '../../assets/images/star-pink-2.svg';
 import { DivWithBorder } from '../ui/moving-border';
 
 const KeyFeaturesSection = () => {
@@ -18,13 +19,9 @@ const KeyFeaturesSection = () => {
     const cardLength = data.length;
 
     useEffect(() => {
-		console.log('zscrollRef.current', scrollRef.current, window.innerWidth < 768, cardRefs, active, cardRefs.current[active]);
-
         if (window.innerWidth < 768 && !cardRefs.current[active]) {
-			console.log('zscrollRef.current1', scrollRef.current);
 			if (scrollRef.current) {
 				const getVal = active >= prevActive ? 300 : -300;
-				console.log('zscrollRef.current2', scrollRef.current, getVal);
 				scrollRef.current.scrollBy({left: getVal, behavior: 'smooth'});
 			}
         }
@@ -113,18 +110,8 @@ const KeyFeaturesSection = () => {
                         A glimpse into the best features on Polkassembly to elevate your governance experience.
                     </p>
                 </div>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="80"
-                    height="80"
-                    viewBox="0 0 80 80"
-                    fill="none"
-                >
-                    <path
-                        d="M40 0L46.7882 33.2118L80 40L46.7882 46.7882L40 80L33.2118 46.7882L0 40L33.2118 33.2118L40 0Z"
-                        fill="#E6007A"
-                    />
-                </svg>
+                <img src={starPink} alt='star' className='w-20 h-20'/>
+                
             </div>
             <motion.div
                 ref={ref}

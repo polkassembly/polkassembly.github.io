@@ -27,7 +27,7 @@ export default function RecognitionSection() {
 				/>
 			</div>
 
-			<div className='container bg-white grid md:grid-cols-3 items-start mt-12 justify-center border rounded-3xl py-8'>
+			<div className=' bg-white grid md:grid-cols-3 items-start mt-12 justify-center border rounded-3xl py-8'>
 				<div className='flex flex-col col-span-1 pb-8 md:pb-0 px-8'>
 					<img
 						src={web3Grant}

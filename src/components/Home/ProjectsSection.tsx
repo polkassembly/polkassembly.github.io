@@ -8,7 +8,7 @@ export default function ProjectsSection() {
 	const cards = data.map((card, index) => (
 		<div
 			key={card.title}
-			className='w-[250px] md:w-[350px] md:h-[300px] bg-[#F3F3F3] rounded-3xl flex flex-col justify-between gap-4  p-8 md:p-12'>
+			className='w-[250px] md:w-96 md:h-[300px] bg-[#F3F3F3] rounded-3xl flex flex-col justify-between gap-4  p-8 md:p-12'>
 			<div className='text-2xl font-semibold flex gap-2'>
 				<img
 					src={card.logo}
@@ -31,12 +31,15 @@ export default function ProjectsSection() {
 	return (
 		<section
 			id='projects-section'
-			className='flex flex-col md:flex-row md:items-center justify-between md:h-screen mt-28 md:mt-auto md:ml-28'>
+			className='flex flex-col md:flex-row md:items-center justify-between md:h-[80vh] mt-28 md:mt-auto md:ml-28'>
 			<h1 className='text-4xl flex flex-col ml-8 md:ml-auto lg:text-6xl font-bold text-black'>
 				Polkassembly <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Projects</span>
 			</h1>
 			<div className='ml-8 px-2 relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]'>
-				<Carousel items={cards} />
+				<Carousel
+					items={cards}
+					type='projects'
+				/>
 			</div>
 		</section>
 	);
