@@ -47,7 +47,12 @@ export default function MonthlyNewsLetter() {
 							className='w-9 h-9 rounded-full p-2 bg-white'
 							alt='arrow'
 						/>
-						<span className='text-white text-sm lg:text-lg font-normal'> Learn more</span>
+						<a
+							href={news.canonical_url}
+							target='_blank'
+							rel='noreferrer'>
+							<span className='text-white text-sm lg:text-lg font-normal'> Learn more</span>
+						</a>
 					</div>
 				</div>
 			</div>

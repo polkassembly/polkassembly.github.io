@@ -8,7 +8,7 @@ export default function ProjectsSection() {
 	const cards = data.map((card, index) => (
 		<div
 			key={card.title}
-			className='w-[250px] md:w-96 md:h-[300px] bg-[#F3F3F3] rounded-3xl flex flex-col justify-between gap-4  p-8 md:p-12'>
+			className='w-[250px] md:w-96 md:h-[300px] bg-[#FEF6FB] border border-[#F8BDDD] rounded-3xl flex flex-col justify-between gap-4  p-8 md:p-12'>
 			<div className='text-2xl font-semibold flex gap-2'>
 				<img
 					src={card.logo}

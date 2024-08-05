@@ -142,14 +142,14 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 					<div className='grid grid-cols-1 h-fit gap-2 sm:grid-cols-2 md:grid-cols-4 col-span-6'>
 						<div className='text-center sm:text-left'>
 							<p className='hidden md:block text-lg font-medium text-white underline'>About us</p>
-							<div className='md:w-[600px] xl:w-[800px] xl:ml-24 flex flex-col md:flex-row items-start gap-2 md:items-center rounded-xl mt-12 bg-[#292a32] py-12 px-8'>
+							{/* <div className='md:w-[600px] xl:w-[800px] xl:ml-24 flex flex-col md:flex-row items-start gap-2 md:items-center rounded-xl mt-12 bg-[#292a32] py-12 px-8'>
 								<input
 									type='email'
 									placeholder='Email'
 									className='z-20 w-full px-4 py-2 text-white rounded-xl bg-transparent border border-white placeholder:text-white'
 								/>
 								<button className='md:ml-4 text-white bg-pa-pink hover:bg-pa-pink/80 px-4 py-2 md:w-[40%] rounded-xl'>Subscribe to news</button>
-							</div>
+							</div> */}
 						</div>
 
 						<div className='hidden md:block text-center sm:text-left underline'>

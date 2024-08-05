@@ -1,7 +1,7 @@
-import whyOne from '../../assets/images/why-1.svg';
-import whyTwo from '../../assets/images/why-2.svg';
-import whyThree from '../../assets/images/why-3.svg';
-import whyFour from '../../assets/images/why-4.svg';
+import whyOne from '../../assets/images/why-1.png';
+import whyTwo from '../../assets/images/why-2.png';
+import whyThree from '../../assets/images/why-3.png';
+import whyFour from '../../assets/images/why-4.png';
 import star from '../../assets/images/star.svg';
 
 export default function WhySection() {
@@ -21,23 +21,23 @@ export default function WhySection() {
 				<p className='text-sm lg:text-xl w-[75%] font-semibold text-center mt-6 text-black'>Lets take a deep dive into the values that make Polkassembly the best governance platform for the DOT ecosystem.</p>
 				<img
 					src={star}
-					className='absolute right-2 md:-right-48 bottom-0 w-8 h-8 md:w-12 md:h-12'
+					className='absolute right-2 md:right-0 bottom-0 w-8 h-8 md:w-12 md:h-12'
 				/>
 			</div>
-			<div className='container mx-12 md:mx-48 mb-24 grid xl:grid-cols-2 justify-center items-center w-fit mt-24 gap-4'>
+			<div className='container mx-12 md:mx-24 2xl:mx-48 mb-24 grid xl:grid-cols-2 justify-center items-center w-fit mt-24 gap-4'>
 				{data.map(item => (
 					<div
 						key={item.id}
-						className='rounded-3xl md:rounded-[50px] overflow-hidden border w-full md:h-full bg-white p-8 md:p-12 flex flex-col col-span-1 justify-start'>
-						<p className='text-2xl mb-8 font-bold text-[#666666]'>{item.id}</p>
-						<div className='flex gap-16 flex-col lg:flex-row items-start'>
+						className='rounded-3xl md:rounded-[50px] overflow-hidden border w-full md:h-full bg-white p-8 md:p-8 2xl:p-12 flex flex-col col-span-1 justify-start'>
+						<p className='text-2xl mb-6 2xl:mb-8 font-bold text-[#666666]'>{item.id}</p>
+						<div className='flex gap-8 2xl:gap-16 flex-col lg:flex-row items-start'>
 							<img
 								src={item.logo}
-								className='w-32 h-32'
+								className='w-28'
 							/>
 							<div className='flex flex-col gap-4'>
 								<h3 className='text-2xl font-bold text-black'>{item.title}</h3>
-								<p className='text-sm text-black leading-7'>{item.content}</p>
+								<p className='text-black leading-7'>{item.content}</p>
 							</div>
 						</div>
 					</div>
@@ -70,7 +70,7 @@ const data = [
 	{
 		id: '04',
 		title: 'Strategic Collaborations: ',
-		logo: whyThree,
-		content: 'We actively seek and maintain partnerships with influential projects and leaders in the Polkadot ecosystem, ensuring that our platform remains at the forefront of innovation.'
+		logo: whyTwo,
+		content: 'We actively seek and maintain partnerships with influential projects and leaders , ensuring  we remains at the forefront of innovation and growth.'
 	}
 ];

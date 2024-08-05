@@ -153,8 +153,8 @@ export default function Navbar() {
 	});
 
 	return (
-		<nav className='bg-white border-b-4 relative border-pa-pink md:border-0  md:bg-transparent z-50'>
-			<div className='container flex justify-between text-black text-center py-3'>
+		<nav className='bg-white border-b-4 relative border-pa-pink md:border-0 mt-4  md:bg-transparent z-50'>
+			<div className='container flex justify-between text-black text-center p-3'>
 				<Link
 					to='/'
 					className='logo ml-3 md:ml-6'>
@@ -170,7 +170,7 @@ export default function Navbar() {
 						delay={0}
 						offset={-40}
 						duration={200}
-						className='hidden md:block mx-6 cursor-pointer font-semibold hover:text-pa-pink'>
+						className='hidden md:block mx-10 cursor-pointer font-semibold hover:text-pa-pink'>
 						Features
 					</ScrollLink>
 					<ScrollLink
@@ -179,7 +179,7 @@ export default function Navbar() {
 						delay={0}
 						offset={-40}
 						duration={200}
-						className='hidden md:block mx-6 cursor-pointer font-semibold hover:text-pa-pink'>
+						className='hidden md:block mx-10 cursor-pointer font-semibold hover:text-pa-pink'>
 						About
 					</ScrollLink>
 					<ScrollLink
@@ -188,7 +188,7 @@ export default function Navbar() {
 						delay={0}
 						offset={-40}
 						duration={200}
-						className='hidden md:block mx-6 cursor-pointer font-semibold hover:text-pa-pink'>
+						className='hidden md:block mx-10 cursor-pointer font-semibold hover:text-pa-pink'>
 						Recognition
 					</ScrollLink>
 					<ScrollLink
@@ -197,16 +197,16 @@ export default function Navbar() {
 						delay={0}
 						offset={-40}
 						duration={200}
-						className='hidden md:block mx-6 cursor-pointer font-semibold hover:text-pa-pink'>
-						Testimonial
+						className='hidden md:block mx-10 cursor-pointer font-semibold hover:text-pa-pink'>
+						Testimonials
 					</ScrollLink>
-					<a
+					{/* <a
 						href='https://docs.polkassembly.io/'
 						rel='noopener noreferrer'
 						target='_blank'
 						className='hidden md:block mx-0 mr-3 md:mx-6 font-normal text-sm md:text-base md:font-semibold hover:text-pa-pink'>
 						Docs
-					</a>
+					</a> */}
 				</div>
 				<div className='flex items-center gap-2 me-2'>
 					<div className='hidden md:flex items-center'>
