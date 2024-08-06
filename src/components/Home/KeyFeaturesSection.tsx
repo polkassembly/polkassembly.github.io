@@ -25,7 +25,7 @@ const KeyFeaturesSection = () => {
 	});
 	const yTransform = useTransform(scrollYProgress, [0, 1], [0.7, -700]);
 	const springYTransform = useSpring(yTransform, {bounce: 20, damping: 30});
-	const xTransform = useTransform(scrollYProgress, [0, 1], [0, -300]);
+	const xTransform = useTransform(scrollYProgress, [0, 1], [0.7, -100]);
 	const springXTransform = useSpring(xTransform, {bounce: 20, damping: 30});
 	const cardLength = data.length;
 
@@ -98,7 +98,7 @@ const KeyFeaturesSection = () => {
 				animate={{opacity: 1}}
 				transition={{duration: 0.5, ease: 'linear'}}
 				className='bg-white rounded-3xl h-full max-h-[300px] w-[55vw] md:w-auto md:h-auto md:rounded-full border-slate-400 border p-10'
-				// onClick={() => setActive(index)}
+				onClick={() => setActive(index)}
 				ref={el => (cardRefs.current[index] = el)}>
 				<div className='flex justify-between items-center'>
 					<h1 className='text-xl text-black font-semibold'>

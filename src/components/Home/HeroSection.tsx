@@ -10,7 +10,7 @@ export default function HeroSection() {
 			className='bg-hero-bg bg-cover bg-no-repeat bg-center'>
 			<div
 				id='hero-section'
-				className='h-[55vh] md:h-[75vh] md:-mt-24 flex justify-center items-center w-full'>
+				className='min-h-[55vh] md:h-[75vh] md:-mt-24 flex justify-center items-center w-full'>
 				<div className='h-[500px] flex lg:items-end relative z-10 md:mt-32'>
 					<img
 						src={starPink}
