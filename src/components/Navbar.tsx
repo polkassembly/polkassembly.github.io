@@ -101,6 +101,13 @@ export default function Navbar() {
 		setShowMobileNetworks(!showMobileNetworks);
 	};
 
+	useEffect(() => {
+		const html = document.querySelector('html');
+		if (html) {
+			html.style.overflow = isOpen ? 'hidden' : 'auto';
+		}
+	}, [isOpen]);
+
 	const subMenuAnimate = {
 		enter: {
 			opacity: 1,
@@ -159,7 +166,7 @@ export default function Navbar() {
 
 	return (
 		<nav className='bg-white  relative  mt-4 h-16 md:h-auto md:bg-transparent z-50'>
-			<div className='container fixed md:relative border-b-4 border-pa-pink md:border-0 top-0 bg-white md:bg-transparent flex justify-between text-black text-center p-3'>
+			<div className='containe w-full fixed md:relative border-b-4 border-pa-pink md:border-0 top-0 bg-white md:bg-transparent flex justify-between text-black text-center p-3'>
 				<Link
 					to='/'
 					className='logo ml-3 md:ml-6'>
@@ -199,7 +206,7 @@ export default function Navbar() {
 								<>
 									<NavLink
 										to='/'
-										className={({isActive}) => (isActive ? `bg-pa-pink text-white ${launchAppBtnClasses}` : `text-white ${launchAppBtnClasses}`)}>
+										className={({isActive}) => (isActive ? `bg-pa-pink h-[2.5rem] text-white ${launchAppBtnClasses}` : `text-white ${launchAppBtnClasses}`)}>
 										<span className='absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-pa-pink group-hover:translate-x-0 ease'>
 											<svg
 												className='w-6 h-6'
@@ -289,7 +296,7 @@ export default function Navbar() {
 						custom={height}
 						ref={containerRef}>
 						<motion.div
-							className='sidebar-container  overscroll-contain absolute top-[74px] z-50 -right-[16px] w-[102vw] h-[100vh] bg-white'
+							className='sidebar-container overscroll-contain absolute top-[74px] z-50 -right-[16px] w-[102vw] h-[100vh] bg-white'
 							// className={`'sidebar-container  absolute top-16 z-50 -right-[16px] w-[100vw] h-[100vh] ${isOpen ? 'bg-white' : 'bg-white'}'`}
 							variants={sidebar}>
 							{showMobileNetworks ? (

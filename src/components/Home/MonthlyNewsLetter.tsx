@@ -41,19 +41,18 @@ export default function MonthlyNewsLetter() {
 				<div>
 					<h1 className='line-ellipsis-2 text-white text-lg lg:text-[22px] font-medium mb-[8px] md:mb-[18px]'>{news.title}</h1>
 					{/* <p className='line-ellipsis-5 text-white text-md lg:text-lg font-normal'>{news?.truncated_body_text}</p> */}
-					<div className='flex gap-4 items-center'>
+					<a
+						href={news.canonical_url}
+						target='_blank'
+						rel='noreferrer'
+						className='flex gap-4 items-center'>
 						<img
 							src={arrow}
 							className='w-9 h-9 rounded-full p-2 bg-white'
 							alt='arrow'
 						/>
-						<a
-							href={news.canonical_url}
-							target='_blank'
-							rel='noreferrer'>
-							<span className='text-white text-sm lg:text-lg font-normal'> Learn more</span>
-						</a>
-					</div>
+						<span className='text-white text-sm lg:text-lg font-normal'> Learn more</span>
+					</a>
 				</div>
 			</div>
 		</div>

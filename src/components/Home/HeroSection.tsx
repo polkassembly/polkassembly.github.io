@@ -10,7 +10,7 @@ export default function HeroSection() {
 			className='bg-hero-bg bg-cover bg-no-repeat bg-center'>
 			<div
 				id='hero-section'
-				className='h-[65vh] md:h-[75vh] md:-mt-24 flex justify-center items-center w-full'>
+				className='h-[55vh] md:h-[75vh] md:-mt-24 flex justify-center items-center w-full'>
 				<div className='h-[500px] flex lg:items-end relative z-10 md:mt-32'>
 					<img
 						src={starPink}
@@ -23,7 +23,7 @@ export default function HeroSection() {
 						className='w-9 h-9 absolute hidden md:block top-20 left-[25%]'
 					/>
 					<div className='ml-4 mt-16 mb-16 lg:mb-32 flex flex-col items-center text-white'>
-						<h1 className='text-4xl lg:text-[50px] 2xl:text-[80px] font-bold text-black'>
+						<h1 className='text-3xl xs:text-4xl lg:text-[50px] 2xl:text-[80px] font-bold text-black'>
 							The <span className='bg-pa-pink rounded-md md:rounded-xl text-white px-2 py-1'>Ultimate Hub</span>
 						</h1>
 						<h1 className='text-xl font-semibold lg:text-[34px] 2xl:text-[44px] mt-3 md:mt-8 2xl:mt-16 text-black'>for Polkadot Governance</h1>

@@ -23,7 +23,7 @@ const KeyFeaturesSection = () => {
 	const {scrollYProgress} = useScroll({
 		target: sectionRef
 	});
-	const yTransform = useTransform(scrollYProgress, [0, 1], [500, -700]);
+	const yTransform = useTransform(scrollYProgress, [0, 1], [0.7, -700]);
 	const springYTransform = useSpring(yTransform, {bounce: 20, damping: 30});
 	const xTransform = useTransform(scrollYProgress, [0, 1], [0, -300]);
 	const springXTransform = useSpring(xTransform, {bounce: 20, damping: 30});
@@ -54,7 +54,7 @@ const KeyFeaturesSection = () => {
 
 	const animatedActiveCard = (id: string, title: string, description: string) => {
 		useMotionValueEvent(scrollYProgress, 'change', latest => {
-			const cardsBreakpoints = data.map((_, index) => (index + 1) / cardLength);
+			const cardsBreakpoints = data.map((_, index) => index / cardLength);
 			const closestBreakpointIndex = cardsBreakpoints.reduce((acc, breakpoint, index) => {
 				const distance = Math.abs(latest - breakpoint);
 				if (distance < Math.abs(latest - cardsBreakpoints[acc])) {

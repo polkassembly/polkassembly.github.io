@@ -106,7 +106,7 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 	return (
 		<footer className='bg-[#191A23] rounded-tl-3xl rounded-tr-3xl relative z-10'>
 			<div className='max-w-screen-xl px-4 pt-8 md:pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24'>
-				<div className='md:grid md:grid-cols-1 gap-8 lg:grid-cols-12'>
+				<div className='md:grid md:grid-cols-12 gap-8 lg:grid-cols-12'>
 					{/* Logo and Socials */}
 					<div className='md:-mt-5 col-span-3'>
 						<div className='flex items-center w-full justify-between  md:justify-start'>
@@ -139,7 +139,7 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 					</div>
 
 					{/* Links */}
-					<div className='grid grid-cols-1 h-fit gap-2 sm:grid-cols-2 md:grid-cols-4 col-span-6'>
+					<div className='grid grid-cols-1 h-fit gap-2 md:grid-cols-4 col-span-6'>
 						<div className='text-center sm:text-left'>
 							{/* <p className='hidden md:block text-lg font-medium text-white underline'>About us</p> */}
 							{/* <div className='md:w-[600px] xl:w-[800px] xl:ml-24 flex flex-col md:flex-row items-start gap-2 md:items-center rounded-xl mt-12 bg-[#292a32] py-12 px-8'>
@@ -150,7 +150,7 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 								/>
 								<button className='md:ml-4 text-white bg-pa-pink hover:bg-pa-pink/80 px-4 py-2 md:w-[40%] rounded-xl'>Subscribe to news</button>
 							</div> */}
-							<div className='md:w-[600px] xl:w-[800px] xl:ml-24 flex flex-col md:justify-end md:flex-row gap-2 md:items-end rounded-xl md:mt-12 py-8  md:py-12 px-8'>
+							<div className='md:w-[500px] xl:w-[800px] xl:ml-24 flex flex-col md:justify-end md:flex-row gap-2 md:items-end rounded-xl md:mt-12 py-8  md:py-12 px-8'>
 								{/* <input
 									type='text'
 									placeholder='Describe your issue'
