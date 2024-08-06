@@ -148,7 +148,7 @@ const KeyFeaturesSection = () => {
 					<motion.div
 						style={active < cardLength - 1 ? boxShadowStyle : {}}
 						ref={scrollRef}
-						className='feature-list-container  md:col-span-5 md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 pr-2 overflow-x-scroll md:overflow-x-auto gap-8'>
+						className='feature-list-container  md:col-span-5 md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8'>
 						{data.map((item, idx) => (
 							<motion.div
 								style={isMobile ? {x: springXTransform} : {y: springYTransform}}
