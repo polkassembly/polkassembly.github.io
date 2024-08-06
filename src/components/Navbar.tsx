@@ -7,6 +7,7 @@ import parachainsArr from './parachainsArr';
 import {chainProperties, network} from '../utils/networkConstants';
 import {isOpenGovSupported} from '../utils/openGovNetworks';
 import chainLogo from '../assets/parachain-logos/chain-logo.jpg';
+import {socialLinksUL} from './Home/Footer';
 
 export const useDimensions = (ref: any) => {
 	const dimensions = useRef({width: 0, height: 0});
@@ -52,7 +53,7 @@ for (const key of Object.keys(network)) {
 						alt='Logo'
 					/>
 				</span>
-				<span className='text-sm font-medium capitalize text-bodyBlue hover:text-pa-pink truncate'>{keyVal == 'hydradx' ? 'HydraDX' : keyVal}</span>
+				<span className='text-xl md:text-sm font-medium capitalize text-bodyBlue hover:text-pa-pink truncate'>{keyVal == 'hydradx' ? 'HydraDX' : keyVal}</span>
 			</div>
 		),
 		link
@@ -77,6 +78,7 @@ export default function Navbar() {
 	const launchAppBtnClasses = 'hidden md:inline-flex relative items-center text-white justify-center p-4 px-6 py-1 overflow-hidden font-medium transition duration-300 ease-out border-2 bg-pa-pink rounded-full shadow-md group';
 	const launchAppBtnMobileClasses = 'block md:hidden text-sm font-normal whitespace-nowrap rounded-md border bg-pa-pink mr-2 border-pa-pink hover:text-white hover:bg-pa-pink px-2 py-1';
 	const [isMouse, toggleMouse] = React.useState(false);
+	const [showMobileNetworks, setShowMobileNetworks] = React.useState(false);
 	const containerRef = useRef(null);
 	const {height} = useDimensions(containerRef);
 	const [isOpen, toggleOpen] = useCycle(false, true);
@@ -95,6 +97,10 @@ export default function Navbar() {
 		toggleMouse(!isMouse);
 	};
 
+	const toggleMobileNetworks = () => {
+		setShowMobileNetworks(!showMobileNetworks);
+	};
+
 	const subMenuAnimate = {
 		enter: {
 			opacity: 1,
@@ -109,7 +115,7 @@ export default function Navbar() {
 			rotateX: -15,
 			transition: {
 				duration: 0.3,
-				delay: 0.3
+				delay: 0
 			},
 			transitionEnd: {
 				display: 'none'
@@ -119,7 +125,7 @@ export default function Navbar() {
 
 	const sidebar = {
 		open: (height = 1000) => ({
-			clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+			clipPath: `circle(${height * 2 + 200}px at 100% 40px)`,
 			transition: {
 				type: 'spring',
 				stiffness: 20,
@@ -127,9 +133,8 @@ export default function Navbar() {
 			}
 		}),
 		closed: {
-			clipPath: 'circle(30px at 40px 40px)',
+			clipPath: 'circle(0px at 100% 0%)',
 			transition: {
-				delay: 0.5,
 				type: 'spring',
 				stiffness: 400,
 				damping: 40
@@ -153,8 +158,8 @@ export default function Navbar() {
 	});
 
 	return (
-		<nav className='bg-white border-b-4 relative border-pa-pink md:border-0 mt-4  md:bg-transparent z-50'>
-			<div className='container flex justify-between text-black text-center p-3'>
+		<nav className='bg-white  relative  mt-4 h-16 md:h-auto md:bg-transparent z-50'>
+			<div className='container fixed md:relative border-b-4 border-pa-pink md:border-0 top-0 bg-white md:mg-transparent flex justify-between text-black text-center p-3'>
 				<Link
 					to='/'
 					className='logo ml-3 md:ml-6'>
@@ -304,13 +309,141 @@ export default function Navbar() {
 					<motion.nav
 						initial={false}
 						animate={isOpen ? 'open' : 'closed'}
-						className='flex md:hidden absolute top-0 right-4 bottom-0'
+						className='flex md:hidden absolute top-0 right-4 overscroll-contain bottom-0'
 						custom={height}
 						ref={containerRef}>
 						<motion.div
-							className='absolute top-0 z-50 right-0 w-[300px] bg-white'
-							variants={sidebar}
-						/>
+							className='sidebar-container  overscroll-contain absolute top-[74px] z-50 -right-[16px] w-[102vw] h-[100vh] bg-white'
+							// className={`'sidebar-container  absolute top-16 z-50 -right-[16px] w-[100vw] h-[100vh] ${isOpen ? 'bg-white' : 'bg-white'}'`}
+							variants={sidebar}>
+							{showMobileNetworks ? (
+								<div className='flex flex-col w-full items-start'>
+									<button
+										className='p-3 ml-4 mr-auto rotate-180'
+										onClick={toggleMobileNetworks}>
+										<svg
+											xmlns='http://www.w3.org/2000/svg'
+											width='25'
+											height='16'
+											viewBox='0 0 25 16'
+											fill='none'>
+											<path
+												d='M24.7071 8.70711C25.0976 8.31658 25.0976 7.68342 24.7071 7.29289L18.3431 0.928932C17.9526 0.538408 17.3195 0.538408 16.9289 0.928932C16.5384 1.31946 16.5384 1.95262 16.9289 2.34315L22.5858 8L16.9289 13.6569C16.5384 14.0474 16.5384 14.6805 16.9289 15.0711C17.3195 15.4616 17.9526 15.4616 18.3431 15.0711L24.7071 8.70711ZM0 9H24V7H0V9Z'
+												fill='#444444'
+											/>
+										</svg>
+									</button>
+									<div className='max-h-[90vh] w-full px-4 rounded-lg overflow-y-auto'>
+										<>
+											<div className='mt-2 grid  gap-x-4 w-full'>
+												{polkadotChains.map(optionObj => (
+													<a
+														href={optionObj.link}
+														target='_blank'
+														rel='noopener noreferrer'
+														key={optionObj.key}
+														className={`flex p-4 border-b  w-full text-left font-semibold col-span-1 cursor-pointer text-pink_primary`}>
+														<div className='my-1 flex items-center'>
+															<span className='text-lg font-medium capitalize truncate mr-2'>{optionObj.label}</span>
+														</div>
+													</a>
+												))}
+											</div>
+											<div className='mt-2 grid  gap-x-4 w-full'>
+												{kusamaChains.map(optionObj => (
+													<a
+														href={optionObj.link}
+														target='_blank'
+														rel='noopener noreferrer'
+														key={optionObj.key}
+														className={`flex p-4 border-b  w-full text-left font-semibold col-span-1 cursor-pointer text-pink_primary`}>
+														<div className='my-1 flex items-center'>
+															<span className='text-sm font-medium capitalize truncate mr-2'>{optionObj.label}</span>
+														</div>
+													</a>
+												))}
+											</div>
+											<div className='mt-2 grid pb-8  gap-x-4 w-full'>
+												{testChains.map(optionObj => (
+													<a
+														href={optionObj.link}
+														target='_blank'
+														rel='noopener noreferrer'
+														key={optionObj.key}
+														className={`flex p-4 border-b  w-full text-left font-semibold col-span-1 cursor-pointer text-pink_primary`}>
+														<div className='my-1 flex items-center'>
+															<span className='text-sm font-medium capitalize truncate mr-2'>{optionObj.label}</span>
+														</div>
+													</a>
+												))}
+											</div>
+										</>
+									</div>
+								</div>
+							) : (
+								<div className='flex flex-col w-full items-start'>
+									<ScrollLink
+										to='home-section'
+										smooth='easeInOutQuart'
+										delay={500}
+										offset={-40}
+										duration={200}
+										onClick={() => toggleOpen()}
+										className='p-6 border-b  w-full text-left font-semibold text-base'>
+										Home
+									</ScrollLink>
+									<ScrollLink
+										to='features-section'
+										smooth='easeInOutQuart'
+										delay={500}
+										onClick={() => toggleOpen()}
+										offset={0}
+										duration={200}
+										className='p-6 border-b  w-full text-left font-semibold text-base'>
+										Features
+									</ScrollLink>
+									<ScrollLink
+										to='about-section'
+										smooth='easeInOutQuart'
+										delay={500}
+										offset={0}
+										onClick={() => toggleOpen()}
+										duration={200}
+										className='p-6 border-b  w-full text-left font-semibold text-base'>
+										About
+									</ScrollLink>
+									<ScrollLink
+										to='recognition-section'
+										smooth='easeInOutQuart'
+										delay={500}
+										offset={0}
+										onClick={() => toggleOpen()}
+										duration={200}
+										className='p-6 border-b  w-full text-left font-semibold text-base'>
+										Recognition
+									</ScrollLink>
+									<ScrollLink
+										to='testimonial-section'
+										smooth='easeInOutQuart'
+										delay={500}
+										offset={0}
+										duration={200}
+										onClick={() => toggleOpen()}
+										className='p-6 border-b  w-full text-left font-semibold text-base'>
+										Testimonials
+									</ScrollLink>
+									<div className='flex w-full justify-center'>
+										<button
+											onClick={() => toggleMobileNetworks()}
+											className=' px-16  text-center mt-12 bg-pa-pink text-white text-lg font-normal whitespace-nowrap rounded-full border mr-2 border-pa-pink hover:text-white hover:bg-pa-pink py-2'>
+											Launch App
+										</button>
+									</div>
+									<div className='flex w-full justify-center'>{socialLinksUL('text-black', 'w-6 h-6', 'mt-12')}</div>
+								</div>
+							)}
+						</motion.div>
+
 						<button onClick={() => toggleOpen()}>
 							<svg
 								width='23'

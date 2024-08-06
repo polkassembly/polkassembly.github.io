@@ -5,7 +5,9 @@ import starPink from '../../assets/images/star-pink-2.svg';
 
 export default function HeroSection() {
 	return (
-		<section className='bg-hero-bg bg-cover bg-no-repeat bg-center'>
+		<section
+			id='home-section'
+			className='bg-hero-bg bg-cover bg-no-repeat bg-center'>
 			<div
 				id='hero-section'
 				className='h-[65vh] md:h-[75vh] md:-mt-24 flex justify-center items-center w-full'>

@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import arrow from '../../assets/images/arrow-rounded-white.svg';
-import { useMotionValueEvent, useScroll, useAnimation } from 'framer-motion';
-import { motion } from 'framer-motion';
+import {useMotionValueEvent, useScroll, useAnimation, useTransform, useSpring} from 'framer-motion';
+import {motion} from 'framer-motion';
 import starPink from '../../assets/images/star-pink-2.svg';
-import { DivWithBorder } from '../ui/moving-border';
+import {DivWithBorder} from '../ui/moving-border';
 import delegation from '../../assets/images/delegation.svg';
 import leaderboard from '../../assets/images/leaderboard.svg';
 import voting from '../../assets/images/voting.svg';
@@ -13,15 +13,20 @@ import partnership from '../../assets/images/social.svg';
 const KeyFeaturesSection = () => {
 	const [active, setActive] = useState<number>(0);
 	const [prevActive, setPrevActive] = useState<number>(0);
-	const ref = useRef<any>(null);
+	const sectionRef = useRef<any>(null);
 	const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 	const scrollRef = useRef<HTMLDivElement>(null);
 	const scrollControls = useAnimation();
 	const {scrollYProgress} = useScroll({
-		target: ref,
-		offset: ['center center', 'center start']
+		target: sectionRef
 	});
+	const yTransform = useTransform(scrollYProgress, [0, 1], [500, -500]);
+	const springYTransform = useSpring(yTransform, {bounce: 20, damping: 30});
 	const cardLength = data.length;
+
+	const boxShadowStyle = {
+		boxShadow: '0px -129px 18px -106px rgba(0,0,0,0.22) inset'
+	};
 
 	useEffect(() => {
 		if (window.innerWidth < 768 && !cardRefs.current[active]) {
@@ -34,7 +39,7 @@ const KeyFeaturesSection = () => {
 
 	const animatedActiveCard = (id: string, title: string, description: string) => {
 		useMotionValueEvent(scrollYProgress, 'change', latest => {
-			const cardsBreakpoints = data.map((_, index) => index / cardLength);
+			const cardsBreakpoints = data.map((_, index) => (index + 1) / cardLength);
 			const closestBreakpointIndex = cardsBreakpoints.reduce((acc, breakpoint, index) => {
 				const distance = Math.abs(latest - breakpoint);
 				if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
@@ -45,7 +50,6 @@ const KeyFeaturesSection = () => {
 			setPrevActive(active);
 			setActive(closestBreakpointIndex);
 		});
-
 		return (
 			<DivWithBorder
 				className='bg-[#f5f5f572] border-pa-pink rounded-2xl border p-8'
@@ -75,8 +79,11 @@ const KeyFeaturesSection = () => {
 	const inactiveCard = (id: string, title: string, description: string, index: number) => {
 		return (
 			<motion.div
-				className='bg-white rounded-3xl h-full max-h-[300px] w-[55vw] md:w-auto md:h-auto md:rounded-full border-slate-400 cursor-pointer border p-8'
-				onClick={() => setActive(index)}
+				initial={{opacity: 0}}
+				animate={{opacity: 1}}
+				transition={{duration: 0.5, ease: 'linear'}}
+				className='bg-white rounded-3xl h-full max-h-[300px] w-[55vw] md:w-auto md:h-auto md:rounded-full border-slate-400 border p-10'
+				// onClick={() => setActive(index)}
 				ref={el => (cardRefs.current[index] = el)}>
 				<div className='flex justify-between items-center'>
 					<h1 className='text-xl text-black font-semibold'>
@@ -100,59 +107,67 @@ const KeyFeaturesSection = () => {
 	};
 
 	return (
-		<section
-			id='features-section'
-			className='pb-28'>
-			<div className='w-full border-t-8 py-8 md:py-20 border-pa-pink' />
-			<div className='flex px-8 md:px-28 items-start justify-between'>
-				<div className=''>
-					<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
-						Key <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Features</span>
-					</h1>
-					<p className='text-sm md:w-[60%] lg:text-xl text-left mt-6 text-black'>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
+		<div
+			ref={sectionRef}
+			className='h-[300vh] relative scroll-smooth '>
+			<motion.section
+				id='features-section'
+				className='pb-28 sticky top-0'>
+				<div className='w-full border-t-8 py-8 2xl:py-20 border-pa-pink' />
+				<div className='flex px-8 md:px-28 items-start justify-between'>
+					<div className=''>
+						<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
+							Key <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Features</span>
+						</h1>
+						<p className='text-sm md:w-[60%] lg:text-xl text-left mt-6 text-black'>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
+					</div>
+					<img
+						src={starPink}
+						alt='star'
+						className='md:w-20 md:h-20'
+					/>
 				</div>
-				<img
-					src={starPink}
-					alt='star'
-					className='md:w-20 md:h-20'
-				/>
-			</div>
-			<motion.div
-				ref={ref}
-				animate={scrollControls}
-				className='relative grid mt-8 h-[auto] px-8 md:px-28 gap-8 md:grid-cols-12'>
-				<div
-					ref={scrollRef}
-					className='md:col-span-5 md:relative flex md:flex-col md:py-4 pr-2 overflow-x-scroll md:overflow-x-auto gap-8'>
-					{data.map((item, idx) => (
-						<div key={item.id}>{idx === active ? animatedActiveCard(item.id, item.title, item.description) : inactiveCard(item.id, item.title, item.description, idx)}</div>
-					))}
-				</div>
-
 				<motion.div
-					key={active}
-					initial={{opacity: 0}}
-					animate={{opacity: 1}}
-					transition={{duration: 0.5, ease: 'easeInOut'}}
-					className='md:col-span-7 md:sticky top-4 bg-pa-pink-light flex flex-col max-h-[500px] justify-start rounded-3xl p-8'>
-					<div className='h-[400px] w-full rounded-xl'>
-						<img
-							src={data[active].banner}
-							alt={data[active].title}
-							className='w-full h-full rounded-3xl object-cover'
-						/>
-					</div>
-					<div className='flex items-center mt-4 justify-between'>
-						<h1 className='text-3xl text-black font-semibold'>{data.filter(item => item.id === data[active].id)[0].title}</h1>
-						<img
-							src={arrow}
-							alt='arrow'
-							className='w-8 md:w-12'
-						/>
-					</div>
+					animate={scrollControls}
+					className='relative grid mt-8 px-8 md:px-28 gap-8 md:grid-cols-12'>
+					<motion.div
+						style={active < cardLength - 1 ? boxShadowStyle : {}}
+						className='feature-list-container  md:col-span-5 md:relative h-[30rem] overflow-hidden flex md:flex-col md:py-4 pr-2 overflow-x-scroll md:overflow-x-auto gap-8'>
+						{data.map((item, idx) => (
+							<motion.div
+								style={{y: springYTransform}}
+								className='feature-list'
+								key={item.id}>
+								{idx === active ? animatedActiveCard(item.id, item.title, item.description) : inactiveCard(item.id, item.title, item.description, idx)}
+							</motion.div>
+						))}
+					</motion.div>
+
+					<motion.div
+						key={active}
+						initial={{opacity: 0}}
+						animate={{opacity: 1}}
+						transition={{duration: 0.5, ease: 'linear', delay: 0.2}}
+						className='md:col-span-7 md:-mt-8 bg-pa-pink-light flex flex-col max-h-[500px] justify-start rounded-3xl p-8'>
+						<div className='h-[350px] w-full rounded-xl'>
+							<img
+								src={data[active].banner}
+								alt={data[active].title}
+								className='w-full h-full rounded-3xl object-cover'
+							/>
+						</div>
+						<div className='flex items-center mt-4 justify-between'>
+							<h1 className='text-3xl text-black font-semibold'>{data.filter(item => item.id === data[active].id)[0].title}</h1>
+							<img
+								src={arrow}
+								alt='arrow'
+								className='w-8 md:w-12'
+							/>
+						</div>
+					</motion.div>
 				</motion.div>
-			</motion.div>
-		</section>
+			</motion.section>
+		</div>
 	);
 };
 
