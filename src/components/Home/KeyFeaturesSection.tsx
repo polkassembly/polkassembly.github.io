@@ -172,20 +172,22 @@ const KeyFeaturesSection = () => {
 								className='w-full h-full rounded-3xl object-cover'
 							/>
 						</div>
-						{data[active].link && (
-							<a
-								href={data[active].link}
-								rel='noopener noreferrer'
-								target='_blank'
-								className='flex items-center mt-4 justify-between'>
-								<h1 className='text-3xl text-black font-semibold'>{data.filter(item => item.id === data[active].id)[0].title}</h1>
-								<img
-									src={arrow}
-									alt='arrow'
-									className='w-8 md:w-12'
-								/>
-							</a>
-						)}
+						<div className='flex items-center mt-4 justify-between'>
+							<h1 className='text-3xl text-black font-semibold'>{data.filter(item => item.id === data[active].id)[0].title}</h1>
+
+							{data[active].link && (
+								<a
+									href={data[active].link}
+									target='_blank'
+									rel='noreferrer'>
+									<img
+										src={arrow}
+										alt='arrow'
+										className='w-8 md:w-12'
+									/>
+								</a>
+							)}
+						</div>
 					</motion.div>
 				</motion.div>
 			</motion.section>
