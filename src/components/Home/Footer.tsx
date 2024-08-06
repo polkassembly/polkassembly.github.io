@@ -179,7 +179,7 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 				</div>
 
 				{/* Bottom Line Content */}
-				<div className='pt-8 md:pt-12 mt-4 md:mt-12 border-t border-white'>
+				<div className='pt-8 md:pt-12 mt-4  border-t border-white'>
 					<div className='text-center sm:flex sm:justify-between sm:text-left'>
 						<p className='md:mt-4 mb-4 md:mb-auto text-sm text-white sm:order-first sm:mt-0 '>&copy; Polka Labs Private Limited {new Date().getFullYear()}, All Rights Reserved</p>
 						<a
