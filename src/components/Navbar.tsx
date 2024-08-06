@@ -159,7 +159,7 @@ export default function Navbar() {
 
 	return (
 		<nav className='bg-white  relative  mt-4 h-16 md:h-auto md:bg-transparent z-50'>
-			<div className='container fixed md:relative border-b-4 border-pa-pink md:border-0 top-0 bg-white md:mg-transparent flex justify-between text-black text-center p-3'>
+			<div className='container fixed md:relative border-b-4 border-pa-pink md:border-0 top-0 bg-white md:bg-transparent flex justify-between text-black text-center p-3'>
 				<Link
 					to='/'
 					className='logo ml-3 md:ml-6'>
@@ -169,42 +169,18 @@ export default function Navbar() {
 					/>
 				</Link>
 				<div className='mr-3 md:mr-6 flex items-center'>
-					<ScrollLink
-						to='features-section'
-						smooth='easeInOutQuart'
-						delay={0}
-						offset={-40}
-						duration={200}
-						className='hidden md:block mx-10 cursor-pointer font-semibold hover:text-pa-pink'>
-						Features
-					</ScrollLink>
-					<ScrollLink
-						to='about-section'
-						smooth='easeInOutQuart'
-						delay={0}
-						offset={-40}
-						duration={200}
-						className='hidden md:block mx-10 cursor-pointer font-semibold hover:text-pa-pink'>
-						About
-					</ScrollLink>
-					<ScrollLink
-						to='recognition-section'
-						smooth='easeInOutQuart'
-						delay={0}
-						offset={-40}
-						duration={200}
-						className='hidden md:block mx-10 cursor-pointer font-semibold hover:text-pa-pink'>
-						Recognition
-					</ScrollLink>
-					<ScrollLink
-						to='testimonial-section'
-						smooth='easeInOutQuart'
-						delay={0}
-						offset={-40}
-						duration={200}
-						className='hidden md:block mx-10 cursor-pointer font-semibold hover:text-pa-pink'>
-						Testimonials
-					</ScrollLink>
+					{['features', 'about', 'recognition'].map(section => (
+						<ScrollLink
+							key={section}
+							to={section + '-section'}
+							smooth='easeInOutQuart'
+							delay={0}
+							offset={-40}
+							duration={200}
+							className='hidden md:block mx-10 cursor-pointer capitalize font-semibold hover:text-pa-pink'>
+							{section.replace('-', ' ')}
+						</ScrollLink>
+					))}
 					{/* <a
 						href='https://docs.polkassembly.io/'
 						rel='noopener noreferrer'
@@ -382,56 +358,20 @@ export default function Navbar() {
 								</div>
 							) : (
 								<div className='flex flex-col w-full items-start'>
-									<ScrollLink
-										to='home-section'
-										smooth='easeInOutQuart'
-										delay={500}
-										offset={-40}
-										duration={200}
-										onClick={() => toggleOpen()}
-										className='p-6 border-b  w-full text-left font-semibold text-base'>
-										Home
-									</ScrollLink>
-									<ScrollLink
-										to='features-section'
-										smooth='easeInOutQuart'
-										delay={500}
-										onClick={() => toggleOpen()}
-										offset={0}
-										duration={200}
-										className='p-6 border-b  w-full text-left font-semibold text-base'>
-										Features
-									</ScrollLink>
-									<ScrollLink
-										to='about-section'
-										smooth='easeInOutQuart'
-										delay={500}
-										offset={0}
-										onClick={() => toggleOpen()}
-										duration={200}
-										className='p-6 border-b  w-full text-left font-semibold text-base'>
-										About
-									</ScrollLink>
-									<ScrollLink
-										to='recognition-section'
-										smooth='easeInOutQuart'
-										delay={500}
-										offset={0}
-										onClick={() => toggleOpen()}
-										duration={200}
-										className='p-6 border-b  w-full text-left font-semibold text-base'>
-										Recognition
-									</ScrollLink>
-									<ScrollLink
-										to='testimonial-section'
-										smooth='easeInOutQuart'
-										delay={500}
-										offset={0}
-										duration={200}
-										onClick={() => toggleOpen()}
-										className='p-6 border-b  w-full text-left font-semibold text-base'>
-										Testimonials
-									</ScrollLink>
+									{['home', 'features', 'about', 'recognition'].map(section => (
+										<ScrollLink
+											key={section}
+											to={section + '-section'}
+											smooth='easeInOutQuart'
+											delay={500}
+											offset={-40}
+											onClick={() => toggleOpen()}
+											duration={200}
+											className='p-6 border-b capitalize w-full text-left font-semibold text-xl'>
+											{section.replace('-', ' ')}
+										</ScrollLink>
+									))}
+
 									<div className='flex w-full justify-center'>
 										<button
 											onClick={() => toggleMobileNetworks()}

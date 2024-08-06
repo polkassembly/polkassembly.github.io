@@ -1,6 +1,6 @@
 import townhallLogo from '../../assets/projects/townhall.svg';
 import polkasafeLogo from '../../assets/projects/polkasafe.svg';
-import townhallBanner from '../../assets/images/projects-icon.svg';
+import polkassemblyLogo from '../../assets/images/pa-logo.svg';
 import learnMore from '../../assets/images/project-arrow.svg';
 import {Carousel} from '../ui/cards-carousel';
 
@@ -14,18 +14,22 @@ export default function ProjectsSection() {
 					src={card.logo}
 					alt={card.title}
 				/>
-				<h1 className=''>{card.title}</h1>
+				{/* <h1 className=''>{card.title}</h1> */}
 			</div>
 			<p className=''>{card.content}</p>
-
-			<h1 className='text-xl text-black font-light flex items-center gap-2'>
-				<img
-					src={learnMore}
-					alt='Learn More'
-					className='w-8 h-8'
-				/>
-				Learn More
-			</h1>
+			<a
+				href={card.link}
+				target='_blank'
+				rel='noopener noreferrer'>
+				<h1 className='text-xl text-black font-light flex items-center gap-2'>
+					<img
+						src={learnMore}
+						alt='Learn More'
+						className='w-8 h-8'
+					/>
+					Learn More
+				</h1>
+			</a>
 		</div>
 	));
 	return (
@@ -48,27 +52,26 @@ export default function ProjectsSection() {
 const data = [
 	{
 		title: 'Townhall',
-		banner: townhallBanner,
 		logo: townhallLogo,
-		content: 'A glimpse into the best features on Polkassembly to elevate your governance experience.'
+		link: 'https://townhallgov.com/',
+		content: 'One stop destination for on- chain and off-chain decision-making, treasury management, and fostering a thriving Web3 ecosystem. '
 	},
 	{
 		title: 'Polkasafe',
-		banner: townhallBanner,
 		logo: polkasafeLogo,
-		content: 'A glimpse into the best features on Polkassembly to elevate your governance experience.'
+		link: 'https://polkasafe.xyz/',
+		content: 'Experience a new era of asset management with PolkaSafe. An all-improved MultiSig experience on the Polkadot Blockchain.'
 	},
-	{
-		title: 'Fellowship',
-		banner: townhallBanner,
-		logo: polkasafeLogo,
-		content: 'A glimpse into the best features on Polkassembly to elevate your governance experience.'
-	},
-
 	{
 		title: 'Polkassembly',
-		banner: townhallBanner,
-		logo: polkasafeLogo,
+		logo: polkassemblyLogo,
+		link: 'https://polkadot.polkassembly.io/',
 		content: 'A glimpse into the best features on Polkassembly to elevate your governance experience.'
 	}
+	// {
+	// 	title: 'Fellowship',
+	// 	logo: polkassemblyLogo,
+	// 	link: 'https://collectives.polkassembly.io/',
+	// 	content: 'A glimpse into the best features on Polkassembly to elevate your governance experience.'
+	// }
 ];

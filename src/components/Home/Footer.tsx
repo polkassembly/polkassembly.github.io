@@ -128,12 +128,12 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 										<span className='text-white transition group-hover:text-purple-400/60'>Email: info@polkassembly.io</span>
 									</a>
 								</li>
-								<li>
+								{/* <li>
 									<span className='text-white transition group-hover:text-purple-400/60'>Phone: Feature Request</span>
 								</li>
 								<li>
 									<span className='text-white transition group-hover:text-purple-400/60'>A House of Commons Initiative</span>
-								</li>
+								</li> */}
 							</ul>
 						</div>
 					</div>
@@ -141,7 +141,7 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 					{/* Links */}
 					<div className='grid grid-cols-1 h-fit gap-2 sm:grid-cols-2 md:grid-cols-4 col-span-6'>
 						<div className='text-center sm:text-left'>
-							<p className='hidden md:block text-lg font-medium text-white underline'>About us</p>
+							{/* <p className='hidden md:block text-lg font-medium text-white underline'>About us</p> */}
 							{/* <div className='md:w-[600px] xl:w-[800px] xl:ml-24 flex flex-col md:flex-row items-start gap-2 md:items-center rounded-xl mt-12 bg-[#292a32] py-12 px-8'>
 								<input
 									type='email'
@@ -150,9 +150,22 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 								/>
 								<button className='md:ml-4 text-white bg-pa-pink hover:bg-pa-pink/80 px-4 py-2 md:w-[40%] rounded-xl'>Subscribe to news</button>
 							</div> */}
+							<div className='md:w-[600px] xl:w-[800px] xl:ml-24 flex flex-col md:justify-end md:flex-row gap-2 md:items-end rounded-xl md:mt-12 py-8  md:py-12 px-8'>
+								{/* <input
+									type='text'
+									placeholder='Describe your issue'
+									className='z-20 w-full px-4 py-2 text-white rounded-xl bg-transparent border border-white placeholder:text-white'
+								/> */}
+								<a
+									className='md:w-[40%]'
+									href='https://github.com/premiurly/polkassembly/issues'
+									target='_blank'>
+									<button className='md:ml-4 text-white bg-pa-pink hover:bg-pa-pink/80 px-4 py-2 w-full rounded-xl'>Report</button>
+								</a>
+							</div>
 						</div>
 
-						<div className='hidden md:block text-center sm:text-left underline'>
+						{/* <div className='hidden md:block text-center sm:text-left underline'>
 							<p className='text-lg w-fit font-medium text-white underline'>Services</p>
 						</div>
 						<div className='hidden md:block text-center sm:text-left underline'>
@@ -160,7 +173,7 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 						</div>
 						<div className='hidden md:block text-center sm:text-left underline'>
 							<p className='text-lg ml-4 w-fit font-medium text-white underline'>Blog</p>
-						</div>
+						</div> */}
 					</div>
 					<div className='hidden md:block col-span-3 h-fit'>{socialLinksUL('', 'w-5 h-5', 'justify-end')}</div>
 				</div>

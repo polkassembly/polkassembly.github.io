@@ -17,7 +17,7 @@ export default function Home() {
 			<KeyFeaturesSection />
 			<WhySection />
 			<RecognitionSection />
-			<TestimonialSection />
+			{/* <TestimonialSection /> */}
 			<GovernSection />
 			<MonthlyNewsLetter />
 			<Footer />

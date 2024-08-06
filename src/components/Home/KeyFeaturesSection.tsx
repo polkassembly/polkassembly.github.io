@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, {useState, useRef, useEffect, useCallback, useLayoutEffect} from 'react';
 import arrow from '../../assets/images/arrow-rounded-white.svg';
 import {useMotionValueEvent, useScroll, useAnimation, useTransform, useSpring} from 'framer-motion';
 import {motion} from 'framer-motion';
@@ -8,7 +8,7 @@ import delegation from '../../assets/images/delegation.svg';
 import leaderboard from '../../assets/images/leaderboard.svg';
 import voting from '../../assets/images/voting.svg';
 import social from '../../assets/images/social.svg';
-import partnership from '../../assets/images/social.svg';
+import treasury from '../../assets/images/treasury.svg';
 
 const KeyFeaturesSection = () => {
 	const [active, setActive] = useState<number>(0);
@@ -16,16 +16,21 @@ const KeyFeaturesSection = () => {
 	const sectionRef = useRef<any>(null);
 	const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 	const scrollRef = useRef<HTMLDivElement>(null);
+	const isMobile = window && window.innerWidth < 768;
+	const [scrollRange, setScrollRange] = useState(0);
+	const [viewportW, setViewportW] = useState(0);
 	const scrollControls = useAnimation();
 	const {scrollYProgress} = useScroll({
 		target: sectionRef
 	});
-	const yTransform = useTransform(scrollYProgress, [0, 1], [500, -500]);
+	const yTransform = useTransform(scrollYProgress, [0, 1], [500, -700]);
 	const springYTransform = useSpring(yTransform, {bounce: 20, damping: 30});
+	const xTransform = useTransform(scrollYProgress, [0, 1], [0, -300]);
+	const springXTransform = useSpring(xTransform, {bounce: 20, damping: 30});
 	const cardLength = data.length;
 
 	const boxShadowStyle = {
-		boxShadow: '0px -129px 18px -106px rgba(0,0,0,0.22) inset'
+		boxShadow: isMobile ? '-10px 0 5px -2px rgba(0,0,0,0.22) inset' : '0px -129px 18px -106px rgba(0,0,0,0.22) inset'
 	};
 
 	useEffect(() => {
@@ -36,6 +41,16 @@ const KeyFeaturesSection = () => {
 			}
 		}
 	}, [active, scrollControls]);
+
+	useLayoutEffect(() => {
+		scrollRef && setScrollRange(sectionRef.current.scrollWidth);
+	}, [scrollRef]);
+
+	const onResize = useCallback((entries: any) => {
+		for (let entry of entries) {
+			setViewportW(entry.contentRect.width);
+		}
+	}, []);
 
 	const animatedActiveCard = (id: string, title: string, description: string) => {
 		useMotionValueEvent(scrollYProgress, 'change', latest => {
@@ -115,7 +130,7 @@ const KeyFeaturesSection = () => {
 				className='pb-28 sticky top-0'>
 				<div className='w-full border-t-8 py-8 2xl:py-20 border-pa-pink' />
 				<div className='flex px-8 md:px-28 items-start justify-between'>
-					<div className=''>
+					<div className='mt-4 md:mt-0'>
 						<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 							Key <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Features</span>
 						</h1>
@@ -132,10 +147,11 @@ const KeyFeaturesSection = () => {
 					className='relative grid mt-8 px-8 md:px-28 gap-8 md:grid-cols-12'>
 					<motion.div
 						style={active < cardLength - 1 ? boxShadowStyle : {}}
-						className='feature-list-container  md:col-span-5 md:relative h-[30rem] overflow-hidden flex md:flex-col md:py-4 pr-2 overflow-x-scroll md:overflow-x-auto gap-8'>
+						ref={scrollRef}
+						className='feature-list-container  md:col-span-5 md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 pr-2 overflow-x-scroll md:overflow-x-auto gap-8'>
 						{data.map((item, idx) => (
 							<motion.div
-								style={{y: springYTransform}}
+								style={isMobile ? {x: springXTransform} : {y: springYTransform}}
 								className='feature-list'
 								key={item.id}>
 								{idx === active ? animatedActiveCard(item.id, item.title, item.description) : inactiveCard(item.id, item.title, item.description, idx)}
@@ -156,14 +172,20 @@ const KeyFeaturesSection = () => {
 								className='w-full h-full rounded-3xl object-cover'
 							/>
 						</div>
-						<div className='flex items-center mt-4 justify-between'>
-							<h1 className='text-3xl text-black font-semibold'>{data.filter(item => item.id === data[active].id)[0].title}</h1>
-							<img
-								src={arrow}
-								alt='arrow'
-								className='w-8 md:w-12'
-							/>
-						</div>
+						{data[active].link && (
+							<a
+								href={data[active].link}
+								rel='noopener noreferrer'
+								target='_blank'
+								className='flex items-center mt-4 justify-between'>
+								<h1 className='text-3xl text-black font-semibold'>{data.filter(item => item.id === data[active].id)[0].title}</h1>
+								<img
+									src={arrow}
+									alt='arrow'
+									className='w-8 md:w-12'
+								/>
+							</a>
+						)}
 					</motion.div>
 				</motion.div>
 			</motion.section>
@@ -176,12 +198,14 @@ const data = [
 		id: '01',
 		title: 'Delegation',
 		banner: delegation,
+		link: 'https://polkadot.polkassembly.io/delegation',
 		description: "Easily delegate your voting power to trusted members within the community, ensuring your voice is always heard, even when you're not actively participating."
 	},
 	{
 		id: '02',
 		title: 'Leaderboard',
 		banner: leaderboard,
+		link: 'https://polkadot.polkassembly.io/leaderboard',
 		description: 'Stay informed about the most active and influential contributors in the community. Recognize and follow top participants to stay updated on their activities and proposals.'
 	},
 	{
@@ -198,9 +222,9 @@ const data = [
 	},
 	{
 		id: '05',
-		title: 'Partnerships',
-		banner: partnership,
-		description: 'Collaborate with key projects and influencers within the Polkadot ecosystem. Our platform highlights strategic partnerships that enhance functionality and foster innovation.'
+		title: 'Treasury  Analytics',
+		banner: treasury,
+		description: 'Stay informed about the most active proposals on Polkassembly by using the Treasury Analytics feature. It showcases all the relevant data required for you to stay up to date about what goes on in a specific track.'
 	}
 ];
 
