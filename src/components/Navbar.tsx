@@ -175,7 +175,7 @@ export default function Navbar() {
 							to={section + '-section'}
 							smooth='easeInOutQuart'
 							delay={0}
-							offset={-40}
+							offset={0}
 							duration={200}
 							className='hidden md:block mx-10 cursor-pointer capitalize font-semibold hover:text-pa-pink'>
 							{section.replace('-', ' ')}

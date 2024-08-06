@@ -8,11 +8,12 @@ export default function ProjectsSection() {
 	const cards = data.map((card, index) => (
 		<div
 			key={card.title}
-			className='w-[250px] md:w-96 md:h-[300px] bg-[#FEF6FB] border border-[#F8BDDD] rounded-3xl flex flex-col justify-between gap-4  p-8 md:p-12'>
-			<div className='text-2xl font-semibold flex gap-2'>
+			className='w-[250px] md:w-96 h-[325px] md:h-[300px] bg-[#FEF6FB] border border-[#F8BDDD] rounded-3xl flex flex-col justify-between gap-4  p-8 md:p-12'>
+			<div className={`'text-2xl h-[24px] ${card.title === 'Polkassembly' && '-mt-4 -ml-2'} font-semibold flex gap-2'`}>
 				<img
 					src={card.logo}
 					alt={card.title}
+					className={`${card.title === 'Polkassembly' ? 'h-16' : 'h-8'}`}
 				/>
 				{/* <h1 className=''>{card.title}</h1> */}
 			</div>
