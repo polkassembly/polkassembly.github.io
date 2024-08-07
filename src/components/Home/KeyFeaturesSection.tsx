@@ -128,7 +128,7 @@ const KeyFeaturesSection = () => {
 	return (
 		<div
 			ref={sectionRef}
-			className='h-screen md:h-[300vh] relative scroll-smooth '>
+			className='min-h-screen md:h-[300vh] relative scroll-smooth '>
 			<motion.section
 				id='features-section'
 				className='pb-28 sticky top-0'>
