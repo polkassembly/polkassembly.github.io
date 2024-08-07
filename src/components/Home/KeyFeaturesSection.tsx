@@ -16,15 +16,15 @@ const KeyFeaturesSection = () => {
 	const sectionRef = useRef<any>(null);
 	const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 	const scrollRef = useRef<HTMLDivElement>(null);
-	const ghostRef = useRef<any>(null);
 	const isMobile = window && window.innerWidth < 768;
 	const [scrollRange, setScrollRange] = useState(0);
+	const [hasScrolled, setHasScrolled] = useState(false);
 	const [viewportW, setViewportW] = useState(0);
 	const scrollControls = useAnimation();
 	const {scrollYProgress} = useScroll({
 		target: sectionRef
 	});
-	const {scrollYProgress: scrollYMb} = useScroll();
+	const {scrollYProgress: scrollYMb, scrollY} = useScroll();
 	const yTransform = useTransform(scrollYProgress, [0, 1], [0.7, -700]);
 	const springYTransform = useSpring(yTransform, {bounce: 20, damping: 30});
 	const xTransform = useTransform(scrollYMb, [0, 1], [0, -scrollRange + viewportW]);
@@ -37,8 +37,9 @@ const KeyFeaturesSection = () => {
 
 	useEffect(() => {
 		if (window.innerWidth < 768 && !cardRefs.current[active]) {
-			if (scrollRef.current) {
-				const getVal = active >= prevActive ? window.innerWidth - 100 : -(window.innerWidth - 100);
+			console.log('scrollRef', scrollRef, xTransform, scrollYProgress, scrollYMb, hasScrolled);
+			if (scrollRef.current && hasScrolled) {
+				const getVal = active >= prevActive ? 248 : -248;
 				scrollRef.current.scrollBy({left: getVal, behavior: 'smooth'});
 			}
 		}
@@ -48,31 +49,24 @@ const KeyFeaturesSection = () => {
 		scrollRef && setScrollRange(sectionRef.current.scrollWidth);
 	}, [scrollRef]);
 
-	const onResize = useCallback((entries: any) => {
-		for (let entry of entries) {
-			setViewportW(entry.contentRect.width);
+	useMotionValueEvent(scrollYProgress, 'change', latest => {
+		console.log('Page scroll: ', latest);
+		if (latest > 0.1) {
+			setHasScrolled(true);
 		}
-	}, []);
-
-	// useLayoutEffect(() => {
-	// 	const resizeObserver = new ResizeObserver(entries => onResize(entries));
-	// 	ghostRef && resizeObserver && resizeObserver?.observe(ghostRef?.current);
-	// 	return () => resizeObserver.disconnect();
-	// }, [onResize]);
+		const cardsBreakpoints = data.map((_, index) => index / cardLength);
+		const closestBreakpointIndex = cardsBreakpoints.reduce((acc, breakpoint, index) => {
+			const distance = Math.abs(latest - breakpoint);
+			if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
+				return index;
+			}
+			return acc;
+		}, 0);
+		setPrevActive(active);
+		setActive(closestBreakpointIndex);
+	});
 
 	const animatedActiveCard = (id: string, title: string, description: string) => {
-		useMotionValueEvent(scrollYProgress, 'change', latest => {
-			const cardsBreakpoints = data.map((_, index) => index / cardLength);
-			const closestBreakpointIndex = cardsBreakpoints.reduce((acc, breakpoint, index) => {
-				const distance = Math.abs(latest - breakpoint);
-				if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
-					return index;
-				}
-				return acc;
-			}, 0);
-			setPrevActive(active);
-			setActive(closestBreakpointIndex);
-		});
 		return (
 			<DivWithBorder
 				className='bg-[#f5f5f572] border-pa-pink rounded-2xl border p-4 md:p-8'
@@ -156,7 +150,7 @@ const KeyFeaturesSection = () => {
 					<motion.div
 						style={active < cardLength - 1 ? boxShadowStyle : {}}
 						ref={scrollRef}
-						className='feature-list-container h-[12rem]  md:col-span-5 md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8'>
+						className='feature-list-container h-[12rem] px-24 md:px-0  md:col-span-5 md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8'>
 						{data.map((item, idx) => (
 							<motion.div
 								style={isMobile ? {x: springXTransform} : {y: springYTransform}}
@@ -199,13 +193,6 @@ const KeyFeaturesSection = () => {
 					</motion.div>
 				</motion.div>
 			</motion.section>
-			{isMobile && (
-				<div
-					ref={ghostRef}
-					style={{height: scrollRange}}
-					className='w-screen'
-				/>
-			)}
 		</div>
 	);
 };
