@@ -6,7 +6,7 @@ import {cn} from '../../utils/utils';
 export function DivWithBorder({borderRadius = '1.75rem', children, as: Component = 'div', containerClassName, borderClassName, duration, className, ...otherProps}: {borderRadius?: string; children: React.ReactNode; as?: any; containerClassName?: string; borderClassName?: string; duration?: number; className?: string; [key: string]: any}) {
 	return (
 		<Component
-			className={cn('bg-transparent relative text-xl w-full p-[1px] overflow-hidden ', containerClassName)}
+			className={cn('bg-transparent relative text-xl w-full p-[1px] h-full overflow-hidden ', containerClassName)}
 			style={{
 				borderRadius: borderRadius
 			}}

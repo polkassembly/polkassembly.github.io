@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect, useCallback, useLayoutEffect} from 'react';
 import arrow from '../../assets/images/arrow-rounded-white.svg';
-import {useMotionValueEvent, useScroll, useAnimation, useTransform, useSpring} from 'framer-motion';
+import {useMotionValueEvent, useScroll, useAnimation, useTransform, useSpring, useViewportScroll} from 'framer-motion';
 import {motion} from 'framer-motion';
 import starPink from '../../assets/images/star-pink-2.svg';
 import {DivWithBorder} from '../ui/moving-border';
@@ -16,6 +16,7 @@ const KeyFeaturesSection = () => {
 	const sectionRef = useRef<any>(null);
 	const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 	const scrollRef = useRef<HTMLDivElement>(null);
+	const ghostRef = useRef<any>(null);
 	const isMobile = window && window.innerWidth < 768;
 	const [scrollRange, setScrollRange] = useState(0);
 	const [viewportW, setViewportW] = useState(0);
@@ -23,10 +24,11 @@ const KeyFeaturesSection = () => {
 	const {scrollYProgress} = useScroll({
 		target: sectionRef
 	});
+	const {scrollYProgress: scrollYMb} = useScroll();
 	const yTransform = useTransform(scrollYProgress, [0, 1], [0.7, -700]);
 	const springYTransform = useSpring(yTransform, {bounce: 20, damping: 30});
-	const xTransform = useTransform(scrollYProgress, [0, 1], [0.7, -100]);
-	const springXTransform = useSpring(xTransform, {bounce: 20, damping: 30});
+	const xTransform = useTransform(scrollYMb, [0, 1], [0, -scrollRange + viewportW]);
+	const springXTransform = useSpring(xTransform, {damping: 15, mass: 0.27, stiffness: 55});
 	const cardLength = data.length;
 
 	const boxShadowStyle = {
@@ -36,7 +38,7 @@ const KeyFeaturesSection = () => {
 	useEffect(() => {
 		if (window.innerWidth < 768 && !cardRefs.current[active]) {
 			if (scrollRef.current) {
-				const getVal = active >= prevActive ? 300 : -300;
+				const getVal = active >= prevActive ? window.innerWidth - 100 : -(window.innerWidth - 100);
 				scrollRef.current.scrollBy({left: getVal, behavior: 'smooth'});
 			}
 		}
@@ -51,6 +53,12 @@ const KeyFeaturesSection = () => {
 			setViewportW(entry.contentRect.width);
 		}
 	}, []);
+
+	// useLayoutEffect(() => {
+	// 	const resizeObserver = new ResizeObserver(entries => onResize(entries));
+	// 	ghostRef && resizeObserver && resizeObserver?.observe(ghostRef?.current);
+	// 	return () => resizeObserver.disconnect();
+	// }, [onResize]);
 
 	const animatedActiveCard = (id: string, title: string, description: string) => {
 		useMotionValueEvent(scrollYProgress, 'change', latest => {
@@ -67,10 +75,10 @@ const KeyFeaturesSection = () => {
 		});
 		return (
 			<DivWithBorder
-				className='bg-[#f5f5f572] border-pa-pink rounded-2xl border p-8'
+				className='bg-[#f5f5f572] border-pa-pink rounded-2xl border p-4 md:p-8'
 				duration={5000}>
 				<div className='flex w-[55vw] md:w-auto justify-between items-center'>
-					<h1 className='text-xl text-pa-pink font-bold'>
+					<h1 className='text-base md:text-xl text-pa-pink font-bold'>
 						{id} <span className='text-black font-semibold ml-1'>{title}</span>
 					</h1>
 					<svg
@@ -86,7 +94,7 @@ const KeyFeaturesSection = () => {
 						/>
 					</svg>
 				</div>
-				<p className='text-base mt-4 text-black'>{description}</p>
+				<p className='text-xs md:max-h-auto md:text-base mt-4 text-black'>{description}</p>
 			</DivWithBorder>
 		);
 	};
@@ -97,11 +105,11 @@ const KeyFeaturesSection = () => {
 				initial={{opacity: 0}}
 				animate={{opacity: 1}}
 				transition={{duration: 0.5, ease: 'linear'}}
-				className='bg-white rounded-3xl h-full max-h-[300px] w-[55vw] md:w-auto md:h-auto md:rounded-full border-slate-400 border p-10'
+				className='bg-white rounded-3xl h-full max-h-[300px] w-[55vw] md:w-auto md:h-auto md:rounded-full border-slate-400 border p-6 md:p-10'
 				onClick={() => setActive(index)}
 				ref={el => (cardRefs.current[index] = el)}>
 				<div className='flex justify-between items-center'>
-					<h1 className='text-xl text-black font-semibold'>
+					<h1 className='text-base md:text-xl text-black font-semibold'>
 						{id} <span className='text-black font-normal ml-1'>{title}</span>
 					</h1>
 					<svg
@@ -129,7 +137,7 @@ const KeyFeaturesSection = () => {
 				id='features-section'
 				className='pb-28 sticky top-0'>
 				<div className='w-full border-t-8 py-8 2xl:py-20 border-pa-pink' />
-				<div className='flex px-8 md:px-28 items-start justify-between'>
+				<div className='flex px-8 mt-1 md:mt-auto md:px-28 items-start justify-between'>
 					<div className='mt-4 md:mt-0'>
 						<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 							Key <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Features</span>
@@ -148,7 +156,7 @@ const KeyFeaturesSection = () => {
 					<motion.div
 						style={active < cardLength - 1 ? boxShadowStyle : {}}
 						ref={scrollRef}
-						className='feature-list-container  md:col-span-5 md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8'>
+						className='feature-list-container h-[12rem]  md:col-span-5 md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8'>
 						{data.map((item, idx) => (
 							<motion.div
 								style={isMobile ? {x: springXTransform} : {y: springYTransform}}
@@ -165,7 +173,7 @@ const KeyFeaturesSection = () => {
 						animate={{opacity: 1}}
 						transition={{duration: 0.5, ease: 'linear', delay: 0.2}}
 						className='md:col-span-7 md:-mt-8 bg-pa-pink-light flex flex-col max-h-[500px] justify-start rounded-3xl p-8'>
-						<div className='h-[350px] w-full rounded-xl'>
+						<div className='h-[150px] md:h-[350px] w-full rounded-xl'>
 							<img
 								src={data[active].banner}
 								alt={data[active].title}
@@ -191,6 +199,13 @@ const KeyFeaturesSection = () => {
 					</motion.div>
 				</motion.div>
 			</motion.section>
+			{isMobile && (
+				<div
+					ref={ghostRef}
+					style={{height: scrollRange}}
+					className='w-screen'
+				/>
+			)}
 		</div>
 	);
 };
