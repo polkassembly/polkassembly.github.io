@@ -33,11 +33,11 @@ export default function WhySection() {
 						<div className='flex gap-8 2xl:gap-16 flex-col lg:flex-row items-start'>
 							<img
 								src={item.logo}
-								className='w-28'
+								className='w-24 md:w-28'
 							/>
 							<div className='flex flex-col gap-4'>
 								<h3 className='text-2xl font-bold text-black'>{item.title}</h3>
-								<p className='text-black leading-7'>{item.content}</p>
+								<p className='text-black font-semibold leading-7'>{item.content}</p>
 							</div>
 						</div>
 					</div>

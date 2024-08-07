@@ -12,47 +12,25 @@ import treasury from '../../assets/images/treasury.svg';
 
 const KeyFeaturesSection = () => {
 	const [active, setActive] = useState<number>(0);
-	const [prevActive, setPrevActive] = useState<number>(0);
 	const sectionRef = useRef<any>(null);
 	const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 	const cardRefs2 = useRef<(HTMLDivElement | null)[]>([]);
 	const scrollRef = useRef<HTMLDivElement>(null);
 	const isMobile = window && window.innerWidth < 768;
-	const [scrollRange, setScrollRange] = useState(0);
-	const [hasScrolled, setHasScrolled] = useState(false);
-	const [viewportW, setViewportW] = useState(0);
 	const scrollControls = useAnimation();
 	const {scrollYProgress} = useScroll({
 		target: sectionRef
 	});
-	const {scrollYProgress: scrollYMb, scrollY} = useScroll();
 	const yTransform = useTransform(scrollYProgress, [0, 1], [0.7, -700]);
 	const springYTransform = useSpring(yTransform, {bounce: 20, damping: 30});
-	const xTransform = useTransform(scrollYMb, [0, 1], [0, -scrollRange + viewportW]);
-	const springXTransform = useSpring(xTransform, {damping: 15, mass: 0.27, stiffness: 55});
 	const cardLength = data.length;
 
 	const boxShadowStyle = {
 		boxShadow: isMobile ? '-10px 0 5px -2px rgba(0,0,0,0.22) inset' : '0px -129px 18px -106px rgba(0,0,0,0.22) inset'
 	};
 
-	useEffect(() => {
-		if (window.innerWidth < 768 && !cardRefs.current[active]) {
-			if (scrollRef.current && hasScrolled) {
-				const getVal = active >= prevActive ? 248 : -248;
-				scrollRef.current.scrollBy({left: getVal, behavior: 'smooth'});
-			}
-		}
-	}, [active, scrollControls]);
-
-	useLayoutEffect(() => {
-		scrollRef && setScrollRange(sectionRef.current.scrollWidth);
-	}, [scrollRef]);
-
 	useMotionValueEvent(scrollYProgress, 'change', latest => {
-		if (latest > 0.1) {
-			setHasScrolled(true);
-		}
+		if (isMobile) return;
 		const cardsBreakpoints = data.map((_, index) => index / cardLength);
 		const closestBreakpointIndex = cardsBreakpoints.reduce((acc, breakpoint, index) => {
 			const distance = Math.abs(latest - breakpoint);
@@ -61,7 +39,6 @@ const KeyFeaturesSection = () => {
 			}
 			return acc;
 		}, 0);
-		setPrevActive(active);
 		setActive(closestBreakpointIndex);
 	});
 
@@ -73,7 +50,7 @@ const KeyFeaturesSection = () => {
 
 		const observer = new IntersectionObserver(entries => {
 			entries.forEach(entry => {
-				if (entry.isIntersecting) {
+				if (entry.isIntersecting && isMobile) {
 					const index = cardRefs2.current.indexOf(entry.target as HTMLDivElement);
 					setActive(index);
 				}
@@ -89,7 +66,7 @@ const KeyFeaturesSection = () => {
 		return () => {
 			observer.disconnect();
 		};
-	}, [cardRefs2]);
+	}, [cardRefs2, isMobile]);
 
 	const animatedActiveCard = (id: string, title: string, description: string) => {
 		return (
@@ -151,7 +128,7 @@ const KeyFeaturesSection = () => {
 	return (
 		<div
 			ref={sectionRef}
-			className='h-[300vh] relative scroll-smooth '>
+			className='h-screen md:h-[300vh] relative scroll-smooth '>
 			<motion.section
 				id='features-section'
 				className='pb-28 sticky top-0'>
@@ -175,14 +152,13 @@ const KeyFeaturesSection = () => {
 					<motion.div
 						style={active < cardLength - 1 ? boxShadowStyle : {}}
 						ref={scrollRef}
-						className='feature-list-container h-[12rem] px-24 md:px-0  md:col-span-5 md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8'>
+						className='feature-list-container h-[12rem]  md:col-span-5 md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8'>
 						{data.map((item, idx) => (
 							<motion.div
-								style={isMobile ? {x: springXTransform} : {y: springYTransform}}
+								style={isMobile ? {} : {y: springYTransform}}
 								className='feature-list'
 								key={item.id}
-								// ref={el => (cardRefs2.current[idx] = el)}
-								>
+								ref={el => (cardRefs2.current[idx] = el)}>
 								{idx === active ? animatedActiveCard(item.id, item.title, item.description) : inactiveCard(item.id, item.title, item.description, idx)}
 							</motion.div>
 						))}
@@ -194,7 +170,7 @@ const KeyFeaturesSection = () => {
 						animate={{opacity: 1}}
 						transition={{duration: 0.5, ease: 'linear', delay: 0.2}}
 						className='md:col-span-7 md:-mt-8 bg-pa-pink-light flex flex-col max-h-[500px] justify-start rounded-3xl p-4 md:p-8'>
-						<div className='h-[180px] md:h-[350px] w-full rounded-xl'>
+						<div className='h-[220px] md:h-[350px] w-full rounded-xl'>
 							<img
 								src={data[active].banner}
 								alt={data[active].title}
