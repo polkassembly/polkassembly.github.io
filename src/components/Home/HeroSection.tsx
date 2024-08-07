@@ -29,7 +29,7 @@ export default function HeroSection() {
 						<h1 className='text-xl font-semibold lg:text-[34px] 2xl:text-[44px] mt-3 md:mt-8 2xl:mt-16 text-black'>for Polkadot Governance</h1>
 						<p className='text-md w-[80%] md:w-[55%] md:text-xl 2xl:text-2xl text-center mt-8 text-black'>Welcome to Polkassembly, the premier platform for governance and collaboration in the Polkadot ecosystem. Our mission is to empower the community with the tools needed for effective decision-making and engagement.</p>
 
-						{socialLinksUL('text-black', 'w-6 h-6', 'mt-8')}
+						{socialLinksUL('text-black', 'w-6 h-6 mx-2', 'mt-8')}
 					</div>
 					<img
 						src={starPink}

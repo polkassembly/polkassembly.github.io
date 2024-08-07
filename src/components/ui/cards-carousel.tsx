@@ -114,24 +114,24 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 						onClick={scrollLeft}
 						disabled={!canScrollLeft}>
 						{type === 'news' ? (
-							<div className='w-8 md:w-24 relative -left-24 z-20 border rounded-full'>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								// width='56'
-								// height='56'
-								viewBox='0 0 56 56'
-								fill={canScrollLeft ? '#222222' : 'white'}>
-								<circle
-									cx='28'
-									cy='28'
-									r='27.5'
-									transform='matrix(-1 0 0 1 56 0)'
-								/>
-								<path
-									d='M13.2928 28.7071C12.9022 28.3166 12.9022 27.6834 13.2928 27.2929L19.6567 20.9289C20.0473 20.5384 20.6804 20.5384 21.0709 20.9289C21.4615 21.3195 21.4615 21.9526 21.0709 22.3431L15.4141 28L21.0709 33.6569C21.4615 34.0474 21.4615 34.6805 21.0709 35.0711C20.6804 35.4616 20.0473 35.4616 19.6567 35.0711L13.2928 28.7071ZM41.9999 29H13.9999V27H41.9999V29Z'
-									fill={canScrollLeft ? 'white' : '#222222'}
-								/>
-							</svg>
+							<div className='w-8 md:w-24 relative top-24 md:top-auto -left-8 md:-left-24 z-20 border rounded-full'>
+								<svg
+									xmlns='http://www.w3.org/2000/svg'
+									// width='56'
+									// height='56'
+									viewBox='0 0 56 56'
+									fill={canScrollLeft ? '#222222' : 'white'}>
+									<circle
+										cx='28'
+										cy='28'
+										r='27.5'
+										transform='matrix(-1 0 0 1 56 0)'
+									/>
+									<path
+										d='M13.2928 28.7071C12.9022 28.3166 12.9022 27.6834 13.2928 27.2929L19.6567 20.9289C20.0473 20.5384 20.6804 20.5384 21.0709 20.9289C21.4615 21.3195 21.4615 21.9526 21.0709 22.3431L15.4141 28L21.0709 33.6569C21.4615 34.0474 21.4615 34.6805 21.0709 35.0711C20.6804 35.4616 20.0473 35.4616 19.6567 35.0711L13.2928 28.7071ZM41.9999 29H13.9999V27H41.9999V29Z'
+										fill={canScrollLeft ? 'white' : '#222222'}
+									/>
+								</svg>
 							</div>
 						) : (
 							<div className={`w-8 h-8 md:w-14 md:h-14 rotate-180 rounded-full bg-slate-800 flex items-center justify-center ${canScrollLeft ? '' : 'hidden'}`}>
@@ -165,7 +165,7 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 						onClick={scrollRight}
 						disabled={!canScrollRight}>
 						{type === 'news' ? (
-							<div className='w-8 md:w-24 relative -right-24 z-20 border rounded-full'>
+							<div className='w-8 md:w-24 top-24 md:top-auto -right-8 relative md:-right-24 z-20 border rounded-full'>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									// width='56'

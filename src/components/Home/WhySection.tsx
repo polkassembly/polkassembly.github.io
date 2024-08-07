@@ -10,7 +10,7 @@ export default function WhySection() {
 			id='about-section'
 			className='bg-pa-pink-light flex flex-col items-center'>
 			<div className='w-full border-t-8 border-pa-pink' />
-			<div className='flex relative w-fit flex-col pt-24 items-center container'>
+			<div className='flex relative w-fit flex-col pt-8 md:pt-24 items-center container'>
 				<img
 					src={star}
 					className='absolute -left-48 top-12 w-12 h-12'
@@ -24,7 +24,7 @@ export default function WhySection() {
 					className='absolute right-2 md:right-0 bottom-0 w-8 h-8 md:w-12 md:h-12'
 				/>
 			</div>
-			<div className='container mx-4 xs:mx-12 md:mx-24 2xl:mx-48 mb-24 grid xl:grid-cols-2 justify-center items-center w-fit mt-24 gap-4'>
+			<div className='container mx-4 xs:mx-12 md:mx-24 2xl:mx-48 mb-24 grid xl:grid-cols-2 justify-center items-center w-fit mt-8 md:mt-24 gap-4'>
 				{data.map(item => (
 					<div
 						key={item.id}

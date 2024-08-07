@@ -34,7 +34,7 @@ export default function MonthlyNewsLetter() {
 	const cards = data.map(news => (
 		<div
 			key={news?.id}
-			className='container h-[350px] w-[250px] p-3 flex drop-shadow-md rounded-[50px] overflow-hidden flex-col md:flex-row  md:h-[500px] md:w-[599px] bg-white'>
+			className='container h-[350px] w-[320px] p-3 flex drop-shadow-md rounded-[50px] overflow-hidden flex-col md:flex-row  md:h-[500px] md:w-[599px] bg-white'>
 			<div
 				className={`bg-cover bg-center bg-no-repeat w-full h-full rounded-[40px] z-20 flex flex-col justify-end p-[24px] md:p-[36px] gap-[24px] md:gap-[18px]`}
 				style={{backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0), transparent 100%), url(${news?.cover_image || NewsLetter})`}}>
@@ -48,7 +48,7 @@ export default function MonthlyNewsLetter() {
 						className='flex gap-4 items-center'>
 						<img
 							src={arrow}
-							className='w-9 h-9 rounded-full p-2 bg-white'
+							className='w-7 h-7 md:w-9 md:h-9 rounded-full p-2 bg-white'
 							alt='arrow'
 						/>
 						<span className='text-white text-sm lg:text-lg font-normal'> Learn more</span>
@@ -59,7 +59,7 @@ export default function MonthlyNewsLetter() {
 	));
 
 	return data.length ? (
-		<section className='my-28 mx-4 md:mx-20 flex flex-col items-center justify-center'>
+		<section className='my-8 md:my-28 mx-4 md:mx-20 flex flex-col items-center justify-center'>
 			<div className='flex justify-between w-full items-center'>
 				<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 					<span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Polkadot</span> News
@@ -84,16 +84,17 @@ export default function MonthlyNewsLetter() {
 					</button>
 				</a>
 			</div>
-			<div className='px-2 w-[75vw] relative'>
+			<div className='px-2 w-[95vw] md:w-[75vw] relative'>
 				<Carousel
 					items={cards}
-					size={isMobile() ? 300 : 630}
+					size={isMobile() ? 320 : 630}
 					type='news'
 				/>
 			</div>
 			<a
 				href='https://polkassembly.substack.com/'
 				target='_blank'
+				className='flex w-full justify-start'
 				rel='noreferrer'>
 				<button className='flex md:hidden mr-auto bg-white text-pa-pink rounded-full border border-pa-pink py-2 px-4 text-base font-semibold items-center gap-2'>
 					See More

@@ -142,15 +142,15 @@ export const InfiniteMovingCards = ({
 				className={cn('scroller relative z-20  w-full overflow-hidden  ', className)}>
 				<ul
 					ref={scrollerRef}
-					className={cn('flex min-w-full shrink-0 gap-24 py-4 w-max flex-nowrap', start && 'animate-scroll ', pauseOnHover && 'hover:[animation-play-state:paused]')}>
+					className={cn('flex min-w-full shrink-0 gap-6 md:gap-24 py-4 w-max flex-nowrap', start && 'animate-scroll ', pauseOnHover && 'hover:[animation-play-state:paused]')}>
 					{items.map((item, idx) => (
 						<li
-							className='flex items-center gap-4'
+							className='flex items-center md:gap-4'
 							key={item.title}>
 							<h1 className='text-3xl inline-flex items-center gap-2 lg:text-6xl font-bold text-black'>{item.title}</h1>
 							<img
 								src={starPink}
-								className='w-12 ml-12'
+								className='w-8 md:w-12 ml-6 md:ml-12'
 							/>
 						</li>
 					))}

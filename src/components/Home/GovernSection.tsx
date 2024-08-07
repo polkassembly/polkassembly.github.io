@@ -17,12 +17,12 @@ const GovernSection = () => {
 				/>
 			</div>
 			<div className='flex w-full items-center gap-4 mt-16 md:mt-24'>
-				<div className='w-full ml-12 border-2 border-black' />
+				<div className='w-full ml-6 md:ml-12 border-2 border-black' />
 				<img
 					src={starBlack}
 					className='w-8'
 				/>
-				<div className='w-full mr-12 border-2 border-black' />
+				<div className='w-full mr-6 md:mr-12 border-2 border-black' />
 			</div>
 		</section>
 	);

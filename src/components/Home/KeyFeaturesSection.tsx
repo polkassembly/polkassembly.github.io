@@ -15,6 +15,7 @@ const KeyFeaturesSection = () => {
 	const [prevActive, setPrevActive] = useState<number>(0);
 	const sectionRef = useRef<any>(null);
 	const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+	const cardRefs2 = useRef<(HTMLDivElement | null)[]>([]);
 	const scrollRef = useRef<HTMLDivElement>(null);
 	const isMobile = window && window.innerWidth < 768;
 	const [scrollRange, setScrollRange] = useState(0);
@@ -37,7 +38,6 @@ const KeyFeaturesSection = () => {
 
 	useEffect(() => {
 		if (window.innerWidth < 768 && !cardRefs.current[active]) {
-			console.log('scrollRef', scrollRef, xTransform, scrollYProgress, scrollYMb, hasScrolled);
 			if (scrollRef.current && hasScrolled) {
 				const getVal = active >= prevActive ? 248 : -248;
 				scrollRef.current.scrollBy({left: getVal, behavior: 'smooth'});
@@ -50,7 +50,6 @@ const KeyFeaturesSection = () => {
 	}, [scrollRef]);
 
 	useMotionValueEvent(scrollYProgress, 'change', latest => {
-		console.log('Page scroll: ', latest);
 		if (latest > 0.1) {
 			setHasScrolled(true);
 		}
@@ -66,6 +65,32 @@ const KeyFeaturesSection = () => {
 		setActive(closestBreakpointIndex);
 	});
 
+	useEffect(() => {
+		const observerOptions = {
+			root: scrollRef.current,
+			threshold: 0.5 // Adjust this value as needed
+		};
+
+		const observer = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const index = cardRefs2.current.indexOf(entry.target as HTMLDivElement);
+					setActive(index);
+				}
+			});
+		}, observerOptions);
+
+		cardRefs2.current.forEach(card => {
+			if (card) {
+				observer.observe(card);
+			}
+		});
+
+		return () => {
+			observer.disconnect();
+		};
+	}, [cardRefs2]);
+
 	const animatedActiveCard = (id: string, title: string, description: string) => {
 		return (
 			<DivWithBorder
@@ -76,7 +101,7 @@ const KeyFeaturesSection = () => {
 						{id} <span className='text-black font-semibold ml-1'>{title}</span>
 					</h1>
 					<svg
-						className='rotate-90 md:rotate-0'
+						className='rotate-90 md:rotate-0 w-5 md:w-auto'
 						xmlns='http://www.w3.org/2000/svg'
 						width='26'
 						height='16'
@@ -146,7 +171,7 @@ const KeyFeaturesSection = () => {
 				</div>
 				<motion.div
 					animate={scrollControls}
-					className='relative grid mt-8 px-8 md:px-28 gap-8 md:grid-cols-12'>
+					className='relative grid mt-4 md:mt-8 px-8 md:px-28 gap-8 md:grid-cols-12'>
 					<motion.div
 						style={active < cardLength - 1 ? boxShadowStyle : {}}
 						ref={scrollRef}
@@ -155,7 +180,9 @@ const KeyFeaturesSection = () => {
 							<motion.div
 								style={isMobile ? {x: springXTransform} : {y: springYTransform}}
 								className='feature-list'
-								key={item.id}>
+								key={item.id}
+								// ref={el => (cardRefs2.current[idx] = el)}
+								>
 								{idx === active ? animatedActiveCard(item.id, item.title, item.description) : inactiveCard(item.id, item.title, item.description, idx)}
 							</motion.div>
 						))}
@@ -166,8 +193,8 @@ const KeyFeaturesSection = () => {
 						initial={{opacity: 0}}
 						animate={{opacity: 1}}
 						transition={{duration: 0.5, ease: 'linear', delay: 0.2}}
-						className='md:col-span-7 md:-mt-8 bg-pa-pink-light flex flex-col max-h-[500px] justify-start rounded-3xl p-8'>
-						<div className='h-[150px] md:h-[350px] w-full rounded-xl'>
+						className='md:col-span-7 md:-mt-8 bg-pa-pink-light flex flex-col max-h-[500px] justify-start rounded-3xl p-4 md:p-8'>
+						<div className='h-[180px] md:h-[350px] w-full rounded-xl'>
 							<img
 								src={data[active].banner}
 								alt={data[active].title}
@@ -175,7 +202,7 @@ const KeyFeaturesSection = () => {
 							/>
 						</div>
 						<div className='flex items-center mt-4 justify-between'>
-							<h1 className='text-3xl text-black font-semibold'>{data.filter(item => item.id === data[active].id)[0].title}</h1>
+							<h1 className='text-xl md:text-3xl text-black font-semibold'>{data.filter(item => item.id === data[active].id)[0].title}</h1>
 
 							{data[active].link && (
 								<a
@@ -185,7 +212,7 @@ const KeyFeaturesSection = () => {
 									<img
 										src={arrow}
 										alt='arrow'
-										className='w-8 md:w-12'
+										className='w-6 md:w-12'
 									/>
 								</a>
 							)}

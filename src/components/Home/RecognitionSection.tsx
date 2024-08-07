@@ -28,8 +28,8 @@ export default function RecognitionSection() {
 				/>
 			</div> */}
 
-			<div className=' bg-white grid lg:grid-cols-3 items-start mt-12 justify-center border rounded-3xl py-8'>
-				<div className='flex flex-col col-span-1 pb-8 md:pb-0 px-8'>
+			<div className=' bg-white grid lg:grid-cols-3 items-start mt-12 justify-center border rounded-3xl py-4 md:py-8'>
+				<div className='flex flex-col col-span-1 pb-8 md:pb-0 px-4 md:px-8'>
 					<img
 						src={web3Grant}
 						className=''
@@ -48,7 +48,7 @@ export default function RecognitionSection() {
 							href='https://substrate.io/ecosystem/projects/'
 							target='_blank'
 							rel='noopener noreferrer'
-							className=' text-pa-pink flex items-center font-semibold'>
+							className=' text-pa-pink flex items-center mt-4 font-semibold'>
 							Learn More
 							<img
 								src={arrow}

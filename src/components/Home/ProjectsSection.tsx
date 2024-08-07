@@ -8,7 +8,7 @@ export default function ProjectsSection() {
 	const cards = data.map((card, index) => (
 		<div
 			key={card.title}
-			className='w-[250px] md:w-96 h-[325px] md:h-[300px] bg-[#FEF6FB] border border-[#F8BDDD] rounded-3xl flex flex-col justify-between gap-4  p-8 md:p-12'>
+			className='w-[250px] md:w-96 h-[265px] md:h-[300px] bg-[#FEF6FB] border border-[#F8BDDD] rounded-3xl flex flex-col justify-between gap-4  p-8 md:p-12'>
 			<div className={`'text-2xl h-[24px] ${card.title === 'Polkassembly' && '-mt-4 -ml-2'} font-semibold flex gap-2'`}>
 				<img
 					src={card.logo}
@@ -17,12 +17,12 @@ export default function ProjectsSection() {
 				/>
 				{/* <h1 className=''>{card.title}</h1> */}
 			</div>
-			<p className=''>{card.content}</p>
+			<p className='text-sm md:text-base'>{card.content}</p>
 			<a
 				href={card.link}
 				target='_blank'
 				rel='noopener noreferrer'>
-				<h1 className='text-xl text-black font-light flex items-center gap-2'>
+				<h1 className='text-base font-semibold md:text-xl text-black flex items-center gap-2'>
 					<img
 						src={learnMore}
 						alt='Learn More'
@@ -40,7 +40,7 @@ export default function ProjectsSection() {
 			<h1 className='text-4xl flex flex-col ml-8 lg:ml-auto lg:text-6xl font-bold text-black'>
 				Polkassembly <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Projects</span>
 			</h1>
-			<div className='ml-8 px-2 relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]'>
+			<div className='md:ml-8 px-2 relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]'>
 				<Carousel
 					items={cards}
 					type='projects'
