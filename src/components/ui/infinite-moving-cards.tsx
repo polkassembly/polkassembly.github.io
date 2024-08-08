@@ -80,13 +80,18 @@ export const InfiniteMovingCards = ({
 						<li
 							className='w-[135px] md:w-[200px] flex flex-col items-center justify-center relative rounded-2xl bg-white border-4 flex-shrink-0 border-[#E1E1E1] p-4'
 							key={item.title}>
-							<div className='flex items-center justify-center h-12 md:h-16'>
-								<img
-									src={item.image}
-									className='rounded-full h-auto w-16 mx-auto'
-								/>
-							</div>
-							<h3 className={`mt-3 md:mt-5 text-base font-medium md:text-lg md:font-semibold text-black ${item.title === 'Xx' ? 'uppercase' : 'capitalize'} tracking-normal lg:tracking-widest text-center leading-none md:leading-auto px-2`}>{item.title}</h3>
+							{item.title && <a
+								href={["moonbase", "moonriver", "moonbeam", "kilt", "automata"].includes(item.title) ? `https://${item.title}.polkassembly.network` : `https://${item.title}.polkassembly.io`}
+								target='_blank'
+								rel='noreferrer'>
+								<div className='flex items-center justify-center h-12 md:h-16'>
+									<img
+										src={item.image}
+										className='rounded-full h-auto w-16 mx-auto'
+									/>
+								</div>
+								<h3 className={`mt-3 md:mt-5 text-base font-medium md:text-lg md:font-semibold text-black ${item.title === 'Xx' ? 'uppercase' : 'capitalize'} tracking-normal lg:tracking-widest text-center leading-none md:leading-auto px-2`}>{item.title}</h3>
+							</a>}
 						</li>
 					))}
 				</ul>
