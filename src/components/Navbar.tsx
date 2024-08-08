@@ -1,7 +1,8 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Link, NavLink, useLocation} from 'react-router-dom';
 import {Link as ScrollLink, animateScroll as scroll} from 'react-scroll';
 import polkassemblyLogo from '../assets/images/pa-logo.svg';
+import search from '../assets/images/search.svg';
 import {motion, useCycle} from 'framer-motion';
 import parachainsArr from './parachainsArr';
 import {chainProperties, network} from '../utils/networkConstants';
@@ -80,6 +81,8 @@ export default function Navbar() {
 	const [isMouse, toggleMouse] = React.useState(false);
 	const [showMobileNetworks, setShowMobileNetworks] = React.useState(false);
 	const containerRef = useRef(null);
+	const [searchInput, setSearchInput] = useState<string>('');
+	const [searchResults, setSearchResults] = useState<any[]>([]);
 	const {height} = useDimensions(containerRef);
 	const [isOpen, toggleOpen] = useCycle(false, true);
 
@@ -148,6 +151,17 @@ export default function Navbar() {
 			}
 		}
 	};
+
+	useEffect(() => {
+		if (searchInput) {
+			const searchData = [...polkadotChains, ...kusamaChains, ...soloChains, ...testChains];
+			const newsearchData = searchData.filter(item => item.key.toLowerCase().includes(searchInput.toLowerCase()));
+
+			setSearchResults(newsearchData);
+		} else {
+			setSearchResults([]);
+		}
+	}, [searchInput]);
 
 	function currentRoute() {
 		const location = useLocation();
@@ -237,11 +251,72 @@ export default function Navbar() {
 								initial='exit'
 								animate={isMouse ? 'enter' : 'exit'}
 								variants={subMenuAnimate}>
-								<div className='max-h-[52vh] bg-white border border-pa-pink px-4 rounded-lg overflow-y-auto'>
-									<>
-										<div className='text-sm font-semibold mt-2 text-gray-800 text-left'>Polkadot &amp; Parachains</div>
+								<div className='max-h-[52vh] min-h-[10rem] bg-white border border-pa-pink px-4 rounded-lg overflow-y-auto'>
+									<div className='relative mt-2 flex'>
+										<img
+											src={search}
+											className='w-4 h-4 absolute top-1/2 -translate-y-1/2 left-4'
+										/>
+										<input
+											className='w-full pr-3 pl-10 py-1 text-sm border-2 rounded-lg'
+											id='search'
+											type='search'
+											placeholder='Search'
+											value={searchInput}
+											onChange={e => setSearchInput(e.target.value)}
+										/>
+									</div>
+									{searchInput === '' && searchResults.length === 0 ? (
+										<>
+											<div className='text-sm font-semibold mt-2 text-gray-800 text-left'>Polkadot &amp; Parachains</div>
+											<div className='mt-2 grid grid-cols-2 gap-x-4 w-[300px]'>
+												{polkadotChains.map(optionObj => (
+													<a
+														href={optionObj.link}
+														target='_blank'
+														rel='noopener noreferrer'
+														key={optionObj.key}
+														className={`flex col-span-1 cursor-pointer font-medium text-pink_primary dark:text-blue-dark-high`}>
+														<div className='my-1 flex items-center'>
+															<span className='text-sm font-medium capitalize truncate mr-2'>{optionObj.label}</span>
+														</div>
+													</a>
+												))}
+											</div>
+											<div className='text-sm font-semibold mt-2 text-gray-800 text-left'>Kusama &amp; Parachains</div>
+											<div className='mt-2 grid grid-cols-2 gap-x-4 w-[300px]'>
+												{kusamaChains.map(optionObj => (
+													<a
+														href={optionObj.link}
+														target='_blank'
+														rel='noopener noreferrer'
+														key={optionObj.key}
+														className={`flex col-span-1 cursor-pointer font-medium text-pink_primary dark:text-blue-dark-high`}>
+														<div className='my-1 flex items-center'>
+															<span className='text-sm font-medium capitalize truncate mr-2'>{optionObj.label}</span>
+														</div>
+													</a>
+												))}
+											</div>
+											<div className='text-sm font-semibold mt-2 text-gray-800 text-left'>Test Chains</div>
+											<div className='mt-2 grid grid-cols-2 gap-x-4 w-[300px]'>
+												{testChains.map(optionObj => (
+													<a
+														href={optionObj.link}
+														target='_blank'
+														rel='noopener noreferrer'
+														key={optionObj.key}
+														className={`flex col-span-1 cursor-pointer font-medium text-pink_primary dark:text-blue-dark-high`}>
+														<div className='my-1 flex items-center'>
+															<span className='text-sm font-medium capitalize truncate mr-2'>{optionObj.label}</span>
+														</div>
+													</a>
+												))}
+											</div>
+										</>
+									) : (
 										<div className='mt-2 grid grid-cols-2 gap-x-4 w-[300px]'>
-											{polkadotChains.map(optionObj => (
+											{searchResults.map(optionObj => (
 												<a
 													href={optionObj.link}
 													target='_blank'
@@ -254,37 +329,7 @@ export default function Navbar() {
 												</a>
 											))}
 										</div>
-										<div className='text-sm font-semibold mt-2 text-gray-800 text-left'>Kusama &amp; Parachains</div>
-										<div className='mt-2 grid grid-cols-2 gap-x-4 w-[300px]'>
-											{kusamaChains.map(optionObj => (
-												<a
-													href={optionObj.link}
-													target='_blank'
-													rel='noopener noreferrer'
-													key={optionObj.key}
-													className={`flex col-span-1 cursor-pointer font-medium text-pink_primary dark:text-blue-dark-high`}>
-													<div className='my-1 flex items-center'>
-														<span className='text-sm font-medium capitalize truncate mr-2'>{optionObj.label}</span>
-													</div>
-												</a>
-											))}
-										</div>
-										<div className='text-sm font-semibold mt-2 text-gray-800 text-left'>Test Chains</div>
-										<div className='mt-2 grid grid-cols-2 gap-x-4 w-[300px]'>
-											{testChains.map(optionObj => (
-												<a
-													href={optionObj.link}
-													target='_blank'
-													rel='noopener noreferrer'
-													key={optionObj.key}
-													className={`flex col-span-1 cursor-pointer font-medium text-pink_primary dark:text-blue-dark-high`}>
-													<div className='my-1 flex items-center'>
-														<span className='text-sm font-medium capitalize truncate mr-2'>{optionObj.label}</span>
-													</div>
-												</a>
-											))}
-										</div>
-									</>
+									)}
 								</div>
 							</motion.div>
 						</motion.div>
@@ -301,6 +346,8 @@ export default function Navbar() {
 							variants={sidebar}>
 							{showMobileNetworks ? (
 								<div className='flex flex-col w-full items-start'>
+									<div className='flex items-center gap-2  mr-8'>
+
 									<button
 										className='p-3 ml-4 mr-auto rotate-180'
 										onClick={toggleMobileNetworks}>
@@ -313,11 +360,26 @@ export default function Navbar() {
 											<path
 												d='M24.7071 8.70711C25.0976 8.31658 25.0976 7.68342 24.7071 7.29289L18.3431 0.928932C17.9526 0.538408 17.3195 0.538408 16.9289 0.928932C16.5384 1.31946 16.5384 1.95262 16.9289 2.34315L22.5858 8L16.9289 13.6569C16.5384 14.0474 16.5384 14.6805 16.9289 15.0711C17.3195 15.4616 17.9526 15.4616 18.3431 15.0711L24.7071 8.70711ZM0 9H24V7H0V9Z'
 												fill='#444444'
-											/>
+												/>
 										</svg>
 									</button>
+									<div className='relative mt-2 w-[80%] flex'>
+										<img
+											src={search}
+											className='w-4 h-4 absolute top-1/2 -translate-y-1/2 left-4'
+										/>
+										<input
+											className='w-full pr-3 pl-10 py-1 text-sm border-2 rounded-lg'
+											id='search'
+											type='search'
+											placeholder='Search'
+											value={searchInput}
+											onChange={e => setSearchInput(e.target.value)}
+										/>
+									</div>
+												</div>
 									<div className='max-h-[90vh] w-full px-4 rounded-lg overflow-y-auto'>
-										<>
+										{searchInput === '' && searchResults.length === 0 ? <>
 											<div className='mt-2 grid  gap-x-4 w-full'>
 												{polkadotChains.map(optionObj => (
 													<a
@@ -360,7 +422,22 @@ export default function Navbar() {
 													</a>
 												))}
 											</div>
-										</>
+										</> : <>
+										<div className='mt-2 grid pb-8  gap-x-4 w-full'>
+												{searchResults.map(optionObj => (
+													<a
+														href={optionObj.link}
+														target='_blank'
+														rel='noopener noreferrer'
+														key={optionObj.key}
+														className={`flex p-4 border-b  w-full text-left font-semibold col-span-1 cursor-pointer text-pink_primary`}>
+														<div className='my-1 flex items-center'>
+															<span className='text-sm font-medium capitalize truncate mr-2'>{optionObj.label}</span>
+														</div>
+													</a>
+												))}
+											</div>
+										</>}
 									</div>
 								</div>
 							) : (

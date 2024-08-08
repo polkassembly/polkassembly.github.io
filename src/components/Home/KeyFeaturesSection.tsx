@@ -138,7 +138,7 @@ const KeyFeaturesSection = () => {
 						<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 							Key <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Features</span>
 						</h1>
-						<p className='text-sm md:w-[60%] lg:text-xl text-left mt-6 text-black'>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
+						<p className='text-sm md:w-[55%] 2xl:w-[60%] lg:text-xl text-left mt-6 text-black'>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
 					</div>
 					<img
 						src={starPink}
@@ -169,8 +169,8 @@ const KeyFeaturesSection = () => {
 						initial={{opacity: 0}}
 						animate={{opacity: 1}}
 						transition={{duration: 0.5, ease: 'linear', delay: 0.2}}
-						className='md:col-span-7 md:-mt-8 bg-pa-pink-light flex flex-col max-h-[500px] justify-start rounded-3xl p-4 md:p-8'>
-						<div className='h-[220px] md:h-[350px] w-full rounded-xl'>
+						className='md:col-span-7 md:-mt-32 2xl:-mt-24 bg-pa-pink-light flex flex-col justify-between max-h-[465px] 2xl:max-h-[520px] w-[90%] rounded-3xl p-4 md:p-6'>
+						<div className='h-[220px] md:h-[350px] 2xl:h-[420px] w-full rounded-xl'>
 							<img
 								src={data[active].banner}
 								alt={data[active].title}
@@ -180,7 +180,7 @@ const KeyFeaturesSection = () => {
 						<div className='flex items-center mt-4 justify-between'>
 							<h1 className='text-xl md:text-3xl text-black font-semibold'>{data.filter(item => item.id === data[active].id)[0].title}</h1>
 
-							{data[active].link && (
+							{data[active].link ? (
 								<a
 									href={data[active].link}
 									target='_blank'
@@ -191,7 +191,7 @@ const KeyFeaturesSection = () => {
 										className='w-6 md:w-12'
 									/>
 								</a>
-							)}
+							): <div className='px-2 py-1 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold bg-[#A514A0] rounded-full'>Coming Soon</div>}
 						</div>
 					</motion.div>
 				</motion.div>

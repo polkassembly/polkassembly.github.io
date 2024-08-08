@@ -9,7 +9,7 @@ export default function RecognitionSection() {
 	return (
 		<section
 			id='recognition-section'
-			className='p-6 xs:p-8 md:p-28 md:pt-16 bg-recognition-bg md:bg-cover bg-no-repeat '>
+			className='p-6 xs:p-8 md:p-28 md:pt-16 bg-recognition-bg md:bg-cover bg-position-y-50 bg-no-repeat '>
 			{/* className='p-8 md:p-28 md:pt-16 bg-recognition-bg md:bg-contain bg-no-repeat bg-bottom'> */}
 			<h1 className='text-4xl flex flex-wrap items-center gap-2 lg:text-6xl font-bold text-black'>
 				Notable <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Recognition</span>
@@ -80,7 +80,7 @@ export default function RecognitionSection() {
 							href='https://substrate.io/ecosystem/projects/'
 							target='_blank'
 							rel='noopener noreferrer'
-							className=' text-pa-pink flex items-center font-semibold'>
+							className=' text-pa-pink flex md:mt-4 items-center font-semibold'>
 							Learn More
 							<img
 								src={arrow}
@@ -112,7 +112,7 @@ export default function RecognitionSection() {
 							href='https://substrate.io/ecosystem/projects/'
 							target='_blank'
 							rel='noopener noreferrer'
-							className=' text-pa-pink flex items-center font-semibold'>
+							className=' text-pa-pink mt-2 flex items-center font-semibold'>
 							Learn More
 							<img
 								src={arrow}

@@ -7,7 +7,7 @@ const GovernSection = () => {
 		<section
 			id='govern-section'
 			className='flex flex-col items-center'>
-			<div className='w-full border-t-8 border-pa-pink my-12 md:my-24' />
+			<div className='w-full border-t-8 border-pa-pink mb-12 md:mb-24' />
 			<div className='-mt-24 top-16 w-full flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden'>
 				<InfiniteMovingCards
 					items={[{title: 'Govern'}, {title: 'Participate'}, {title: 'Collaborate'}]}

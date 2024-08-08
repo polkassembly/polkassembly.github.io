@@ -160,7 +160,7 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 									className='md:w-[40%]'
 									href='https://github.com/premiurly/polkassembly/issues'
 									target='_blank'>
-									<button className='md:ml-4 text-white bg-pa-pink hover:bg-pa-pink/80 px-4 py-2 w-full rounded-xl'>Report</button>
+									<button className='md:ml-4 text-white bg-pa-pink hover:bg-pa-pink/80 px-4 py-2 font-semibold w-full rounded-xl'>Report a bug</button>
 								</a>
 							</div>
 						</div>

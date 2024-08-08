@@ -13,7 +13,7 @@ export default function WhySection() {
 			<div className='flex relative w-fit flex-col pt-8 md:pt-24 items-center container'>
 				<img
 					src={star}
-					className='absolute -left-48 top-12 w-12 h-12'
+					className='absolute -left-48 md:-left-12 2xl:-left-48 top-12 w-12 h-12'
 				/>
 				<h1 className='text-3xl xs:text-4xl flex items-center flex-wrap gap-2 lg:text-6xl font-bold text-black'>
 					Why <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Polkassembly?</span>
@@ -24,12 +24,12 @@ export default function WhySection() {
 					className='absolute right-2 md:right-0 bottom-0 w-8 h-8 md:w-12 md:h-12'
 				/>
 			</div>
-			<div className='container mx-4 xs:mx-12 md:mx-24 2xl:mx-48 mb-24 grid xl:grid-cols-2 justify-center items-center w-fit mt-8 md:mt-24 gap-4'>
+			<div className='container mx-4 xs:mx-12 md:mx-24 2xl:mx-48 mb-24 grid xl:grid-cols-2 justify-center items-center w-fit mt-8 md:mt-8 2xl:mt-12 gap-4'>
 				{data.map(item => (
 					<div
 						key={item.id}
-						className='rounded-3xl md:rounded-[50px] overflow-hidden border w-full md:h-full bg-white p-8 md:p-8 2xl:p-12 flex flex-col col-span-1 justify-start'>
-						<p className='text-2xl mb-6 2xl:mb-8 font-bold text-[#666666]'>{item.id}</p>
+						className='rounded-3xl md:rounded-[40px] overflow-hidden border w-full md:h-full bg-white p-8 md:p-8 2xl:p-12 flex flex-col col-span-1 justify-start'>
+						<p className='text-2xl mb-3 2xl:mb-8 font-bold text-[#666666]'>{item.id}</p>
 						<div className='flex gap-8 2xl:gap-16 flex-col lg:flex-row items-start'>
 							<img
 								src={item.logo}
@@ -37,7 +37,7 @@ export default function WhySection() {
 							/>
 							<div className='flex flex-col gap-4'>
 								<h3 className='text-2xl font-bold text-black'>{item.title}</h3>
-								<p className='text-black font-semibold leading-7'>{item.content}</p>
+								<p className='text-black  leading-7'>{item.content}</p>
 							</div>
 						</div>
 					</div>

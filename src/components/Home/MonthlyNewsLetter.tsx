@@ -59,9 +59,9 @@ export default function MonthlyNewsLetter() {
 	));
 
 	return data.length ? (
-		<section className='my-8 md:my-28 mx-4 md:mx-20 flex flex-col items-center justify-center'>
+		<section className='my-8 md:my-20 mx-4 md:mx-20 flex flex-col items-center justify-center'>
 			<div className='flex justify-between w-full items-center'>
-				<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
+				<h1 className='text-4xl md:ml-1 flex items-center gap-2 lg:text-6xl font-bold text-black'>
 					<span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Polkadot</span> News
 				</h1>
 				<a
@@ -84,7 +84,7 @@ export default function MonthlyNewsLetter() {
 					</button>
 				</a>
 			</div>
-			<div className='px-2 w-[95vw] md:w-[75vw] relative'>
+			<div className='px-2 md:px-0 w-[95vw] md:w-full relative'>
 				<Carousel
 					items={cards}
 					size={isMobile() ? 320 : 630}
