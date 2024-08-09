@@ -78,7 +78,7 @@ export const InfiniteMovingCards = ({
 					className={cn('flex min-w-full shrink-0 gap-24 py-4 w-max flex-nowrap', start && 'animate-scroll ', pauseOnHover && 'hover:[animation-play-state:paused]')}>
 					{items.map((item, idx) => (
 						<li
-							className='w-[135px] md:w-[200px] flex flex-col items-center justify-center relative rounded-2xl bg-white border-4 flex-shrink-0 border-[#E1E1E1] p-4'
+							className='w-[135px] md:w-[200px] flex flex-col hover:border-3 hover:border-pa-pink items-center justify-center relative rounded-2xl bg-white border-4 flex-shrink-0 border-[#E1E1E1] p-4'
 							key={item.title}>
 							{item.title && <a
 								href={["moonbase", "moonriver", "moonbeam", "kilt", "automata"].includes(item.title) ? `https://${item.title}.polkassembly.network` : `https://${item.title}.polkassembly.io`}

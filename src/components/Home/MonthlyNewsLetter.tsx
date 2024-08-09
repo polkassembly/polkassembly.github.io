@@ -68,7 +68,7 @@ export default function MonthlyNewsLetter() {
 					href='https://polkassembly.substack.com/'
 					target='_blank'
 					rel='noreferrer'>
-					<button className='hidden md:flex bg-white text-pa-pink rounded-full border border-pa-pink p-4 text-sm font-semibold items-center gap-2'>
+					<button className='hidden md:flex bg-white text-pa-pink rounded-full border border-pa-pink p-4 px-6 text-sm font-semibold items-center gap-2'>
 						See More
 						<svg
 							xmlns='http://www.w3.org/2000/svg'

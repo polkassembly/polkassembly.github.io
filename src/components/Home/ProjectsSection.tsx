@@ -40,7 +40,7 @@ export default function ProjectsSection() {
 			<h1 className='text-4xl flex flex-col ml-8 lg:ml-auto lg:text-6xl font-bold text-black'>
 				Polkassembly <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Projects</span>
 			</h1>
-			<div className='md:ml-8 px-2 relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]'>
+			<div className='md:ml-8 px-2 relative overflow-hidden '>
 				<Carousel
 					items={cards}
 					type='projects'
