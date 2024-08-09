@@ -109,12 +109,12 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 					</div>
 				</div>
 				<div className='flex justify-end gap-2 mr-10'>
-					<button
-						className='absolute top-1/2 -translate-y-1/2 left-8 z-40 h-14 w-14 rounded-full flex items-center justify-center'
-						onClick={scrollLeft}
-						disabled={!canScrollLeft}>
-						{type === 'news' ? (
-							<div className='w-8 md:w-24 relative top-24 md:top-auto -left-8 md:-left-24 z-20 border rounded-full'>
+					{type === 'news' ? (
+						<button
+							className='absolute md:top-1/2 -translate-y-1/2 z-40 bottom-12 -left-8 md:-left-16 h-14 w-14 rounded-full flex items-center justify-center'
+							onClick={scrollLeft}
+							disabled={!canScrollLeft}>
+							<div className='w-8 md:w-24 relative md:top-auto z-20 border rounded-full'>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									// width='56'
@@ -133,7 +133,12 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 									/>
 								</svg>
 							</div>
-						) : (
+						</button>
+					) : (
+						<button
+							className='absolute top-1/2 -translate-y-1/2 left-8 z-40 h-14 w-14 rounded-full flex items-center justify-center'
+							onClick={scrollLeft}
+							disabled={!canScrollLeft}>
 							<div className={`w-8 h-8 md:w-14 md:h-14 rotate-180 rounded-full bg-slate-800 flex items-center justify-center ${canScrollLeft ? '' : 'hidden'}`}>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
@@ -158,58 +163,66 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 									</defs>
 								</svg>
 							</div>
-						)}
-					</button>
-					<button
-						className='absolute top-1/2 -translate-y-1/2 right-8 z-40 h-14 w-14 rounded-full flex items-center justify-center'
-						onClick={scrollRight}
-						disabled={!canScrollRight}>
+						</button>
+					)}
+
+					<>
 						{type === 'news' ? (
-							<div className='w-8 md:w-24 top-24 md:top-auto -right-8 relative md:-right-24 z-20 border rounded-full'>
-								<svg
-									xmlns='http://www.w3.org/2000/svg'
-									// width='56'
-									// height='56'
-									viewBox='0 0 56 56'
-									fill={canScrollRight ? '#222222' : 'white'}>
-									<circle
-										cx='28'
-										cy='28'
-										r='28'
-									/>
-									<path
-										d='M42.7072 28.7071C43.0977 28.3166 43.0977 27.6834 42.7072 27.2929L36.3432 20.9289C35.9527 20.5384 35.3195 20.5384 34.929 20.9289C34.5385 21.3195 34.5385 21.9526 34.929 22.3431L40.5859 28L34.929 33.6569C34.5385 34.0474 34.5385 34.6805 34.929 35.0711C35.3195 35.4616 35.9527 35.4616 36.3432 35.0711L42.7072 28.7071ZM14.0001 29H42.0001V27H14.0001V29Z'
-										fill={canScrollRight ? 'white' : '#222222'}
-									/>
-								</svg>
-							</div>
-						) : (
-							<div className={`w-8 h-8 md:w-14 md:h-14 rounded-full bg-slate-800 flex items-center justify-center ${canScrollRight ? '' : 'hidden'}`}>
-								<svg
-									xmlns='http://www.w3.org/2000/svg'
-									width='20'
-									height='20'
-									viewBox='0 0 24 24'
-									fill='none'>
-									<g clip-path='url(#clip0_388_578)'>
-										<path
-											d='M16.172 10.9999L10.808 5.63592L12.222 4.22192L20 11.9999L12.222 19.7779L10.808 18.3639L16.172 12.9999H4V10.9999H16.172Z'
-											fill='white'
+							<button
+								className='absolute md:top-1/2 -translate-y-1/2 -right-8 bottom-12 md:-right-16 z-40 h-14 w-14 rounded-full flex items-center justify-center'
+								onClick={scrollRight}
+								disabled={!canScrollRight}>
+								<div className='w-8 md:w-24  md:top-auto  z-20 border rounded-full'>
+									<svg
+										xmlns='http://www.w3.org/2000/svg'
+										// width='56'
+										// height='56'
+										viewBox='0 0 56 56'
+										fill={canScrollRight ? '#222222' : 'white'}>
+										<circle
+											cx='28'
+											cy='28'
+											r='28'
 										/>
-									</g>
-									<defs>
-										<clipPath id='clip0_388_578'>
-											<rect
-												width='24'
-												height='24'
+										<path
+											d='M42.7072 28.7071C43.0977 28.3166 43.0977 27.6834 42.7072 27.2929L36.3432 20.9289C35.9527 20.5384 35.3195 20.5384 34.929 20.9289C34.5385 21.3195 34.5385 21.9526 34.929 22.3431L40.5859 28L34.929 33.6569C34.5385 34.0474 34.5385 34.6805 34.929 35.0711C35.3195 35.4616 35.9527 35.4616 36.3432 35.0711L42.7072 28.7071ZM14.0001 29H42.0001V27H14.0001V29Z'
+											fill={canScrollRight ? 'white' : '#222222'}
+										/>
+									</svg>
+								</div>
+							</button>
+						) : (
+							<button
+								className='absolute top-1/2 -translate-y-1/2 right-8 z-40 h-14 w-14 rounded-full flex items-center justify-center'
+								onClick={scrollRight}
+								disabled={!canScrollRight}>
+								<div className={`w-8 h-8 md:w-14 md:h-14 rounded-full bg-slate-800 flex items-center justify-center ${canScrollRight ? '' : 'hidden'}`}>
+									<svg
+										xmlns='http://www.w3.org/2000/svg'
+										width='20'
+										height='20'
+										viewBox='0 0 24 24'
+										fill='none'>
+										<g clip-path='url(#clip0_388_578)'>
+											<path
+												d='M16.172 10.9999L10.808 5.63592L12.222 4.22192L20 11.9999L12.222 19.7779L10.808 18.3639L16.172 12.9999H4V10.9999H16.172Z'
 												fill='white'
 											/>
-										</clipPath>
-									</defs>
-								</svg>
-							</div>
+										</g>
+										<defs>
+											<clipPath id='clip0_388_578'>
+												<rect
+													width='24'
+													height='24'
+													fill='white'
+												/>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+							</button>
 						)}
-					</button>
+					</>
 				</div>
 			</div>
 		</CarouselContext.Provider>
