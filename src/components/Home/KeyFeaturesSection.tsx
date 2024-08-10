@@ -71,7 +71,7 @@ const KeyFeaturesSection = () => {
 	const animatedActiveCard = (id: string, title: string, description: string) => {
 		return (
 			<DivWithBorder
-				className='bg-[#f5f5f572] border-pa-pink rounded-2xl border p-4 md:py-8 md:px-10'
+			className='bg-[#f5f5f572] border-pa-pink rounded-2xl border p-4 md:py-8 md:px-10'
 				duration={5000}>
 				<div className='flex w-[55vw] md:w-auto justify-between items-center'>
 					<h1 className='text-base md:text-xl text-pa-pink font-bold'>
@@ -98,9 +98,9 @@ const KeyFeaturesSection = () => {
 	const inactiveCard = (id: string, title: string, description: string, index: number) => {
 		return (
 			<motion.div
-				initial={{opacity: 1}}
-				animate={{opacity: 1}}
-				transition={{duration: 0.5, ease: 'linear', delay: 0.2}}
+			initial={{opacity: 1}}
+			animate={{opacity: 1}}
+			transition={{duration: 0.5, ease: 'linear', delay: 0.2}}
 				className='bg-white rounded-3xl h-full max-h-[300px] w-[55vw] md:w-auto md:h-auto md:rounded-full border-slate-400 border p-6 md:p-10'
 				onClick={() => setActive(index)}
 				ref={el => (cardRefs.current[index] = el)}>
@@ -128,11 +128,11 @@ const KeyFeaturesSection = () => {
 	return (
 		<div
 			ref={sectionRef}
-			className='min-h-screen md:h-[375vh] relative scroll-smooth '>
+			className='min-h-screen md:h-[350vh] relative scroll-smooth '>
 			<motion.section
 				id='features-section'
-				className='pb-[104px] sticky top-0'>
-				<div className='w-full border-t-8 py-7 2xl:py-18 border-pa-pink' />
+				className='pb-28 sticky top-0'>
+				<div className='w-full border-t-8 py-8 2xl:py-20 border-pa-pink' />
 				<div className='flex px-8 mt-1 md:mt-auto md:px-28 items-start justify-between'>
 					<div className='mt-4 md:mt-0'>
 						<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
@@ -140,21 +140,19 @@ const KeyFeaturesSection = () => {
 						</h1>
 						<p className='text-sm lg:text-xl text-left mt-6 text-black'>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
 					</div>
-					<div>
-						<img
-							src={starPink}
-							alt='star'
-							className='md:w-20 md:h-20'
-						/>
-					</div>
+					<img
+						src={starPink}
+						alt='star'
+						className='md:w-20 md:h-20'
+					/>
 				</div>
 				<motion.div
 					animate={scrollControls}
-					className='grid mt-4 md:h-[500px] md:mt-8 px-8 md:px-28 gap-20 md:grid-cols-12'>
+					className='relative grid mt-4 md:mt-8 px-8 md:px-28 gap-20 md:grid-cols-12'>
 					<motion.div
 						style={active < cardLength - 1 ? boxShadowStyle : {}}
 						ref={scrollRef}
-						className='feature-list-container scrollbar-hide md:col-span-5 md:relative overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8'>
+						className='feature-list-container h-[12rem] scrollbar-hide  md:col-span-5 md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8'>
 						{data.map((item, idx) => (
 							<motion.div
 								style={isMobile ? {} : {y: springYTransform}}
@@ -165,21 +163,23 @@ const KeyFeaturesSection = () => {
 							</motion.div>
 						))}
 					</motion.div>
+
 					<motion.div
 						key={active}
 						initial={{opacity: 1}}
 						animate={{opacity: 1}}
 						transition={{duration: 3, ease: 'linear', delay: 0.1, damping:20}}
-						className='md:col-span-7 bg-pa-pink-light flex flex-col justify-between w-[90%] rounded-3xl p-4 md:p-8'>
-						<div className='h-[220px] md:h-[350px] 2xl:h-[575px] w-full rounded-xl'>
+						className='md:col-span-7 bg-pa-pink-light flex flex-col justify-between max-h-[465px] 2xl:max-h-[520px] w-[90%] rounded-3xl p-4 md:p-7'>
+						<div className='h-[220px] md:h-[350px] 2xl:h-[420px] w-full rounded-xl'>
 							<img
 								src={data[active].banner}
 								alt={data[active].title}
 								className='w-full h-full rounded-3xl object-cover'
 							/>
 						</div>
-						<div className='flex items-center mt-5 justify-between'>
+						<div className='flex items-center mt-4 justify-between'>
 							<h1 className='text-xl md:text-3xl text-black font-semibold'>{data.filter(item => item.id === data[active].id)[0].title}</h1>
+
 							{data[active].link ? (
 								<a
 									href={data[active].link}
@@ -199,7 +199,6 @@ const KeyFeaturesSection = () => {
 		</div>
 	);
 };
-
 const data = [
 	{
 		id: '01',
