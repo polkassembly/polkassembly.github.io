@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect, useCallback, useLayoutEffect} from 'react';
+import {useState, useRef, useEffect} from 'react';
 import arrow from '../../assets/images/arrow-rounded-white.svg';
 import {useMotionValueEvent, useScroll, useAnimation, useTransform, useSpring, useViewportScroll} from 'framer-motion';
 import {motion} from 'framer-motion';
@@ -45,7 +45,7 @@ const KeyFeaturesSection = () => {
 	useEffect(() => {
 		const observerOptions = {
 			root: scrollRef.current,
-			threshold: 0.5 // Adjust this value as needed
+			threshold: 0.5
 		};
 
 		const observer = new IntersectionObserver(entries => {
@@ -71,7 +71,7 @@ const KeyFeaturesSection = () => {
 	const animatedActiveCard = (id: string, title: string, description: string) => {
 		return (
 			<DivWithBorder
-				className='bg-[#f5f5f572] border-pa-pink rounded-2xl border p-4 md:p-8'
+				className='bg-[#f5f5f572] border-pa-pink rounded-2xl border p-4 md:py-8 md:px-10'
 				duration={5000}>
 				<div className='flex w-[55vw] md:w-auto justify-between items-center'>
 					<h1 className='text-base md:text-xl text-pa-pink font-bold'>
@@ -98,9 +98,9 @@ const KeyFeaturesSection = () => {
 	const inactiveCard = (id: string, title: string, description: string, index: number) => {
 		return (
 			<motion.div
-				initial={{opacity: 0}}
+				initial={{opacity: 1}}
 				animate={{opacity: 1}}
-				transition={{duration: 0.5, ease: 'linear'}}
+				transition={{duration: 0.5, ease: 'linear', delay: 0.2}}
 				className='bg-white rounded-3xl h-full max-h-[300px] w-[55vw] md:w-auto md:h-auto md:rounded-full border-slate-400 border p-6 md:p-10'
 				onClick={() => setActive(index)}
 				ref={el => (cardRefs.current[index] = el)}>
@@ -128,31 +128,33 @@ const KeyFeaturesSection = () => {
 	return (
 		<div
 			ref={sectionRef}
-			className='min-h-screen md:h-[300vh] relative scroll-smooth '>
+			className='min-h-screen md:h-[375vh] relative scroll-smooth '>
 			<motion.section
 				id='features-section'
-				className='pb-28 sticky top-0'>
-				<div className='w-full border-t-8 py-8 2xl:py-20 border-pa-pink' />
+				className='pb-[104px] sticky top-0'>
+				<div className='w-full border-t-8 py-7 2xl:py-18 border-pa-pink' />
 				<div className='flex px-8 mt-1 md:mt-auto md:px-28 items-start justify-between'>
 					<div className='mt-4 md:mt-0'>
 						<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 							Key <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Features</span>
 						</h1>
-						<p className='text-sm md:w-[55%] 2xl:w-[60%] lg:text-xl text-left mt-6 text-black'>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
+						<p className='text-sm lg:text-xl text-left mt-6 text-black'>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
 					</div>
-					<img
-						src={starPink}
-						alt='star'
-						className='md:w-20 md:h-20'
-					/>
+					<div>
+						<img
+							src={starPink}
+							alt='star'
+							className='md:w-20 md:h-20'
+						/>
+					</div>
 				</div>
 				<motion.div
 					animate={scrollControls}
-					className='relative grid mt-4 md:mt-8 px-8 md:px-28 gap-8 md:grid-cols-12'>
+					className='grid mt-4 md:h-[500px] md:mt-8 px-8 md:px-28 gap-20 md:grid-cols-12'>
 					<motion.div
 						style={active < cardLength - 1 ? boxShadowStyle : {}}
 						ref={scrollRef}
-						className='feature-list-container h-[12rem] scrollbar-hide  md:col-span-5 md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8'>
+						className='feature-list-container scrollbar-hide md:col-span-5 md:relative overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8'>
 						{data.map((item, idx) => (
 							<motion.div
 								style={isMobile ? {} : {y: springYTransform}}
@@ -163,23 +165,21 @@ const KeyFeaturesSection = () => {
 							</motion.div>
 						))}
 					</motion.div>
-
 					<motion.div
 						key={active}
-						initial={{opacity: 0}}
+						initial={{opacity: 1}}
 						animate={{opacity: 1}}
-						transition={{duration: 0.5, ease: 'linear', delay: 0.2}}
-						className='md:col-span-7 md:-mt-32 2xl:-mt-24 bg-pa-pink-light flex flex-col justify-between max-h-[465px] 2xl:max-h-[520px] w-[90%] rounded-3xl p-4 md:p-6'>
-						<div className='h-[220px] md:h-[350px] 2xl:h-[420px] w-full rounded-xl'>
+						transition={{duration: 3, ease: 'linear', delay: 0.1, damping:20}}
+						className='md:col-span-7 bg-pa-pink-light flex flex-col justify-between w-[90%] rounded-3xl p-4 md:p-8'>
+						<div className='h-[220px] md:h-[350px] 2xl:h-[575px] w-full rounded-xl'>
 							<img
 								src={data[active].banner}
 								alt={data[active].title}
 								className='w-full h-full rounded-3xl object-cover'
 							/>
 						</div>
-						<div className='flex items-center mt-4 justify-between'>
+						<div className='flex items-center mt-5 justify-between'>
 							<h1 className='text-xl md:text-3xl text-black font-semibold'>{data.filter(item => item.id === data[active].id)[0].title}</h1>
-
 							{data[active].link ? (
 								<a
 									href={data[active].link}
@@ -219,6 +219,7 @@ const data = [
 		id: '03',
 		title: 'Voting',
 		banner: voting,
+		link: 'https://polkadot.polkassembly.io/all-posts?trackStatus=all&page=1',
 		description: 'Participate in governance by voting on proposals that shape the future of the Polkadot ecosystem. Our intuitive voting interface makes it simple and transparent.'
 	},
 	{
@@ -229,8 +230,9 @@ const data = [
 	},
 	{
 		id: '05',
-		title: 'Treasury  Analytics',
+		title: 'Treasury Analytics',
 		banner: treasury,
+		link: 'https://polkadot.polkassembly.io/all-posts?trackStatus=all&page=1&analytics=true',
 		description: 'Stay informed about the most active proposals on Polkassembly by using the Treasury Analytics feature. It showcases all the relevant data required for you to stay up to date about what goes on in a specific track.'
 	}
 ];

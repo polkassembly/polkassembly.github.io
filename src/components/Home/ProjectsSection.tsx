@@ -36,11 +36,11 @@ export default function ProjectsSection() {
 	return (
 		<section
 			id='projects-section'
-			className='flex flex-col lg:flex-row lg:items-center justify-between lg:h-[80vh] mt-28 lg:mt-auto lg:ml-28'>
+			className='flex flex-col lg:flex-row lg:items-center justify-between lg:h-[55vh] mt-28 lg:mt-[52px] lg:ml-28'>
 			<h1 className='text-4xl flex flex-col ml-8 lg:ml-auto lg:text-6xl font-bold text-black'>
 				Polkassembly <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Projects</span>
 			</h1>
-			<div className='md:ml-8 px-2 relative overflow-hidden '>
+			<div className='md:ml-8 px-2 relative overflow-hidden'>
 				<Carousel
 					items={cards}
 					type='projects'

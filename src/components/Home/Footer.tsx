@@ -150,14 +150,14 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 								/>
 								<button className='md:ml-4 text-white bg-pa-pink hover:bg-pa-pink/80 px-4 py-2 md:w-[40%] rounded-xl'>Subscribe to news</button>
 							</div> */}
-							<div className='md:w-[500px] xl:w-[800px] xl:ml-24 flex flex-col md:justify-end md:flex-row gap-2 md:items-end rounded-xl md:mt-12 py-8  md:py-12 px-8'>
+							<div className='md:w-[500px] xl:w-[800px] xl:ml-24 flex flex-col md:justify-end md:flex-row gap-2 md:items-end rounded-xl md:mt-12 py-8  md:py-12'>
 								{/* <input
 									type='text'
 									placeholder='Describe your issue'
 									className='z-20 w-full px-4 py-2 text-white rounded-xl bg-transparent border border-white placeholder:text-white'
 								/> */}
 								<a
-									className='md:w-[40%]'
+									className='md:w-[30%]'
 									href='https://github.com/premiurly/polkassembly/issues'
 									target='_blank'>
 									<button className='md:ml-4 text-white bg-pa-pink hover:bg-pa-pink/80 px-4 py-2 font-semibold w-full rounded-xl'>Report a bug</button>
