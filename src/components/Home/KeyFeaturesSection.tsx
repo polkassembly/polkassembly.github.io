@@ -179,8 +179,8 @@ const KeyFeaturesSection = () => {
 						initial={{opacity: 1}}
 						animate={{opacity: 1}}
 						transition={{duration: 3, ease: 'linear', delay: 0.1, damping:20}}
-						className='bg-[#FEF6FB] flex flex-col justify-between rounded-3xl p-4 md:p-6 col-span-5 row-span-5'>
-						<div className='md:h-[350px] w-full rounded-xl'>
+						className='bg-[#FEF6FB] flex flex-col justify-between rounded-3xl p-6 md:p-8 col-span-5 row-span-5'>
+						<div className='md:h-[430px] w-full rounded-xl'>
 							<img
 								src={data[active].banner}
 								alt={data[active].title}
