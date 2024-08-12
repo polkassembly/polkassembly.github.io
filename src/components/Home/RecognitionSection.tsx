@@ -40,7 +40,7 @@ export default function RecognitionSection() {
 							Supported by Web3 <br /> Foundation
 						</h2>
 
-						<p className='mt-1 text-lg overflow-hidden ellipsis md:h-[175px]'>
+						<p className='mt-1 text-lg overflow-hidden ellipsis md:h-[200px]'>
 							Polkassembly is a recipient of a technical grant from Web3 Foundation. We have successfully delivered the milestones described in our grant applications. Please see the Wave 7 Grants blog from Web 3 Foundation that mentions our project.
 							<br />
 						</p>
@@ -48,7 +48,7 @@ export default function RecognitionSection() {
 							href='https://substrate.io/ecosystem/projects/'
 							target='_blank'
 							rel='noopener noreferrer'
-							className=' text-pa-pink flex items-center mt-2 font-semibold'>
+							className=' text-pa-pink flex mt-2 items-center font-semibold'>
 							Learn More
 							<img
 								src={arrow}
@@ -80,7 +80,7 @@ export default function RecognitionSection() {
 							href='https://substrate.io/ecosystem/projects/'
 							target='_blank'
 							rel='noopener noreferrer'
-							className=' text-pa-pink flex md:mt-2 items-center font-semibold'>
+							className=' text-pa-pink flex mt-7 items-center font-semibold'>
 							Learn More
 							<img
 								src={arrow}
@@ -112,7 +112,7 @@ export default function RecognitionSection() {
 							href='https://substrate.io/ecosystem/projects/'
 							target='_blank'
 							rel='noopener noreferrer'
-							className=' text-pa-pink mt-2 flex items-center font-semibold'>
+							className=' text-pa-pink mt-7 flex i5ems-center font-semibold'>
 							Learn More
 							<img
 								src={arrow}

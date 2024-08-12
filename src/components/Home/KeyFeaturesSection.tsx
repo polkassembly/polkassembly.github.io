@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect, useCallback, useLayoutEffect} from 'react';
 import arrow from '../../assets/images/arrow-rounded-white.svg';
-import {useMotionValueEvent, useScroll, useAnimation, useTransform, useSpring, useViewportScroll} from 'framer-motion';
+import {useMotionValueEvent, useScroll, useAnimation, useTransform, useSpring, useViewportScroll, AnimatePresence} from 'framer-motion';
 import {motion} from 'framer-motion';
 import starPink from '../../assets/images/star-pink-2.svg';
 import {DivWithBorder} from '../ui/moving-border';
@@ -28,9 +28,9 @@ const KeyFeaturesSection = () => {
 	const boxShadowStyle = {
 		boxShadow: isMobile ? '-10px 0 5px -2px rgba(0,0,0,0.22) inset' : '0px -129px 18px -106px rgba(0,0,0,0.22) inset'
 	};
-
 	useMotionValueEvent(scrollYProgress, 'change', latest => {
 		if (isMobile) return;
+	
 		const cardsBreakpoints = data.map((_, index) => index / cardLength);
 		const closestBreakpointIndex = cardsBreakpoints.reduce((acc, breakpoint, index) => {
 			const distance = Math.abs(latest - breakpoint);
@@ -41,6 +41,7 @@ const KeyFeaturesSection = () => {
 		}, 0);
 		setActive(closestBreakpointIndex);
 	});
+	
 
 	useEffect(() => {
 		const observerOptions = {
@@ -68,10 +69,10 @@ const KeyFeaturesSection = () => {
 		};
 	}, [cardRefs2, isMobile]);
 
-	const animatedActiveCard = (id: string, title: string, description: string) => {
+	const animatedActiveCard = (id: string, title: string, description: string, index:number) => {
 		return (
 			<DivWithBorder
-				className='bg-[#f5f5f572] border-pa-pink rounded-2xl border p-4 md:py-8 md:px-10'
+				className={`bg-[#f5f5f572] border-pa-pink rounded-2xl border p-4 md:py-8 md:px-10 ${index === cardLength - 1 ? 'sticky bottom-0' : ''}`}
 				duration={5000}>
 				<div className='flex w-[55vw] md:w-auto justify-between items-center'>
 					<h1 className='text-base md:text-xl text-pa-pink font-bold'>
@@ -128,49 +129,58 @@ const KeyFeaturesSection = () => {
 	return (
 		<div
 			ref={sectionRef}
-			className='min-h-screen md:h-[350vh] relative scroll-smooth '>
+			className='min-h-screen md:h-[300vh] relative scroll-smooth '>
 			<motion.section
 				id='features-section'
 				className='pb-28 sticky top-0'>
 				<div className='w-full border-t-8 py-8 2xl:py-20 border-pa-pink' />
-				<div className='flex px-8 mt-1 md:mt-auto md:px-28 items-start justify-between'>
-					<div className='mt-4 md:mt-0'>
+					<div className='flex mt-1 mx-auto w-[1240px]  items-center justify-between'>
 						<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 							Key <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Features</span>
 						</h1>
-						<p className='text-sm md:w-[55%] 2xl:w-[60%] lg:text-xl text-left mt-6 text-black'>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
-					</div>
-					<img
+						<img
 						src={starPink}
 						alt='star'
 						className='md:w-20 md:h-20'
-					/>
-				</div>
+						/>
+					</div>
+				<div className='grid grid-flow-col w-[1240px] mt-10  mx-auto gap-x-10 col-span-9 row-span-6'>
+				<div className='col-span-4 row-span-5 w-[500px]'>
+				<p className=' text-black row-span-1 '>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
+				
 				<motion.div
 					animate={scrollControls}
-					className='relative grid mt-4 md:mt-8 px-8 md:px-28 gap-20 md:grid-cols-12'>
+					className='relative grid mt-2 md:mt-8 gap-10 '>
+						
 					<motion.div
 						style={active < cardLength - 1 ? boxShadowStyle : {}}
 						ref={scrollRef}
-						className='feature-list-container h-[12rem] scrollbar-hide  md:col-span-5 md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8'>
-						{data.map((item, idx) => (
-							<motion.div
-								style={isMobile ? {} : {y: springYTransform}}
-								className='feature-list'
-								key={item.id}
-								ref={el => (cardRefs2.current[idx] = el)}>
-								{idx === active ? animatedActiveCard(item.id, item.title, item.description) : inactiveCard(item.id, item.title, item.description, idx)}
-							</motion.div>
-						))}
+						className={`feature-list-container w-full h-[12rem] scrollbar-hide md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8`}>
+						<AnimatePresence>
+							{data.map((item, idx) => (
+								<motion.div
+									style={isMobile ? {} : {y: springYTransform}}
+									className={`feature-list `}
+									key={item.id}
+									ref={el => (cardRefs2.current[idx] = el)}
+									exit='collapsed'
+									>
+									{idx === active ? animatedActiveCard(item.id, item.title, item.description, idx) : 	inactiveCard(item.id, item.title, item.description, idx)}
+								</motion.div>
+							))}
+						</AnimatePresence>
 					</motion.div>
 
-					<motion.div
+					
+				</motion.div>
+				</div>
+				<motion.div
 						key={active}
 						initial={{opacity: 1}}
 						animate={{opacity: 1}}
 						transition={{duration: 3, ease: 'linear', delay: 0.1, damping:20}}
-						className='md:col-span-7 bg-[#FEF6FB] flex flex-col justify-between max-h-[465px] 2xl:max-h-[520px] w-[90%] rounded-3xl p-4 md:p-6'>
-						<div className='h-[220px] md:h-[350px] 2xl:h-[420px] w-full rounded-xl'>
+						className='bg-[#FEF6FB] flex flex-col justify-between rounded-3xl p-4 md:p-6 col-span-5 row-span-5'>
+						<div className='md:h-[350px] w-full rounded-xl'>
 							<img
 								src={data[active].banner}
 								alt={data[active].title}
@@ -191,10 +201,11 @@ const KeyFeaturesSection = () => {
 										className='w-6 md:w-12'
 									/>
 								</a>
-							): <div className='px-2 py-1 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold bg-[#A514A0] rounded-full'>Coming Soon</div>}
+							): <div className='px-2 py-1 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold bg-[#A514A0] rounded-full '>Coming Soon</div>}
 						</div>
 					</motion.div>
-				</motion.div>
+				</div>
+				
 			</motion.section>
 		</div>
 	);
