@@ -22,7 +22,7 @@ export default function HeroSection() {
 						alt='star'
 						className='w-9 h-9 absolute hidden md:block top-20 left-[25%]'
 					/>
-					<div className='ml-4 mt-16 mb-16 lg:mb-32 flex flex-col items-center text-white'>
+					<div className=' mt-16 mb-16 lg:mb-32 flex flex-col items-center text-white'>
 						<h1 className='text-3xl xs:text-4xl lg:text-[50px] 2xl:text-[80px] font-bold text-black'>
 							The <span className='bg-pa-pink rounded-md md:rounded-xl text-white px-2 py-1'>Ultimate Hub</span>
 						</h1>
