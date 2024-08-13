@@ -169,8 +169,8 @@ const KeyFeaturesSection = () => {
 					</h1>
 					<img src={starPink} alt='star' className='md:w-20 md:h-20' />
 				</div>
-				<div className='grid md:grid-flow-col max-w-[1240px] mt-10 mx-auto gap-x-10 md:grid-col-9'>
-					<div className='col-span-4 row-span-5 w-full md:w-[500px]'>
+				<div className='grid md:grid-flow-col max-w-[1240px] mt-10 mx-auto gap-x-10 md:grid-rows-5 grid-col-9'>
+					<div className='md:col-span-4 col-span-9  md:row-span-5 w-full md:w-[500px]'>
 						<p className=' text-black row-span-1 ml-6 md:ml-0'>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
 						<motion.div animate={scrollControls} className='relative grid mt-2 md:mt-8 gap-10'>
 							<motion.div
@@ -197,7 +197,7 @@ const KeyFeaturesSection = () => {
 						initial={{ opacity: 1 }}
 						animate={{ opacity: 1 }}
 						transition={{ duration: 3, ease: 'linear', delay: 0.1, damping: 20 }}
-						className='bg-[#FEF6FB] flex flex-col justify-between rounded-3xl p-6 md:p-8 md:col-span-5 row-span-5'>
+						className='bg-[#FEF6FB] flex flex-col justify-between rounded-3xl p-6 md:p-8 col-span-9  md:col-span-5 md:row-span-5'>
 						<div className='md:h-[430px] w-full rounded-xl'>
 							<img src={data[active].banner} alt={data[active].title} className='w-full h-full rounded-3xl object-cover' />
 						</div>
