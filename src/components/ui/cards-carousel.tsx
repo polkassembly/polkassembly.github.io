@@ -134,7 +134,7 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 								</svg>
 							</div>
 						</button>
-					) : !isMobile ? (
+					) : !isMobile() ? (
 						<button
 							className='absolute top-1/2 -translate-y-1/2 -left-2 md:left-8 z-40 h-14 w-14 rounded-full flex items-center justify-center'
 							onClick={scrollLeft}
