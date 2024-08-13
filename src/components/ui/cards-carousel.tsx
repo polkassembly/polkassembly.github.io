@@ -169,7 +169,7 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 					<>
 						{type === 'news' ? (
 							<button
-								className='absolute top-1/2 -translate-y-1/2 -right-6 bottom-12 md:-right-16 z-40 h-14 w-14 rounded-full flex items-center justify-center'
+								className='absolute top-1/2 -translate-y-1/2 -right-0 bottom-12 lg:-right-16 z-40 h-14 w-14 rounded-full flex items-center justify-center'
 								onClick={scrollRight}
 								disabled={!canScrollRight}>
 								<div className='w-8 md:w-24  md:top-auto  z-20 border rounded-full'>
