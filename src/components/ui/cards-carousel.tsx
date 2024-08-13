@@ -82,8 +82,8 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 
 					<div
 						className={cn(
-							'flex flex-row justify-start gap-12',
-							'mx-auto' // remove max-w-4xl if you want the carousel to span the full width of its container
+							`flex flex-row justify-start ${type === 'news' ? 'md:gap-12' : 'gap-4 md:gap-12'} `,
+							'mx-auto'
 						)}>
 						{items.map((item, index) => (
 							<motion.div
@@ -111,7 +111,7 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 				<div className='flex justify-end gap-2 mr-10'>
 					{type === 'news' ? (
 						<button
-							className='absolute md:top-1/2 -translate-y-1/2 z-40 bottom-12 -left-8 md:-left-16 h-14 w-14 rounded-full flex items-center justify-center'
+							className='absolute top-1/2 -translate-y-1/2 z-40 bottom-12 -left-6 md:-left-16 h-14 w-14 rounded-full flex items-center justify-center'
 							onClick={scrollLeft}
 							disabled={!canScrollLeft}>
 							<div className='w-8 md:w-24 relative md:top-auto z-20 border rounded-full'>
@@ -134,9 +134,9 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 								</svg>
 							</div>
 						</button>
-					) : (
+					) : !isMobile ? (
 						<button
-							className='absolute top-1/2 -translate-y-1/2 left-8 z-40 h-14 w-14 rounded-full flex items-center justify-center'
+							className='absolute top-1/2 -translate-y-1/2 -left-2 md:left-8 z-40 h-14 w-14 rounded-full flex items-center justify-center'
 							onClick={scrollLeft}
 							disabled={!canScrollLeft}>
 							<div className={`w-8 h-8 md:w-14 md:h-14 rotate-180 rounded-full bg-slate-800 flex items-center justify-center ${canScrollLeft ? '' : 'hidden'}`}>
@@ -164,12 +164,12 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 								</svg>
 							</div>
 						</button>
-					)}
+					) : null}
 
 					<>
 						{type === 'news' ? (
 							<button
-								className='absolute md:top-1/2 -translate-y-1/2 -right-8 bottom-12 md:-right-16 z-40 h-14 w-14 rounded-full flex items-center justify-center'
+								className='absolute top-1/2 -translate-y-1/2 -right-6 bottom-12 md:-right-16 z-40 h-14 w-14 rounded-full flex items-center justify-center'
 								onClick={scrollRight}
 								disabled={!canScrollRight}>
 								<div className='w-8 md:w-24  md:top-auto  z-20 border rounded-full'>
@@ -191,9 +191,9 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 									</svg>
 								</div>
 							</button>
-						) : (
+						) : !isMobile() ? (
 							<button
-								className='absolute top-1/2 -translate-y-1/2 right-8 z-40 h-14 w-14 rounded-full flex items-center justify-center'
+								className='absolute top-1/2 -translate-y-1/2 -right-2 md:right-8 z-40 h-14 w-14 rounded-full flex items-center justify-center'
 								onClick={scrollRight}
 								disabled={!canScrollRight}>
 								<div className={`w-8 h-8 md:w-14 md:h-14 rounded-full bg-slate-800 flex items-center justify-center ${canScrollRight ? '' : 'hidden'}`}>
@@ -221,7 +221,7 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 									</svg>
 								</div>
 							</button>
-						)}
+						) : null}
 					</>
 				</div>
 			</div>
