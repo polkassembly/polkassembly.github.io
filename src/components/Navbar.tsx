@@ -198,7 +198,7 @@ export default function Navbar() {
 
   return (
     <nav className='bg-white relative  mt-4 h-16 md:h-auto md:bg-transparent z-50'>
-      <div className='w-full fixed md:relative border-b-4 border-pa-pink md:border-0 top-0 bg-white md:bg-transparent flex justify-between text-black text-center p-3'>
+      <div className='w-full fixed md:relative border-b-4 border-pa-pink md:border-0 top-0 bg-white md:bg-transparent flex justify-between text-black text-center p-3 max-w-[1240px] lg:mx-auto'>
         <Link to='/' className='logo ml-3 md:ml-6'>
           <img src={polkassemblyLogo} className='h-auto w-32 md:w-44' />
         </Link>
