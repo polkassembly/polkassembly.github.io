@@ -59,7 +59,7 @@ export default function MonthlyNewsLetter() {
 	));
 
 	return data.length ? (
-		<section className='my-8 md:my-20 mx-4 md:mx-20 flex flex-col items-center justify-center'>
+		<section className='my-8 md:my-20 mx-4 md:mx-20 flex flex-col items-center justify-center max-w-[1240px] lg:mx-auto'>
 			<div className='flex justify-between w-full items-center'>
 				<h1 className='text-4xl md:ml-1 flex items-center gap-2 lg:text-6xl font-bold text-black'>
 					<span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Polkadot</span> News

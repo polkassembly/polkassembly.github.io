@@ -163,7 +163,7 @@ const KeyFeaturesSection = () => {
 		<div ref={sectionRef} className='min-h-screen md:h-[300vh] relative scroll-smooth'>
 			<motion.section id='features-section' className='pb-28 sticky top-0'>
 				<div className='w-full border-t-8 py-8 2xl:py-20 border-pa-pink' />
-				<div className='flex mt-1 mx-auto max-w-[1240px] px-6 md:px-0 items-center justify-between'>
+				<div className='flex mt-1 mx-auto max-w-[1240px] px-5 md:px-6 items-center justify-between'>
 					<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
 						Key <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Features</span>
 					</h1>
@@ -171,8 +171,8 @@ const KeyFeaturesSection = () => {
 				</div>
 				<div className='grid md:grid-flow-col max-w-[1240px] mt-10 mx-auto gap-x-10 md:grid-rows-5 grid-col-9'>
 					<div className='md:col-span-4 col-span-9  md:row-span-5 w-full md:w-[500px]'>
-						<p className=' text-black row-span-1 ml-6 md:ml-0'>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
-						<motion.div animate={scrollControls} className='relative mx-2 md:mx-0 mb-6 md:mb-0 grid mt-2 md:mt-8 gap-10'>
+						<p className=' text-black row-span-1 mx-5 md:ml-0'>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
+						<motion.div animate={scrollControls} className='relative ml-4 md:mx-0 mb-6 md:mb-0 grid mt-4 md:mt-8 gap-10'>
 							<motion.div
 								style={active < cardLength - 1 ? boxShadowStyle : {}}
 								ref={scrollRef}
@@ -197,7 +197,7 @@ const KeyFeaturesSection = () => {
 						initial={{ opacity: 1 }}
 						animate={{ opacity: 1 }}
 						transition={{ duration: 3, ease: 'linear', delay: 0.1, damping: 20 }}
-						className='bg-[#FEF6FB] flex flex-col justify-between rounded-3xl mx-2 md:mx-0 p-6 md:p-8 col-span-9  md:col-span-5 md:row-span-5'>
+						className='bg-[#FEF6FB] flex flex-col justify-between rounded-3xl mx-4 md:mx-0 p-4 sm:p-6 md:p-8 col-span-9 md:col-span-5 md:row-span-5'>
 						<div className='md:h-[430px] w-full rounded-xl'>
 							<img src={data[active].banner} alt={data[active].title} className='w-full h-full rounded-3xl object-cover' />
 						</div>

@@ -11,7 +11,7 @@ export default function RecognitionSection() {
 			id='recognition-section'
 			className='p-6 xs:p-8 md:p-28 md:pt-16 bg-recognition-bg md:bg-cover bg-position-y-50 bg-no-repeat '>
 			{/* className='p-8 md:p-28 md:pt-16 bg-recognition-bg md:bg-contain bg-no-repeat bg-bottom'> */}
-			<h1 className='text-4xl flex flex-wrap items-center gap-2 lg:text-6xl font-bold text-black'>
+			<h1 className='text-4xl flex flex-wrap items-center gap-2 lg:text-6xl font-bold text-black max-w-[1240px] lg:mx-auto'>
 				Notable <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Recognition</span>
 			</h1>
 
@@ -28,7 +28,7 @@ export default function RecognitionSection() {
 				/>
 			</div> */}
 
-			<div className=' bg-white grid lg:grid-cols-3 items-start mt-12 justify-center border rounded-3xl py-4 md:py-6'>
+			<div className=' bg-white grid lg:grid-cols-3 items-start mt-12 justify-center border rounded-3xl py-4 md:py-6 max-w-[1240px] lg:mx-auto'>
 				<div className='flex flex-col col-span-1 pb-8 md:pb-0 px-4 md:px-8'>
 					<img
 						src={web3Grant}

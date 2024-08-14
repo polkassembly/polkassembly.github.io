@@ -1,4 +1,3 @@
-'use client';
 import React, {useEffect, useState, createContext} from 'react';
 import {motion} from 'framer-motion';
 import {cn} from '../../utils/utils';
@@ -41,13 +40,16 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 
 	const scrollLeft = () => {
 		if (carouselRef.current) {
-			carouselRef.current.scrollBy({left: -size, behavior: 'smooth'});
+			const scrollAmount = isMobile() && type != 'news' ? 230 : size;
+			carouselRef.current.scrollBy({left: -scrollAmount, behavior: 'smooth'});
 		}
 	};
+	
 
 	const scrollRight = () => {
 		if (carouselRef.current) {
-			carouselRef.current.scrollBy({left: size, behavior: 'smooth'});
+			const scrollAmount = isMobile() && type != 'news' ? 230 : size;
+			carouselRef.current.scrollBy({left: scrollAmount, behavior: 'smooth'});
 		}
 	};
 
@@ -111,7 +113,7 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 				<div className='flex justify-end gap-2 mr-10'>
 					{type === 'news' ? (
 						<button
-							className='absolute top-1/2 -translate-y-1/2 z-40 bottom-12 -left-6 md:-left-16 h-14 w-14 rounded-full flex items-center justify-center'
+							className={`absolute top-1/2 -translate-y-1/2 z-40 bottom-12  ${!isMobile() ? ' md:-left-16 ' : '-left-6'} h-14 w-14 rounded-full flex items-center justify-center`}
 							onClick={scrollLeft}
 							disabled={!canScrollLeft}>
 							<div className='w-8 md:w-24 relative md:top-auto z-20 border rounded-full'>
@@ -134,9 +136,9 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 								</svg>
 							</div>
 						</button>
-					) : !isMobile() ? (
+					) : (
 						<button
-							className='absolute top-1/2 -translate-y-1/2 -left-2 md:left-8 z-40 h-14 w-14 rounded-full flex items-center justify-center'
+							className={`absolute top-1/2 -translate-y-1/2 ${!isMobile() ? '-left-2 md:left-8' : '-left-2'} z-40 h-14 w-14 rounded-full flex items-center justify-center`}
 							onClick={scrollLeft}
 							disabled={!canScrollLeft}>
 							<div className={`w-8 h-8 md:w-14 md:h-14 rotate-180 rounded-full bg-slate-800 flex items-center justify-center ${canScrollLeft ? '' : 'hidden'}`}>
@@ -164,12 +166,12 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 								</svg>
 							</div>
 						</button>
-					) : null}
+					)}
 
 					<>
 						{type === 'news' ? (
 							<button
-								className='absolute top-1/2 -translate-y-1/2 -right-0 bottom-12 lg:-right-16 z-40 h-14 w-14 rounded-full flex items-center justify-center'
+								className={`absolute top-1/2 -translate-y-1/2 ${!isMobile() ? '-right-0 lg:-right-16' : '-right-0'} bottom-12 z-40 h-14 w-14 rounded-full flex items-center justify-center`}
 								onClick={scrollRight}
 								disabled={!canScrollRight}>
 								<div className='w-8 md:w-24  md:top-auto  z-20 border rounded-full'>
@@ -191,9 +193,9 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 									</svg>
 								</div>
 							</button>
-						) : !isMobile() ? (
+						) : (
 							<button
-								className='absolute top-1/2 -translate-y-1/2 -right-2 md:right-8 z-40 h-14 w-14 rounded-full flex items-center justify-center'
+								className={`absolute top-1/2 -translate-y-1/2 ${!isMobile() ? '-right-2 md:right-8' : '-right-0'} z-40 h-14 w-14 rounded-full flex items-center justify-center`}
 								onClick={scrollRight}
 								disabled={!canScrollRight}>
 								<div className={`w-8 h-8 md:w-14 md:h-14 rounded-full bg-slate-800 flex items-center justify-center ${canScrollRight ? '' : 'hidden'}`}>
@@ -221,7 +223,7 @@ export const Carousel = ({items, initialScroll = 0, size = 300, type = 'projects
 									</svg>
 								</div>
 							</button>
-						) : null}
+						) }
 					</>
 				</div>
 			</div>
