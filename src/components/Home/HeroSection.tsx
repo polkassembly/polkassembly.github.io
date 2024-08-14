@@ -63,7 +63,7 @@ export default function HeroSection() {
           />
         </div>
       </div>
-      <div className='md:-mt-10 -mt-10  top-16 flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden'>
+      <div className='md:-mt-10 -mt-3 top-16 flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden'>
         <InfiniteMovingCards
           items={parachainsArr}
           speed='slow'
