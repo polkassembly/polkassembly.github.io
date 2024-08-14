@@ -8,7 +8,7 @@ export default function WhySection() {
 	return (
 		<section
 			id='about-section'
-			className='bg-pa-pink-light flex flex-col items-center'>
+			className='bg-[#FEF6FB] flex flex-col items-center'>
 			<div className='w-full border-t-8 border-pa-pink' />
 			<div className='flex relative w-fit flex-col pt-8 md:pt-24 items-center container'>
 				<img
