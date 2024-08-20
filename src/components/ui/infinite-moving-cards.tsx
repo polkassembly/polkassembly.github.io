@@ -103,7 +103,7 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
 function getCardClasses(type: string): string {
   switch (type) {
     case "logos":
-      return "h-[120px] w-[120px] md:w-[212px] md:min-h-[212px] flex flex-col hover:border-3 hover:border-pa-pink items-center justify-center relative rounded-2xl bg-white border-4 flex-shrink-0 border-[#E1E1E1] p-4";
+      return "h-[120px] w-[120px] md:w-[212px] mx-2 md:min-h-[212px] flex flex-col hover:border-3 hover:border-pa-pink items-center justify-center relative rounded-2xl bg-white border-4 flex-shrink-0 border-[#E1E1E1] p-4";
     case "cards":
       return "w-[350px] max-w-full relative rounded-2xl border flex-shrink-0 bg-pa-pink-light px-8 py-6 md:w-[550px]";
     case "banner":

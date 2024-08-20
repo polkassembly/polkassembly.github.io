@@ -8,11 +8,11 @@ export default function HeroSection() {
 	return (
     <section
       id='home-section'
-      className='bg-hero-bg bg-cover bg-no-repeat bg-center -mt-10 lg:-mt-28
+      className='bg-hero-bg bg-cover bg-no-repeat bg-center -mt-32 lg:-mt-64
       '
       style={{
         backgroundImage: `url(${bgImage})`,
-        backgroundSize: 'cover',
+        backgroundSize: window.innerWidth > 768 ? 'fit' : 'cover',
       }}
     >
       <div
@@ -23,7 +23,7 @@ export default function HeroSection() {
           <img
             src={starPink}
             alt='star'
-            className='w-9 h-9 absolute  md:block -top-8 md:top-0 right-8'
+            className='w-9 h-9 absolute  md:block -top-12 md:top-0 right-8'
           />
           <img
             src={starPink}
@@ -47,7 +47,7 @@ export default function HeroSection() {
               and engagement.
             </p>
 
-            {socialLinksUL('text-black', 'w-6 h-6 mx-2', 'mt-8')}
+            {socialLinksUL('text-black', 'w-6 h-6 mx-2', 'mt-[60px] md:mt-10')}
           </div>
           <img
             src={starPink}
