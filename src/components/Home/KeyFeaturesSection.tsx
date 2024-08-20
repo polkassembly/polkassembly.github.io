@@ -171,7 +171,7 @@ const KeyFeaturesSection = () => {
     >
       <motion.section
         id="features-section"
-        className="py-10 pb-32 md:pb-20 sticky top-0"
+        className="py-6 sm:py-10 pb-32 md:pb-20 sticky top-0"
       >
         <div className="flex  px-5 md:px-0 max-w-[1240px] mx-auto items-center justify-between">
           <h1 className="text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black">
