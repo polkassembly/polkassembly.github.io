@@ -9,7 +9,7 @@ import leaderboard from '../../assets/images/leaderboard.svg';
 import voting from '../../assets/images/voting.svg';
 import social from '../../assets/images/social.svg';
 import treasury from '../../assets/images/treasury.svg';
-
+import loaderSvg from '../../assets/images/loader.svg';
 const data = [
 	{
 		id: '01',
@@ -49,6 +49,7 @@ const data = [
 
 const KeyFeaturesSection = () => {
 	const [active, setActive] = useState<number>(0);
+	const [loading, setLoading] = useState(true);
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 	const cardRefs2 = useRef<(HTMLDivElement | null)[]>([]);
@@ -105,6 +106,10 @@ const KeyFeaturesSection = () => {
 			observer.disconnect();
 		};
 	}, [cardRefs2, isMobile]);
+	 useEffect(() => {
+     setLoading(true);
+   }, [active]);
+
 
 	const animatedActiveCard = (id: string, title: string, description: string, index: number) => (
 		<DivWithBorder
@@ -160,62 +165,114 @@ const KeyFeaturesSection = () => {
 	);
 
 	return (
-		<div ref={sectionRef} className='min-h-screen md:h-[300vh] relative scroll-smooth'>
-			<motion.section id='features-section' className='pb-28 sticky top-0'>
-				<div className='w-full border-t-8 py-8 2xl:py-20 border-pa-pink' />
-				<div className='flex mt-1 mx-auto max-w-[1240px] px-5 md:px-6 items-center justify-between'>
-					<h1 className='text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black'>
-						Key <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Features</span>
-					</h1>
-					<img src={starPink} alt='star' className='md:w-20 md:h-20' />
-				</div>
-				<div className='grid md:grid-flow-col max-w-[1240px] mt-10 mx-auto gap-x-10 md:grid-rows-5 grid-col-9'>
-					<div className='md:col-span-4 col-span-9  md:row-span-5 w-full md:w-[500px]'>
-						<p className=' text-black row-span-1 mx-5 md:ml-0'>A glimpse into the best features on Polkassembly to elevate your governance experience.</p>
-						<motion.div animate={scrollControls} className='relative ml-4 md:mx-0 mb-6 md:mb-0 grid mt-4 md:mt-8 gap-10'>
-							<motion.div
-								style={active < cardLength - 1 ? boxShadowStyle : {}}
-								ref={scrollRef}
-								className={`feature-list-container w-full h-[12rem] scrollbar-hide md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8`}>
-								<AnimatePresence>
-									{data.map((item, idx) => (
-										<motion.div
-											style={isMobile ? {} : { y: springYTransform }}
-											className='feature-list'
-											key={item.id}
-											ref={el => (cardRefs2.current[idx] = el)}
-											exit='collapsed'>
-											{idx === active ? animatedActiveCard(item.id, item.title, item.description, idx) : inactiveCard(item.id, item.title, item.description, idx)}
-										</motion.div>
-									))}
-								</AnimatePresence>
-							</motion.div>
-						</motion.div>
-					</div>
-					<motion.div
-						key={active}
-						initial={{ opacity: 1 }}
-						animate={{ opacity: 1 }}
-						transition={{ duration: 3, ease: 'linear', delay: 0.1, damping: 20 }}
-						className='bg-[#FEF6FB] flex flex-col justify-between rounded-3xl mx-4 md:mx-0 p-4 sm:p-6 md:p-8 col-span-9 md:col-span-5 md:row-span-5'>
-						<div className='md:h-[430px] w-full rounded-xl'>
-							<img src={data[active].banner} alt={data[active].title} className='w-full h-full rounded-3xl object-cover' />
-						</div>
-						<div className='flex items-center mt-4 justify-between'>
-							<h1 className='text-xl md:text-3xl text-black font-semibold'>{data[active].title}</h1>
-							{data[active].link ? (
-								<a href={data[active].link} target='_blank' rel='noreferrer'>
-									<img src={arrow} alt='arrow' className='w-6 md:w-12' />
-								</a>
-							) : (
-								<div className='px-2 py-1 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold bg-[#A514A0] rounded-full'>Coming Soon</div>
-							)}
-						</div>
-					</motion.div>
-				</div>
-			</motion.section>
-		</div>
-	);
+    <div
+      ref={sectionRef}
+      className="min-h-screen md:h-[300vh] relative scroll-smooth "
+    >
+      <motion.section
+        id="features-section"
+        className="py-10 pb-32 md:pb-20 sticky top-0"
+      >
+        <div className="flex  px-5 md:px-0 max-w-[1240px] mx-auto items-center justify-between">
+          <h1 className="text-4xl flex items-center gap-2 lg:text-6xl font-bold text-black">
+            Key{" "}
+            <span className="bg-pa-pink w-fit rounded-xl text-white p-2">
+              Features
+            </span>
+          </h1>
+          <img src={starPink} alt="star" className="md:w-20 md:h-20" />
+        </div>
+        <div className="grid md:grid-flow-col max-w-[1240px] max-h-[575px] mt-10 mx-auto px-5 md:px-0 gap-x-10 md:grid-rows-5 grid-col-9">
+          <div className="md:col-span-4 col-span-9  md:row-span-5 w-full ">
+            <p className=" text-black row-span-1 md:ml-0 text-xl">
+              A glimpse into the best features on Polkassembly to elevate your
+              governance experience.
+            </p>
+            <motion.div
+              animate={scrollControls}
+              className="relative md:mx-0 mb-6 md:mb-0 grid mt-4 md:mt-8 gap-10"
+            >
+              <motion.div
+                style={active < cardLength - 1 ? boxShadowStyle : {}}
+                ref={scrollRef}
+                className={`feature-list-container md:w-[457px] h-[12.5rem] scrollbar-hide md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8 pr-5`}
+              >
+                <AnimatePresence>
+                  {data.map((item, idx) => (
+                    <motion.div
+                      style={isMobile ? {} : { y: springYTransform }}
+                      className="feature-list"
+                      key={item.id}
+                      ref={(el) => (cardRefs2.current[idx] = el)}
+                      exit="collapsed"
+                    >
+                      {idx === active
+                        ? animatedActiveCard(
+                            item.id,
+                            item.title,
+                            item.description,
+                            idx
+                          )
+                        : inactiveCard(
+                            item.id,
+                            item.title,
+                            item.description,
+                            idx
+                          )}
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+              </motion.div>
+            </motion.div>
+          </div>
+          <motion.div
+            key={active}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 3,
+              ease: "linear",
+              delay: 0.1,
+              damping: 20,
+            }}
+            className="bg-[#FEF6FB] flex flex-col justify-between rounded-3xl p-4 md:mx-0 md:p-8 col-span-9 md:col-span-5 md:row-span-5"
+          >
+            <div className="w-[280px] h-[257px] md:w-[676px] md:h-[429px] mx-auto rounded-3xl flex items-center justify-center">
+              {loading && (
+                  <img
+                    src={loaderSvg}
+                    alt="Loading..."
+                    className="animate-spin w-10 h-10 m-auto"
+                  />
+              )}
+              <img
+                src={data[active].banner}
+                alt={data[active].title}
+                onLoad={() => setLoading(false)}
+                className={`w-full h-full rounded-3xl object-cover ${
+                  loading ? "hidden" : ""
+                }`}
+              />
+            </div>
+            <div className="flex items-center mt-4 justify-between">
+              <h1 className="text-xl md:text-3xl text-black font-semibold">
+                {data[active].title}
+              </h1>
+              {data[active].link ? (
+                <a href={data[active].link} target="_blank" rel="noreferrer">
+                  <img src={arrow} alt="arrow" className="w-6 md:w-12" />
+                </a>
+              ) : (
+                <div className="px-2 py-1 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold bg-[#A514A0] rounded-full">
+                  Coming Soon
+                </div>
+              )}
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+    </div>
+  );
 };
 
 export default KeyFeaturesSection;

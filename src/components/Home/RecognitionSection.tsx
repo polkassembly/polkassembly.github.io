@@ -9,7 +9,7 @@ export default function RecognitionSection() {
 	return (
 		<section
 			id='recognition-section'
-			className='p-6 xs:p-8 md:p-28 md:pt-16 bg-recognition-bg md:bg-cover bg-position-y-50 bg-no-repeat '>
+			className='p-5 xs:p-8 md:p-28 md:pt-16 bg-recognition-bg md:bg-cover bg-position-y-50 bg-no-repeat '>
 			{/* className='p-8 md:p-28 md:pt-16 bg-recognition-bg md:bg-contain bg-no-repeat bg-bottom'> */}
 			<h1 className='text-4xl flex flex-wrap items-center gap-2 lg:text-6xl font-bold text-black max-w-[1240px] lg:mx-auto'>
 				Notable <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Recognition</span>
@@ -91,7 +91,7 @@ export default function RecognitionSection() {
 					</div>
 				</div>
 
-				<div className='flex flex-col col-span-1 pt-8 md:pt-0 px-8'>
+				<div className='flex flex-col col-span-1 p-6 md:pt-0 '>
 					<img
 						src={treasuryImg}
 						className=''

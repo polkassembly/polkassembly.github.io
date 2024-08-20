@@ -34,7 +34,7 @@ export default function MonthlyNewsLetter() {
 	const cards = data.map(news => (
 		<div
 			key={news?.id}
-			className='container h-[350px] w-[320px] p-3 flex drop-shadow-md rounded-[50px] overflow-hidden flex-col md:flex-row  md:h-[500px] md:w-[599px] bg-white'>
+			className='container h-[243px] w-[320px] p-3 flex drop-shadow-md rounded-[50px] overflow-hidden flex-col md:flex-row  md:h-[500px] md:w-[599px] bg-white'>
 			<div
 				className={`bg-cover bg-center bg-no-repeat w-full h-full rounded-[40px] z-20 flex flex-col justify-end p-[24px] md:p-[36px] gap-[24px] md:gap-[18px]`}
 				style={{backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0), transparent 100%), url(${news?.cover_image || NewsLetter})`}}>
@@ -84,7 +84,7 @@ export default function MonthlyNewsLetter() {
 					</button>
 				</a>
 			</div>
-			<div className='px-2 md:px-0 w-[95vw] md:w-full relative'>
+			<div className=' w-[90vw] md:w-full relative'>
 				<Carousel
 					items={cards}
 					size={isMobile() ? 320 : 630}

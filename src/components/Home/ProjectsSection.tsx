@@ -34,20 +34,24 @@ export default function ProjectsSection() {
 		</div>
 	));
 	return (
-		<section
-			id='projects-section'
-			className='flex flex-col lg:flex-row lg:items-center md:gap-10 justify-between lg:h-[55vh] mt-28 lg:mt-[52px] lg:ml-28'>
-			<h1 className='text-4xl flex flex-col ml-5 sm:ml-8 lg:ml-auto lg:text-6xl font-bold text-black'>
-				Polkassembly <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Projects</span>
-			</h1>
-			<div className='pl-5 md:px-2 relative overflow-hidden'>
-				<Carousel
-					items={cards}
-					type='projects'
-				/>
-			</div>
-		</section>
-	);
+    <>
+      <section
+        id="projects-section"
+        className="flex flex-col lg:flex-row lg:items-center md:gap-10 justify-between  pt-24 lg:my-[60px] lg:ml-28"
+      >
+        <h1 className="text-4xl flex flex-col ml-5 sm:ml-8 lg:ml-auto lg:text-6xl font-bold text-black">
+          Polkassembly{" "}
+          <span className="bg-pa-pink w-fit rounded-xl text-white p-2">
+            Projects
+          </span>
+        </h1>
+        <div className="pl-5 md:px-2 relative overflow-hidden">
+          <Carousel items={cards} type="projects" />
+        </div>
+      </section>
+      <div className=" border-t-8   border-pa-pink my-28" />
+    </>
+  );
 }
 
 const data = [

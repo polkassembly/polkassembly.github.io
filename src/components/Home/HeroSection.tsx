@@ -1,5 +1,3 @@
-// HeroSection 
-
 import parachainsArr from '../parachainsArr';
 import {InfiniteMovingCards} from '../ui/infinite-moving-cards';
 import {socialLinksUL} from './Footer';
@@ -10,18 +8,18 @@ export default function HeroSection() {
 	return (
     <section
       id='home-section'
-      className='bg-hero-bg bg-cover bg-no-repeat bg-center'
+      className='bg-hero-bg bg-cover bg-no-repeat bg-center -mt-10 lg:-mt-28
+      '
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
-        height: '100vh',
       }}
     >
       <div
         id='hero-section'
-        className='min-h-[55vh] md:h-[75vh] md:-mt-24 pt-20 flex justify-center items-center w-full'
+        className='h-[65vh]  md:h-screen flex justify-center items-center w-full pt-40 md:pt-24'
       >
-        <div className='h-[500px] flex lg:items-end relative z-10 md:mt-32'>
+        <div className='h-[312px] lg:h-[410px] flex lg:items-end relative z-10 '>
           <img
             src={starPink}
             alt='star'
@@ -32,7 +30,7 @@ export default function HeroSection() {
             alt='star'
             className='w-9 h-9 absolute hidden md:block top-20 left-[25%]'
           />
-          <div className='mt-8 md:mt-16 mb-16 lg:mb-32 flex flex-col items-center text-white'>
+          <div className=' max-w-[1077px] flex flex-col items-center text-white'>
             <h1 className='text-3xl xs:text-4xl lg:text-[50px] 2xl:text-[80px] font-bold text-black'>
               The{' '}
               <span className='bg-pa-pink rounded-md md:rounded-xl text-white px-2 py-1'>
@@ -63,7 +61,7 @@ export default function HeroSection() {
           />
         </div>
       </div>
-      <div className='md:-mt-10 -mt-3 top-16 flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden'>
+      <div className='md:top-24 top-32  flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden'>
         <InfiniteMovingCards
           items={parachainsArr}
           speed='slow'
