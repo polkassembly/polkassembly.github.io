@@ -49,7 +49,7 @@ export default function ProjectsSection() {
           <Carousel items={cards} type="projects" />
         </div>
       </section>
-      <div className=" border-t-8   border-pa-pink my-28" />
+      <div className=" border-t-8 border-pa-pink my-4 md:my-28" />
     </>
   );
 }
