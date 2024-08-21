@@ -46,7 +46,7 @@ import tidechainLogo from '../assets/parachain-logos/tidechain-logo.svg'
 import cereLogo from '../assets/parachain-logos/cere-logo.png'
 
 
-const parachainsArr: {title:string, image:string}[] = [
+const parachainsArr: {title: string; image: string}[] = [
 	{
 		image: polkadotLogo,
 		title: 'polkadot'
@@ -65,7 +65,7 @@ const parachainsArr: {title:string, image:string}[] = [
 	},
 	{
 		image: acalaLogo,
-		title: 'ACALA'
+		title: 'Acala'
 	},
 	{
 		image: acuityLogo,
@@ -242,7 +242,7 @@ const parachainsArr: {title:string, image:string}[] = [
 	{
 		image: cereLogo,
 		title: 'Cere'
-	},
+	}
 ];
 
 export default parachainsArr;
