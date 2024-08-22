@@ -195,7 +195,7 @@ const KeyFeaturesSection = () => {
               <motion.div
                 style={active < cardLength - 1 ? boxShadowStyle : {}}
                 ref={scrollRef}
-                className={`feature-list-container md:w-[457px] h-[12.5rem] scrollbar-hide md:relative md:h-[30rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8 pr-5`}
+                className={`feature-list-container md:w-[457px] h-[12.5rem] scrollbar-hide md:relative md:h-[28rem] overflow-hidden flex md:flex-col md:py-4 overflow-x-scroll md:overflow-x-auto gap-8 pr-5`}
               >
                 <AnimatePresence>
                   {data.map((item, idx) => (
