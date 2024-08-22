@@ -83,7 +83,7 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
+          "flex min-w-full shrink-0 gap-6 md:gap-20 py-4 w-max flex-nowrap",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
@@ -172,12 +172,12 @@ function renderCardContent(type: string, item: Item): JSX.Element | null {
       );
     case "banner":
       return (
-        <>
-          <h1 className="text-3xl inline-flex items-center gap-2 lg:text-6xl font-bold text-black">
+        <div className="flex gap-20 justify-around">
+          <h2 className="text-3xl inline-flex items-center lg:text-6xl font-bold text-black">
             {item.title}
-          </h1>
-          <img src={starPink} className="w-8 md:w-12 ml-6 md:ml-12" />
-        </>
+          </h2>
+          <img src={starPink} className="w-8 md:w-12 " />
+        </div>
       );
     default:
       return null;

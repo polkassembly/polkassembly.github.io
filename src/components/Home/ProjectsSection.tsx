@@ -37,7 +37,7 @@ export default function ProjectsSection() {
     <>
       <section
         id="projects-section"
-        className="flex flex-col lg:flex-row lg:items-center md:gap-10 justify-between  pt-24 lg:my-[60px] lg:ml-28"
+        className="flex flex-col lg:flex-row lg:items-center md:gap-10 justify-between  pt-20 lg:my-[40px] lg:ml-28"
       >
         <h1 className="text-4xl flex flex-col ml-5 sm:ml-8 lg:ml-auto lg:text-6xl font-bold text-black">
           Polkassembly{" "}
@@ -49,7 +49,7 @@ export default function ProjectsSection() {
           <Carousel items={cards} type="projects" />
         </div>
       </section>
-      <div className=" border-t-8 border-pa-pink my-4 md:my-28" />
+      <div className="border-t-8 border-pa-pink my-4 md:mt-[60px] md:mb-8" />
     </>
   );
 }

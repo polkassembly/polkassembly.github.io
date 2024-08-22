@@ -9,38 +9,24 @@ export default function RecognitionSection() {
 	return (
 		<section
 			id='recognition-section'
-			className='p-5 xs:p-8 md:p-28 md:pt-16 bg-recognition-bg md:bg-cover bg-position-y-50 bg-no-repeat '>
-			{/* className='p-8 md:p-28 md:pt-16 bg-recognition-bg md:bg-contain bg-no-repeat bg-bottom'> */}
+			className='p-5 xs:p-8 md:p-24 md:pt-20 bg-recognition-bg md:bg-cover bg-position-y-50 bg-no-repeat '>
 			<h1 className='text-4xl flex flex-wrap items-center gap-2 lg:text-6xl font-bold text-black max-w-[1240px] lg:mx-auto'>
 				Notable <span className='bg-pa-pink w-fit rounded-xl text-white p-2'>Recognition</span>
 			</h1>
 
-			{/* <div className='overflow-hidden bg-white grid md:grid-cols-6 items-start mt-24 justify-center border rounded-3xl'>
-				<div className='md:col-span-5 p-8 md:w-[80%]'>
-					<h1 className='text-4xl font-bold text-pa-pink'>Gavin Wood</h1>
-					<p className='mt-1 text-lg'>Marketing Director at XYZ Corp</p>
-					<p className='mt-4 text-base font-semibold italic'>“We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.”</p>
-				</div>
-				<img
-					className='md:col-span-1 relative -bottom-28 md:bottom-0 left-8 lg:left-auto md:-right-24 rotate-90 md:rotate-0'
-					src={illus}
-					alt='illus'
-				/>
-			</div> */}
-
-			<div className=' bg-white grid lg:grid-cols-3 items-start mt-12 justify-center border rounded-3xl py-4 md:py-6 max-w-[1240px] lg:mx-auto'>
-				<div className='flex flex-col col-span-1 pb-8 md:pb-0 px-4 md:px-8'>
+			<div className=' bg-white flex lg:justify-around flex-col lg:flex-row items-start md:items-center mt-12 justify-center border rounded-3xl lg:rounded-[40px] py-4 md:py-6 max-w-[1240px]'>
+				<div className='flex flex-col col-span-1 pb-8 px-4 md:py-6 lg:py-2'>
 					<img
 						src={web3Grant}
-						className=''
+						className='w-[286px] h-[143px]'
 					/>
 
 					<div className='flex flex-col justify-between'>
-						<h2 className='text-xl font-bold my-4'>
+						<h2 className='text-xl font-bold my-3'>
 							Supported by Web3 <br /> Foundation
 						</h2>
 
-						<p className='mt-1 text-lg overflow-hidden ellipsis md:h-[200px]'>
+						<p className=' text-base overflow-hidden ellipsis md:min-h-[140px] md:max-w-[286px] text-[#424242] leading-[20px]'>
 							Polkassembly is a recipient of a technical grant from Web3 Foundation. We have successfully delivered the milestones described in our grant applications. Please see the Wave 7 Grants blog from Web 3 Foundation that mentions our project.
 							<br />
 						</p>
@@ -59,20 +45,24 @@ export default function RecognitionSection() {
 					</div>
 				</div>
 
-				<div className='flex flex-col col-span-1 border-2 border-x-0 border-y-2 md:border-x-2 md:border-y-0 p-8 md:p-0 md:px-8'>
+				<div className='hidden w-[1px] bg-[#DDDDDD] h-[400px] lg:block'></div>
+				<div className='w-full bg-[#DDDDDD] h-[1px] lg:hidden'></div>
+
+
+				<div className='flex flex-col col-span-1 mt-4 md:mt-0 pb-8 px-4 md:py-6 lg:py-2'>
 					<img
 						src={substrateBuilders}
-						className=''
+						className='w-[286px] h-[143px]'
 					/>
 
 					<div className='flex flex-col justify-between'>
-						<h2 className='text-xl font-bold my-4'>
+						<h2 className='text-xl font-bold my-3'>
 							Substrate Builders
 							<br />
 							Program
 						</h2>
 
-						<p className='mt-1 text-lg overflow-hidden ellipsis md:h-[175px]'>
+						<p className='text-base overflow-hidden ellipsis md:min-h-[140px] md:max-w-[286px] text-[#424242] leading-[20px]'>
 							Polkassembly is one of the projects that have been carefully selected by Parity to participate in Substrate Builders Program. Please see the Substrate projects page that mentions our project.
 							<br />
 						</p>
@@ -80,7 +70,7 @@ export default function RecognitionSection() {
 							href='https://substrate.io/ecosystem/projects/'
 							target='_blank'
 							rel='noopener noreferrer'
-							className=' text-pa-pink flex mt-7 items-center font-semibold'>
+							className=' text-pa-pink flex mt-2 items-center font-semibold'>
 							Learn More
 							<img
 								src={arrow}
@@ -91,20 +81,24 @@ export default function RecognitionSection() {
 					</div>
 				</div>
 
-				<div className='flex flex-col col-span-1 p-6 md:pt-0 '>
+				<div className='hidden w-[1px] bg-[#DDDDDD] h-[400px] lg:block'></div>
+				<div className='w-full bg-[#DDDDDD] h-[1px] lg:hidden'></div>
+
+
+				<div className='flex flex-col col-span-1 mt-4 md:mt-0 pb-8 px-4 md:py-6 lg:py-2'>
 					<img
 						src={treasuryImg}
-						className=''
+						className='w-[286px] h-[143px]'
 					/>
 
 					<div className='flex flex-col justify-between'>
-						<h2 className='text-xl font-bold my-4'>
+						<h2 className='text-xl font-bold my-3'>
 							Funded by Polkadot
 							<br />
 							and Kusama Treasury
 						</h2>
 
-						<p className='mt-1 text-lg  overflow-hidden ellipsis md:h-[175px]'>
+						<p className='text-base overflow-hidden ellipsis md:min-h-[140px] md:max-w-[286px] text-[#424242] leading-[20px]'>
 							Polkassembly is a recipient of treasury grants from Polkadot as well as Kusama for building the community's go-to governance platform. <br />
 						</p>
 
@@ -112,7 +106,7 @@ export default function RecognitionSection() {
 							href='https://substrate.io/ecosystem/projects/'
 							target='_blank'
 							rel='noopener noreferrer'
-							className=' text-pa-pink mt-7 flex i5ems-center font-semibold'>
+							className=' text-pa-pink flex mt-2 items-center font-semibold'>
 							Learn More
 							<img
 								src={arrow}
