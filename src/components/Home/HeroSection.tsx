@@ -22,12 +22,12 @@ export default function HeroSection() {
           <img
             src={starPink}
             alt='star'
-            className='w-9 h-9 absolute md:block -top-8 md:top-0 right-8'
+            className='w-9 h-9 absolute md:block -top-16 md:top-0 right-8'
           />
           <img
             src={starPink}
             alt='star'
-            className='w-9 h-9 absolute hidden md:block top-20 left-[25%]'
+            className='w-9 h-9 absolute hidden md:block top-10 sm:top-20 left-[25%]'
           />
           <div className='max-w-[1077px] flex flex-col items-center text-white'>
             <h1 className='text-3xl xs:text-4xl lg:text-[50px] 2xl:text-[80px] font-bold text-black'>
@@ -51,12 +51,12 @@ export default function HeroSection() {
           <img
             src={starPink}
             alt='star'
-            className='w-9 h-9 absolute md:block bottom-[15%] right-5 md:right-1/4'
+            className='w-9 h-9 absolute md:block bottom-[15%] right-3 md:right-1/4'
           />
           <img
             src={starPink}
             alt='star'
-            className='w-7 h-7 absolute md:block bottom-4 md:bottom-[25%] left-12'
+            className='w-7 h-7 absolute md:block -bottom-4 md:bottom-[25%] left-12'
           />
         </div>
       </div>
