@@ -9,15 +9,15 @@ export default function HeroSection() {
         <section>
             <div
                 id='home-section'
-                className='bg-hero-bg bg-cover bg-no-repeat bg-center lg:h-[804px] -mt-32 md:-mt-40 lg:-mt-48'
+                className='bg-hero-bg bg-cover bg-no-repeat bg-center lg:h-[804px] -mt-32 md:-mt-40 lg:-mt-60 relative'
                 style={{
-                    backgroundImage: `url(${bgImage})`,
-                    backgroundSize: window.innerWidth > 768 ? 'fit' : 'cover',
-                }}
+                  backgroundImage: `url(${bgImage})`,
+                  backgroundSize: window.innerWidth > 768 ? 'fit' : 'cover',
+              }}
             >
                 <div
                     id='hero-section'
-                    className='h-[65vh] lg:h-[80vh] flex justify-center items-center w-full pt-40 md:pt-20'
+                    className='h-[65vh] md:h-[80vh] flex justify-center items-center w-full pt-40 md:pt-20 md:mt-20'
                 >
 
                     <div className='h-[312px] lg:h-[410px] flex lg:items-end relative z-10 '>
@@ -62,7 +62,7 @@ export default function HeroSection() {
                         />
                     </div>
                 </div>
-                <div className='hidden md:block absolute bottom-28 left-0 w-full translate-y-1/2'>
+                <div className='hidden md:block absolute bottom-0 left-0 w-full translate-y-1/2'>
                     <InfiniteMovingCards
                         items={parachainsArr}
                         speed='slow'
@@ -70,13 +70,13 @@ export default function HeroSection() {
                         type='logos'
                     />
                 </div>
-                <div className='md:hidden md:top-24 top-32  flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden'>
-                    <InfiniteMovingCards
-                        items={parachainsArr}
-                        speed='slow'
-                        pauseOnHover={false}
-                        type='logos'
-                     />
+                <div className='md:hidden md:top-24 top-32 flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden'>
+                  <InfiniteMovingCards
+                    items={parachainsArr}
+                    speed='slow'
+                    pauseOnHover={false}
+                    type='logos'
+                  />
                 </div>
             </div>
         </section>
