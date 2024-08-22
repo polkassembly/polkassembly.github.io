@@ -5,7 +5,7 @@ import contactUsBg from '../../assets/images/contact-us-bg.svg'
 
 export const socialLinksUL = (colorClass?: string, iconClass?: string, classes?: string) => {
 	return (
-		<ul className={`ml-0 flex flex-wrap gap-4 ${classes}`}>
+		<ul className={`ml-0 flex flex-wrap gap-2 sm:gap-4 ${classes}`}>
 			<li>
 				<a
 					href='https://github.com/polkassembly/polkassembly'
@@ -106,26 +106,26 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 	return (
 		<footer className='bg-[#191A23] rounded-tl-3xl rounded-tr-3xl relative z-10'>
 			<div className='max-w-screen-xl px-4 pt-8 md:pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24'>
-				<div className='md:grid md:grid-cols-12 gap-8 lg:grid-cols-12'>
+				<div className='md:flex gap-8 items-center md:justify-between '>
 					{/* Logo and Socials */}
 					<div className='md:-mt-5 col-span-3'>
-						<div className='flex items-center w-full justify-between  md:justify-start'>
+						<div className='flex items-center w-full justify-between md:justify-start'>
 							<img
 								src={polkassemblyLogoWhite}
-								className='h-auto w-40 md:w-52'
+								className='h-auto w-[144px] md:w-52'
 							/>
 							<div className='block md:hidden col-span-3 h-fit'>{socialLinksUL('', 'w-5 h-5', 'justify-end')}</div>
 						</div>
 						<div className='mt-12 flex flex-col items-center md:items-start'>
-							<h1 className='text-white bg-pa-pink rounded-md px-2 w-fit'>Contact us:</h1>
+							<h1 className='text-white bg-pa-pink rounded-md px-2 pb-[2px] w-fit font-medium'>Contact us:</h1>
 							<ul className='mt-4 space-y-4 text-sm flex flex-col items-center md:items-start'>
 								<li>
 									<a
 										className='flex items-center justify-center sm:justify-start gap-1.5 group'
-										href='mailto:info@polkassembly.io'
+										href='mailto:hello@polkassembly.io'
 										rel='noopener noreferrer'
 										target='_blank'>
-										<span className='text-white transition group-hover:text-purple-400/60'>Email: info@polkassembly.io</span>
+										<span className='text-white transition group-hover:text-purple-400/60'>Email: hello@polkassembly.io</span>
 									</a>
 								</li>
 								{/* <li>
@@ -139,49 +139,21 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 					</div>
 
 					{/* Links */}
-					<div className='grid grid-cols-1 h-fit gap-2 md:grid-cols-4 col-span-6'>
-						<div className='text-center sm:text-left'>
-							{/* <p className='hidden md:block text-lg font-medium text-white underline'>About us</p> */}
-							{/* <div className='md:w-[600px] xl:w-[800px] xl:ml-24 flex flex-col md:flex-row items-start gap-2 md:items-center rounded-xl mt-12 bg-[#292a32] py-12 px-8'>
-								<input
-									type='email'
-									placeholder='Email'
-									className='z-20 w-full px-4 py-2 text-white rounded-xl bg-transparent border border-white placeholder:text-white'
-								/>
-								<button className='md:ml-4 text-white bg-pa-pink hover:bg-pa-pink/80 px-4 py-2 md:w-[40%] rounded-xl'>Subscribe to news</button>
-							</div> */}
-							<div className='md:w-[500px] xl:w-[800px] xl:ml-24 flex flex-col md:justify-end md:flex-row gap-2 md:items-end rounded-xl md:mt-12 py-8  md:py-12'>
-								{/* <input
-									type='text'
-									placeholder='Describe your issue'
-									className='z-20 w-full px-4 py-2 text-white rounded-xl bg-transparent border border-white placeholder:text-white'
-								/> */}
-								<a
-									className='md:w-[30%]'
-									href='https://github.com/premiurly/polkassembly/issues'
-									target='_blank'>
-									<button className='md:ml-4 text-white bg-pa-pink hover:bg-pa-pink/80 px-4 py-2 font-semibold w-full rounded-xl'>Report a bug</button>
-								</a>
-							</div>
-						</div>
-
-						{/* <div className='hidden md:block text-center sm:text-left underline'>
-							<p className='text-lg w-fit font-medium text-white underline'>Services</p>
-						</div>
-						<div className='hidden md:block text-center sm:text-left underline'>
-							<p className='text-lg w-fit font-medium truncate text-white underline'>Report a Bug</p>
-						</div>
-						<div className='hidden md:block text-center sm:text-left underline'>
-							<p className='text-lg ml-4 w-fit font-medium text-white underline'>Blog</p>
-						</div> */}
+					<div className='flex flex-col items-end gap-10'>
+						<div className='hidden md:block h-fit'>{socialLinksUL('', 'w-5 h-5', 'justify-end md:mt-2')}</div>
+						<a
+							className='md:justify-end mx-auto mt-5 md:mt-0 w-max text-white bg-pa-pink hover:bg-pa-pink/80 px-4 py-2 font-semibold rounded-xl'
+							href='https://github.com/premiurly/polkassembly/issues'
+							target='_blank'>
+							Share Feedback
+						</a>
 					</div>
-					<div className='hidden md:block col-span-3 h-fit'>{socialLinksUL('', 'w-5 h-5', 'justify-end')}</div>
 				</div>
 
 				{/* Bottom Line Content */}
-				<div className='pt-8 md:pt-12 mt-4  border-t border-white'>
-					<div className='text-center sm:flex sm:justify-between sm:text-left'>
-						<p className='md:mt-4 mb-4 md:mb-auto text-sm text-white sm:order-first sm:mt-0 '>&copy; Polka Labs Private Limited {new Date().getFullYear()}, All Rights Reserved</p>
+				<div className='pt-6 md:pt-4 mt-8 border-t border-white'>
+					<div className='text-center sm:flex  sm: items-center sm:justify-between sm:text-left'>
+						<p className='md:mt-4 mb-4 text-sm text-white sm:order-first sm:mt-0 '>&copy; Polka Labs Private Limited {new Date().getFullYear()}, All Rights Reserved</p>
 						<a
 							className='text-white text-sm underline transition hover:text-purple-400/60'
 							rel='noopener noreferrer'
