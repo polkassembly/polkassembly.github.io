@@ -107,7 +107,7 @@ export default function RecognitionSection() {
 							href='https://substrate.io/ecosystem/projects/'
 							target='_blank'
 							rel='noopener noreferrer'
-							className=' text-pa-pink mt-2 flex i5ems-center font-semibold'>
+							className=' text-pa-pink flex mt-2 items-center font-semibold'>
 							Learn More
 							<img
 								src={arrow}
