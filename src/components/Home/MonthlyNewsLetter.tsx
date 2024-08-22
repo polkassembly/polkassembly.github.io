@@ -34,18 +34,18 @@ export default function MonthlyNewsLetter() {
 	const cards = data.map(news => (
 		<div
 			key={news?.id}
-			className='container h-[243px] w-[320px] p-3 flex drop-shadow-md rounded-[50px] overflow-hidden flex-col md:flex-row  md:h-[500px] md:w-[599px] bg-white'>
+			className='container h-[243px] w-[320px] p-2 sm:p-3 flex drop-shadow-md rounded-3xl md:rounded-[50px] overflow-hidden flex-col md:flex-row  md:h-[500px] md:w-[599px] bg-white'>
 			<div
-				className={`bg-cover bg-center bg-no-repeat w-full h-full rounded-[40px] z-20 flex flex-col justify-end p-[24px] md:p-[36px] gap-[24px] md:gap-[18px]`}
+				className={`bg-cover bg-center bg-no-repeat w-full h-full rounded-3xl md:rounded-[40px] z-20 flex flex-col justify-end px-[24px] py-[16px] md:p-[36px] gap-[24px] md:gap-[18px]`}
 				style={{backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0), transparent 100%), url(${news?.cover_image || NewsLetter})`}}>
 				<div>
-					<h1 className='line-ellipsis-2 text-white text-lg lg:text-[22px] font-medium mb-[8px] md:mb-[18px]'>{news.title}</h1>
+					<h1 className='line-ellipsis-2 text-white text-lg lg:text-[22px] font-medium mb-[6px] md:mb-[18px]'>{news.title}</h1>
 					{/* <p className='line-ellipsis-5 text-white text-md lg:text-lg font-normal'>{news?.truncated_body_text}</p> */}
 					<a
 						href={news.canonical_url}
 						target='_blank'
 						rel='noreferrer'
-						className='flex gap-4 items-center'>
+						className='flex gap-2 sm:gap-4 items-center'>
 						<img
 							src={arrow}
 							className='w-7 h-7 md:w-9 md:h-9 rounded-full p-2 bg-white'
