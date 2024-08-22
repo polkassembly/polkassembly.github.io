@@ -1,36 +1,35 @@
 import parachainsArr from '../parachainsArr';
-import {InfiniteMovingCards} from '../ui/infinite-moving-cards';
-import {socialLinksUL} from './Footer';
+import { InfiniteMovingCards } from '../ui/infinite-moving-cards';
+import { socialLinksUL } from './Footer';
 import starPink from '../../assets/images/star-pink-2.svg';
 import bgImage from '../../assets/images/bg-hero.svg';
 
 export default function HeroSection() {
-	return (
+  return (
     <section
       id='home-section'
-      className='bg-hero-bg bg-cover bg-no-repeat bg-center -mt-32 lg:-mt-64
-      '
+      className='bg-hero-bg bg-cover bg-no-repeat bg-center -mt-10 lg:-mt-28'
       style={{
         backgroundImage: `url(${bgImage})`,
-        backgroundSize: window.innerWidth > 768 ? 'fit' : 'cover',
+        backgroundSize: 'cover',
       }}
     >
       <div
         id='hero-section'
-        className='h-[65vh]  md:h-screen flex justify-center items-center w-full pt-40 md:pt-24'
+        className='h-[65vh] md:h-screen flex justify-center items-center w-full pt-40 md:pt-24'
       >
         <div className='h-[312px] lg:h-[410px] flex lg:items-end relative z-10 '>
           <img
             src={starPink}
             alt='star'
-            className='w-9 h-9 absolute  md:block -top-12 md:top-0 right-8'
+            className='w-9 h-9 absolute md:block -top-16 md:top-0 right-8'
           />
           <img
             src={starPink}
             alt='star'
-            className='w-9 h-9 absolute hidden md:block top-20 left-[25%]'
+            className='w-9 h-9 absolute hidden md:block top-10 sm:top-20 left-[25%]'
           />
-          <div className=' max-w-[1077px] flex flex-col items-center text-white'>
+          <div className='max-w-[1077px] flex flex-col items-center text-white'>
             <h1 className='text-3xl xs:text-4xl lg:text-[50px] 2xl:text-[80px] font-bold text-black'>
               The{' '}
               <span className='bg-pa-pink rounded-md md:rounded-xl text-white px-2 py-1'>
@@ -47,21 +46,21 @@ export default function HeroSection() {
               and engagement.
             </p>
 
-            {socialLinksUL('text-black', 'w-6 h-6 mx-2', 'mt-[60px] md:mt-10')}
+            {socialLinksUL('text-black', 'w-6 h-6 mx-2', 'mt-8')}
           </div>
           <img
             src={starPink}
             alt='star'
-            className='w-9 h-9 absolute md:block bottom-[15%] right-5 md:right-1/4'
+            className='w-9 h-9 absolute md:block bottom-[15%] right-3 md:right-1/4'
           />
           <img
             src={starPink}
             alt='star'
-            className='w-7 h-7 absolute md:block bottom-4 md:bottom-[25%] left-12'
+            className='w-7 h-7 absolute md:block -bottom-4 md:bottom-[25%] left-12'
           />
         </div>
       </div>
-      <div className='md:top-24 top-32  flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden'>
+      <div className='md:top-24 top-32 flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden'>
         <InfiniteMovingCards
           items={parachainsArr}
           speed='slow'
