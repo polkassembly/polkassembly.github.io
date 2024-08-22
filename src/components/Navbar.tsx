@@ -197,7 +197,7 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="bg-none relative mx-auto w-full h-24 py-5 md:h-auto md:mt-10 md:bg-transparent z-[1000]">
+    <nav className="bg-none relative mx-auto w-full h-24 py-5 md:py-0 md:h-auto md:mt-6 md:bg-transparent z-[1000] md:mb-10">
       <div className="w-full fixed md:relative border-b-4  max-w-[1340px] mx-auto border-pa-pink md:border-0 top-0 bg-white md:bg-transparent px-3 sm:px-5 py-3 md:p-0 flex justify-between text-black text-center ">
         <Link to="/" className="logo md:ml-6">
           <img src={polkassemblyLogo} className="h-auto w-32 md:w-44" />
@@ -216,13 +216,6 @@ export default function Navbar() {
               {section.replace("-", " ")}
             </ScrollLink>
           ))}
-          {/* <a
-						href='https://docs.polkassembly.io/'
-						rel='noopener noreferrer'
-						target='_blank'
-						className='hidden md:block mx-0 mr-3 md:mx-6 font-normal text-sm md:text-base md:font-semibold hover:text-pa-pink'>
-						Docs
-					</a> */}
         </div>
         <div className="flex items-center gap-2 me-2">
           <div className="hidden md:flex items-center">
