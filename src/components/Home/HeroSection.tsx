@@ -6,23 +6,6 @@ import starPink from "../../assets/images/star-pink-2.svg";
 import bgImage from "../../assets/images/bg-hero.svg";
 
 export default function HeroSection() {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  // Function to update screen width
-  const updateScreenWidth = () => {
-    setScreenWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    // Add event listener on mount
-    window.addEventListener("resize", updateScreenWidth);
-
-    // Cleanup listener on unmount
-    return () => window.removeEventListener("resize", updateScreenWidth);
-  }, []);
-
-  console.log("screenWidth", screenWidth);
-
   return (
     <section
       id="home-section"
