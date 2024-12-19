@@ -6,15 +6,30 @@ import starPink from "../../assets/images/star-pink-2.svg";
 import bgImage from "../../assets/images/bg-hero.svg";
 
 export default function HeroSection() {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  // Function to update screen width
+  const updateScreenWidth = () => {
+    setScreenWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    // Add event listener on mount
+    window.addEventListener("resize", updateScreenWidth);
+
+    // Cleanup listener on unmount
+    return () => window.removeEventListener("resize", updateScreenWidth);
+  }, []);
+
+  console.log("screenWidth", screenWidth);
+
   return (
     <section
       id="home-section"
-      className="bg-hero-bg bg-cover bg-no-repeat bg-center -mt-32 lg:-mt-44
-      "
+      className="bg-hero-bg h-[730px] 3xl:h-[880px] md:h-[804px] 5xl:h-[950px] 6xl:h-[1024px] bg-cover bg-no-repeat bg-center -mt-32 lg:-mt-44"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "fit",
-        height: window.innerWidth > 768 ? "804px" : "730px",
       }}
     >
       <div
@@ -30,7 +45,7 @@ export default function HeroSection() {
           <img
             src={starPink}
             alt="star"
-            className="w-9 h-9 absolute hidden md:block top-20 left-[25%]"
+            className="w-9 h-9 absolute hidden md:block top-20 3xl:top-5 left-[25%] 3xl:left-10 4xl:"
           />
           <div className=" max-w-[1077px] flex flex-col items-center text-white">
             <h1 className="text-3xl xs:text-4xl lg:text-[50px] 2xl:text-[80px] font-bold text-black">
@@ -63,7 +78,7 @@ export default function HeroSection() {
           />
         </div>
       </div>
-      <div className="md:top-28 top-32 xl:top-[112px] 2xl:top-4 3xl:top-20 4xl:top-4 5xl:top-[-28px] 6xl:top-[-104px] flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <div className="md:top-28 top-32 xl:top-[112px] 2xl:top-4 3xl:top-36 4xl:top-[72px] 5xl:top-[100px] 6xl:top-24 flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards
           items={parachainsArr}
           speed="slow"
