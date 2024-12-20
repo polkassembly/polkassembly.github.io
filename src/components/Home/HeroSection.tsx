@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section
       id="home-section"
-      className="bg-hero-bg h-[730px] 3xl:h-[880px] md:h-[804px] 5xl:h-[950px] 6xl:h-[1024px] bg-cover bg-no-repeat bg-center -mt-32 lg:-mt-44"
+      className="bg-hero-bg h-[700px] 3xl:h-[880px] md:h-[804px] 5xl:h-[950px] 6xl:h-[1024px] bg-cover bg-no-repeat bg-center -mt-32 lg:-mt-44"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "fit",
