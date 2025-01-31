@@ -15,10 +15,14 @@ module.exports = {
         '6xl': '2200px'
       },
       colors: {
-        'pa-pink': '#E80B81',
+        'pa-pink': '#E6007A',
         'pa-pink-light': '#FFC9E5',
+        'pa-bg-pink': '#FEE1F3',
         'pa-purple': '#F9D2FF',
-        'pa-purple-light': '#F1EBFF'
+        'pa-purple-light': '#F1EBFF',
+        'pa-grey': '#6D6B6E',
+        'pa-grey-light': '#A6A6A6',
+        'pa-blue': '#0C5CFF',
       },
       container: {
         center: true,

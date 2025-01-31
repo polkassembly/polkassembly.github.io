@@ -8,6 +8,7 @@ import { chainProperties, network } from '../utils/networkConstants';
 import { isOpenGovSupported } from '../utils/openGovNetworks';
 import chainLogo from '../assets/parachain-logos/chain-logo.jpg';
 import { socialLinksUL } from './Home/Footer';
+import downloadIcon from '../assets/images/download-icon.svg';
 
 export const useDimensions = (ref: any) => {
   const dimensions = useRef({ width: 0, height: 0 });
@@ -203,7 +204,7 @@ export default function Navbar() {
           <img src={polkassemblyLogo} className="h-auto w-32 md:w-44" />
         </Link>
         <div className="hidden md:flex mr-3 md:mr-6 items-center">
-          {["features", "about", "recognition"].map((section) => (
+          {["features", "mobile-app", "about", "recognition"].map((section) => (
             <ScrollLink
               key={section}
               to={section + "-section"}
@@ -382,6 +383,16 @@ export default function Navbar() {
               </motion.div>
             </motion.div>
           </div>
+            <a
+              href={'/app-apk/9063afa-posts-patch.apk'}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className='hidden md:flex text-pa-pink bg-white border-2 border-pa-pink rounded-full px-6 py-1 text-base font-semibold items-center gap-x-2'
+            >
+              Download App
+              <img src={downloadIcon} className='w-6 h-6' />
+            </a>
           <motion.nav
             initial={false}
             animate={isOpen ? "open" : "closed"}
@@ -509,7 +520,7 @@ export default function Navbar() {
                 </div>
               ) : (
                 <div className="flex flex-col w-full items-start">
-                  {["home", "features", "about", "recognition"].map(
+                  {["home", "features", "mobile-app", "about", "recognition"].map(
                     (section) => (
                       <ScrollLink
                         key={section}
@@ -526,14 +537,25 @@ export default function Navbar() {
                     )
                   )}
 
-                  <div className="flex w-full justify-center">
+                  <div className="flex flex-col items-center gap-y-4 w-full mt-12">
                     <button
                       onClick={() => toggleMobileNetworks()}
-                      className=" px-16  text-center mt-12 bg-pa-pink text-white text-lg font-normal whitespace-nowrap rounded-full border mr-2 border-pa-pink hover:text-white hover:bg-pa-pink py-2"
+                      className=" px-16  text-center bg-pa-pink text-white text-lg font-normal whitespace-nowrap rounded-full border mr-2 border-pa-pink hover:text-white hover:bg-pa-pink py-2"
                     >
                       Launch App
                     </button>
+                    <a
+                      href={'/app-apk/9063afa-posts-patch.apk'}
+                      download
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className='text-pa-pink bg-white border-2 border-pa-pink rounded-full px-12 py-2 text-lg font-semibold flex items-center gap-x-2'
+                    >
+                      Download App
+                      <img src={downloadIcon} className='w-6 h-6' />
+                    </a>
                   </div>
+
                   <div className="flex w-full justify-center">
                     {socialLinksUL("text-black", "w-6 h-6", "mt-12")}
                   </div>

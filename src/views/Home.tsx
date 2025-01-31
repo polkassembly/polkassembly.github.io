@@ -8,18 +8,21 @@ import WhySection from '../components/Home/WhySection';
 import TestimonialSection from '../components/Home/TestimonialSection';
 import GovernSection from '../components/Home/GovernSection';
 import KeyFeaturesSection from '../components/Home/KeyFeaturesSection';
+import MobileAppSection from '../components/Home/MobileAppSection';
 
 export default function Home() {
 	return (
 		<>
 			<HeroSection />
 			<ProjectsSection />
+			<MobileAppSection />
 			<KeyFeaturesSection />
 			<WhySection />
 			<RecognitionSection />
 			{/* <TestimonialSection /> */}
 			<GovernSection />
 			<MonthlyNewsLetter />
+
 			<Footer />
 		</>
 	);
