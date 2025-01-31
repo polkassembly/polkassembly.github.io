@@ -6,7 +6,7 @@ import bgImage from "../../assets/images/bg-hero.svg";
 import starPink from "../../assets/images/star-pink-2.svg";
 
 export default function MobileAppSection() {
-    const downloadLink = "https://drive.google.com/file/d/1zoHHLXbbIt1iZZeP5xpx8m-ScRuHQyHY/view?usp=drive_link"
+    const downloadLink = "https://firebasestorage.googleapis.com/v0/b/polkassembly-v2.firebasestorage.app/o/mobile-app-apk%2F9063afa-posts-patch.apk?alt=media&token=dd1449c4-dd56-43c8-b170-b967cf38d25c"
   return (
     <section
       id="mobile-app-section"
@@ -42,7 +42,7 @@ export default function MobileAppSection() {
 
             <div className="flex flex-col lg:flex-row items-start justify-between px-5 xs:px-8 md:px-24" style={{ background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0.35%, rgba(230, 0, 122, 0.24) 134.23%)'}}>
                 <div className="flex flex-col gap-y-4">
-                    <a download href={'/app-apk/9063afa-posts-patch.apk'} target="_blank" className="text-2xl font-semibold text-pa-pink flex items-center gap-x-2">Download App for android
+                    <a download href={downloadLink} target="_blank" className="text-2xl font-semibold text-pa-pink flex items-center gap-x-2">Download App for android
                         <div className="w-[34px]">
                             <img src={downloadIcon} alt="downloadIcon" />
                         </div>
