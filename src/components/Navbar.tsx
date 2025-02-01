@@ -98,7 +98,7 @@ export default function Navbar() {
   const { height } = useDimensions(containerRef);
   const [isOpen, toggleOpen] = useCycle(false, true);
 
-  const downloadLink = 'https://firebasestorage.googleapis.com/v0/b/polkassembly-v2.firebasestorage.app/o/mobile-app-apk%2F9063afa-posts-patch.apk?alt=media&token=dd1449c4-dd56-43c8-b170-b967cf38d25c'
+  const downloadLink = 'https://firebasestorage.googleapis.com/v0/b/polkassembly-v2.firebasestorage.app/o/mobile-app-apk%2FPolkassemblyApp.apk?alt=media&token=81592577-22b8-4b4d-8042-3efdbaec7758'
 
   const Path = (props: any) => (
     <motion.path
