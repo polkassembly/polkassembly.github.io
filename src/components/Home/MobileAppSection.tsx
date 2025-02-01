@@ -19,17 +19,17 @@ export default function MobileAppSection() {
         <img
             src={starPink}
             alt="star"
-            className="w-9 h-9 absolute  md:block top-32 right-64"
+            className="w-9 h-9 absolute hidden md:block top-32 right-64"
           />
           <img
             src={starPink}
             alt="star"
-            className="w-10 h-10 absolute top-[40%] right-[45%]"
+            className="w-10 h-10 absolute hidden md:block top-[40%] right-[45%]"
           />
           <img
             src={starPink}
             alt="star"
-            className="w-6 h-6 absolute top-[70%] right-[50%]"
+            className="w-6 h-6 absolute hidden md:block top-[70%] right-[50%]"
           />
             <div className="flex flex-col gap-y-4 text-4xl flex flex-wrap lg:text-6xl font-bold text-black max-w-[1240px] mb-8 px-5 xs:px-8 md:px-24 md:pt-20">
                 <h1>
@@ -42,8 +42,8 @@ export default function MobileAppSection() {
 
             <div className="flex flex-col lg:flex-row items-start justify-between px-5 xs:px-8 md:px-24" style={{ background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0.35%, rgba(230, 0, 122, 0.24) 134.23%)'}}>
                 <div className="flex flex-col gap-y-4">
-                    <a download href={downloadLink} target="_blank" className="text-2xl font-semibold text-pa-pink flex items-center gap-x-2">Download App for android
-                        <div className="w-[34px]">
+                    <a download href={downloadLink} target="_blank" className="text-xl md:text-2xl font-semibold text-pa-pink flex items-center gap-x-2">Download App for android
+                        <div className="w-[26px] md:w-[34px]">
                             <img src={downloadIcon} alt="downloadIcon" />
                         </div>
                     </a>
@@ -52,7 +52,7 @@ export default function MobileAppSection() {
                         <p className="text-base text-black">(Version 2.23.12.75)</p>
                         <p className="text-base text-black">Android OS 5.0 or above</p>
                     </div>
-                    <div className="rounded-b-xl rounded-tl-xl bg-pa-grey px-4 py-2.5 border border-pa-grey-light flex items-center gap-x-3 w-max relative">
+                    <div className="rounded-b-xl rounded-tl-xl bg-pa-grey px-4 py-2.5 border border-pa-grey-light hidden md:flex items-center gap-x-3 w-max relative">
                         <div className="w-[26px]">
                             <img src={appleLogo} alt="appleLogo" />
                         </div>
@@ -70,7 +70,7 @@ export default function MobileAppSection() {
             </div>
         </div>
         <div className="px-5 xs:px-8 md:px-24 py-20 bg-pa-bg-pink">
-            <h1 className="text-4xl flex flex-wrap items-center gap-2 lg:text-6xl font-bold text-black justify-center">
+            <h1 className="text-2xl md:text-4xl flex flex-wrap items-center gap-2 lg:text-6xl font-bold text-black justify-center">
                 Log into{" "}
                 <span className="bg-pa-pink w-fit rounded-xl text-white p-2">
                 Polkassembly App
