@@ -1,8 +1,6 @@
 import React from 'react'
 import polkassemblyLogoWhite from '../../assets/images/pa-logo-white.svg'
-import ideaIcon from '../../assets/images/idea.svg'
-import contactUsBg from '../../assets/images/contact-us-bg.svg'
-
+import PolkadotIcon from '../../assets/images/polkadot-logo.svg'
 export const socialLinksUL = (colorClass?: string, iconClass?: string, classes?: string) => {
 	return (
 		<ul className={`ml-0 flex flex-wrap gap-2 sm:gap-4 ${classes}`}>
@@ -128,13 +126,13 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 										<span className='text-white transition group-hover:text-purple-400/60'>Email: hello@polkassembly.io</span>
 									</a>
 								</li>
-								{/* <li>
-									<span className='text-white transition group-hover:text-purple-400/60'>Phone: Feature Request</span>
-								</li>
-								<li>
-									<span className='text-white transition group-hover:text-purple-400/60'>A House of Commons Initiative</span>
-								</li> */}
 							</ul>
+							<div className="mt-4 flex items-center">
+                				<span className="font-medium text-base text-white">
+           					       Powered By
+            				    </span>
+            				    <img src={PolkadotIcon} className="ml-1 h-[30px] w-[141px]" />
+           					   </div>
 						</div>
 					</div>
 
