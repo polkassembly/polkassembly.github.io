@@ -128,11 +128,11 @@ export default function Footer({withContactUs = true}: {withContactUs?: boolean}
 								</li>
 							</ul>
 							<div className="mt-4 flex items-center">
-                				<span className="font-medium text-base text-white">
-           					       Powered By
-            				    </span>
-            				    <img src={PolkadotIcon} className="ml-1 h-[30px] w-[141px]" />
-           					   </div>
+  								<span className="font-medium text-base text-white">Powered By</span>
+ 								<a href="https://polkadot.com/" target="_blank" rel="noopener noreferrer">
+  								   <img src={PolkadotIcon} className="ml-1 h-[30px] w-[141px]" alt="Polkadot" />
+								</a>
+							</div>
 						</div>
 					</div>
 
