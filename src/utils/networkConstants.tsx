@@ -1930,5 +1930,5 @@ export const chainProperties: types.ChainPropType = {
 			key: "wss://polkadot-mythos-rpc.polkadot.io",
 		  },
 		],
-	  },
+	  }
 };
