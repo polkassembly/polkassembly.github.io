@@ -55,6 +55,7 @@ import heikoLogo from '../assets/parachain-logos/heiko-logo.png';
 import ZeitgeistLogo from '../assets/parachain-logos/zeitgeist-logo.png';
 import integriteeLogo from '../assets/parachain-logos/integritee-logo.png';
 import myriadLogo from '../assets/parachain-logos/myriad-logo.png';
+import mythicalLogo from '../assets/parachain-logos/mythical-logo.png';
 
 import * as types from '../components/types';
 
@@ -119,7 +120,8 @@ export const network = {
 	XX: 'xx',
 	ZEITGEIST: 'zeitgeist',
 	MANDALA: 'mandala',
-	CURIO: 'curio'
+	CURIO: 'curio',
+    MYTHOS: 'mythos'
 };
 
 export const tokenSymbol = {
@@ -177,7 +179,8 @@ export const tokenSymbol = {
 	XX: 'XX',
 	ZTG: 'ZTG',
 	KPGT: 'KPGT',
-	CGT: 'CGT'
+	CGT: 'CGT',
+	MYTH: 'MYTH'
 };
 
 export const chainProperties: types.ChainPropType = {
@@ -1904,5 +1907,28 @@ export const chainProperties: types.ChainPropType = {
 				key: 'wss://main.rpc.zeitgeist.pm/ws'
 			}
 		]
-	}
+	},
+	[network.MYTHOS]: {
+		blockTime: 13000,
+		category: "polkadot",
+		chainId: 0,
+		logo: mythicalLogo,
+		rpcEndpoint: "wss://polkadot-mythos-rpc.polkadot.io",
+		ss58Format: 42,
+		subsquidUrl:
+		  "https://polkassembly.squids.live/mythos-polkassembly@v1/api/graphql",
+		tokenDecimals: 18,
+		tokenSymbol: tokenSymbol.MYTH,
+		treasuryProposalBondPercent: null,
+		treasuryProposalMinBond: null,
+		treasuryProposalMaxBond: null,
+		externalLinks: "https://mythos.api.subscan.io",
+		gTag: null,
+		rpcEndpoints: [
+		  {
+			label: "via Parity",
+			key: "wss://polkadot-mythos-rpc.polkadot.io",
+		  },
+		],
+	  }
 };
