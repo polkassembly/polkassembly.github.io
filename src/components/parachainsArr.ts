@@ -44,6 +44,7 @@ import snowLogo from '../assets/parachain-logos/snow-logo.png'
 import polymeshLogo from '../assets/parachain-logos/polymesh-logo.png'
 import tidechainLogo from '../assets/parachain-logos/tidechain-logo.svg'
 import cereLogo from '../assets/parachain-logos/cere-logo.png'
+import mythosLogo from '../assets/parachain-logos/mythical-logo.png'
 
 
 const parachainsArr: {title: string; image: string}[] = [
@@ -242,6 +243,10 @@ const parachainsArr: {title: string; image: string}[] = [
 	{
 		image: cereLogo,
 		title: 'Cere'
+	},
+	{
+		image: mythosLogo,
+		title: 'Mythos'
 	}
 ];
 
