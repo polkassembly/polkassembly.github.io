@@ -1,37 +1,1496 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="icon" type="image/ico" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Polkassembly</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta name="description" content="Democratizing governance for substrate blockchains" />
-    <meta property="og:title" content="Polkassembly" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/Polkassembly.jpeg" />
-    <meta property="og:description" content="Democratizing governance for substrate blockchains" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-E0ERLX91JE"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Polkassembly · Governance Infrastructure for Polkadot (2020–2026)</title>
+		<meta
+			name="description"
+			content="Polkassembly was the on-chain governance platform for Polkadot, Kusama, and 50+ networks. 1,700+ referenda. $300M+ in treasury decisions. PolkaSafe: $300M+ AUM. Backed by Gavin Wood. Founded by Jaskirat Singh and Nikhil Ranjan. Archived May 2026."
+		/>
+		<meta
+			name="robots"
+			content="index, follow"
+		/>
+		<meta
+			name="theme-color"
+			content="#070910"
+		/>
+		<link
+			rel="canonical"
+			href="https://polkassembly.io"
+		/>
+		<meta
+			property="og:site_name"
+			content="Polkassembly"
+		/>
+		<meta
+			property="og:title"
+			content="Polkassembly · Governance Infrastructure for Polkadot"
+		/>
+		<meta
+			property="og:description"
+			content="The on-chain governance platform for Polkadot and Kusama. 1,700+ referenda. $300M+ in treasury decisions. Archived 2026."
+		/>
+		<meta
+			property="og:type"
+			content="website"
+		/>
+		<meta
+			property="og:url"
+			content="https://polkassembly.io"
+		/>
+		<meta
+			property="og:image"
+			content="https://polkassembly.io/og.png"
+		/>
+		<meta
+			property="og:image:width"
+			content="1200"
+		/>
+		<meta
+			property="og:image:height"
+			content="630"
+		/>
+		<meta
+			property="og:locale"
+			content="en_US"
+		/>
+		<meta
+			name="twitter:card"
+			content="summary_large_image"
+		/>
+		<meta
+			name="twitter:site"
+			content="@polk_gov"
+		/>
+		<meta
+			name="twitter:title"
+			content="Polkassembly · Governance Infrastructure for Polkadot"
+		/>
+		<meta
+			name="twitter:description"
+			content="The on-chain governance platform for Polkadot and Kusama. 1,700+ referenda. $300M+ in treasury decisions. Archived 2026."
+		/>
+		<meta
+			name="twitter:image"
+			content="https://polkassembly.io/og.png"
+		/>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@graph": [
+					{
+						"@type": "Organization",
+						"@id": "https://polkassembly.io/#org",
+						"name": "Polkassembly",
+						"alternateName": "Polka Labs Private Limited",
+						"url": "https://polkassembly.io",
+						"logo": "https://polkassembly.io/logo.png",
+						"foundingDate": "2020",
+						"dissolutionDate": "2026-05-31",
+						"description": "Polkassembly was the primary on-chain governance interface for Polkadot, Kusama, and 50+ Substrate-based networks from 2020 to 2026. The platform hosted 1,700+ OpenGov referenda on Polkadot, facilitated over $300 million in on-chain treasury decisions, and served 250,000+ governance participants across 50+ networks. Polkassembly ranked as the second most adopted product in the Polkadot ecosystem by active user count, behind only primary wallet infrastructure, and was listed as the default governance interface in official Polkadot documentation throughout the OpenGov era. The team also built PolkaSafe, a multisig and treasury management tool that peaked at $300M+ in assets under management and was trusted by the Web3 Foundation and Mythos, and Proof of Personhood, on-chain identity infrastructure for Sybil-resistant governance. The company raised a strategic round in 2022, backed by Gavin Wood (co-founder of Polkadot and Ethereum), Paul Kim (Notifi), and Azeem Khan (Miden). Founded by Jaskirat Singh (CEO) and Nikhil Ranjan (CTO). The platform and associated domains were archived on May 31, 2026.",
+						"founders": [
+							{
+								"@type": "Person",
+								"name": "Jaskirat Singh",
+								"jobTitle": "CEO",
+								"sameAs": ["https://www.linkedin.com/in/jaskirat21/", "https://x.com/jas_jaski"]
+							},
+							{
+								"@type": "Person",
+								"name": "Nikhil Ranjan",
+								"jobTitle": "CTO",
+								"sameAs": ["https://www.linkedin.com/in/niklabh/", "https://x.com/niklabh"]
+							}
+						],
+						"funder": [
+							{ "@type": "Person", "name": "Gavin Wood", "description": "Co-founder of Polkadot and Ethereum. Lead investor in Polkassembly's 2022 strategic round." },
+							{ "@type": "Person", "name": "Paul Kim", "description": "Notifi" },
+							{ "@type": "Person", "name": "Azeem Khan", "description": "Miden" }
+						],
+						"sameAs": ["https://github.com/polkassembly", "https://polkadot.polkassembly.io", "https://polkasafe.xyz", "https://proofofpersonhood.how"],
+						"numberOfEmployees": { "@type": "QuantitativeValue", "value": 15 }
+					},
+					{
+						"@type": "WebSite",
+						"@id": "https://polkassembly.io/#site",
+						"name": "Polkassembly",
+						"url": "https://polkassembly.io",
+						"publisher": { "@id": "https://polkassembly.io/#org" }
+					},
+					{
+						"@type": "SoftwareApplication",
+						"name": "PolkaSafe",
+						"url": "https://polkasafe.xyz",
+						"applicationCategory": "Finance",
+						"description": "PolkaSafe was a multisig and treasury management tool for the Polkadot ecosystem. Peak AUM of $300M+ across five networks. Used by the Web3 Foundation and Mythos.",
+						"creator": { "@id": "https://polkassembly.io/#org" },
+						"codeRepository": "https://github.com/polkasafe/polkasafe-ui",
+						"dateArchived": "2026-05-31"
+					}
+				]
+			}
+		</script>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			:root {
+				--bg: #070910;
+				--ln: rgba(255, 255, 255, 0.072);
+				--lh: rgba(255, 255, 255, 0.13);
+				--tx: #c8d5e8;
+				--sf: #7d96b2;
+				--mu: #566d84;
+				--br: #e8f0fb;
+				--gn: #3ecb7e;
+				--bl: #609fcd;
+				--fd: 'Outfit', system-ui, sans-serif;
+				--fm: 'IBM Plex Mono', monospace;
+				--fb: 'DM Sans', system-ui, sans-serif;
+				--eo: cubic-bezier(0.16, 1, 0.3, 1);
+				--max: 1120px;
+			}
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			html {
+				font-size: 16px;
+				scroll-behavior: smooth;
+			}
+			body {
+				background:
+					radial-gradient(ellipse 60% 45% at 92% -4%, rgba(46, 76, 160, 0.13), transparent 56%),
+					radial-gradient(ellipse 38% 30% at 8% 96%, rgba(230, 0, 122, 0.07), transparent 50%), var(--bg);
+				color: var(--tx);
+				font-family: var(--fb);
+				line-height: 1.65;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+			.wrap {
+				max-width: var(--max);
+				margin: 0 auto;
+				padding: 0 32px;
+			}
 
-      gtag("config", "G-E0ERLX91JE");
-    </script>
-    <script type="module" crossorigin src="/assets/index.fbd5ddf8.js"></script>
-    <link rel="stylesheet" href="/assets/index.37aa09f6.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    
-  </body>
+			@keyframes hUp {
+				from {
+					opacity: 0;
+					transform: translateY(14px);
+				}
+				to {
+					opacity: 1;
+					transform: none;
+				}
+			}
+			.a1 {
+				animation: hUp 0.72s var(--eo) 0.04s both;
+			}
+			.a2 {
+				animation: hUp 0.72s var(--eo) 0.18s both;
+			}
+			.a3 {
+				animation: hUp 0.72s var(--eo) 0.28s both;
+			}
+			html.js .ri {
+				opacity: 0;
+				transform: translateY(9px);
+				transition:
+					opacity 0.6s var(--eo),
+					transform 0.6s var(--eo);
+			}
+			html.js .ri.in {
+				opacity: 1;
+				transform: none;
+			}
+			html.js .sg > * {
+				opacity: 0;
+				transform: translateY(8px);
+				transition:
+					opacity 0.5s var(--eo),
+					transform 0.5s var(--eo);
+			}
+			html.js .sg.in > *:nth-child(1) {
+				opacity: 1;
+				transform: none;
+				transition-delay: 0s;
+			}
+			html.js .sg.in > *:nth-child(2) {
+				opacity: 1;
+				transform: none;
+				transition-delay: 0.07s;
+			}
+			html.js .sg.in > *:nth-child(3) {
+				opacity: 1;
+				transform: none;
+				transition-delay: 0.14s;
+			}
+			html.js .sg.in > *:nth-child(4) {
+				opacity: 1;
+				transform: none;
+				transition-delay: 0.21s;
+			}
+			html.js .sg.in > *:nth-child(5) {
+				opacity: 1;
+				transform: none;
+				transition-delay: 0.28s;
+			}
+
+			/* NAV */
+			nav {
+				position: sticky;
+				top: 0;
+				z-index: 50;
+				border-bottom: 1px solid var(--ln);
+				background: rgba(7, 9, 16, 0.9);
+				backdrop-filter: blur(16px);
+				-webkit-backdrop-filter: blur(16px);
+			}
+			.ni {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				height: 52px;
+			}
+			.nb {
+				display: flex;
+				align-items: center;
+			}
+			.nl {
+				height: 30px;
+				width: auto;
+				display: block;
+				mix-blend-mode: screen;
+				opacity: 0.88;
+				transition: opacity 0.2s;
+			}
+			.nl:hover {
+				opacity: 1;
+			}
+			.nf {
+				font-family: var(--fd);
+				font-weight: 700;
+				font-size: 15px;
+				color: var(--br);
+				display: none;
+			}
+			.nr {
+				display: flex;
+				align-items: center;
+				gap: 24px;
+			}
+			.na {
+				font-family: var(--fm);
+				font-size: 11px;
+				color: var(--mu);
+				letter-spacing: 0.04em;
+				transition: color 0.18s;
+			}
+			.na:hover {
+				color: var(--sf);
+			}
+			.pill {
+				display: inline-flex;
+				align-items: center;
+				gap: 7px;
+				padding: 5px 12px;
+				border: 1px solid var(--lh);
+				border-radius: 999px;
+				font-family: var(--fm);
+				font-size: 10px;
+				letter-spacing: 0.1em;
+				color: var(--sf);
+				background: rgba(255, 255, 255, 0.025);
+			}
+			.dot {
+				width: 5px;
+				height: 5px;
+				border-radius: 50%;
+				background: var(--gn);
+				flex-shrink: 0;
+			}
+
+			/* HERO */
+			.hero {
+				padding: 88px 0 72px;
+				border-bottom: 1px solid var(--ln);
+			}
+			.hg {
+				display: grid;
+				grid-template-columns: 1fr 252px;
+				gap: 68px;
+				align-items: start;
+			}
+			.ey {
+				font-family: var(--fm);
+				font-size: 11px;
+				font-weight: 500;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: var(--mu);
+				margin-bottom: 18px;
+			}
+			h1 {
+				font-family: var(--fd);
+				font-size: clamp(42px, 5.6vw, 68px);
+				font-weight: 800;
+				line-height: 0.98;
+				letter-spacing: -0.028em;
+				color: var(--br);
+				margin-bottom: 22px;
+			}
+			.hb {
+				font-size: 15px;
+				color: var(--sf);
+				line-height: 1.8;
+				max-width: 520px;
+				margin-bottom: 30px;
+			}
+			.ctas {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				flex-wrap: wrap;
+				margin-bottom: 26px;
+			}
+			.cp {
+				display: inline-flex;
+				align-items: center;
+				padding: 10px 22px;
+				background: var(--br);
+				color: #07090f;
+				border-radius: 8px;
+				font-family: var(--fd);
+				font-weight: 600;
+				font-size: 13.5px;
+				letter-spacing: -0.01em;
+				transition: opacity 0.18s;
+			}
+			.cp:hover {
+				opacity: 0.84;
+			}
+			.cs {
+				display: inline-flex;
+				align-items: center;
+				padding: 9px 20px;
+				border: 1px solid var(--lh);
+				border-radius: 8px;
+				font-family: var(--fd);
+				font-weight: 500;
+				font-size: 13.5px;
+				color: var(--tx);
+				transition:
+					border-color 0.18s,
+					color 0.18s;
+			}
+			.cs:hover {
+				border-color: rgba(255, 255, 255, 0.26);
+				color: var(--br);
+			}
+			.hs {
+				font-family: var(--fm);
+				font-size: 11px;
+				color: var(--mu);
+				letter-spacing: 0.06em;
+			}
+
+			/* HERO ASIDE */
+			.ha {
+				display: flex;
+				flex-direction: column;
+			}
+			.ab {
+				padding: 16px 0;
+				border-top: 1px solid var(--ln);
+			}
+			.ab:first-child {
+				border-top: none;
+				padding-top: 0;
+			}
+			.lbl {
+				font-family: var(--fm);
+				font-size: 10px;
+				font-weight: 500;
+				text-transform: uppercase;
+				letter-spacing: 0.13em;
+				color: var(--mu);
+				margin-bottom: 12px;
+			}
+			.pe {
+				margin-bottom: 10px;
+			}
+			.pe:last-child {
+				margin-bottom: 0;
+			}
+			.pn {
+				font-family: var(--fd);
+				font-weight: 700;
+				font-size: 13.5px;
+				color: var(--tx);
+				line-height: 1.2;
+			}
+			.pr {
+				font-size: 12px;
+				color: var(--mu);
+				margin-top: 1px;
+			}
+			.pl {
+				display: flex;
+				gap: 10px;
+				margin-top: 3px;
+			}
+			.pk {
+				font-family: var(--fm);
+				font-size: 10.5px;
+				color: var(--bl);
+				transition: color 0.15s;
+			}
+			.pk:hover {
+				color: var(--br);
+			}
+			.bk {
+				margin-bottom: 9px;
+			}
+			.bk:last-child {
+				margin-bottom: 0;
+			}
+			.bn {
+				font-family: var(--fd);
+				font-weight: 600;
+				font-size: 13px;
+				color: var(--tx);
+				line-height: 1.2;
+			}
+			.bo {
+				font-size: 11.5px;
+				color: var(--mu);
+				margin-top: 1px;
+			}
+			.af {
+				font-family: var(--fm);
+				font-size: 10px;
+				color: var(--mu);
+				margin-top: 8px;
+			}
+
+			/* METRICS */
+			.metrics {
+				border-bottom: 1px solid var(--ln);
+			}
+			.mg {
+				display: grid;
+				grid-template-columns: repeat(5, 1fr);
+			}
+			.mt {
+				padding: 32px 0;
+			}
+			.mt + .mt {
+				padding-left: 28px;
+				border-left: 1px solid var(--ln);
+			}
+			.mn {
+				font-family: var(--fd);
+				font-size: clamp(24px, 2.7vw, 40px);
+				font-weight: 800;
+				color: var(--br);
+				letter-spacing: -0.02em;
+				line-height: 1;
+				margin-bottom: 9px;
+			}
+			.mk {
+				font-family: var(--fm);
+				font-size: 10px;
+				font-weight: 500;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				color: var(--mu);
+				margin-bottom: 7px;
+			}
+			.md {
+				font-size: 12px;
+				color: var(--sf);
+				line-height: 1.6;
+				max-width: 170px;
+			}
+
+			/* PRODUCTS */
+			.products {
+				padding: 56px 0;
+				border-bottom: 1px solid var(--ln);
+			}
+			.pg {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+			}
+			.pc {
+				padding-right: 40px;
+			}
+			.pc + .pc {
+				padding-left: 40px;
+				padding-right: 40px;
+				border-left: 1px solid var(--ln);
+			}
+			.pc:last-child {
+				padding-right: 0;
+			}
+			.ptag {
+				font-family: var(--fm);
+				font-size: 10px;
+				font-weight: 500;
+				text-transform: uppercase;
+				letter-spacing: 0.13em;
+				color: var(--mu);
+				margin-bottom: 10px;
+			}
+			.ph {
+				font-family: var(--fd);
+				font-weight: 700;
+				font-size: 19px;
+				letter-spacing: -0.02em;
+				color: var(--br);
+				margin-bottom: 11px;
+				line-height: 1.15;
+			}
+			.pdesc {
+				font-size: 13.5px;
+				color: var(--sf);
+				line-height: 1.78;
+				margin-bottom: 18px;
+			}
+			.pf {
+				display: flex;
+				flex-direction: column;
+				gap: 6px;
+				padding-bottom: 16px;
+				margin-bottom: 16px;
+				border-bottom: 1px solid var(--ln);
+			}
+			.pfi {
+				font-size: 12.5px;
+				color: var(--sf);
+				line-height: 1.5;
+			}
+			.pfi strong {
+				font-family: var(--fd);
+				font-weight: 600;
+				font-size: 12.5px;
+				color: var(--tx);
+				letter-spacing: -0.01em;
+			}
+			.plc {
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+			}
+			.pa {
+				font-family: var(--fm);
+				font-size: 11px;
+				color: var(--bl);
+				display: inline-flex;
+				align-items: baseline;
+				transition: color 0.15s;
+			}
+			.pa:hover {
+				color: var(--br);
+			}
+			.pat {
+				color: var(--mu);
+				margin-right: 6px;
+				font-size: 10px;
+				transition: color 0.15s;
+			}
+			.pa:hover .pat {
+				color: var(--sf);
+			}
+
+			/* STANDING */
+			.standing {
+				border-bottom: 1px solid var(--ln);
+			}
+			.sg2 {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+			}
+			.si {
+				padding: 40px 36px 40px 0;
+			}
+			.si + .si {
+				padding-left: 36px;
+				border-left: 1px solid var(--ln);
+			}
+			.si:last-child {
+				padding-right: 0;
+			}
+			.st {
+				font-family: var(--fm);
+				font-size: 10px;
+				font-weight: 500;
+				text-transform: uppercase;
+				letter-spacing: 0.13em;
+				color: var(--mu);
+				margin-bottom: 14px;
+			}
+			.sf2 {
+				font-family: var(--fd);
+				font-weight: 700;
+				font-size: clamp(18px, 2vw, 26px);
+				color: var(--br);
+				letter-spacing: -0.02em;
+				line-height: 1.2;
+				margin-bottom: 12px;
+			}
+			.sb {
+				font-size: 13.5px;
+				color: var(--sf);
+				line-height: 1.72;
+				max-width: 300px;
+			}
+
+			/* OSS */
+			.oss {
+				padding: 28px 0;
+				border-bottom: 1px solid var(--ln);
+			}
+			.oi {
+				display: flex;
+				align-items: center;
+			}
+			.rl {
+				font-family: var(--fm);
+				font-size: 10px;
+				font-weight: 500;
+				text-transform: uppercase;
+				letter-spacing: 0.13em;
+				color: var(--mu);
+				min-width: 130px;
+				flex-shrink: 0;
+			}
+			.os {
+				display: flex;
+				border-left: 1px solid var(--ln);
+			}
+			.ost {
+				padding: 0 28px;
+				border-right: 1px solid var(--ln);
+			}
+			.on {
+				font-family: var(--fd);
+				font-weight: 700;
+				font-size: 21px;
+				color: var(--br);
+				letter-spacing: -0.02em;
+				line-height: 1;
+				margin-bottom: 3px;
+			}
+			.ok {
+				font-family: var(--fm);
+				font-size: 10px;
+				font-weight: 500;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				color: var(--mu);
+			}
+			.or {
+				display: flex;
+				gap: 20px;
+				padding: 0 0 0 28px;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+			.oa {
+				font-family: var(--fm);
+				font-size: 11px;
+				color: var(--bl);
+				transition: color 0.15s;
+			}
+			.oa:hover {
+				color: var(--br);
+			}
+
+			/* CONTRIBUTORS */
+			.contributors {
+				padding: 24px 0;
+				border-bottom: 1px solid var(--ln);
+			}
+			.ci {
+				display: flex;
+				align-items: baseline;
+			}
+			.cn {
+				font-size: 13px;
+				color: var(--sf);
+				line-height: 1.85;
+				border-left: 1px solid var(--ln);
+				padding-left: 28px;
+			}
+			.cn a {
+				color: var(--sf);
+				transition: color 0.15s;
+			}
+			.cn a:hover {
+				color: var(--tx);
+			}
+			.ct {
+				color: var(--mu);
+			}
+
+			/* ARCHIVE NOTE */
+			.an {
+				padding: 52px 0;
+				border-bottom: 1px solid var(--ln);
+			}
+			.at {
+				font-size: 14px;
+				color: var(--sf);
+				line-height: 1.9;
+				max-width: 680px;
+			}
+			.at a {
+				color: var(--bl);
+				border-bottom: 1px solid rgba(96, 159, 205, 0.25);
+				transition:
+					color 0.15s,
+					border-color 0.15s;
+			}
+			.at a:hover {
+				color: var(--br);
+				border-color: rgba(232, 240, 251, 0.38);
+			}
+
+			/* FOOTER */
+			footer {
+				padding: 20px 0 44px;
+			}
+			.fi {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.fc {
+				font-family: var(--fm);
+				font-size: 11px;
+				color: var(--mu);
+			}
+			.fl {
+				display: flex;
+				gap: 20px;
+			}
+			.fl a {
+				font-family: var(--fm);
+				font-size: 11px;
+				color: var(--mu);
+				transition: color 0.15s;
+			}
+			.fl a:hover {
+				color: var(--sf);
+			}
+
+			/* RESPONSIVE */
+			@media (max-width: 1020px) {
+				.mg {
+					grid-template-columns: repeat(3, 1fr);
+				}
+				.mt:nth-child(4) {
+					border-left: none;
+					padding-left: 0;
+					border-top: 1px solid var(--ln);
+					padding-top: 28px;
+				}
+				.mt:nth-child(5) {
+					padding-left: 28px;
+					border-top: 1px solid var(--ln);
+					padding-top: 28px;
+				}
+				.pg {
+					grid-template-columns: 1fr;
+					gap: 0;
+				}
+				.pc,
+				.pc + .pc {
+					padding: 0;
+					border-left: none;
+					border-top: 1px solid var(--ln);
+					padding-top: 40px;
+					padding-bottom: 40px;
+				}
+				.pc:first-child {
+					border-top: none;
+					padding-top: 0;
+				}
+				.pc:last-child {
+					padding-bottom: 0;
+				}
+				.sg2 {
+					grid-template-columns: 1fr 1fr;
+				}
+				.si:nth-child(3) {
+					grid-column: 1/-1;
+					border-left: none;
+					padding-left: 0;
+					border-top: 1px solid var(--ln);
+					padding-top: 32px;
+					padding-bottom: 0;
+				}
+			}
+			@media (max-width: 860px) {
+				.hero {
+					padding: 60px 0 52px;
+				}
+				.hg {
+					grid-template-columns: 1fr;
+					gap: 40px;
+				}
+				.ha {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+				}
+				.ab {
+					border-top: none;
+					border-left: 1px solid var(--ln);
+					padding: 0 0 0 22px;
+				}
+				.ab:first-child {
+					border-left: none;
+					padding-left: 0;
+				}
+				.oi {
+					flex-wrap: wrap;
+					gap: 18px 0;
+				}
+				.or {
+					border-left: none;
+					padding-left: 0;
+					padding-top: 4px;
+				}
+				.ci {
+					flex-direction: column;
+					gap: 10px;
+				}
+				.cn {
+					border-left: none;
+					padding-left: 0;
+				}
+			}
+			@media (max-width: 640px) {
+				.wrap {
+					padding: 0 20px;
+				}
+				.hero {
+					padding: 48px 0 44px;
+				}
+				h1 {
+					font-size: clamp(36px, 9.5vw, 52px);
+				}
+				.ha {
+					grid-template-columns: 1fr;
+				}
+				.ab {
+					border-left: none;
+					padding-left: 0;
+					border-top: 1px solid var(--ln);
+					padding-top: 18px;
+				}
+				.ab:first-child {
+					border-top: none;
+					padding-top: 0;
+				}
+				.ctas {
+					flex-direction: column;
+					align-items: flex-start;
+				}
+				.mg {
+					grid-template-columns: 1fr 1fr;
+				}
+				.mt {
+					padding: 22px 0;
+				}
+				.mt + .mt {
+					padding-left: 18px;
+				}
+				.mt:nth-child(3) {
+					border-left: none;
+					padding-left: 0;
+					border-top: 1px solid var(--ln);
+					padding-top: 22px;
+				}
+				.mt:nth-child(4) {
+					border-left: 1px solid var(--ln);
+					padding-left: 18px;
+					border-top: 1px solid var(--ln);
+					padding-top: 22px;
+				}
+				.mt:nth-child(5) {
+					grid-column: 1/-1;
+					border-left: none;
+					padding-left: 0;
+					border-top: 1px solid var(--ln);
+					padding-top: 22px;
+				}
+				.sg2 {
+					grid-template-columns: 1fr;
+				}
+				.si,
+				.si + .si {
+					padding: 28px 0;
+					border-left: none;
+					border-top: 1px solid var(--ln);
+				}
+				.si:first-child {
+					border-top: none;
+					padding-top: 0;
+				}
+				.si:last-child {
+					padding-bottom: 0;
+				}
+				.si:nth-child(3) {
+					grid-column: 1;
+					border-top: 1px solid var(--ln);
+				}
+				.oi {
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 14px;
+				}
+				.os {
+					border-left: none;
+					flex-direction: column;
+					gap: 12px;
+				}
+				.ost {
+					padding-left: 0;
+					border-right: none;
+				}
+				.rl {
+					min-width: auto;
+				}
+				.fi {
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 12px;
+				}
+				.nr .pill {
+					display: none;
+				}
+			}
+			@media (max-width: 400px) {
+				.mg {
+					grid-template-columns: 1fr;
+				}
+				.mt + .mt,
+				.mt:nth-child(4) {
+					border-left: none;
+					padding-left: 0;
+					border-top: 1px solid var(--ln);
+					padding-top: 20px;
+				}
+				.mt:nth-child(5) {
+					grid-column: 1;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div class="wrap">
+				<div class="ni">
+					<div class="nb">
+						<img
+							src="/logo.png"
+							alt="Polkassembly"
+							class="nl"
+							onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+						/>
+						<span class="nf">Polkassembly</span>
+					</div>
+					<div class="nr">
+						<a
+							href="https://polkadot.polkassembly.io"
+							target="_blank"
+							rel="noopener"
+							class="na"
+							>App archive</a
+						>
+						<a
+							href="https://github.com/polkassembly"
+							target="_blank"
+							rel="noopener"
+							class="na"
+							>GitHub</a
+						>
+						<div class="pill"><span class="dot"></span>ARCHIVED</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<header class="hero">
+			<div class="wrap">
+				<div class="hg">
+					<div class="a1">
+						<div class="ey">2020 — 2026</div>
+						<h1>Governance<br />infrastructure<br />for Polkadot.</h1>
+						<div class="a2">
+							<p class="hb">
+								The default governance interface for Polkadot, Kusama, and the Substrate ecosystem. Where proposals were submitted, referenda tracked, votes cast, and on-chain
+								decisions recorded — across 50+ networks for six years.
+							</p>
+							<div class="ctas">
+								<a
+									href="https://polkadot.polkassembly.io"
+									target="_blank"
+									rel="noopener"
+									class="cp"
+									>Open app archive →</a
+								>
+								<a
+									href="https://github.com/polkassembly"
+									target="_blank"
+									rel="noopener"
+									class="cs"
+									>GitHub ↗</a
+								>
+							</div>
+							<div class="hs">Archived · Read-only · Governance record intact through May 31, 2026.</div>
+						</div>
+					</div>
+
+					<div class="a3 ha">
+						<div class="ab">
+							<div class="lbl">Founded by</div>
+							<div class="pe">
+								<div class="pn">Jaskirat Singh</div>
+								<div class="pr">CEO</div>
+								<div class="pl">
+									<a
+										href="https://www.linkedin.com/in/jaskirat21/"
+										class="pk"
+										target="_blank"
+										rel="noopener"
+										>LinkedIn</a
+									><a
+										href="https://x.com/jas_jaski"
+										class="pk"
+										target="_blank"
+										rel="noopener"
+										>X</a
+									>
+								</div>
+							</div>
+							<div class="pe">
+								<div class="pn">Nikhil Ranjan</div>
+								<div class="pr">CTO</div>
+								<div class="pl">
+									<a
+										href="https://www.linkedin.com/in/niklabh/"
+										class="pk"
+										target="_blank"
+										rel="noopener"
+										>LinkedIn</a
+									><a
+										href="https://x.com/niklabh"
+										class="pk"
+										target="_blank"
+										rel="noopener"
+										>X</a
+									>
+								</div>
+							</div>
+						</div>
+						<div class="ab">
+							<div class="lbl">Backed by</div>
+							<div class="bk">
+								<div class="bn">Gavin Wood</div>
+								<div class="bo">Co-founder, Polkadot &amp; Ethereum</div>
+							</div>
+							<div class="bk">
+								<div class="bn">Paul Kim</div>
+								<div class="bo">Notifi</div>
+							</div>
+							<div class="bk">
+								<div class="bn">Azeem Khan</div>
+								<div class="bo">Miden</div>
+							</div>
+							<div class="af">+ others · strategic round, 2022</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section class="metrics">
+			<div class="wrap">
+				<div class="mg sg">
+					<div class="mt">
+						<div class="mn">1,700+</div>
+						<div class="mk">Referenda on Polkadot</div>
+						<div class="md">Every OpenGov referendum submitted, discussed, and tracked on the platform.</div>
+					</div>
+					<div class="mt">
+						<div class="mn">$300M+</div>
+						<div class="mk">Treasury decisions</div>
+						<div class="md">On-chain funds authorized through proposals since OpenGov launched in 2023.</div>
+					</div>
+					<div class="mt">
+						<div class="mn">250K+</div>
+						<div class="mk">Participants</div>
+						<div class="md">Voters and delegates active across all supported networks.</div>
+					</div>
+					<div class="mt">
+						<div class="mn">50+</div>
+						<div class="mk">Networks</div>
+						<div class="md">Polkadot, Kusama, and the full parachain ecosystem.</div>
+					</div>
+					<div class="mt">
+						<div class="mn">10K+</div>
+						<div class="mk">Posts &amp; discussions</div>
+						<div class="md">Six years of governance debate, on record.</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="products ri">
+			<div class="wrap">
+				<div class="pg sg">
+					<div class="pc">
+						<div class="ptag">Governance platform</div>
+						<div class="ph">Polkassembly</div>
+						<p class="pdesc">
+							The primary interface for on-chain governance across Polkadot and Kusama. From Gov1 through the OpenGov migration — proposals, referenda, treasury, conviction-based
+							delegation, Technical Fellowship tooling, identity verification, and governance analytics in one place.
+						</p>
+						<div class="pf">
+							<div class="pfi"><strong>2020</strong> — First governance UX at scale on Polkadot</div>
+							<div class="pfi"><strong>2023</strong> — Primary interface for the OpenGov migration</div>
+							<div class="pfi"><strong>2024</strong> — Fellowship induction UI, identity, Proof of Personhood</div>
+						</div>
+						<div class="plc">
+							<a
+								href="https://polkadot.polkassembly.io"
+								class="pa"
+								target="_blank"
+								rel="noopener"
+								><span class="pat">web</span>polkadot.polkassembly.io</a
+							>
+							<a
+								href="https://github.com/polkassembly/polkassembly"
+								class="pa"
+								target="_blank"
+								rel="noopener"
+								><span class="pat">git</span>polkassembly/polkassembly</a
+							>
+							<a
+								href="https://github.com/polkassembly/polkassembly-v2"
+								class="pa"
+								target="_blank"
+								rel="noopener"
+								><span class="pat">git</span>polkassembly/polkassembly-v2</a
+							>
+						</div>
+					</div>
+
+					<div class="pc">
+						<div class="ptag">Treasury &amp; multisig</div>
+						<div class="ph">PolkaSafe</div>
+						<p class="pdesc">
+							Multisig and treasury management for the Polkadot ecosystem. Built for teams, DAOs, and on-chain organizations managing shared assets at scale — trusted by the Web3
+							Foundation, Mythos, and leading parachain teams as their primary multisig tool.
+						</p>
+						<div class="pf">
+							<div class="pfi"><strong>$300M+</strong> — Peak assets under management, five networks</div>
+							<div class="pfi"><strong>Web3 Foundation, Mythos</strong> — and top ecosystem teams</div>
+						</div>
+						<div class="plc">
+							<a
+								href="https://polkasafe.xyz"
+								class="pa"
+								target="_blank"
+								rel="noopener"
+								><span class="pat">web</span>polkasafe.xyz</a
+							>
+							<a
+								href="https://github.com/polkasafe/polkasafe-ui"
+								class="pa"
+								target="_blank"
+								rel="noopener"
+								><span class="pat">git</span>polkasafe/polkasafe-ui</a
+							>
+						</div>
+					</div>
+
+					<div class="pc">
+						<div class="ptag">Identity &amp; personhood</div>
+						<div class="ph">Proof of Personhood</div>
+						<p class="pdesc">
+							On-chain identity infrastructure for decentralized governance. One-person, one-voice participation built at the infrastructure layer — Sybil resistance and
+							privacy-preserving identity as a foundational primitive, not a feature.
+						</p>
+						<div class="pf">
+							<div class="pfi"><strong>Sybil resistance</strong> — at the governance infrastructure layer</div>
+							<div class="pfi"><strong>Privacy-preserving</strong> — identity without surveillance</div>
+						</div>
+						<div class="plc">
+							<a
+								href="https://proofofpersonhood.how"
+								class="pa"
+								target="_blank"
+								rel="noopener"
+								><span class="pat">web</span>proofofpersonhood.how</a
+							>
+							<a
+								href="https://github.com/polkassembly"
+								class="pa"
+								target="_blank"
+								rel="noopener"
+								><span class="pat">git</span>github.com/polkassembly</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="standing ri">
+			<div class="wrap">
+				<div class="sg2">
+					<div class="si">
+						<div class="st">Adoption</div>
+						<div class="sf2">#2 in Polkadot</div>
+						<p class="sb">Most adopted product in the ecosystem by active user count — behind only the primary wallet infrastructure.</p>
+					</div>
+					<div class="si">
+						<div class="st">Recognition</div>
+						<div class="sf2">Polkadot's primary governance layer</div>
+						<p class="sb">
+							Cited in official Polkadot documentation, used by the Technical Fellowship, and chosen by the Web3 Foundation as their governance interface throughout the OpenGov
+							era.
+						</p>
+					</div>
+					<div class="si">
+						<div class="st">Dependency</div>
+						<div class="sf2">Every on-chain decision</div>
+						<p class="sb">Every protocol upgrade, treasury allocation, and Fellowship vote on Polkadot since 2020 was submitted, discussed, or tracked through the platform.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="oss ri">
+			<div class="wrap">
+				<div class="oi">
+					<div class="rl">Open source</div>
+					<div class="os">
+						<div class="ost">
+							<div class="on">15K+</div>
+							<div class="ok">Commits</div>
+						</div>
+						<div class="ost">
+							<div class="on">60+</div>
+							<div class="ok">Contributors</div>
+						</div>
+					</div>
+					<div class="or">
+						<a
+							href="https://github.com/polkassembly/polkassembly"
+							class="oa"
+							target="_blank"
+							rel="noopener"
+							>polkassembly →</a
+						>
+						<a
+							href="https://github.com/polkassembly/polkassembly-v2"
+							class="oa"
+							target="_blank"
+							rel="noopener"
+							>polkassembly-v2 →</a
+						>
+						<a
+							href="https://github.com/polkasafe/polkasafe-ui"
+							class="oa"
+							target="_blank"
+							rel="noopener"
+							>polkasafe-ui →</a
+						>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="contributors ri">
+			<div class="wrap">
+				<div class="ci">
+					<div class="rl">Contributors</div>
+					<div class="cn">
+						<a
+							href="https://github.com/alphainfinitus"
+							target="_blank"
+							rel="noopener"
+							>Mridul Kumar</a
+						>
+						·
+						<a
+							href="https://github.com/aadarsh012"
+							target="_blank"
+							rel="noopener"
+							>Aadarsh</a
+						>
+						·
+						<a
+							href="https://github.com/AleemAlam"
+							target="_blank"
+							rel="noopener"
+							>Aleem Alam</a
+						>
+						·
+						<a
+							href="https://www.linkedin.com/in/bhavyabatra-/"
+							target="_blank"
+							rel="noopener"
+							>Bhavya Batra</a
+						>
+						·
+						<a
+							href="https://www.linkedin.com/in/ritika786/"
+							target="_blank"
+							rel="noopener"
+							>Ritika Agarwal</a
+						>
+						·
+						<a
+							href="https://github.com/vmmuthu31"
+							target="_blank"
+							rel="noopener"
+							>V M Muthu</a
+						>
+						·
+						<a
+							href="https://github.com/rajdeep7Singh"
+							target="_blank"
+							rel="noopener"
+							>Rajdeep Singh</a
+						>
+						·
+						<a
+							href="https://github.com/adetoye-dev"
+							target="_blank"
+							rel="noopener"
+							>Adetoye</a
+						>
+						.
+						<a
+							href="https://github.com/KanishkaRajputd"
+							target="_blank"
+							rel="noopener"
+							>Kanishka</a
+						>
+						.
+						<a
+							href="https://github.com/jasmeets-6575"
+							target="_blank"
+							rel="noopener">Jasmeet</a
+						>
+						.
+						<a
+							href="https://github.com/This-Is-Prince"
+							target="_blank"
+							rel="noopener">Prince</a
+						>
+						<span class="ct"> · and 52 others</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="an ri">
+			<div class="wrap">
+				<p class="at">
+					Polkassembly ran as Polkadot's primary governance infrastructure from 2020 to 2026. The platform and associated app domains remain accessible in read-only archive mode
+					through May 31, 2026, after which all domains redirect here. The code is public. The governance record — every proposal, every vote, every discussion — is permanent and
+					on-chain. See the full codebase at
+					<a
+						href="https://github.com/polkassembly"
+						target="_blank"
+						rel="noopener"
+						>github.com/polkassembly</a
+					>.
+				</p>
+			</div>
+		</section>
+
+		<footer>
+			<div class="wrap">
+				<div class="fi">
+					<div class="fc">© Polkassembly · 2020–2026</div>
+					<div class="fl">
+						<a
+							href="https://twitter.com/polk_gov"
+							target="_blank"
+							rel="noopener"
+							>@polk_gov</a
+						>
+						<a href="mailto:hello@polkassembly.io">Contact</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			(function () {
+				document.documentElement.classList.add('js');
+				var els = document.querySelectorAll('.ri,.sg');
+				if (!els.length) return;
+				function inView(el) {
+					var r = el.getBoundingClientRect();
+					return r.top < window.innerHeight - 40;
+				}
+				if (!('IntersectionObserver' in window)) {
+					els.forEach(function (el) {
+						el.classList.add('in');
+					});
+					return;
+				}
+				var io = new IntersectionObserver(
+					function (entries) {
+						entries.forEach(function (e) {
+							if (e.isIntersecting) {
+								e.target.classList.add('in');
+								io.unobserve(e.target);
+							}
+						});
+					},
+					{ threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+				);
+				els.forEach(function (el) {
+					if (inView(el)) {
+						el.classList.add('in');
+					} else {
+						io.observe(el);
+					}
+				});
+			})();
+		</script>
+	</body>
 </html>
